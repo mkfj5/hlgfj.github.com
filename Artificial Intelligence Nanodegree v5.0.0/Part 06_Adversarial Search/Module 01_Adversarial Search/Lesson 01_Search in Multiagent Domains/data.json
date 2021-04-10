@@ -1,0 +1,1985 @@
+{
+  "data": {
+    "lesson": {
+      "id": 559327,
+      "key": "781f8037-a6e9-4b18-8a7b-c0168b2beee7",
+      "title": "Search in Multiagent Domains",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Thad returns to teach search in multi-agent domains, using the Minimax theorem to solve adversarial problems and build agents that make better decisions than humans.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/781f8037-a6e9-4b18-8a7b-c0168b2beee7/559327/1538955372108/Search+in+Multiagent+Domains+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/781f8037-a6e9-4b18-8a7b-c0168b2beee7/559327/1538955367562/Search+in+Multiagent+Domains+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 590561,
+          "key": "24650bca-8364-4503-a1dd-49f62a5ca1d4",
+          "title": "Lesson Plan - Week 8",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "24650bca-8364-4503-a1dd-49f62a5ca1d4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 593065,
+              "key": "e430aa16-5820-4759-b603-0579c9bbe697",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Lesson Plan: Week 8\n---\nThis week you'll learn about minimax, which extends search to multi-agent domains (i.e., problems where your agent isn't the only influence on the environment). Minimax agents have been very successful in some games (like Chess), but the central idea is even more important: _your agent can make better decisions by considering the consequences of its actions_.\n\nThe project for this module can be very difficult to complete. **Start early!**\n\n## Classroom\n- Watch the **multi-agent search** lectures (this lesson)\n- Review the project description for the next project: \"Build an Adversarial Game Playing Agent\"\n- Complete **all** of the coding exercises for minimax (these are directly applicable to the project!)\n\n## Reading (_Optional_)\n- Read AIMA **Chapter 5.1-5.2**",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 194203,
+          "key": "54308329080923",
+          "title": "Overview ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "54308329080923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193869,
+              "key": "5430832908",
+              "title": "Overview ",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "uoSrsXpgmZ0",
+                "china_cdn_id": "uoSrsXpgmZ0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 533943,
+          "key": "913b0d1a-3ea5-433f-b759-49c0e6c3739b",
+          "title": "The Minimax Algorithm",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "913b0d1a-3ea5-433f-b759-49c0e6c3739b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 533945,
+              "key": "acbfb976-0f10-407e-b56b-c862bb17f3e9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# The Minimax Algorithm\n---\nThe Artificial Intelligence a Modern Approach (AIMA) textbook provides the following pseudocode for the minimax algorithm.  As Thad presents the concept in lectures, you'll also work through coding exercises to implement this algorithm. Then you'll complete a project to build an agent using this algorithm to play a more complex version of the game.\n\n**Note:** It is also common to see minimax presented as a simply [recursive function](https://en.wikipedia.org/wiki/Minimax#Pseudocode), or other variants like [negamax](https://en.wikipedia.org/wiki/Negamax#Negamax_base_algorithm).  However, we will adhere to the version from the AIMA text in this exercise, because it separates the functionality for handling the min level and max level nodes (which makes it easier to test), and it more explicitly shows that you only need to choose a move from the root node -- all other children nodes only need to return a value.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 533944,
+              "key": "fa9c2460-0f23-4fdd-a655-46e918d8e228",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/596d2f7f_minimax-decision/minimax-decision.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/fa9c2460-0f23-4fdd-a655-46e918d8e228",
+              "caption": "The minimax search algorithm as shown in Artificial Intelligence a Modern Approach, 3rd edition.",
+              "alt": "",
+              "width": 497,
+              "height": 475,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 194010,
+          "key": "52413103710923",
+          "title": "Isolation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "52413103710923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193646,
+              "key": "5241310371",
+              "title": "Isolation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "Here are a couple more games that you can watch: [Isolation Extras](https://www.youtube.com/watch?v=n_ExdXeLNTk)\n\n_Notice how hard it is to estimate the chances of winning at the beginning of the game, and how you can become more and more certain as it progresses, ultimately being able to see till the very end._",
+              "video": {
+                "youtube_id": "BYqGXP95QLc",
+                "china_cdn_id": "BYqGXP95QLc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194161,
+          "key": "49647685840923",
+          "title": "Building a Game Tree",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "49647685840923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193819,
+              "key": "4964768584",
+              "title": "Building a Game Tree",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "**Note**: We start with one filled spot to reduce the complexity of the problem, as we try to develop a method to solve it. It's definitely more enjoyable (and challenging) to play isolation on bigger boards, with more spots to fill.",
+              "video": {
+                "youtube_id": "92VDHI0s7DI",
+                "china_cdn_id": "92VDHI0s7DI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 624479,
+          "key": "9472a34b-72a2-45f7-b330-0ff879cb2554",
+          "title": "Coding: Building a Game Class",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9472a34b-72a2-45f7-b330-0ff879cb2554",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 624480,
+              "key": "40a1d16c-6fc7-4c13-a150-4a0a6dfd91b2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Representing the Game State in Code\nBefore we can code the minimax algorithm, we need a way to keep track of the game state while the program runs. We'll start with a simple class for the mini-Isolation game from the lecture examples. (Using a simple example will make it easier to reason about expected correct behavior while debugging & testing the code.)\n\n## Game Class Requirements\nThe game state object needs to enforce all of the rules of the game, and represent all of the information describing a single configuration of the game at a specific point in time. There isn't only one \"Right Way\" to do this, so we'll have to make some additional assumptions that constrain the solution space -- but you shouldn't worry if your choices don't exactly match the examples shown.\n\nThe basic Board class is going to be _very_ simple. In this quiz we're _only_ going to write the class constructor method `__init__()`, then **you will add functionality to the class in later quizzes**. Your Isolation `GameState` class needs properties that can :\n1. keep track of which cells are open and closed\n2. identify which player has initiative (whose turn it is to move)\n3. track the current position each player on the board\n\n_Note: the constructor should make sure that the bottom corner cell is blocked when a new instance is created!_\n\nWe will assume that board origin is in the top left corner and set the x axis to move from left to right and the y axis to move from top to bottom (the usual semantics for 2d array indexing). Each cell on the board can be described by an ordered pair `(x, y)`. Thus (0, 0) is the top-left corner cell; (2, 1) is the bottom right corner (the blocked cell).\n\nIf you get stuck, flip over to the solution to see one possible implementation.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 624481,
+              "key": "d4c52d86-4951-486a-af64-d57d3b2e95df",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "The test case for this class will accept any code that removes the error raised by the constructor method...which should make sense because the class doesn't _do_ anything yet. (Don't worry, we'll get there soon enough.)\n",
+              "user_state": {
+                "node_key": "d4c52d86-4951-486a-af64-d57d3b2e95df",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "Game State Init",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6466306671509504",
+                "initial_code_files": [
+                  {
+                    "text": "\n# TODO: implement the __init__ class below by adding properties\n# that meet the three requirements specified\n\nclass GameState:\n\n    def __init__(self):\n        \"\"\"The GameState class constructor performs required\n        initializations when an instance is created. The class\n        should:\n        \n        1) Keep track of which cells are open/closed\n        2) Identify which player has initiative\n        3) Record the current location of each player\n        \n        Parameters\n        ----------\n        self:\n            instance methods automatically take \"self\" as an\n            argument in python\n        \n        Returns\n        -------\n        None\n        \"\"\"\n        # You can define attributes like this:\n        # self.value = 73  # an arbitrary number\n        # reassign it to a string (variable type is dynamic in Python)\n        # self.value = \"some string\"\n        # self.foo = []  # create an empty list\n        raise NotImplementedError\n\n\nif __name__ == \"__main__\":\n    # This code is only executed if \"gameagent.py\" is the run\n    # as a script (i.e., it is not run if \"gameagent.py\" is\n    # imported as a module)\n    emptyState = GameState()  # create an instance of the object\n",
+                    "name": "gamestate.py"
+                  },
+                  {
+                    "text": "# Feel free to modify this code for testing, however the \"submit\" button\n# will NOT recognize any of these changes\n\nfrom gamestate import *\n\nprint(\"Creating empty game board...\")\nemptyState = GameState()\nprint(\"Everything looks good!\")\n",
+                    "name": "testcode.py"
+                  },
+                  {
+                    "text": "# This is just one possible solution, there are many\n# other options that will work just as well or better \n\n\nxlim, ylim = 3, 2  # board dimension constants\n\nclass GameState:\n    \"\"\"\n    Attributes\n    ----------\n    _board: list(list)\n        Represent the board with a 2d array _board[x][y]\n        where open spaces are 0 and closed spaces are 1\n        and a coordinate system where [0][0] is the top-\n        left corner, and x increases to the right while\n        y increases going down (this is an arbitrary\n        convention choice -- there are many other options\n        that are just as good)\n    \n    _parity: bool\n        Keep track of active player initiative (which\n        player has control to move) where 0 indicates that\n        player one has initiative and 1 indicates player two\n    \n    _player_locations: list(tuple)\n        Keep track of the current location of each player\n        on the board where position is encoded by the\n        board indices of their last move, e.g., [(0, 0), (1, 0)]\n        means player one is at (0, 0) and player two is at (1, 0)\n    \"\"\"\n    def __init__(self):\n        # single-underscore prefix on attribute names means\n        # that the attribute is \"private\" (Python doesn't truly\n        # support public/private members, so this is only a\n        # convention)\n        self._board = [[0] * ylim for _ in range(xlim)]\n        self._board[-1][-1] = 1  # block lower-right corner\n        self._parity = 0\n        self._player_locations = [None, None]\n",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 194052,
+          "key": "52413103720923",
+          "title": "Which of These Are Valid Moves?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "52413103720923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193692,
+              "key": "5241310372",
+              "title": "Which of These Are Valid Moves?",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "5241310372",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "gsSp5nBlTP8",
+                  "china_cdn_id": "gsSp5nBlTP8.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Which of These Are Valid Moves?",
+                "alt_text": "",
+                "background_image": "//lh3.googleusercontent.com/jVXWQscVsSXpOrpHqBPlZbiIoQP8NVdwvHl6Od_cDHs8RML55QLbW8p7O2vTCoKbtbquOGb5616skWbMqi2j=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5241310372",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "5241310374",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check1",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.13826761221945136,
+                      "y": 0.6246881929046563
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check2",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.07613778054862842,
+                      "y": 0.674889135254989
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check3",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.10748519326683292,
+                      "y": 0.6745426829268293
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check4",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.18385676433915213,
+                      "y": 0.6231638026607539
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check5",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.18387624688279303,
+                      "y": 0.6744041019955654
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check6",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.2152821072319202,
+                      "y": 0.6739537139689579
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check7",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.2896469763092269,
+                      "y": 0.6206347006651884
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check8",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.35125077930174564,
+                      "y": 0.621015798226164
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check9",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3213061097256858,
+                      "y": 0.6715285476718403
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check10",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3989830112219451,
+                      "y": 0.6219165742793792
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check11",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4584437344139651,
+                      "y": 0.6218126385809313
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check12",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3968983790523691,
+                      "y": 0.6722214523281597
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check13",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5350296134663342,
+                      "y": 0.6205654101995566
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check14",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5044809850374065,
+                      "y": 0.6726371951219512
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check15",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5352828865336658,
+                      "y": 0.6745773281596452
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check16",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6098036159600998,
+                      "y": 0.6185559866962306
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check17",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.609745168329177,
+                      "y": 0.6725679046563193
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check18",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6422810162094763,
+                      "y": 0.6734340354767184
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check19",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.7193539588528678,
+                      "y": 0.6198032150776053
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check20",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.7499415523690773,
+                      "y": 0.6209118625277162
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check21",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.7493375935162094,
+                      "y": 0.6715631929046563
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check22",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.8249298628428927,
+                      "y": 0.6176552106430155
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check23",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.8557122817955112,
+                      "y": 0.619214246119734
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check24",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.82487141521197,
+                      "y": 0.671944290465632
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "jJ6dS7itftM",
+                  "china_cdn_id": "jJ6dS7itftM.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 624482,
+          "key": "327ecc14-95e5-4ac0-9c67-cfe0a24a5c34",
+          "title": "Coding: Game Class Functionality",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "327ecc14-95e5-4ac0-9c67-cfe0a24a5c34",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 624483,
+              "key": "42f72b1c-05d5-4a15-9559-6afa876447dc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Adding Functionality to the Game Class\n---\nWe will use the interface for adversarial search problems defined in Chapter 5.1 of Artificial Intelligence: a Modern Approach, which includes the following five functions:\n- `player()`: return the active player in the current state\n- `actions()`: return a list of the legal actions in the current state\n- `result(action)`: return a new state that results from applying the given action in the current state\n- `terminal_test()`: return True if the current state is terminal, and False otherwise\n- `utility(player)`: return +inf if the game is terminal and the specified player wins, return -inf if the game is terminal and the specified player loses, and return 0 if the game is not terminal (**NOTE:** You do **not** need to implement this function now)\n\nWe will extend that interface with one additional domain specific method, which will simplify implementing several techniques later in the lesson:\n- `liberties(loc)`: return a list of cells in the neighborhood of the specified location that are open\n\nImplement these functions for your game class below. If you get stuck, flip over to the solution to see one possible implementation.\n\n_Note: Don't be afraid to add additional functions to the class or module to help complete the two required tasks._",
+              "instructor_notes": ""
+            },
+            {
+              "id": 624484,
+              "key": "7bdaa424-6636-449a-99f4-94c383d3ad8b",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "The example solution is intended to be simple to reason about; it is not designed for high performance. Returning copies of the game state when forecasting moves has significant overhead (especially in Python), and returning a complete list of all legal moves is inefficient (a generator would be better), but both conventions simplify the underlying implementation & interface for the minimax algorithm. We will use a similar interface in the project.\n\nWhen performance matters, it is typical to use [bitboards](https://en.wikipedia.org/wiki/Bitboard) (which _are_ used in the project library). ",
+              "user_state": {
+                "node_key": "7bdaa424-6636-449a-99f4-94c383d3ad8b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "Expanding Game State Class",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4617090449932288",
+                "initial_code_files": [
+                  {
+                    "text": "\nclass GameState:\n    \"\"\"\n    Attributes\n    ----------\n    TODO: Copy in your implementation from the previous quiz\n    \"\"\"\n    def __init__(self):\n        # TODO: Copy in your implementation from the previous quiz\n        pass\n        \n    def actions(self):\n        \"\"\" Return a list of legal actions for the active player \n        \n        You are free to choose any convention to represent actions,\n        but one option is to represent actions by the (row, column)\n        of the endpoint for the token. For example, if your token is\n        in (0, 0), and your opponent is in (1, 0) then the legal\n        actions could be encoded as (0, 1) and (0, 2).\n        \"\"\"\n        # TODO: Finish this function!\n        pass\n    \n    def player(self):\n        \"\"\" Return the id of the active player \n        \n        Hint: return 0 for the first player, and 1 for the second player\n        \"\"\"\n        # TODO: Finish this function!\n        pass\n    \n    def result(self, action):\n        \"\"\" Return a new state that results from applying the given\n        action in the current state\n        \n        Hint: Check out the deepcopy module--do NOT modify the\n        objects internal state in place\n        \"\"\"\n        # TODO: Finish this function!\n        pass\n    \n    def terminal_test(self):\n        \"\"\" return True if the current state is terminal,\n        and False otherwise\n        \n        Hint: an Isolation state is terminal if _either_\n        player has no remaining liberties (even if the\n        player is not active in the current state)\n        \"\"\"\n        # TODO: Finish this function!\n        pass\n    \n    def liberties(self, loc):\n        \"\"\" Return a list of all open cells in the\n        neighborhood of the specified location.  The list \n        should include all open spaces in a straight line\n        along any row, column or diagonal from the current\n        position. (Tokens CANNOT move through obstacles\n        or blocked squares in queens Isolation.)\n        \n        Note: if loc is None, then return all empty cells\n        on the board\n        \"\"\"\n        # TODO: Finish this function!\n        pass\n",
+                    "name": "gamestate.py"
+                  },
+                  {
+                    "text": "\nfrom gamestate import *\n\nprint(\"Creating empty game board...\")\ng = GameState()\n\nprint(\"Checking active player on an empty board...\")\nif g.player() != 0:\n    print(\"Failed\\n Uh Oh! Your game did not return player \" +\n          \"id 0 on an empty board.\")\nelse:\n    print(\"Passed.\")\n\nprint(\"Checking terminal test on an empty board...\")\nif g.terminal_test() != False:\n    print(\"Failed\\n Uh Oh! Your game marked an empty game state as terminal.\")\nelse:\n    print(\"Passed.\")\n    \nprint(\"Checking liberties on an empty board...\")\np1_liberties = g.liberties(None)\nif len(p1_liberties) != 5:\n    print(\"Failed\\n Uh oh! Your game did not return 5 empty \" +\n          \"cell locations as liberties on an empty board.\")\nelse:\n    print(\"Passed.\")\n\nprint(\"Getting legal moves for player 1...\")\np1_empty_moves = g.actions()\nprint(\"Found {} legal moves.\".format(len(p1_empty_moves or [])))\n\nprint(\"Applying move {} for player 1...\".format(p1_empty_moves[0]))\ng1 = g.result(p1_empty_moves[0])\n\nprint(\"Getting legal moves for player 2...\")\np2_empty_moves = g1.actions()\nif len(p2_empty_moves) != 4:\n    print(\"Failed\\n  Uh oh! Your game did not return the expected \" +\n          \"number of actions for player 2!\")\nelse:\n    print(\"Passed.\")\n\nprint(\"\\nPlaying a full game\")\nfor _ in range(5):\n    if g.terminal_test(): break\n    g = g.result(g.actions()[0])\n\nprint(\"Checking terminal test on a terminal board...\")\nif g.terminal_test() != True:\n    print(\"Failed\\n  Uh oh! Your game did not correctly evalute \" +\n          \"a terminal game state as terminal!\")\nelse:\n    print(\"Passed.\")\n",
+                    "name": "testcode.py"
+                  },
+                  {
+                    "text": "\nfrom copy import deepcopy\n\nxlim, ylim = 3, 2  # board dimensions\n\n# The eight movement directions possible for a chess queen\nRAYS = [(1, 0), (1, -1), (0, -1), (-1, -1),\n        (-1, 0), (-1, 1), (0, 1), (1, 1)]\n\n\nclass GameState:\n    \"\"\"\n    Attributes\n    ----------\n    _board: list(list)\n        Represent the board with a 2d array _board[x][y]\n        where open spaces are 0 and closed spaces are 1\n    \n    _parity: bool\n        Keep track of active player initiative (which\n        player has control to move) where 0 indicates that\n        player one has initiative and 1 indicates player 2\n    \n    _player_locations: list(tuple)\n        Keep track of the current location of each player\n        on the board where position is encoded by the\n        board indices of their last move, e.g., [(0, 0), (1, 0)]\n        means player 1 is at (0, 0) and player 2 is at (1, 0)\n    \"\"\"\n    def __init__(self):\n        self._board = [[0] * ylim for _ in range(xlim)]\n        self._board[-1][-1] = 1  # block lower-right corner\n        self._parity = 0\n        self._player_locations = [None, None]\n        \n    def actions(self):\n        \"\"\" Return a list of legal actions for the active player \"\"\"\n        return self.liberties(self._player_locations[self._parity])\n    \n    def player(self):\n        \"\"\" Return the id of the active player \"\"\"\n        return self._parity\n    \n    def result(self, action):\n        \"\"\" Return a new state that results from applying the given\n        action in the current state\n        \"\"\"\n        assert action in self.actions(), \"Attempted forecast of illegal move\"\n        newBoard = deepcopy(self)\n        newBoard._board[action[0]][action[1]] = 1\n        newBoard._player_locations[self._parity] = action\n        newBoard._parity ^= 1\n        return newBoard\n    \n    def terminal_test(self):\n        \"\"\" return True if the current state is terminal,\n        and False otherwise\n        \n        Hint: an Isolation state is terminal if _either_\n        player has no remaining liberties (even if the\n        player is not active in the current state)\n        \"\"\"\n        return (not self._has_liberties(self._parity)\n            or not self._has_liberties(1 - self._parity))\n    \n    def liberties(self, loc):\n        \"\"\" Return a list of all open cells in the\n        neighborhood of the specified location.  The list \n        should include all open spaces in a straight line\n        along any row, column or diagonal from the current\n        position. (Tokens CANNOT move through obstacles\n        or blocked squares in queens Isolation.)\n        \"\"\"\n        if loc is None: return self._get_blank_spaces()\n        moves = []\n        for dx, dy in RAYS:  # check each movement direction\n            _x, _y = loc\n            while 0 <= _x + dx < xlim and 0 <= _y + dy < ylim:\n                _x, _y = _x + dx, _y + dy\n                if self._board[_x][_y]:  # stop at any blocked cell\n                    break\n                moves.append((_x, _y))\n        return moves\n    \n    def _has_liberties(self, player_id):\n        \"\"\" Check to see if the specified player has any liberties \"\"\"\n        return any(self.liberties(self._player_locations[player_id]))\n\n    def _get_blank_spaces(self):\n        \"\"\" Return a list of blank spaces on the board.\"\"\"\n        return [(x, y) for y in range(ylim) for x in range(xlim)\n                if self._board[x][y] == 0]\n",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 193926,
+          "key": "49461227420923",
+          "title": "Building a Game Tree (Contd.)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "49461227420923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193548,
+              "key": "4946122742",
+              "title": "Building a Game Tree (Contd.)",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "2EETczdx2t4",
+                "china_cdn_id": "2EETczdx2t4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 193953,
+          "key": "53272193100923",
+          "title": "Isolation Game Tree with Leaf Values",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "53272193100923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193573,
+              "key": "5327219310",
+              "title": "Isolation Game Tree with Leaf Values",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Isolation Game Tree with Leaf Values\n\n[Click to open:<br />![Isolation game tree with leaf values](https://s3.amazonaws.com/content.udacity-data.com/courses/ud954/images/isolation-L6_leafValues.svg)](https://s3.amazonaws.com/content.udacity-data.com/courses/ud954/images/isolation-L6_leafValues.svg)\n\nTake some time to study the game tree, then continue on.\n\nNote the second subtree at Level 1 (where O picks the top, middle cell) - it leads to a lot of losses (-1 values).\n\n[![Isolation game tree with leaf values](https://s3.amazonaws.com/content.udacity-data.com/courses/ud954/images/isolation-L1-node02.png)](https://s3.amazonaws.com/content.udacity-data.com/courses/ud954/images/isolation-L1-node02.png)\n\n<!--\nL1-node02: alt box drawing:-\n    ┌─────┬─────┬─────┐\n    ╎     ╎  O  ╎     ╎\n    ├─────┼─────┼─────┤\n    ╎     ╎     ╎  ╱  ╎\n    └─────┴─────┴─────┘\n-->\n\n_Can you think of a way to mark that entire subtree as a bad choice?_\n\n",
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 193925,
+          "key": "49461227430923",
+          "title": "How Do We Tell the Computer Not to Lose?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "49461227430923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193547,
+              "key": "4946122743",
+              "title": "How Do We Tell the Computer Not to Lose?",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "mLZZCtXkBHw",
+                "china_cdn_id": "mLZZCtXkBHw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 193937,
+          "key": "49461227440923",
+          "title": "MIN and MAX Levels",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "49461227440923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193559,
+              "key": "4946122744",
+              "title": "MIN and MAX Levels",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "dRBNRN_3t20",
+                "china_cdn_id": "dRBNRN_3t20.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 624506,
+          "key": "7118a8df-3928-4c96-9399-1d6337a1e443",
+          "title": "Coding: Scoring Min & Max Levels",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7118a8df-3928-4c96-9399-1d6337a1e443",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 624507,
+              "key": "0c75d5b3-4ff6-405c-ad4e-c698ab98d46b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Starting to Code Minimax\n---\n\nNow that we have a complete game class and the lectures have introduced the core concept of minimax while walking through the basic procedure in the quizzes, the next step is to do it all with code. In this exercise you're going to implement the two helper functions required by the minimax algorithm.\n\n### The Minimax Algorithm:\nRecall the minimax algorithm originally presented at the beginning of this lesson (shown below). We will start by coding helper functions: the min-value function, and the max-value function. Notice that the `min-value()` and `max-value()` functions only need to return a single number -- a \"utility value\" -- which is the score of the current branch; the function for selecting a move based on those scores will come in a later quiz.\n\n**EXTREMELY IMPORTANT NOTE:** It isn't clear from the pseudocode below, but the UTILITY() value is ALWAYS relative to the active player at the root node of the search tree. The utility is NOT calculated for the \"active\" player. The search is performed from the perspective of the active player at the root node.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 624509,
+              "key": "86c8cc2f-d0c7-40c4-be8b-8273d035c076",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/596d2f7f_minimax-decision/minimax-decision.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/86c8cc2f-d0c7-40c4-be8b-8273d035c076",
+              "caption": "",
+              "alt": "",
+              "width": 497,
+              "height": 475,
+              "instructor_notes": null
+            },
+            {
+              "id": 624508,
+              "key": "c0a2d482-ecd7-4ae5-af5b-49ec11813eb0",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "**NOTE** Technically, any pair of values can be used to indicate wins and losses so long as they admit an ordering such that the score for winning is greater than the score for losing; e.g., instead of -inf & +inf you could you use -π & π/2, or 100.99 & 101.0, or -1 & +1 (which is what Thad uses in lecture). It is common to use -∞ & +∞ when a heuristic function is used (which we'll do in another project for this module) because every possible heuristic estimate lies between those bounds, which avoids a possible bug where your agent prefers a non-terminal state scored by the heuristic to a terminal state with a \"true\" win or loss score.",
+              "user_state": {
+                "node_key": "c0a2d482-ecd7-4ae5-af5b-49ec11813eb0",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6647777361264640",
+                "initial_code_files": [
+                  {
+                    "text": "\n\ndef min_value(gameState):\n    \"\"\" Return the game state utility if the game is over,\n    otherwise return the minimum value over all legal successors\n    \n    # HINT: Assume that the utility is ALWAYS calculated for\n            player 1, NOT for the \"active\" player\n    \"\"\"\n    # TODO: finish this function!\n    pass\n\n\ndef max_value(gameState):\n    \"\"\" Return the game state utility if the game is over,\n    otherwise return the maximum value over all legal successors\n    \n    # HINT: Assume that the utility is ALWAYS calculated for\n            player 1, NOT for the \"active\" player\n    \"\"\"\n    # TODO: finish this function!\n    pass",
+                    "name": "minimax_helpers.py"
+                  },
+                  {
+                    "text": "\n# Please use this implementation for compatability with the test cases\n\nfrom copy import deepcopy\n\nxlim, ylim = 3, 2  # board dimensions\n\n# The eight movement directions possible for a chess queen\nRAYS = [(1, 0), (1, -1), (0, -1), (-1, -1),\n        (-1, 0), (-1, 1), (0, 1), (1, 1)]\n\n\nclass GameState:\n    \"\"\"\n    Attributes\n    ----------\n    _board: list(list)\n        Represent the board with a 2d array _board[x][y]\n        where open spaces are 0 and closed spaces are 1\n    \n    _parity: bool\n        Keep track of active player initiative (which\n        player has control to move) where 0 indicates that\n        player one has initiative and 1 indicates player 2\n    \n    _player_locations: list(tuple)\n        Keep track of the current location of each player\n        on the board where position is encoded by the\n        board indices of their last move, e.g., [(0, 0), (1, 0)]\n        means player 1 is at (0, 0) and player 2 is at (1, 0)\n    \"\"\"\n    def __init__(self):\n        self._board = [[0] * ylim for _ in range(xlim)]\n        self._board[-1][-1] = 1  # block lower-right corner\n        self._parity = 0\n        self._player_locations = [None, None]\n        \n    def actions(self):\n        \"\"\" Return a list of legal actions for the active player \"\"\"\n        return self.liberties(self._player_locations[self._parity])\n    \n    def player(self):\n        \"\"\" Return the id of the active player \"\"\"\n        return self._parity\n    \n    def result(self, action):\n        \"\"\" Return a new state that results from applying the given\n        action in the current state\n        \"\"\"\n        assert action in self.actions(), \"Attempted forecast of illegal move\"\n        newBoard = deepcopy(self)\n        newBoard._board[action[0]][action[1]] = 1\n        newBoard._player_locations[self._parity] = action\n        newBoard._parity ^= 1\n        return newBoard\n    \n    def terminal_test(self):\n        \"\"\" return True if the current state is terminal,\n        and False otherwise\n        \n        Hint: an Isolation state is terminal if _either_\n        player has no remaining liberties (even if the\n        player is not active in the current state)\n        \"\"\"\n        return (not self._has_liberties(self._parity)\n            or not self._has_liberties(1 - self._parity))\n\n    def utility(self, player_id):\n        \"\"\" return +inf if the game is terminal and the\n        specified player wins, return -inf if the game\n        is terminal and the specified player loses, and\n        return 0 if the game is not terminal\n        \"\"\"\n        if not self.terminal_test(): return 0\n        player_id_is_active = (player_id == self.player())\n        active_has_liberties = self._has_liberties(self.player())\n        active_player_wins = (active_has_liberties == player_id_is_active)\n        return float(\"inf\") if active_player_wins else float(\"-inf\")\n    \n    def liberties(self, loc):\n        \"\"\" Return a list of all open cells in the\n        neighborhood of the specified location.  The list \n        should include all open spaces in a straight line\n        along any row, column or diagonal from the current\n        position. (Tokens CANNOT move through obstacles\n        or blocked squares in queens Isolation.)\n        \"\"\"\n        if loc is None: return self._get_blank_spaces()\n        moves = []\n        for dx, dy in RAYS:  # check each movement direction\n            _x, _y = loc\n            while 0 <= _x + dx < xlim and 0 <= _y + dy < ylim:\n                _x, _y = _x + dx, _y + dy\n                if self._board[_x][_y]:  # stop at any blocked cell\n                    break\n                moves.append((_x, _y))\n        return moves\n    \n    def _has_liberties(self, player_id):\n        \"\"\" Check to see if the specified player has any liberties \"\"\"\n        return any(self.liberties(self._player_locations[player_id]))\n\n    def _get_blank_spaces(self):\n        \"\"\" Return a list of blank spaces on the board.\"\"\"\n        return [(x, y) for y in range(ylim) for x in range(xlim)\n                if self._board[x][y] == 0]",
+                    "name": "gamestate.py"
+                  },
+                  {
+                    "text": "\nimport minimax_helpers\n\nfrom gamestate import *\n\ng = GameState()\ninf = float(\"inf\")\nactions = [((0, 0), inf), ((1, 0), -inf), ((2, 0), inf), ((0, 1), inf), ((1, 1), -inf)]\n\nif all(minimax_helpers.min_value(g.result(a)) == ev for a, ev in actions):\n    print(\"Looks like everything works!\")\nelse:\n    print(\"Uh oh! Not all the scores matched.\")\n",
+                    "name": "testcode.py"
+                  },
+                  {
+                    "text": "\ndef min_value(gameState):\n    \"\"\" Return the game state utility if the game is over,\n    otherwise return the minimum value over all legal successors\n    \"\"\"\n    if gameState.terminal_test():\n        return gameState.utility(0)\n    v = float(\"inf\")\n    for a in gameState.actions():\n        v = min(v, max_value(gameState.result(a)))\n    return v\n\n\ndef max_value(gameState):\n    \"\"\" Return the game state utility if the game is over,\n    otherwise return the maximum value over all legal successors\n    \"\"\"\n    if gameState.terminal_test():\n        return gameState.utility(0)\n    v = float(\"-inf\")\n    for a in gameState.actions():\n        v = max(v, min_value(gameState.result(a)))\n    return v\n",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 193936,
+          "key": "49461227450923",
+          "title": "Propagating Values Up the Tree",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "49461227450923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193558,
+              "key": "4946122745",
+              "title": "Propagating Values Up the Tree",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "WpHKf4righw",
+                "china_cdn_id": "WpHKf4righw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194129,
+          "key": "53136108350923",
+          "title": "Computing MIN MAX Values",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "53136108350923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193780,
+              "key": "5313610835",
+              "title": "Computing MIN MAX Values",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Note that the value of the top-most node shown here cannot be ascertained given just this portion of the tree.\nIt has been calculated here using other branches that are out of view.",
+              "user_state": {
+                "node_key": "5313610835",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "xVY-uOiCcRM",
+                  "china_cdn_id": "xVY-uOiCcRM.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Computing MIN MAX Values",
+                "alt_text": "",
+                "background_image": "//lh3.googleusercontent.com/1TpiebiouW4cMwNWnY-dlcVkUuBuxf9Oen59KwNOf2LjKhlAvF5gsmTh6dVab_BaDF-1JqOKbaoOJ1jgN-w=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5313610835",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "5313610837",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric2",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.6480283665835411,
+                      "y": 0.20139273835920177
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric3",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.43722724438902744,
+                      "y": 0.3715701219512195
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric4",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.6484764650872819,
+                      "y": 0.37250554323725055
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric5",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.8578748441396509,
+                      "y": 0.3731984478935698
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric6",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.43810395885286785,
+                      "y": 0.5442073170731707
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric7",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.5771898379052369,
+                      "y": 0.5427868625277162
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric8",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.7177369077306733,
+                      "y": 0.545835643015521
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric9",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.8599205112219451,
+                      "y": 0.5424057649667405
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric10",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.5774431109725686,
+                      "y": 0.7163248337028825
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric11",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.8604075748129676,
+                      "y": 0.7131721175166297
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "w46-PyfRAWo",
+                  "china_cdn_id": "w46-PyfRAWo.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 257316,
+          "key": "12742ba2-3324-45d5-8723-318a28dc3d1b",
+          "title": "Computing MIN MAX Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "12742ba2-3324-45d5-8723-318a28dc3d1b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 257317,
+              "key": "bdb0df0d-533b-4d20-99ea-62852f313706",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Solution\n\nLet's take a moment to understand the solution of the previous quiz.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 257319,
+              "key": "d7d11112-ce2e-4a9d-a87c-5253f52a9980",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/January/587d5eb9_vlcsnap-2017-01-16-15h50m34s627/vlcsnap-2017-01-16-15h50m34s627.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d7d11112-ce2e-4a9d-a87c-5253f52a9980",
+              "caption": "Solution to the previous quiz.",
+              "alt": null,
+              "width": 1280,
+              "height": 738,
+              "instructor_notes": null
+            },
+            {
+              "id": 257320,
+              "key": "c6e84c13-c445-4328-aeac-7bb61d6b0624",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "* To begin with, boxes `E`, `F`, `G`, `H`, `I`, and `J` have just one child. As such, they simply take the value of their child.\n* Box `C` is a minimizer node, and hence chooses the minimum of boxes `F`, and `G` which is `G`'s value of `-1`.\n* Box `A` is a maximizing node, and chooses the maximum of boxes `B`, `C`, and `D` which is `D`'s value of `+1`.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 194160,
+          "key": "54465112280923",
+          "title": "Choosing the Best Branch",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "54465112280923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193817,
+              "key": "5446511228",
+              "title": "Choosing the Best Branch",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "**Complete Isolation Tree** (click to open):\n[![Complete Isolation Tree](https://s3.amazonaws.com/content.udacity-data.com/courses/ud954/images/isolation-L6_minMax_complete.png)](https://s3.amazonaws.com/content.udacity-data.com/courses/ud954/images/isolation-L6_minMax_complete.png)\n\n_Note the two Level 1 nodes where the computer player (**O**) loses._",
+              "video": {
+                "youtube_id": "ftcZMraEokg",
+                "china_cdn_id": "ftcZMraEokg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 624544,
+          "key": "eb7402fb-f58a-4e62-84e6-bf9e3b9a2ece",
+          "title": "Coding: Minimax Search",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "eb7402fb-f58a-4e62-84e6-bf9e3b9a2ece",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 624545,
+              "key": "5b25fac6-35b4-4f2c-bce9-20d25a3837ea",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Minimax Decision: Choosing the Best Branch\n---\n\nNow it's time to bring it all together to complete the minimax algorithm.  The `minimax_decision()` function in the quiz below should implement the eponymous procedure from the pseudocode. It should loop over the legal moves from the current state and return the move that has the highest score. The scores are determined by mutually recursive calls between the min and max value helper functions until a terminal state is reached, and propagated back up the tree as the call stack unwinds. \n\nJust like in the previous quiz, the root node of the tree is itself a \"max\" node, so we call `min_value()` first on each legal move. \n\n**Hints:** \n - One way to implement this function has a body that looks very similar to the `max_value()` function, except that you must keep track of both the best score and best move (and return only the best move)\n - There are also clever ways to do it using the built-in [max](https://docs.python.org/2/library/functions.html#max) function and the optional keyword argument `key`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 624546,
+              "key": "43ad2b7a-df28-4636-9cd5-c8afe3de6f84",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "43ad2b7a-df28-4636-9cd5-c8afe3de6f84",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "Minimax Decision",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4735962796654592",
+                "initial_code_files": [
+                  {
+                    "text": "\nfrom minimax_helpers import *\n\n\ndef minimax_decision(gameState):\n    \"\"\" Return the move along a branch of the game tree that\n    has the best possible value.  A move is a pair of coordinates\n    in (column, row) order corresponding to a legal move for\n    the searching player.\n    \n    You can ignore the special case of calling this function\n    from a terminal state.\n    \"\"\"\n    # TODO: Finish this function!\n    pass\n",
+                    "name": "minimax.py"
+                  },
+                  {
+                    "text": "\ndef min_value(gameState):\n    \"\"\" Return the game state utility if the game is over,\n    otherwise return the minimum value over all legal successors\n    \"\"\"\n    if gameState.terminal_test():\n        return gameState.utility(0)\n    v = float(\"inf\")\n    for a in gameState.actions():\n        v = min(v, max_value(gameState.result(a)))\n    return v\n\n\ndef max_value(gameState):\n    \"\"\" Return the game state utility if the game is over,\n    otherwise return the maximum value over all legal successors\n    \"\"\"\n    if gameState.terminal_test():\n        return gameState.utility(0)\n    v = float(\"-inf\")\n    for a in gameState.actions():\n        v = max(v, min_value(gameState.result(a)))\n    return v\n",
+                    "name": "minimax_helpers.py"
+                  },
+                  {
+                    "text": "\n# Please use this implementation for compatability with the test cases\n\nfrom copy import deepcopy\n\nxlim, ylim = 3, 2  # board dimensions\n\n# The eight movement directions possible for a chess queen\nRAYS = [(1, 0), (1, -1), (0, -1), (-1, -1),\n        (-1, 0), (-1, 1), (0, 1), (1, 1)]\n\n\nclass GameState:\n    \"\"\"\n    Attributes\n    ----------\n    _board: list(list)\n        Represent the board with a 2d array _board[x][y]\n        where open spaces are 0 and closed spaces are 1\n    \n    _parity: bool\n        Keep track of active player initiative (which\n        player has control to move) where 0 indicates that\n        player one has initiative and 1 indicates player 2\n    \n    _player_locations: list(tuple)\n        Keep track of the current location of each player\n        on the board where position is encoded by the\n        board indices of their last move, e.g., [(0, 0), (1, 0)]\n        means player 1 is at (0, 0) and player 2 is at (1, 0)\n    \"\"\"\n    def __init__(self):\n        self._board = [[0] * ylim for _ in range(xlim)]\n        self._board[-1][-1] = 1  # block lower-right corner\n        self._parity = 0\n        self._player_locations = [None, None]\n        \n    def actions(self):\n        \"\"\" Return a list of legal actions for the active player \"\"\"\n        return self.liberties(self._player_locations[self._parity])\n    \n    def player(self):\n        \"\"\" Return the id of the active player \"\"\"\n        return self._parity\n    \n    def result(self, action):\n        \"\"\" Return a new state that results from applying the given\n        action in the current state\n        \"\"\"\n        assert action in self.actions(), \"Attempted forecast of illegal move\"\n        newBoard = deepcopy(self)\n        newBoard._board[action[0]][action[1]] = 1\n        newBoard._player_locations[self._parity] = action\n        newBoard._parity ^= 1\n        return newBoard\n    \n    def terminal_test(self):\n        \"\"\" return True if the current state is terminal,\n        and False otherwise\n        \n        Hint: an Isolation state is terminal if _either_\n        player has no remaining liberties (even if the\n        player is not active in the current state)\n        \"\"\"\n        return (not self._has_liberties(self._parity)\n            or not self._has_liberties(1 - self._parity))\n\n    def utility(self, player_id):\n        \"\"\" return +inf if the game is terminal and the\n        specified player wins, return -inf if the game\n        is terminal and the specified player loses, and\n        return 0 if the game is not terminal\n        \"\"\"\n        if not self.terminal_test(): return 0\n        player_id_is_active = (player_id == self.player())\n        active_has_liberties = self._has_liberties(self.player())\n        active_player_wins = (active_has_liberties == player_id_is_active)\n        return float(\"inf\") if active_player_wins else float(\"-inf\")\n    \n    def liberties(self, loc):\n        \"\"\" Return a list of all open cells in the\n        neighborhood of the specified location.  The list \n        should include all open spaces in a straight line\n        along any row, column or diagonal from the current\n        position. (Tokens CANNOT move through obstacles\n        or blocked squares in queens Isolation.)\n        \"\"\"\n        if loc is None: return self._get_blank_spaces()\n        moves = []\n        for dx, dy in RAYS:  # check each movement direction\n            _x, _y = loc\n            while 0 <= _x + dx < xlim and 0 <= _y + dy < ylim:\n                _x, _y = _x + dx, _y + dy\n                if self._board[_x][_y]:  # stop at any blocked cell\n                    break\n                moves.append((_x, _y))\n        return moves\n    \n    def _has_liberties(self, player_id):\n        \"\"\" Check to see if the specified player has any liberties \"\"\"\n        return any(self.liberties(self._player_locations[player_id]))\n\n    def _get_blank_spaces(self):\n        \"\"\" Return a list of blank spaces on the board.\"\"\"\n        return [(x, y) for y in range(ylim) for x in range(xlim)\n                if self._board[x][y] == 0]",
+                    "name": "gamestate.py"
+                  },
+                  {
+                    "text": "\nimport minimax\nimport gamestate as game\n\n\nbest_moves = set([(0, 0), (2, 0), (0, 1)])\nrootNode = game.GameState()\nminimax_move = minimax.minimax_decision(rootNode)\n\nprint(\"Best move choices: {}\".format(list(best_moves)))\nprint(\"Your code chose: {}\".format(minimax_move))\n\nif minimax_move in best_moves:\n    print(\"That's one of the best move choices. Looks like your minimax-decision function worked!\")\nelse:\n    print(\"Uh oh...looks like there may be a problem.\")\n",
+                    "name": "testcode.py"
+                  },
+                  {
+                    "text": "\nfrom minimax_helpers import *\n\n# Solution using an explicit loop based on max_value()\ndef _minimax_decision(gameState):\n    \"\"\" Return the move along a branch of the game tree that\n    has the best possible value.  A move is a pair of coordinates\n    in (column, row) order corresponding to a legal move for\n    the searching player.\n    \n    You can ignore the special case of calling this function\n    from a terminal state.\n    \"\"\"\n    best_score = float(\"-inf\")\n    best_move = None\n    for m in gameState.actions():\n        v = min_value(gameState.result(m))\n        if v > best_score:\n            best_score = v\n            best_move = m\n    return best_move\n\n\n# This solution does the same thing using the built-in `max` function\n# Note that \"lambda\" expressions are Python's version of anonymous functions\ndef minimax_decision(gameState):\n    \"\"\" Return the move along a branch of the game tree that\n    has the best possible value.  A move is a pair of coordinates\n    in (column, row) order corresponding to a legal move for\n    the searching player.\n    \n    You can ignore the special case of calling this function\n    from a terminal state.\n    \"\"\"\n    # The built in `max()` function can be used as argmax!\n    return max(gameState.actions(),\n               key=lambda m: min_value(gameState.result(m)))\n",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            },
+            {
+              "id": 624547,
+              "key": "bc3d6c4f-ac7d-4017-8d89-607f36046eec",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Conclusion\n\nThat's it—you've completed the minimax algorithm! Your code should now correctly choose one of the winning branches of the game tree from an empty mini-isolation board, just like you did by hand in Thad's quiz. Moreover, if you implement the rules to another game (like tic-tac-toe) in the GameState class, your minimax code will work _without any changes_ on that game, too!\n\nFuture lessons will cover additional optimizations like depth-limiting, alpha-beta pruning, and iterative deepening that will allow minimax to work on even larger games (e.g.,  checkers, chess, etc.), and the project for this module will involve modifying and extending your code from this project to implement some of those techniques.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 194077,
+          "key": "53220985440923",
+          "title": "Max Number of Nodes Visited",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "53220985440923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193725,
+              "key": "5322098544",
+              "title": "Max Number of Nodes Visited",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "oY286RU8u8U",
+                "china_cdn_id": "oY286RU8u8U.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194086,
+          "key": "53220985450923",
+          "title": "Max Moves",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "53220985450923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193726,
+              "key": "5322098545",
+              "title": "Max Moves",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "5322098545",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "tl9CDh4Ooq8",
+                  "china_cdn_id": "tl9CDh4Ooq8.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Max Moves",
+                "alt_text": "Which of these cells acts as a first move that maximizes your options on your next turn?",
+                "background_image": "//lh3.googleusercontent.com/pqSWdts_-Ou9JpvF4K0LnF1dQVLuCMI0qg6L1ftZ8ALaTPKtPRZyEtIvsjJ7F4Jj3d3PtXEUbkiqOaKlPMg=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5322098545",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "5322098547",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check1",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.31885130922693267,
+                      "y": 0.267565133037694
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check2",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4031522755610973,
+                      "y": 0.2696784922394678
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check3",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4861868765586035,
+                      "y": 0.27033675166297116
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check4",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5709943890274314,
+                      "y": 0.2710296563192905
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check5",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6508728179551122,
+                      "y": 0.26947062084257206
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check6",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3203319825436409,
+                      "y": 0.41584672949002216
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check7",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.402821072319202,
+                      "y": 0.41750970066518844
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check8",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4863232543640898,
+                      "y": 0.4177522172949002
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check9",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5699812967581047,
+                      "y": 0.41390659645232813
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check10",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6509702306733167,
+                      "y": 0.4138026607538803
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check11",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.318987687032419,
+                      "y": 0.5654794900221729
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check12",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.40217814837905236,
+                      "y": 0.5661031042128604
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check13",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.48755065461346636,
+                      "y": 0.5645440687361419
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check14",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5683252805486284,
+                      "y": 0.5655487804878049
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check15",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6541848503740648,
+                      "y": 0.5685975609756098
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check16",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.31959164588528677,
+                      "y": 0.7204822616407982
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check17",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4029379675810474,
+                      "y": 0.7175374168514412
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check18",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4886221945137157,
+                      "y": 0.7184035476718403
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check19",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.571072319201995,
+                      "y": 0.7170523835920177
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check20",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6542238154613467,
+                      "y": 0.7150776053215078
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check21",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3207216334164589,
+                      "y": 0.8608300997782705
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check22",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.40350296134663344,
+                      "y": 0.8619041019955654
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check23",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.48903132793017456,
+                      "y": 0.8611419068736141
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check24",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5694163029925187,
+                      "y": 0.8655418514412417
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check25",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6538146820448878,
+                      "y": 0.8644678492239468
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "nExt1uHfhhc",
+                  "china_cdn_id": "nExt1uHfhhc.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 194074,
+          "key": "53220985490923",
+          "title": "The Branching Factor",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "53220985490923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193719,
+              "key": "5322098549",
+              "title": "The Branching Factor",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "SXsEWK3CNaw",
+                "china_cdn_id": "SXsEWK3CNaw.mp4"
+              }
+            },
+            {
+              "id": 327732,
+              "key": "69580fd6-40fe-4eaf-b174-f8c1491a2f03",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Errata:** The final upper bound calculation incorrectly shows 12^13; it should be 12^11. There are 25 total moves; 2 are used for the openings (with 25 and 24 choices, respectively), and the last 12 moves are used in the calculation 12! = 5e8. 25 - 2 - 12 = 11 moves unaccounted for with an average branching factor of 12. The calculation 25 x 24 x 12^11 x 5e8 more closely matches the total estimate shown as 3e23. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 193955,
+          "key": "53220985500923",
+          "title": "Number of Nodes in a Game Tree",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "53220985500923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193579,
+              "key": "5322098550",
+              "title": "Number of Nodes in a Game Tree",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Choose the expression that best estimates the number of nodes that MINIMAX will need to visit, in order find an optimal solution.\n\nHere _b_ is the average branching factor and _d_ is the depth of the game tree.",
+              "user_state": {
+                "node_key": "5322098550",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "3OLwxE9ejbY",
+                  "china_cdn_id": "3OLwxE9ejbY.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Number of Nodes in a Game Tree",
+                "alt_text": "How many nodes do you think MINIMAX will need to visit?",
+                "background_image": "//lh3.googleusercontent.com/loNh3Qxogr95sk_VFpuA-mz2UEQDF3eBvkFgIXF5V8UpkfpNu1jtKBU2yEHXSqHDrMhmcg4Qlu6BfOFsSJZQ=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5322098550",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "5322098552",
+                "widgets": [
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": "bd",
+                    "marker": "radio1",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.31322085411471323,
+                      "y": 0.421875
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": "d^b",
+                    "marker": "radio2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3197669887780549,
+                      "y": 0.5228312084257206
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": "d^2",
+                    "marker": "radio3",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.32083852867830426,
+                      "y": 0.628914911308204
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": "b^d",
+                    "marker": "radio4",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3244038341645885,
+                      "y": 0.7493070953436807
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "OiDByg7hmqc",
+                  "china_cdn_id": "OiDByg7hmqc.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 194166,
+          "key": "53220985540923",
+          "title": "The Branching Factor (Contd.)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "53220985540923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193827,
+              "key": "5322098554",
+              "title": "The Branching Factor (Contd.)",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "mPi1eUToCjk",
+                "china_cdn_id": "mPi1eUToCjk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 193999,
+          "key": "53956591900923",
+          "title": "Max Number of Nodes",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "53956591900923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193634,
+              "key": "5395659190",
+              "title": "Max Number of Nodes",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "x4l3DUlBAMw",
+                "china_cdn_id": "x4l3DUlBAMw.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    }
+  ]
+}

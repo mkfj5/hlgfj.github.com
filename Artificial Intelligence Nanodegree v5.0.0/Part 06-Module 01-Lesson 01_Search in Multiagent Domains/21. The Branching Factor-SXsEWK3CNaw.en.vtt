@@ -1,0 +1,126 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.310 --> 00:00:03.200
+While the center position has
+16 spaces in which it can move,
+
+00:00:03.200 --> 00:00:05.640
+most other positions have 12 or less.
+
+00:00:05.640 --> 00:00:09.200
+As the game plays, we will have less and
+less spaces our player can move.
+
+00:00:09.200 --> 00:00:11.840
+&gt;&gt; That means we can make a better
+estimate on how many nodes we have
+
+00:00:11.840 --> 00:00:12.430
+right?
+
+00:00:12.430 --> 00:00:16.254
+&gt;&gt; Yep, okay, we know we cannot
+have more than 25 moves in a game.
+
+00:00:17.435 --> 00:00:20.655
+That is the maximum depth
+our tree is going to be.
+
+00:00:20.655 --> 00:00:24.025
+And we already know how many moves
+can be done in the beginning,
+
+00:00:24.025 --> 00:00:26.297
+which leaves 23 moves left.
+
+00:00:26.297 --> 00:00:30.097
+We know that each move after the first
+two are generally going to have 12 or
+
+00:00:30.097 --> 00:00:31.807
+fewer moves available.
+
+00:00:31.807 --> 00:00:33.957
+We'll call this the branching factor.
+
+00:00:33.957 --> 00:00:35.817
+In worse case,
+
+00:00:35.817 --> 00:00:41.410
+we can expect 25 times 24 times 12 to
+the 23rd n nodes in our game tree.
+
+00:00:41.410 --> 00:00:42.920
+Shelly, how many is that?
+
+00:00:42.920 --> 00:00:45.608
+&gt;&gt; More than 10 to the 27th power.
+
+00:00:45.608 --> 00:00:48.290
+&gt;&gt; Ouch, okay that really didn't help.
+
+00:00:48.290 --> 00:00:50.660
+Perhaps we can improve
+our estimate more.
+
+00:00:50.660 --> 00:00:53.860
+&gt;&gt; Well, we know at the end of the game
+there have to be progressively fewer
+
+00:00:53.860 --> 00:00:54.970
+moves available.
+
+00:00:54.970 --> 00:00:58.020
+There are zero moves in the end,
+one move before that,
+
+00:00:58.020 --> 00:01:01.850
+a maximum of two before that,
+three before that, and so on.
+
+00:01:01.850 --> 00:01:02.560
+&gt;&gt; You're right.
+
+00:01:02.560 --> 00:01:07.960
+So for the last few moves, assuming a
+branching factor of 12 is way too much.
+
+00:01:07.960 --> 00:01:10.613
+That would be around
+10 to the 13th nodes.
+
+00:01:10.613 --> 00:01:13.226
+But the maximum it could
+be is 12 factorial,
+
+00:01:13.226 --> 00:01:16.010
+or about 5 times 10 to the 8th.
+
+00:01:16.010 --> 00:01:21.693
+I guess we could redo our estimate as
+25 times 24 times 13 12s in a row,
+
+00:01:21.693 --> 00:01:24.064
+times 5 times 10 to the 8th.
+
+00:01:24.064 --> 00:01:28.060
+That's approximately equal
+to 3 times 10 to the 23rd.
+
+00:01:28.060 --> 00:01:30.481
+That is better than 10 to the 25th, or
+
+00:01:30.481 --> 00:01:34.870
+the 10 to the 27th, but
+still seems like a gross overestimate
+
+00:01:34.870 --> 00:01:38.840
+as most branches will have much less
+than the maximum branching factor.
+
+00:01:38.840 --> 00:01:41.000
+&gt;&gt; Let's see if the students
+have a better answer than we do.
+

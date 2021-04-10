@@ -1,0 +1,105 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.360 --> 00:00:03.082
+Let's talk about a different
+evaluation function.
+
+00:00:03.082 --> 00:00:08.590
+Let's use number of #my_moves minus
+the number of my #opponents_moves.
+
+00:00:08.590 --> 00:00:12.280
+I really like variants of this
+function for simple isolation games.
+
+00:00:12.280 --> 00:00:15.117
+The point of isolation is to
+illuminate the opponent's moves.
+
+00:00:15.117 --> 00:00:19.722
+#my_moves- #opponents_moves causes
+the computer player to seek moves with
+
+00:00:19.722 --> 00:00:24.415
+the most options while trying to get
+in the way of the opponent's moves.
+
+00:00:24.415 --> 00:00:28.178
+We can even weight the components of
+the formula to try to encourage more
+
+00:00:28.178 --> 00:00:30.448
+aggressive or less aggressive game play.
+
+00:00:30.448 --> 00:00:34.760
+For example, #my_moves- 2 *
+#opponents_moves will cause
+
+00:00:34.760 --> 00:00:38.540
+our computer player to
+chase after the opponent.
+
+00:00:38.540 --> 00:00:39.960
+&gt;&gt; That makes the examples you gave for
+
+00:00:39.960 --> 00:00:42.270
+the horizon effect
+much more interesting.
+
+00:00:42.270 --> 00:00:43.540
+&gt;&gt; How so?
+
+00:00:43.540 --> 00:00:47.290
+&gt;&gt; Well, the winning move now has
+the highest evaluation function result.
+
+00:00:47.290 --> 00:00:48.519
+Here is the winning move.
+
+00:00:48.519 --> 00:00:51.226
+And the evaluation
+function now returns a 1.
+
+00:00:51.226 --> 00:00:55.142
+For the move immediately to the right,
+results in a -2.
+
+00:00:55.142 --> 00:00:58.370
+The move to the far right returns a -1.
+
+00:00:58.370 --> 00:01:01.440
+And the far diagonal move returns a 0.
+
+00:01:01.440 --> 00:01:04.940
+&gt;&gt; Maybe that is the answer,
+maybe keeping your options close, but
+
+00:01:04.940 --> 00:01:07.990
+your enemies closer is the right
+strategy in isolation.
+
+00:01:07.990 --> 00:01:09.160
+&gt;&gt; I'm not so sure.
+
+00:01:09.160 --> 00:01:12.560
+I think the only way to really know is
+to try lots of variants of evaluation
+
+00:01:12.560 --> 00:01:14.940
+functions and
+see which ones are the best.
+
+00:01:14.940 --> 00:01:18.274
+&gt;&gt; You're right, but in addition to
+minimax and iterative deepening,
+
+00:01:18.274 --> 00:01:22.057
+there's one more trick we have to teach
+that can really affect the efficiency of
+
+00:01:22.057 --> 00:01:25.410
+game tree search before we spend
+time doing the evaluation function.
+

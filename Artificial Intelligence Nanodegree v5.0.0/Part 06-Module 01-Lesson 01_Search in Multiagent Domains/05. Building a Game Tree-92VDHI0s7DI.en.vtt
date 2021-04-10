@@ -1,0 +1,80 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.260 --> 00:00:03.930
+Now let's use a simple two by three
+version of isolation to illustrate how
+
+00:00:03.930 --> 00:00:07.100
+to make a game tree that shows all
+the moves possible during a game.
+
+00:00:08.172 --> 00:00:10.962
+We will use this game tree to select
+moves which give the best guarantee
+
+00:00:10.962 --> 00:00:12.200
+of winning.
+
+00:00:12.200 --> 00:00:14.822
+Consider any field spot on
+the game board as unavailable.
+
+00:00:14.822 --> 00:00:17.793
+We will start with one field spot.
+
+00:00:17.793 --> 00:00:20.970
+We'll call the beginning game
+level zero in our game tree.
+
+00:00:20.970 --> 00:00:23.270
+Assume that O is the computer player.
+
+00:00:23.270 --> 00:00:27.580
+O is the first to move, so the computer
+has five choices in the beginning.
+
+00:00:27.580 --> 00:00:31.880
+We draw out all the possible boards for
+level one of the game tree.
+
+00:00:31.880 --> 00:00:33.000
+X goes next and
+
+00:00:33.000 --> 00:00:37.470
+can put its piece anywhere on the game
+board that has not been taken by O.
+
+00:00:37.470 --> 00:00:43.100
+So no matter which position O occupied
+for its first move, X has four choices.
+
+00:00:43.100 --> 00:00:46.180
+We can quickly draw the nodes for
+level two of our tree.
+
+00:00:46.180 --> 00:00:49.950
+&gt;From then on, the number of choices for
+each player becomes smaller
+
+00:00:49.950 --> 00:00:53.610
+as the pieces are limited to
+moves like a queen in chess.
+
+00:00:53.610 --> 00:00:54.992
+O goes next.
+
+00:00:54.992 --> 00:00:58.485
+To the left most leaf,
+O can move straight down.
+
+00:00:58.485 --> 00:00:59.930
+[BLANK_AUDIO]
+
+00:00:59.930 --> 00:01:01.410
+Diagonally down to the right.
+
+00:01:02.660 --> 00:01:04.250
+But it can't move through X.
+

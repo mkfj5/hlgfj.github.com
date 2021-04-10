@@ -1,0 +1,337 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project Introduction</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Build an Adversarial Game Playing Agent</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Project Introduction.html">01. Project Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Workspace.html">02. Workspace</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Build an Adversarial Game Playing Agent.html">Project Description - Build an Adversarial Game Playing Agent</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Build an Adversarial Game Playing Agent.html">Project Rubric - Build an Adversarial Game Playing Agent</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">01. Project Introduction</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="-build-an-adversarial-game-playing-agent"># Build an Adversarial Game Playing Agent</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/viz.gif" alt="**NOTE**: The project is played on a 9x11 grid instead of a 7x7 grid." class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>NOTE</strong>: The project is played on a 9x11 grid instead of a 7x7 grid.</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="synopsis">Synopsis</h2>
+<p>In this project, you will experiment with adversarial search techniques by building an agent to play knights Isolation.  Unlike the examples in lecture where the players control tokens that move like chess queens, this version of Isolation gives each agent control over a single token that moves in L-shaped movements--like a knight in chess.</p>
+<h3 id="isolation">Isolation</h3>
+<p>In the game Isolation, two players each control their own single token and alternate taking turns moving the token from one cell to another on a rectangular grid.  Whenever a token occupies a cell, that cell becomes blocked for the remainder of the game.  An open cell available for a token to move into is called a "liberty".  The first player with no remaining liberties for their token loses the game, and their opponent is declared the winner.</p>
+<p>In knights Isolation, tokens can move to any open cell that is 2-rows and 1-column or 2-columns and 1-row away from their current position on the board.  On a blank board, this means that tokens have at most eight liberties surrounding their current location.  Token movement is blocked at the edges of the board (the board does not wrap around the edges), however, tokens can "jump" blocked or occupied spaces (just like a knight in chess).</p>
+<p>Finally, agents have a fixed time limit (150 milliseconds by default) to search for the best move and respond.  The search will be automatically cut off after the time limit expires, and the active agent will forfeit the game if it has not chosen a move.</p>
+<h2 id="getting-started-workspaces">Getting Started (Workspaces)</h2>
+<p>The easiest way to complete the project is to use the Udacity Workspace in your classroom. The environment has already been configured with the required files and libraries to support the project. If you decide to use the Workspace, then you do NOT need to perform any of the setup steps for this project. Skip to the section with instructions for completing the project.</p>
+<h2 id="getting-started-local-environment">Getting Started (Local Environment)</h2>
+<p>If you would prefer to complete the exercise in your own local environment, then follow the steps below:</p>
+<ul>
+<li>Open your terminal and activate the aind conda environment (OS X or Unix/Linux users use the command shown; Windows users only run <code>activate aind</code>)</li>
+</ul>
+<pre><code>$ source activate aind</code></pre>
+<ul>
+<li>Download a copy of the project files from GitHub and navigate to the project folder. (Note: if you've previously downloaded the repository for another project then you can skip the clone command. However, you should run <code>git pull</code> to receive any project updates since you cloned the repository.)</li>
+</ul>
+<pre><code>(aind) $ git clone https://github.com/udacity/artificial-intelligence
+(aind) $ cd "artificial-intelligence/Projects/3_Game Playing"</code></pre>
+<h2 id="instructions">Instructions</h2>
+<p>You must implement an agent in the <code>CustomPlayer</code> class defined in the <code>game_agent.py</code> file. The interface definition for game agents only requires you to implement the <code>.get_action()</code> method, but you can add any other methods to the class that you deem necessary.  You can build a basic agent by combining minimax search with alpha-beta pruning and iterative deepening from lecture.</p>
+<blockquote>
+  <p><strong>NOTE:</strong> Your agent will <strong>not</strong> be evaluated in an environment suitable for running machine learning or deep learning agents (like AlphaGo); visit an office hours sessions <strong>after</strong> completing the project if you would like guidance on incorporating machine learning in your agent.</p>
+</blockquote>
+<h4 id="the-get_action-method">The get_action() Method</h4>
+<p>This function is called once per turn for each player. The calling function handles the time limit and </p>
+<pre><code>def get_action(self, state):
+    import random
+    self.queue.put(random.choice(state.actions()))</code></pre>
+<ul>
+<li><strong>DO NOT</strong> use multithreading/multiprocessing (the isolation library already uses them, which may cause conflicts)</li>
+<li><strong>ALL</strong> of the functions you add should be created as methods on the CustomPlayer class. </li>
+</ul>
+<h4 id="initialization-data">Initialization Data</h4>
+<p>Your agent will automatically read the contents of a file named <code>data.pickle</code> if it exists in the same folder as <code>my_custom_player.py</code>. The serialized object from the pickle file will be assigned to <code>self.data</code>. Your agent should not write to or modify the contents of the pickle file during search.</p>
+<h4 id="saving-information-between-turns">Saving Information Between Turns</h4>
+<p>The <code>CustomPlayer</code> class can pass internal state by assigning the data to the attribute <code>self.context</code>. An instance of your agent class will carry the context between each turn of a single game, but the contents will be reset at the start of any new game.</p>
+<pre><code>def get_action(...):
+    action = self.mcts()
+    self.queue.put(action)
+    self.context = object_you_want_to_save  # self.context will contain this object on the next turn</code></pre>
+<h2 id="pick-an-experiment">Pick an Experiment</h2>
+<p>Select at least one of the following to implement and evaluate in your report. (There is no upper limit on the techniques you incorporate into your agent.)</p>
+<h3 id="option-1-develop-a-custom-heuristic-must-not-be-one-of-the-heuristics-from-lectures-and-cannot-only-be-a-combination-of-the-number-of-liberties-available-to-each-agent">Option 1: Develop a custom heuristic (must not be one of the heuristics from lectures, and cannot only be a combination of the number of liberties available to each agent)</h3>
+<ul>
+<li>Create a performance baseline using <code>run_search.py</code> (with the <code>fair_matches</code> flag enabled) to evaluate the effectiveness of your agent using the #my_moves - #opponent_moves heuristic from lecture</li>
+<li>Use the same process to evaluate the effectiveness of your agent using your own custom heuristic</li>
+</ul>
+<p><strong>Hints:</strong></p>
+<ul>
+<li>Research other games (chess, go, connect4, etc.) to get ideas for developing good heuristics</li>
+<li>If the results of your tests are very close, try increasing the number of matches (e.g., &gt;100) to increase your confidence in the results</li>
+<li>Experiment with adding more search time--does adding time confer any advantage to your agent over the baseline?</li>
+<li>Augment the code to count the nubmer of nodes your agent searches--is it better to search more or fewer nodes? How does your heuristic compare to the baseline heuristic you chose?</li>
+</ul>
+<h3 id="option-2-develop-an-opening-book-must-span-at-least-depth-4-of-the-search-tree">Option 2: Develop an opening book (must span at least depth 4 of the search tree)</h3>
+<ul>
+<li>Write your own code to develop an opening book of the best moves for every possible game state from an empty board to at least a depth of 4 plies</li>
+<li>Create a performance baseline using <code>run_search.py</code> (with the <code>fair_matches</code> flag <em>disabled</em>) to evaluate the effectiveness of your agent using randomly chosen opening moves.  (You can use any heuristic function, but you should use the same heuristic on your agent for all experiments.)</li>
+<li>Use the same procedure to evaluate the effectiveness of your agent when early moves are selected from your opening book</li>
+</ul>
+<p><strong>Hints:</strong></p>
+<ul>
+<li>Developing an opening book can require long run-times to simulate games and accumulate outcome statistics</li>
+<li>If the results are very close, try increasing the number of matches (e.g., &gt;100) to increase your confidence in the results</li>
+</ul>
+<p><strong>Adding a basic opening book</strong></p>
+<ul>
+<li>You will need to write your own code to develop a good opening book, but you can pass data into your agent by saving the file as "data.pickle" in the same folder as <code>game_agent.py</code>. Use the <a href="https://docs.python.org/3/library/pickle.html" rel="noopener noreferrer" target="_blank">pickle</a> module to serialize the object you want to save. The pickled object will be accessible to your agent through the <code>self.data</code> attribute.</li>
+</ul>
+<p>For example, the contents of dictionary <code>my_data</code> can be saved to disk:</p>
+<pre><code>import pickle
+from isolation import Isolation
+state = Isolation()
+my_data = {state: 57}  # opening book always chooses the middle square on an open board
+with open("data.pickle", 'wb') as f:
+    pickle.dump(my_data, f)</code></pre>
+<h3 id="option-3-build-an-agent-using-advanced-search-techniques-for-example-killer-heuristic-principle-variation-search-not-in-lecture-or-monte-carlo-tree-search-not-in-lecture">Option 3: Build an agent using advanced search techniques (for example: killer heuristic, principle variation search (not in lecture), or monte carlo tree search (not in lecture))</h3>
+<ul>
+<li>Create a performance baseline using <code>run_search.py</code> to evaluate the effectiveness of a baseline agent (e.g., an agent using your minimax or alpha-beta search code from the classroom)</li>
+<li>Use <code>run_search.py</code> to evaluate the effectiveness of your agent using your own custom search techniques</li>
+<li>You must decide whether to test with or without "fair" matches enabled--justify your choice in your report</li>
+</ul>
+<p><strong>Hints:</strong></p>
+<ul>
+<li>If the results are very close, try increasing the number of matches (e.g., &gt;100) to increase your confidence in the results</li>
+<li>Experiment with adding more search time--does adding time confer any advantage to your agent?</li>
+<li>Augment the code to count the number of nodes your agent searches--does your agent have an advantage compared to the baseline search algorithm you chose?</li>
+</ul>
+<blockquote>
+  <p><strong>Note:</strong></p>
+  <ul>
+  <li>You MAY implement advanced techniques from the reading list at the end of the lesson (like Monte Carlo Tree Search, principal variation search, etc.), but your agent is being evaluated for <em>performance</em> rather than <em>correctness</em>. It's possible to pass the project requirements <strong>without</strong> using these advanced techniques, so project reviewers may encourage you to implement a simpler solution if you are struggling with the correct implementation. (That's good general advice: do the simplest thing first, and only add complexity when you must.)</li>
+  </ul>
+</blockquote>
+<h2 id="report-requirements">Report Requirements</h2>
+<p>Your report must include a table or chart with data from an experiment to evaluate the performance of your agent as described above.  Use the data from your experiment to answer the relevant questions below. (You may choose one set of questions if your agent incorporates multiple techniques.)</p>
+<p><strong>Advanced Heuristic</strong></p>
+<ul>
+<li>What features of the game does your heuristic incorporate, and why do you think those features matter in evaluating states during the search?</li>
+<li>Analyze the search depth your agent achieves using your custom heuristic. Does search speed matter more or less than accuracy to the performance of your heuristic?</li>
+</ul>
+<p><strong>Opening book</strong></p>
+<ul>
+<li>Describe your process for collecting statistics to build your opening book. How did you choose states to sample? And how did you perform rollouts to determine a winner?</li>
+<li>What opening moves does your book suggest are most effective on an empty board for player 1 and what is player 2's best reply?</li>
+</ul>
+<p><strong>Advanced Search Techniques</strong></p>
+<ul>
+<li>Choose a baseline search algorithm for comparison (for example, alpha-beta search with iterative deepening, etc.). How much performance difference does your agent show compared to the baseline?</li>
+<li>Why do you think the technique you chose was more (or less) effective than the baseline?</li>
+</ul>
+<h2 id="evaluation">Evaluation</h2>
+<p>Your project will be reviewed by a Udacity reviewer against the project rubric <a href="https://review.udacity.com/#!/rubrics/1801/view" rel="noopener noreferrer" target="_blank">here</a>. Review this rubric thoroughly, and self-evaluate your project before submission. All criteria found in the rubric must meet specifications for you to pass.</p>
+<h2 id="submission">Submission</h2>
+<p>Before you can submit your project for review in the classroom, you must run the remote test suite &amp; generate a zip archive of the required project files. Submit the archive in your classroom for review. (See notes on submissions below for more details.) From your terminal, run the command: (make sure to activate the aind conda environment if you're running the project in your local environment; workspace users do <strong>not</strong> need to activate an environment.)</p>
+<pre><code>$ udacity submit</code></pre>
+<p>The script will automatically create a zip archive of the required files (<code>my_custom_player.py</code> and <code>report.pdf</code> are required; <code>data.pickle</code> will be included if it exists) and submit your code to a remote server for testing. You can only submit a zip archive created by the PA script (even if you're only submitting a partial solution), and you <strong>must submit the exact zip file created by the Project Assistant</strong> in your classroom for review. The classroom verifies the zip file submitted against records on the Project Assistant system; any changes in the file will cause your submission to be rejected.</p>
+<blockquote>
+  <p><strong>NOTE:</strong> Students who authenticate with Facebook or Google accounts <em>must</em> follow the instructions on the FAQ page <a href="https://project-assistant.udacity.com/faq" rel="noopener noreferrer" target="_blank">here</a> to obtain an authentication token. (The Workspace already includes instructions for obtaining and configuring your token.)</p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <blockquote>
+  <p><strong>NOTE:</strong> Importing some modules such as <code>logging</code> is currently not supported by the Autograder. If you do import some extra modules for debugging, etc., turn them off while submitting to the classroom. <br />
+  Here is an example that shows how we can define a flag <code>LOGGING_AVAILABLE</code>. For debugging, the value of this flag is set to <code>True</code>. </p>
+</blockquote>
+<pre><code>LOGGING_AVAILABLE = True
+
+if LOGGING_AVAILABLE:
+    import logging
+
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.DEBUG)
+    fh = logging.FileHandler('stats.csv', mode='w')
+    fh.setLevel(logging.DEBUG)
+    logger.addHandler(fh)</code></pre>
+<blockquote>
+  <p>The piece of code shown above will cause an error that comes from the Autograder. To avoid the error, set the value of the<code>LOGGING_AVAILABLE</code> flag to <code>False</code> before submitting the project to the Autograder.</p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="02. Workspace.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('01. Project Introduction')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

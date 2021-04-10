@@ -1,0 +1,92 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.097 --> 00:00:02.930
+In order to propagate wins and
+losses up the game tree,
+
+00:00:02.930 --> 00:00:05.886
+to the point where a computer
+player can make a decision,
+
+00:00:05.886 --> 00:00:08.055
+we need to start at
+the bottom of the tree.
+
+00:00:08.055 --> 00:00:10.337
+Let's start with the left
+side of the tree.
+
+00:00:10.337 --> 00:00:13.079
+In the left-most branch, O wins.
+
+00:00:13.079 --> 00:00:14.393
+In the next branch over,
+
+00:00:14.393 --> 00:00:18.420
+O never gets to use the last square
+on the game board and loses.
+
+00:00:18.420 --> 00:00:21.130
+Since our opponent x plays to win and
+
+00:00:21.130 --> 00:00:25.570
+minimizes O's score, it will never
+choose the left most branch.
+
+00:00:25.570 --> 00:00:29.610
+Instead it will choose this branch which
+is guaranteed to give the computer
+
+00:00:29.610 --> 00:00:31.470
+player a score of -1.
+
+00:00:31.470 --> 00:00:34.590
+However, our computer player
+can avoid this situation
+
+00:00:34.590 --> 00:00:37.350
+by making a wiser choice one level up.
+
+00:00:37.350 --> 00:00:42.000
+Both branches of this tree lead
+to victory, hence scores of +1.
+
+00:00:42.000 --> 00:00:44.620
+We can keep propagating
+these scores up the tree,
+
+00:00:44.620 --> 00:00:48.150
+alternating men in max levels
+until we arrive at the top.
+
+00:00:48.150 --> 00:00:50.215
+This process of computing values for
+
+00:00:50.215 --> 00:00:53.485
+each node bottom to top is known
+as the mini max algorithm.
+
+00:00:53.485 --> 00:00:57.976
+For each max node, pick the maximum
+value among its child nodes.
+
+00:00:57.976 --> 00:01:00.425
+If there's at least one plus one child,
+
+00:01:00.425 --> 00:01:02.957
+the computer can always
+pick that to win.
+
+00:01:02.957 --> 00:01:07.320
+Otherwise, it could never win from that
+point on, assuming a perfect opponent.
+
+00:01:07.320 --> 00:01:10.670
+Of course, through represent
+the opponent, at each mid node,
+
+00:01:10.670 --> 00:01:12.080
+we pick the minimum value.
+

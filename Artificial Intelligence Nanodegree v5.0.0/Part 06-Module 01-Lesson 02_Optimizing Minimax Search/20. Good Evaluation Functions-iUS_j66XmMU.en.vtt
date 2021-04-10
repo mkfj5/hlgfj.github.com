@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.300 --> 00:00:03.540
+Now let's think about some other
+potential evaluation functions for
+
+00:00:03.540 --> 00:00:04.960
+isolation.
+
+00:00:04.960 --> 00:00:06.728
+Here we have some options.
+
+00:00:06.728 --> 00:00:08.600
+Number of opponent_moves.
+
+00:00:08.600 --> 00:00:10.514
+So similar to the number of my_moves,
+
+00:00:10.514 --> 00:00:13.299
+this is the number of moves
+your opponent has available.
+
+00:00:13.299 --> 00:00:15.100
+Number of squares_remaining,
+
+00:00:15.100 --> 00:00:18.066
+which is the number of empty
+squares left on the board.
+
+00:00:18.066 --> 00:00:21.461
+Number of squares_remaining
+minus number of my_moves.
+
+00:00:21.461 --> 00:00:25.830
+And finally, we have number of my_moves
+minus number of opponent-moves.
+
+00:00:25.830 --> 00:00:29.010
+So go through and mark all the formulas
+you think that would make a good
+
+00:00:29.010 --> 00:00:30.970
+evaluation function for isolation.
+

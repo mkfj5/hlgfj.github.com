@@ -1,0 +1,26 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.240 --> 00:00:03.430
+Okay, so remember that the pieces
+can move like a queen in chess, but
+
+00:00:03.430 --> 00:00:06.450
+can not pass through positions
+that have been previously played.
+
+00:00:06.450 --> 00:00:09.700
+Also, when a piece is moved it doesn't
+leave a trail like the game snake, but
+
+00:00:09.700 --> 00:00:12.560
+just the last position
+is marked as impassable.
+
+00:00:12.560 --> 00:00:14.421
+So here are those resulting child nodes.
+
+00:00:14.421 --> 00:00:16.389
+[BLANK_AUDIO]
+

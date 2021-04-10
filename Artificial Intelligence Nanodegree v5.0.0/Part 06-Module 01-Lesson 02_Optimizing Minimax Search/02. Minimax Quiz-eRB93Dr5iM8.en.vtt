@@ -1,0 +1,29 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.350 --> 00:00:01.690
+Here's the answer.
+
+00:00:01.690 --> 00:00:04.630
+We'll start at the bottom and
+propagate the bottoms up.
+
+00:00:04.630 --> 00:00:06.770
+The first level from
+the bottom is a max level, so
+
+00:00:06.770 --> 00:00:09.650
+we'll take the max of
+each of our leaf nodes.
+
+00:00:09.650 --> 00:00:11.260
+Next, we have a min level, so
+
+00:00:11.260 --> 00:00:14.050
+we'll take the min of each
+of the values we just found.
+
+00:00:14.050 --> 00:00:15.740
+Finally, the top is the max level.
+

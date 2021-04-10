@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.260 --> 00:00:02.910
+Let's look at a simple case of
+Iterative deepening on a tree
+
+00:00:02.910 --> 00:00:05.110
+with a branching factor of 2.
+
+00:00:05.110 --> 00:00:08.109
+A level of 0, only one node is searched.
+
+00:00:08.109 --> 00:00:08.814
+At level 1,
+
+00:00:08.814 --> 00:00:13.190
+we touch this first node again and
+then look at the two child nodes.
+
+00:00:13.190 --> 00:00:18.880
+We've had to explore three nodes for
+level 1 plus one node from level 0.
+
+00:00:18.880 --> 00:00:22.510
+So, our total for
+iterative deepening nodes, is 4.
+
+00:00:22.510 --> 00:00:26.760
+At level 2, we add four nodes
+to the bottom of the tree.
+
+00:00:26.760 --> 00:00:30.260
+To add these nodes, we are looking
+at the 3 above it as well for
+
+00:00:30.260 --> 00:00:32.130
+a total of seven for this level.
+
+00:00:32.130 --> 00:00:37.105
+Adding level 2 to our running tally
+is 11 nodes for iterative deepening.
+
+00:00:37.105 --> 00:00:41.565
+At level 3, we had eight more nodes,
+so we examine 15 nodes for
+
+00:00:41.565 --> 00:00:43.285
+this level in total.
+
+00:00:43.285 --> 00:00:46.025
+Our iterative deepening total is now 26.
+
+00:00:46.025 --> 00:00:47.725
+Know that at each level,
+
+00:00:47.725 --> 00:00:52.130
+the sum total of nodes visited and
+revisited by iterative deepening
+
+00:00:52.130 --> 00:00:56.370
+is actually under two times the number
+of nodes expanded by that level.
+
+00:00:56.370 --> 00:01:00.590
+A depth-limited search to level
+4 would examine 31 nodes, but
+
+00:01:00.590 --> 00:01:02.240
+the iterative deepening total was 57.
+
+00:01:02.240 --> 00:01:07.560
+Depth limited to level 5 would be 63,
+and iterative deepening would be 120.
+
+00:01:07.560 --> 00:01:11.330
+While researching the tree may
+seem like a waste in practice,
+
+00:01:11.330 --> 00:01:15.571
+it is a small multiplier compared to the
+exponential increase from searching each
+
+00:01:15.571 --> 00:01:16.730
+level deeper.
+
+00:01:16.730 --> 00:01:18.770
+With a branching factor of 2,
+
+00:01:18.770 --> 00:01:22.730
+iterative deepening expands less than
+two times the number of nodes a depth
+
+00:01:22.730 --> 00:01:25.360
+limited search would have
+done at the same level.
+
+00:01:25.360 --> 00:01:28.880
+When the branching factor is
+greater than 2, as in most games,
+
+00:01:28.880 --> 00:01:32.080
+then the redundancy caused by
+iterative deepening is even less.
+
+00:01:32.080 --> 00:01:33.330
+Perhaps a quick quiz would help.
+

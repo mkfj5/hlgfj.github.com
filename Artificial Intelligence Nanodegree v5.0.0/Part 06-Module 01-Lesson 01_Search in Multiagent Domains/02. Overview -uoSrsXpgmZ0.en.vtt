@@ -1,0 +1,80 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.650 --> 00:00:05.200
+Your goal in this lesson is to design
+an AI that is smarter than yourself.
+
+00:00:05.200 --> 00:00:06.550
+At least in playing a real game.
+
+00:00:07.570 --> 00:00:11.140
+Now granted,
+a single game is a very limited context.
+
+00:00:11.140 --> 00:00:15.211
+But making a program that can play a
+game better than you can is an exciting
+
+00:00:15.211 --> 00:00:16.426
+introduction to AI.
+
+00:00:16.426 --> 00:00:18.110
+It's the way I got hooked.
+
+00:00:18.110 --> 00:00:20.710
+I'm hoping to share my enthusiasm.
+
+00:00:20.710 --> 00:00:21.520
+Along the way,
+
+00:00:21.520 --> 00:00:25.750
+you will learn how to use adversarial
+search to find optimal moves.
+
+00:00:25.750 --> 00:00:29.228
+In particular, we will talk
+about the minimax algorithm and
+
+00:00:29.228 --> 00:00:30.814
+alpha-beta pruning.
+
+00:00:30.814 --> 00:00:35.460
+We'll also talk about how to create
+evaluation functions for games.
+
+00:00:35.460 --> 00:00:40.290
+These ideas are enough to create
+surprisingly powerful game AIs.
+
+00:00:40.290 --> 00:00:42.810
+We will apply our
+knowledge to Isolation,
+
+00:00:42.810 --> 00:00:46.370
+a complex game with
+surprisingly simple rules.
+
+00:00:46.370 --> 00:00:49.540
+We will then examine multi-player and
+probabilistic games.
+
+00:00:50.730 --> 00:00:54.570
+As your assignment for this lesson, you
+will need to create a game player for
+
+00:00:54.570 --> 00:00:56.060
+Isolation.
+
+00:00:56.060 --> 00:00:59.680
+Note how long it takes you and
+how difficult you find it.
+
+00:00:59.680 --> 00:01:02.070
+That should give you a sense
+of the amount of time and
+
+00:01:02.070 --> 00:01:03.900
+effort that this course will require.
+

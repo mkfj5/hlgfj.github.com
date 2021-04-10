@@ -1,0 +1,85 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.183 --> 00:00:01.850
+Here's the answer.
+
+00:00:01.850 --> 00:00:04.762
+At level 0,
+we have 1 node in the tree and
+
+00:00:04.762 --> 00:00:08.105
+iterative deepening has
+only visited 1 node.
+
+00:00:08.105 --> 00:00:11.007
+At level 1 we now have
+4 nodes in the tree.
+
+00:00:11.007 --> 00:00:15.136
+Iterative deepening will have visited 5,
+the 4 nodes in the tree now and
+
+00:00:15.136 --> 00:00:17.076
+one node from the previous level.
+
+00:00:17.076 --> 00:00:19.618
+At level 2,
+we now have 13 nodes in the tree and
+
+00:00:19.618 --> 00:00:22.040
+iterative deepening
+will have visited 18.
+
+00:00:22.040 --> 00:00:26.610
+13 from this tree plus the 5
+from the previous time.
+
+00:00:26.610 --> 00:00:28.310
+At level three we have 40 nodes
+
+00:00:29.450 --> 00:00:33.046
+in the tree plus 18 makes 58 nodes
+visited binder of deepening.
+
+00:00:33.046 --> 00:00:36.968
+Finally, at level 4 we have
+121 nodes in the tree,
+
+00:00:36.968 --> 00:00:40.564
+iterative deepening
+we'll be visiting 179.
+
+00:00:40.564 --> 00:00:41.918
+Which is actually less than one and
+
+00:00:41.918 --> 00:00:44.460
+a half times the number
+of nodes in the tree.
+
+00:00:44.460 --> 00:00:47.872
+Remember that before when
+the [INAUDIBLE] factor of 2,
+
+00:00:47.872 --> 00:00:51.590
+we had 2 to the d + 1
+minus 1 nodes in the tree.
+
+00:00:51.590 --> 00:00:54.050
+Now with the project factor of three,
+
+00:00:54.050 --> 00:00:59.090
+we have 3 to the d + 1 minus
+1 over 2 nodes in the tree.
+
+00:00:59.090 --> 00:01:01.010
+Let's go ahead and generalize this.
+
+00:01:01.010 --> 00:01:06.660
+For a project factor of k, the formulas
+K to the d + 1- 1 over K- 1 for
+
+00:01:06.660 --> 00:01:09.550
+the number of nodes in the tree.
+

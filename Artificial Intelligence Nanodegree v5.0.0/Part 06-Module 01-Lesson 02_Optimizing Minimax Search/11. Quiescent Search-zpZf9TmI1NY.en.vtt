@@ -1,0 +1,113 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.130 --> 00:00:02.790
+With the depth limit of two we get
+a very different result than with
+
+00:00:02.790 --> 00:00:04.059
+the limit of three.
+
+00:00:04.059 --> 00:00:07.180
+&gt;&gt; Yep, at level two,
+the losing center moves.
+
+00:00:07.180 --> 00:00:11.420
+Both have scores of three, while
+the winning moves have smaller scores.
+
+00:00:11.420 --> 00:00:14.050
+&gt;&gt; Does that mean our
+evaluation function is bad?
+
+00:00:14.050 --> 00:00:15.440
+&gt;&gt; Not necessarily.
+
+00:00:15.440 --> 00:00:19.050
+It may mean that we're not searching
+deep enough to get good answers.
+
+00:00:19.050 --> 00:00:20.040
+&gt;&gt; How do we tell?
+
+00:00:20.040 --> 00:00:23.470
+&gt;&gt; One way to check is to see which
+branches the minimax algorithm
+
+00:00:23.470 --> 00:00:25.790
+recommends at each level of the search.
+
+00:00:25.790 --> 00:00:28.812
+If the results vary widely
+between certain levels,
+
+00:00:28.812 --> 00:00:32.740
+it may be because critical a decision
+is being made at those levels.
+
+00:00:32.740 --> 00:00:35.537
+Let's try it out on
+the example isolation game.
+
+00:00:35.537 --> 00:00:39.241
+We will continue to use the number
+of my moves evaluation function.
+
+00:00:39.241 --> 00:00:43.410
+Which can have a maximum score of
+five and a minimum score of zero.
+
+00:00:43.410 --> 00:00:46.314
+If we find a branch where
+our computer player loses,
+
+00:00:46.314 --> 00:00:48.033
+we'll give it a score of -1.
+
+00:00:48.033 --> 00:00:50.926
+If we find a branch where
+our computer player wins,
+
+00:00:50.926 --> 00:00:52.823
+we'll give it a score of 100.
+
+00:00:52.823 --> 00:00:56.753
+With this example isolation game at
+level one, the number of my moves
+
+00:00:56.753 --> 00:01:01.990
+evaluation function would recommend the
+two center moves and the top left move.
+
+00:01:01.990 --> 00:01:03.740
+Each of these have scores of four.
+
+00:01:03.740 --> 00:01:07.950
+At Level 2,the two center moves are
+considered the best with scores of 3.
+
+00:01:09.370 --> 00:01:12.760
+At Level 3,
+the center moves are considered worse.
+
+00:01:13.830 --> 00:01:20.458
+That continues for Level 4, 5 and 6.
+
+00:01:20.458 --> 00:01:22.398
+[BLANK_AUDIO]
+
+00:01:22.398 --> 00:01:25.590
+After level three,
+we've reach a state of quiescence.
+
+00:01:25.590 --> 00:01:28.330
+The recommended branches
+are not changing much.
+
+00:01:28.330 --> 00:01:29.612
+We know we are in good shape.
+
+00:01:29.612 --> 00:01:30.549
+[BLANK_AUDIO]
+

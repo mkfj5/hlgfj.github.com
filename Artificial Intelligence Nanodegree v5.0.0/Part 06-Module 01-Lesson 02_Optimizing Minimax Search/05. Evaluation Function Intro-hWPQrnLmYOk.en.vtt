@@ -1,0 +1,83 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.330 --> 00:00:04.420
+Okay, great, but what do we do when we
+get to level nine in our mini-max tree?
+
+00:00:04.420 --> 00:00:07.210
+&gt;&gt; That's when things
+really get interesting.
+
+00:00:07.210 --> 00:00:09.950
+We want to evaluate the goodness
+of a node at level nine
+
+00:00:09.950 --> 00:00:14.240
+based on how much we expect it to lead
+to a win for our computer player.
+
+00:00:14.240 --> 00:00:17.200
+Can we create an evaluation
+function that takes in each
+
+00:00:17.200 --> 00:00:21.050
+game board generated level nine of our
+mini-max game tree, return a number that
+
+00:00:21.050 --> 00:00:25.150
+we can use to compare that node for
+all the other nodes at that level?
+
+00:00:25.150 --> 00:00:28.260
+&gt;&gt; Well, we know the only way to win
+is have our computer player have
+
+00:00:28.260 --> 00:00:30.270
+moves left at the end of the game.
+
+00:00:30.270 --> 00:00:33.630
+Maybe our computer player shouldn't
+maximize the number of moves it has?
+
+00:00:33.630 --> 00:00:35.030
+&gt;&gt; That sounds right.
+
+00:00:35.030 --> 00:00:38.770
+We want an evaluation function that
+returns a higher number depending how
+
+00:00:38.770 --> 00:00:41.165
+good the board is for
+our computer player.
+
+00:00:41.165 --> 00:00:44.280
+With an evaluation function like simply
+counting the number of moves our
+
+00:00:44.280 --> 00:00:48.390
+computer player has available at a given
+node, the player will select branches
+
+00:00:48.390 --> 00:00:52.540
+in the mini-max tree that lead to spaces
+where a player has the most options.
+
+00:00:52.540 --> 00:00:54.860
+It seems like a really good idea.
+
+00:00:54.860 --> 00:00:59.475
+Let's call that evaluation function,
+number my moves for convenience.
+
+00:00:59.475 --> 00:01:02.989
+Why don't we test it out on our
+simple five-move game board and
+
+00:01:02.989 --> 00:01:04.510
+see how well it works?
+
+00:01:04.510 --> 00:01:04.890
+&gt;&gt; Let's do it.
+

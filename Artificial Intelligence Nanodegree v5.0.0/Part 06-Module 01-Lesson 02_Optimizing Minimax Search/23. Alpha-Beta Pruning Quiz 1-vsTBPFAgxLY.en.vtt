@@ -1,0 +1,33 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.420 --> 00:00:03.060
+Here we can print this node right here.
+
+00:00:03.060 --> 00:00:08.964
+If we only knew the 11, this max
+level here would be 11 or greater.
+
+00:00:08.964 --> 00:00:11.845
+However, even if the value
+was greater than 11,
+
+00:00:11.845 --> 00:00:15.800
+the next node up would still take
+the five senses of mean level.
+
+00:00:15.800 --> 00:00:18.280
+That means that we actually don't
+need to check the four node
+
+00:00:18.280 --> 00:00:19.320
+because it's irrelevant.
+
+00:00:19.320 --> 00:00:21.550
+And thus we can prune it from the tree.
+
+00:00:21.550 --> 00:00:24.290
+We can't prune any other nodes or
+branches in this situation.
+

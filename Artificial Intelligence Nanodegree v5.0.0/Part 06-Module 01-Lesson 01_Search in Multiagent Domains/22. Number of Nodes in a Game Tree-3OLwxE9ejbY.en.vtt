@@ -1,0 +1,25 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.460 --> 00:00:03.430
+How many nodes do you think the Minimax
+algorithm will need to visit
+
+00:00:03.430 --> 00:00:04.800
+in the game tree?
+
+00:00:04.800 --> 00:00:08.140
+Here's some choices where b is
+the average branching factor, and
+
+00:00:08.140 --> 00:00:09.650
+d is the average depth.
+
+00:00:09.650 --> 00:00:16.520
+So we have bd, d to the power of b,
+d squared, and b to the power of d.
+
+00:00:17.520 --> 00:00:19.020
+Pick what you think is the best answer.
+

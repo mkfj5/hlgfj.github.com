@@ -1,0 +1,130 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.390 --> 00:00:04.280
+One remaining challenge in making our
+computer player are situations where it
+
+00:00:04.280 --> 00:00:08.230
+is obvious to a human player that the
+game will be decided in the next move,
+
+00:00:08.230 --> 00:00:11.140
+but that the computer player cannot
+search far enough into the future
+
+00:00:11.140 --> 00:00:12.780
+to figure out the problem.
+
+00:00:12.780 --> 00:00:14.760
+This situation is called
+the horizon effect.
+
+00:00:15.940 --> 00:00:18.050
+Take a look at this isolation board.
+
+00:00:18.050 --> 00:00:21.340
+It's o's turn, which move should o take?
+
+00:00:21.340 --> 00:00:23.590
+&gt;&gt; Well,
+as soon as o moves diagonally down and
+
+00:00:23.590 --> 00:00:27.202
+left one, x will only have six
+moves as compared to o's seven.
+
+00:00:27.202 --> 00:00:29.200
+Then o will win.
+
+00:00:29.200 --> 00:00:31.200
+&gt;&gt; But that is 13 moves in the future.
+
+00:00:31.200 --> 00:00:33.090
+How did you figure that out?
+
+00:00:33.090 --> 00:00:35.160
+&gt;&gt; X will be blocked on the wrong
+side of a partition and
+
+00:00:35.160 --> 00:00:36.810
+not be able to reach o.
+
+00:00:36.810 --> 00:00:39.540
+Both players will have to fill in
+the rest of the game board efficiently
+
+00:00:39.540 --> 00:00:41.440
+in order to have a chance of winning.
+
+00:00:41.440 --> 00:00:45.020
+&gt;&gt; That's a great observation, but
+our computer player may not see it.
+
+00:00:45.020 --> 00:00:48.840
+Remember, when we started talking about
+having only two seconds to make a move,
+
+00:00:48.840 --> 00:00:52.410
+we said that our computer player
+should only look ahead nine moves.
+
+00:00:52.410 --> 00:00:54.460
+It won't see the endgame coming.
+
+00:00:54.460 --> 00:00:57.450
+&gt;&gt; But with iterative deepening
+it might be able to go deeper.
+
+00:00:57.450 --> 00:01:00.510
+The branching factor towards the end
+of the game is much smaller.
+
+00:01:00.510 --> 00:01:04.500
+True, however, imagine that we have
+all ready reached the next to last
+
+00:01:04.500 --> 00:01:07.060
+depth of our search tree
+in the time we have.
+
+00:01:07.060 --> 00:01:10.250
+We have to evaluate the goodness
+of the children of this node.
+
+00:01:10.250 --> 00:01:14.040
+Which move would our my moves
+evaluation function pick?
+
+00:01:14.040 --> 00:01:16.090
+&gt;&gt; Well, certainly not the winning move.
+
+00:01:16.090 --> 00:01:19.060
+The evaluation function will return
+three for the winning move, but
+
+00:01:19.060 --> 00:01:21.570
+I can see a couple moves
+that would be preferred.
+
+00:01:21.570 --> 00:01:24.240
+&gt;&gt; Going the whole way to
+the right gives a five.
+
+00:01:24.240 --> 00:01:27.703
+&gt;&gt; And going diagonally left and
+down two spaces gives a six, yet
+
+00:01:27.703 --> 00:01:30.380
+both of these moves
+will result in a loss.
+
+00:01:30.380 --> 00:01:34.290
+&gt;&gt; Yep, going to the right will get
+o on the wrong side of the partition.
+
+00:01:34.290 --> 00:01:37.760
+Going to the left causes o to create
+another partition with even less moves.
+

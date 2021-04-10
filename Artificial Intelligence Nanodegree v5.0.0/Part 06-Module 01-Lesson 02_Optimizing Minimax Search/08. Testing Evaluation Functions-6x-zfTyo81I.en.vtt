@@ -1,0 +1,69 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.480 --> 00:00:03.730
+Remember when we had our simple
+five-move isolation board?
+
+00:00:03.730 --> 00:00:05.610
+And we searched it to end-game?
+
+00:00:05.610 --> 00:00:09.207
+We found that player one would
+always win unless it moved to one of
+
+00:00:09.207 --> 00:00:10.883
+the center positions first.
+
+00:00:10.883 --> 00:00:12.070
+&gt;&gt; I see where you're going.
+
+00:00:12.070 --> 00:00:15.780
+The question is whether our evaluation
+function of #my_moves predicts
+
+00:00:15.780 --> 00:00:19.280
+which branches will lead to a win and
+which ones will lead to failure?
+
+00:00:19.280 --> 00:00:20.280
+&gt;&gt; Exactly.
+
+00:00:20.280 --> 00:00:24.222
+I always like to test my assumptions
+because they are often wrong.
+
+00:00:24.222 --> 00:00:27.705
+&gt;&gt; Okay, so here's the mini-max tree
+where I have loaded the the depth to
+
+00:00:27.705 --> 00:00:29.925
+three and
+applied the evaluation function.
+
+00:00:29.925 --> 00:00:33.380
+I've also propagated the values
+up the mini-max tree to the top.
+
+00:00:33.380 --> 00:00:35.110
+&gt;&gt; The result looks promising.
+
+00:00:35.110 --> 00:00:39.940
+The two center positions have scores
+of 1, while the rest of the branches,
+
+00:00:39.940 --> 00:00:42.960
+which we know when, have higher scores.
+
+00:00:42.960 --> 00:00:44.560
+Let's try another example.
+
+00:00:44.560 --> 00:00:46.950
+What happens if we try
+the same thing but
+
+00:00:46.950 --> 00:00:49.810
+assume we could only go two
+levels deep on our search tree?
+

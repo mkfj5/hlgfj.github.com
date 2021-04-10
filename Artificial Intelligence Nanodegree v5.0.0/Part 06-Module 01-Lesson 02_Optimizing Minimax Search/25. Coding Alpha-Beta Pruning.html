@@ -1,0 +1,536 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Coding: Alpha-Beta Pruning</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Optimizing Minimax Search</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Lesson Plan - Week 9.html">01. Lesson Plan - Week 9</a>
+    </li>
+    <li class="">
+      <a href="02. Minimax Quiz.html">02. Minimax Quiz</a>
+    </li>
+    <li class="">
+      <a href="03. Depth-Limited Search.html">03. Depth-Limited Search</a>
+    </li>
+    <li class="">
+      <a href="04. Coding Depth-Limited Search.html">04. Coding: Depth-Limited Search</a>
+    </li>
+    <li class="">
+      <a href="05. Evaluation Function Intro.html">05. Evaluation Function Intro</a>
+    </li>
+    <li class="">
+      <a href="06. Testing the Evaluation Function.html">06. Testing the Evaluation Function</a>
+    </li>
+    <li class="">
+      <a href="07. Testing the Evaluation Function Part 2.html">07. Testing the Evaluation Function Part 2</a>
+    </li>
+    <li class="">
+      <a href="08. Testing Evaluation Functions.html">08. Testing Evaluation Functions</a>
+    </li>
+    <li class="">
+      <a href="09. Testing the Evaluation Function Part 3.html">09. Testing the Evaluation Function Part 3</a>
+    </li>
+    <li class="">
+      <a href="10. Coding #my_moves Heuristic.html">10. Coding: #my_moves Heuristic</a>
+    </li>
+    <li class="">
+      <a href="11. Quiescent Search.html">11. Quiescent Search</a>
+    </li>
+    <li class="">
+      <a href="12. A Problem.html">12. A Problem</a>
+    </li>
+    <li class="">
+      <a href="13. Iterative Deepening.html">13. Iterative Deepening</a>
+    </li>
+    <li class="">
+      <a href="14. Understanding Exponential Time.html">14. Understanding Exponential Time</a>
+    </li>
+    <li class="">
+      <a href="15. Exponential b&#x3D;3.html">15. Exponential b&#x3D;3</a>
+    </li>
+    <li class="">
+      <a href="16. Varying the Branching Factor.html">16. Varying the Branching Factor</a>
+    </li>
+    <li class="">
+      <a href="17. Coding Iterative Deepening.html">17. Coding: Iterative Deepening</a>
+    </li>
+    <li class="">
+      <a href="18. Horizon Effect.html">18. Horizon Effect</a>
+    </li>
+    <li class="">
+      <a href="19. Horizon Effect (Contd.).html">19. Horizon Effect (Contd.)</a>
+    </li>
+    <li class="">
+      <a href="20. Good Evaluation Functions.html">20. Good Evaluation Functions</a>
+    </li>
+    <li class="">
+      <a href="21. Evaluating Evaluation Functions.html">21. Evaluating Evaluation Functions</a>
+    </li>
+    <li class="">
+      <a href="22. Alpha-Beta Pruning.html">22. Alpha-Beta Pruning</a>
+    </li>
+    <li class="">
+      <a href="23. Alpha-Beta Pruning Quiz 1.html">23. Alpha-Beta Pruning Quiz 1</a>
+    </li>
+    <li class="">
+      <a href="24. Alpha-Beta Pruning Quiz 2.html">24. Alpha-Beta Pruning Quiz 2</a>
+    </li>
+    <li class="">
+      <a href="25. Coding Alpha-Beta Pruning.html">25. Coding: Alpha-Beta Pruning</a>
+    </li>
+    <li class="">
+      <a href="26. Solving 5x5 Isolation.html">26. Solving 5x5 Isolation</a>
+    </li>
+    <li class="">
+      <a href="27. Coding Opening Book.html">27. Coding: Opening Book</a>
+    </li>
+    <li class="">
+      <a href="28. Thad’s Asides.html">28. Thad’s Asides</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">25. Coding: Alpha-Beta Pruning</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="-alpha-beta-pruning"># Alpha-Beta Pruning</h2>
+<p>The last technique we'll cover is alpha-beta pruning, which allows the agent to avoid searching nodes that cannot lead to better outcomes than what they've already searched by keeping track of the upper and lower bounds of the value for each branch. The lower bound is called alpha, and the upper bound is called beta. </p>
+<p>The alpha-beta algorithm is shown below. In the quiz that follows, you will modify the existing minimax implementation to perform alpha-beta pruning.</p>
+<p><strong>NOTE:</strong> We have removed the depth-limiting search and are not using iterative deepening in this quiz. You can trivially modify alpha-beta search to use both, just as you did before with minimax.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/alpha-beta-search.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+
+  <h4>Start Quiz:</h4>
+  <div>
+  <div class="nav nav-tabs nav-fill" role="tablist" id="question-tabs">
+    <a href="#624576-minimax-py" class="nav-item nav-link  active show" id="tab-624576-minimax-py" data-toggle="tab" role="tab"
+      aria-controls="624576-minimax-py" aria-selected="true">minimax.py</a>
+    <a href="#624576-gamestate-py" class="nav-item nav-link " id="tab-624576-gamestate-py" data-toggle="tab" role="tab"
+      aria-controls="624576-gamestate-py" aria-selected="false">gamestate.py</a>
+    <a href="#624576-testcode-py" class="nav-item nav-link " id="tab-624576-testcode-py" data-toggle="tab" role="tab"
+      aria-controls="624576-testcode-py" aria-selected="false">testcode.py</a>
+    <a href="#624576-solution-py" class="nav-item nav-link " id="tab-624576-solution-py" data-toggle="tab" role="tab"
+      aria-controls="624576-solution-py" aria-selected="false">solution.py</a>
+  </div>
+
+  <div class="tab-content" style="padding: 20px 0;" id="question-tab-contents">
+    <div class="tab-pane  active show" id="624576-minimax-py" aria-labelledby="tab-624576-minimax-py" role="tabpanel">
+      <pre><code></code>
+def alpha_beta_search(gameState):
+    &quot;&quot;&quot; Return the move along a branch of the game tree that
+    has the best possible value.  A move is a pair of coordinates
+    in (column, row) order corresponding to a legal move for
+    the searching player.
+    
+    You can ignore the special case of calling this function
+    from a terminal state.
+    &quot;&quot;&quot;
+    alpha &#x3D; float(&quot;-inf&quot;)
+    beta &#x3D; float(&quot;inf&quot;)
+    best_score &#x3D; float(&quot;-inf&quot;)
+    best_move &#x3D; None
+    for a in gameState.actions():
+        v &#x3D; min_value(gameState.result(a))
+        if v &gt; best_score:
+            best_score &#x3D; v
+            best_move &#x3D; a
+    return best_move
+
+# TODO: modify the function signature to accept an alpha and beta parameter
+def min_value(gameState):
+    &quot;&quot;&quot; Return the value for a win (+1) if the game is over,
+    otherwise return the minimum value over all legal child
+    nodes.
+    &quot;&quot;&quot;
+    if gameState.terminal_test():
+        return gameState.utility(0)
+    
+    v &#x3D; float(&quot;inf&quot;)
+    for a in gameState.actions():
+        # TODO: modify the call to max_value()
+        v &#x3D; min(v, max_value(gameState.result(a)))
+        # TODO: update the value bound
+    return v
+
+# TODO: modify the function signature to accept an alpha and beta parameter
+def max_value(gameState):
+    &quot;&quot;&quot; Return the value for a loss (-1) if the game is over,
+    otherwise return the maximum value over all legal child
+    nodes.
+    &quot;&quot;&quot;
+    if gameState.terminal_test():
+        return gameState.utility(0)
+    
+    v &#x3D; float(&quot;-inf&quot;)
+    for a in gameState.actions():
+        # TODO: modify the call to min_value()
+        v &#x3D; max(v, min_value(gameState.result(a)))
+        # TODO: update the value bound
+    return v
+</code></pre>
+    </div>
+    <div class="tab-pane " id="624576-gamestate-py" aria-labelledby="tab-624576-gamestate-py" role="tabpanel">
+      <pre><code></code>
+# Please use this implementation for compatability with the test cases
+
+from copy import deepcopy
+
+call_counter &#x3D; 0
+xlim, ylim &#x3D; 3, 2  # board dimensions
+
+# The eight movement directions possible for a chess queen
+RAYS &#x3D; [(1, 0), (1, -1), (0, -1), (-1, -1),
+        (-1, 0), (-1, 1), (0, 1), (1, 1)]
+
+
+class GameState:
+    &quot;&quot;&quot;
+    Attributes
+    ----------
+    _board: list(list)
+        Represent the board with a 2d array _board[x][y]
+        where open spaces are 0 and closed spaces are 1
+    
+    _parity: bool
+        Keep track of active player initiative (which
+        player has control to move) where 0 indicates that
+        player one has initiative and 1 indicates player 2
+    
+    _player_locations: list(tuple)
+        Keep track of the current location of each player
+        on the board where position is encoded by the
+        board indices of their last move, e.g., [(0, 0), (1, 0)]
+        means player 1 is at (0, 0) and player 2 is at (1, 0)
+    &quot;&quot;&quot;
+    def __init__(self):
+        self._board &#x3D; [[0] * ylim for _ in range(xlim)]
+        self._board[-1][-1] &#x3D; 1  # block lower-right corner
+        self._parity &#x3D; 0
+        self._player_locations &#x3D; [None, None]
+        
+    def actions(self):
+        &quot;&quot;&quot; Return a list of legal actions for the active player &quot;&quot;&quot;
+        return self.liberties(self._player_locations[self._parity])
+    
+    def player(self):
+        &quot;&quot;&quot; Return the id of the active player &quot;&quot;&quot;
+        return self._parity
+    
+    def result(self, action):
+        &quot;&quot;&quot; Return a new state that results from applying the given
+        action in the current state
+        &quot;&quot;&quot;
+        assert action in self.actions(), &quot;Attempted forecast of illegal move&quot;
+        newBoard &#x3D; deepcopy(self)
+        newBoard._board[action[0]][action[1]] &#x3D; 1
+        newBoard._player_locations[self._parity] &#x3D; action
+        newBoard._parity ^&#x3D; 1
+        return newBoard
+    
+    def terminal_test(self):
+        &quot;&quot;&quot; return True if the current state is terminal,
+        and False otherwise
+        
+        Hint: an Isolation state is terminal if _either_
+        player has no remaining liberties (even if the
+        player is not active in the current state)
+        &quot;&quot;&quot;
+        global call_counter
+        call_counter +&#x3D; 1
+        return (not self._has_liberties(self._parity)
+            or not self._has_liberties(1 - self._parity))
+
+    def utility(self, player_id):
+        &quot;&quot;&quot; return +inf if the game is terminal and the
+        specified player wins, return -inf if the game
+        is terminal and the specified player loses, and
+        return 0 if the game is not terminal
+        &quot;&quot;&quot;
+        if not self.terminal_test(): return 0
+        player_id_is_active &#x3D; (player_id &#x3D;&#x3D; self.player())
+        active_has_liberties &#x3D; self._has_liberties(self.player())
+        active_player_wins &#x3D; (active_has_liberties &#x3D;&#x3D; player_id_is_active)
+        return float(&quot;inf&quot;) if active_player_wins else float(&quot;-inf&quot;)
+    
+    def liberties(self, loc):
+        &quot;&quot;&quot; Return a list of all open cells in the
+        neighborhood of the specified location.  The list 
+        should include all open spaces in a straight line
+        along any row, column or diagonal from the current
+        position. (Tokens CANNOT move through obstacles
+        or blocked squares in queens Isolation.)
+        &quot;&quot;&quot;
+        if loc is None: return self._get_blank_spaces()
+        moves &#x3D; []
+        for dx, dy in RAYS:  # check each movement direction
+            _x, _y &#x3D; loc
+            while 0 &lt;&#x3D; _x + dx &lt; xlim and 0 &lt;&#x3D; _y + dy &lt; ylim:
+                _x, _y &#x3D; _x + dx, _y + dy
+                if self._board[_x][_y]:  # stop at any blocked cell
+                    break
+                moves.append((_x, _y))
+        return moves
+    
+    def _has_liberties(self, player_id):
+        &quot;&quot;&quot; Check to see if the specified player has any liberties &quot;&quot;&quot;
+        return any(self.liberties(self._player_locations[player_id]))
+
+    def _get_blank_spaces(self):
+        &quot;&quot;&quot; Return a list of blank spaces on the board.&quot;&quot;&quot;
+        return [(x, y) for y in range(ylim) for x in range(xlim)
+                if self._board[x][y] &#x3D;&#x3D; 0]</code></pre>
+    </div>
+    <div class="tab-pane " id="624576-testcode-py" aria-labelledby="tab-624576-testcode-py" role="tabpanel">
+      <pre><code></code>
+import minimax
+import gamestate as game
+
+
+# Test the depth limit by checking the number of nodes visited
+# -- recall that minimax visits every node in the search tree,
+# so if we search depth one on an empty board then minimax should
+# visit each of the five open spaces
+expected_node_count &#x3D; 55
+rootNode &#x3D; game.GameState()
+minimax.alpha_beta_search(rootNode)
+
+print(&quot;Expected node count: {}&quot;.format(expected_node_count))
+print(&quot;Your node count: {}&quot;.format(game.call_counter))
+
+if game.call_counter &#x3D;&#x3D; expected_node_count:
+    print(&quot;That&#x27;s right! Looks like your alpha-beta pruning is working!&quot;)
+else:
+    print(&quot;Uh oh...looks like there may be a problem.&quot;)
+</code></pre>
+    </div>
+    <div class="tab-pane " id="624576-solution-py" aria-labelledby="tab-624576-solution-py" role="tabpanel">
+      <pre><code></code>
+def alpha_beta_search(gameState):
+    &quot;&quot;&quot; Return the move along a branch of the game tree that
+    has the best possible value.  A move is a pair of coordinates
+    in (column, row) order corresponding to a legal move for
+    the searching player.
+    
+    You can ignore the special case of calling this function
+    from a terminal state.
+    &quot;&quot;&quot;
+    alpha &#x3D; float(&quot;-inf&quot;)
+    beta &#x3D; float(&quot;inf&quot;)
+    best_score &#x3D; float(&quot;-inf&quot;)
+    best_move &#x3D; None
+    for a in gameState.actions():
+        v &#x3D; min_value(gameState.result(a), alpha, beta)
+        alpha &#x3D; max(alpha, v)
+        if v &gt; best_score:
+            best_score &#x3D; v
+            best_move &#x3D; a
+    return best_move
+
+# TODO: modify the function signature to accept an alpha and beta parameter
+def min_value(gameState, alpha, beta):
+    &quot;&quot;&quot; Return the value for a win (+1) if the game is over,
+    otherwise return the minimum value over all legal child
+    nodes.
+    &quot;&quot;&quot;
+    if gameState.terminal_test():
+        return gameState.utility(0)
+    
+    v &#x3D; float(&quot;inf&quot;)
+    for a in gameState.actions():
+        v &#x3D; min(v, max_value(gameState.result(a), alpha, beta))
+        if v &lt;&#x3D; alpha:
+            return v
+        beta &#x3D; min(beta, v)
+    return v
+
+# TODO: modify the function signature to accept an alpha and beta parameter
+def max_value(gameState, alpha, beta):
+    &quot;&quot;&quot; Return the value for a loss (-1) if the game is over,
+    otherwise return the maximum value over all legal child
+    nodes.
+    &quot;&quot;&quot;
+    if gameState.terminal_test():
+        return gameState.utility(0)
+    
+    v &#x3D; float(&quot;-inf&quot;)
+    for a in gameState.actions():
+        v &#x3D; max(v, min_value(gameState.result(a), alpha, beta))
+        if v &gt;&#x3D; beta:
+            return v
+        alpha &#x3D; max(alpha, v)
+    return v
+</code></pre>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="26. Solving 5x5 Isolation.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('25. Coding: Alpha-Beta Pruning')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

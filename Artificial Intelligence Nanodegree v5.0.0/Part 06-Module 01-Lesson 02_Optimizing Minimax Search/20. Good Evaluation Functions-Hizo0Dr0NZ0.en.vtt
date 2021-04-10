@@ -1,0 +1,54 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.495 --> 00:00:03.120
+The number of opponent moves would
+actually do the opposite of what we
+
+00:00:03.120 --> 00:00:03.370
+want.
+
+00:00:03.370 --> 00:00:08.050
+It would label boards as good where our
+opponent has a large number of moves
+
+00:00:08.050 --> 00:00:11.770
+when we actually want to isolate
+them and prevent them from moving.
+
+00:00:11.770 --> 00:00:14.935
+Number of squares remaining doesn't
+reflect the goodness of the board.
+
+00:00:14.935 --> 00:00:17.623
+It's constantly decreasing
+with each move.
+
+00:00:17.623 --> 00:00:22.155
+Number of squares remaining minus number
+of my moves would penalize our computer
+
+00:00:22.155 --> 00:00:25.639
+player for boards with more potential
+moves, which is counter productive.
+
+00:00:25.639 --> 00:00:29.515
+Finally, number of my moves
+minus number of opponent moves
+
+00:00:29.515 --> 00:00:33.490
+is a good potential evaluation
+function for isolation.
+
+00:00:33.490 --> 00:00:37.120
+It continues to take into account boards
+where the current player can make
+
+00:00:37.120 --> 00:00:39.010
+a larger number of moves and
+
+00:00:39.010 --> 00:00:43.100
+also penalizes boards where the opponent
+can make a large number of moves.
+

@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.233 --> 00:00:02.310
+With terminal node in our game tree.
+
+00:00:02.310 --> 00:00:06.540
+With a +1 if our computer player
+wins and a -1 if it loses.
+
+00:00:07.670 --> 00:00:11.325
+We've used squares to indicate
+the terminal nodes and
+
+00:00:11.325 --> 00:00:13.394
+put their scores inside them.
+
+00:00:13.394 --> 00:00:16.666
+We are going to assume that our
+opponent x is really smart and
+
+00:00:16.666 --> 00:00:18.640
+will always play to win.
+
+00:00:18.640 --> 00:00:22.630
+In other words, we'll assume that
+x will always minimize o's scores.
+
+00:00:22.630 --> 00:00:26.500
+While our computer player will
+always try to maximize its scores.
+
+00:00:26.500 --> 00:00:30.600
+To show that idea, we are going to mark
+the game tree with a triangle pointing
+
+00:00:30.600 --> 00:00:34.900
+up to indicate turns when our computer
+player is trying to maximize the score.
+
+00:00:34.900 --> 00:00:37.760
+The triangle pointing down when
+the component is trying to minimize
+
+00:00:37.760 --> 00:00:38.850
+the score.
+
+00:00:38.850 --> 00:00:40.890
+Since our computer
+player is going first,
+
+00:00:40.890 --> 00:00:42.470
+we start with the maximization level.
+
+00:00:43.520 --> 00:00:47.999
+In general, since we are only searching
+from our computer player's perspective,
+
+00:00:47.999 --> 00:00:50.583
+they can only affect the game
+when it is its turn,
+
+00:00:50.583 --> 00:00:53.631
+the top of a minimax tree is
+always going to be a max level.
+

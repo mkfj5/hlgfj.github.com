@@ -1,0 +1,143 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.340 --> 00:00:02.870
+So basically you're saying that
+iterative deepening is almost free
+
+00:00:02.870 --> 00:00:05.360
+because of the exponential
+nature of the problem?
+
+00:00:05.360 --> 00:00:06.370
+&gt;&gt; Yeah.
+
+00:00:06.370 --> 00:00:09.040
+&gt;&gt; And I bet that iterative deepening
+really helps when you have a game like
+
+00:00:09.040 --> 00:00:11.720
+Isolation with the wildly
+varying branching factor.
+
+00:00:11.720 --> 00:00:12.730
+&gt;&gt; How so?
+
+00:00:12.730 --> 00:00:15.680
+&gt;&gt; Well when we calculated that we
+should only go nine levels deep
+
+00:00:15.680 --> 00:00:19.120
+in a five-by-five isolation tree
+to return within two seconds.
+
+00:00:19.120 --> 00:00:21.340
+We assumed a branching factor of eight.
+
+00:00:21.340 --> 00:00:24.840
+Yet toward the end game, Isolation
+players only have a few moves available.
+
+00:00:24.840 --> 00:00:27.910
+We might be able to search
+much more deeply at end game.
+
+00:00:27.910 --> 00:00:30.270
+&gt;&gt; And often,
+end game is precisely the time,
+
+00:00:30.270 --> 00:00:34.520
+that you want to search more deeply,
+so you can see what will happen.
+
+00:00:34.520 --> 00:00:37.340
+&gt;&gt; On the other hand at the beginning of
+the game the branching factor is quite
+
+00:00:37.340 --> 00:00:37.850
+large.
+
+00:00:37.850 --> 00:00:40.340
+Our computer player might not
+return within two seconds.
+
+00:00:40.340 --> 00:00:41.540
+&gt;&gt; Correct.
+
+00:00:41.540 --> 00:00:44.140
+Iterative deepening means
+that our computer player
+
+00:00:44.140 --> 00:00:47.690
+always has an answer ready in
+case it runs out of time and
+
+00:00:47.690 --> 00:00:51.460
+it can search as far as possible
+within its time constraints.
+
+00:00:51.460 --> 00:00:54.342
+We limited our time to
+two seconds per move.
+
+00:00:54.342 --> 00:00:56.852
+Yet in some games, like speed chess,
+
+00:00:56.852 --> 00:01:01.600
+we limit the total time a player
+can take for the entire game.
+
+00:01:01.600 --> 00:01:05.660
+In those situations, our computer player
+will want to search deeper in some
+
+00:01:05.660 --> 00:01:08.400
+parts of the game and
+shallower in other parts of the game.
+
+00:01:09.710 --> 00:01:13.380
+Often we can create a strategy for
+how deep we want to search.
+
+00:01:13.380 --> 00:01:16.287
+&gt;&gt; So something like having a book
+of standard initial moves for
+
+00:01:16.287 --> 00:01:19.308
+the beginning of the game,
+then search deeper in the middle and
+
+00:01:19.308 --> 00:01:20.802
+use less time towards the end.
+
+00:01:20.802 --> 00:01:23.028
+Relying on the reduction and
+branching factor and
+
+00:01:23.028 --> 00:01:26.526
+iterative deepening to still allow our
+computer player to search to end game or
+
+00:01:26.526 --> 00:01:28.950
+as deep as it can given
+the remaining time.
+
+00:01:28.950 --> 00:01:32.070
+&gt;&gt; Or we might want to have a
+conservative amount of time we dedicate
+
+00:01:32.070 --> 00:01:34.420
+per move and use iterative deepening and
+
+00:01:34.420 --> 00:01:39.100
+quiescent search to determine the few
+moves we wanted to spend extra time.
+
+00:01:40.420 --> 00:01:42.620
+All these are great strategies, but
+
+00:01:42.620 --> 00:01:45.670
+we can still get into trouble due to
+something called the horizon effect.
+

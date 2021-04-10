@@ -1,0 +1,14 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.310 --> 00:00:02.890
+Fill in the values of this minimax tree.
+
+00:00:02.890 --> 00:00:07.170
+Remember, the root node is the max
+level, then we alternate min levels and
+
+00:00:07.170 --> 00:00:07.970
+max levels.
+

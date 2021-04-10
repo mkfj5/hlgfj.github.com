@@ -1,0 +1,245 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.033 --> 00:00:04.560
+Alpha-beta is a pruning technique that
+allows us to ignore whole sections of
+
+00:00:04.560 --> 00:00:08.480
+the game tree, but still get
+the same answer as with minimax.
+
+00:00:08.480 --> 00:00:11.080
+&gt;&gt; So you're saying that alpha-beta
+never changes the answer, but
+
+00:00:11.080 --> 00:00:12.920
+is more efficient than minimax?
+
+00:00:12.920 --> 00:00:15.830
+&gt;&gt; Precisely,
+often it is much more efficient.
+
+00:00:15.830 --> 00:00:17.910
+Let's take another look
+at the minimax tree for
+
+00:00:17.910 --> 00:00:21.340
+level three of the five
+move Isolation board.
+
+00:00:21.340 --> 00:00:24.930
+We'll assume that our computer player
+is evaluating the game tree from
+
+00:00:24.930 --> 00:00:26.050
+left to right.
+
+00:00:26.050 --> 00:00:28.850
+We have five subtrees
+that we'll consider.
+
+00:00:28.850 --> 00:00:30.729
+Looking at the most left one,
+
+00:00:30.729 --> 00:00:35.400
+the first branch has only two nodes
+with values of 1 and 2 respectively.
+
+00:00:35.400 --> 00:00:37.668
+It is the max level, so
+we choose the two and
+
+00:00:37.668 --> 00:00:40.460
+propagate it up to the mean level.
+
+00:00:40.460 --> 00:00:43.820
+&gt;&gt; Since the opponent x will choose
+a branch that minimizes the value,
+
+00:00:43.820 --> 00:00:46.770
+we know this sub tree will
+have a value of 2 or less.
+
+00:00:46.770 --> 00:00:50.440
+So that means for any of the remaining
+branches, as soon as we see a 2 or more,
+
+00:00:50.440 --> 00:00:53.840
+we could ignore the rest of the nodes
+because they will never be selected.
+
+00:00:53.840 --> 00:00:54.920
+&gt;&gt; Precisely.
+
+00:00:54.920 --> 00:00:58.330
+&gt;&gt; And we have 2s in the leftmost
+node of these three branches.
+
+00:00:58.330 --> 00:00:58.870
+&gt;&gt; Yep.
+
+00:00:58.870 --> 00:01:01.299
+&gt;&gt; Which means we can
+ignore 6 of these 11 nodes.
+
+00:01:02.310 --> 00:01:04.709
+Wow, that's going to save some time.
+
+00:01:04.709 --> 00:01:06.530
+&gt;&gt; It gets even better.
+
+00:01:06.530 --> 00:01:08.930
+Let's look at the next subtree over.
+
+00:01:08.930 --> 00:01:12.590
+As soon as we get to this
+two on the left hand branch,
+
+00:01:12.590 --> 00:01:16.610
+we know that this whole subtree
+is going to return a 2 or less.
+
+00:01:16.610 --> 00:01:20.170
+But we already know that we have
+a 2 from the first subtree.
+
+00:01:20.170 --> 00:01:23.550
+So at the highest node, we already
+know that we will get a 2 or more.
+
+00:01:24.870 --> 00:01:28.160
+That means we can ignore all
+the remaining branches of the second
+
+00:01:28.160 --> 00:01:28.680
+subtree.
+
+00:01:32.100 --> 00:01:36.800
+Going on to the middle subtree,
+we again get a 2 in the left most node.
+
+00:01:36.800 --> 00:01:39.720
+We don't have any constraints
+on the node above yet.
+
+00:01:39.720 --> 00:01:42.630
+So we keep exploring and get another 2.
+
+00:01:42.630 --> 00:01:47.490
+No other valid move is possible,
+so this max node returns a 2.
+
+00:01:47.490 --> 00:01:53.240
+Now, the node above is a minimizing
+node, so it must return a 2 or less.
+
+00:01:53.240 --> 00:01:57.350
+Thus, because we know that the top most
+level already has a branch with a 2
+
+00:01:57.350 --> 00:02:03.100
+value, we can ignore all the rest
+of the nodes in the subtree.
+
+00:02:03.100 --> 00:02:04.280
+&gt;&gt; I see a pattern here.
+
+00:02:04.280 --> 00:02:07.080
+With the fourth subtree,
+we also get a 2 early on,
+
+00:02:07.080 --> 00:02:10.743
+which means we can ignore most of
+the nodes in this subtree as well.
+
+00:02:10.743 --> 00:02:12.743
+[BLANK_AUDIO]
+
+00:02:12.743 --> 00:02:15.275
+&gt;&gt; And the same thing
+happens in this last subtree.
+
+00:02:15.275 --> 00:02:18.423
+[BLANK_AUDIO]
+
+00:02:18.423 --> 00:02:20.697
+&gt;&gt; Hold it,
+this sub-tree is one of the bad moves.
+
+00:02:20.697 --> 00:02:22.860
+Its value is actually 1.
+
+00:02:22.860 --> 00:02:25.140
+Don't we want our computer
+player to know that?
+
+00:02:25.140 --> 00:02:26.000
+&gt;&gt; Why?
+
+00:02:26.000 --> 00:02:29.790
+As long as we only care about our
+computer player selecting the same good
+
+00:02:29.790 --> 00:02:33.480
+move as it would with the minimax
+app rhythm, we are okay.
+
+00:02:33.480 --> 00:02:36.210
+Here our computer selects
+the left most branch,
+
+00:02:36.210 --> 00:02:38.640
+which is the same as our minimax arrow.
+
+00:02:38.640 --> 00:02:41.550
+&gt;&gt; You're assuming that minimax
+is valuing left to right and
+
+00:02:41.550 --> 00:02:44.000
+takes the left most
+branch in case of a tie.
+
+00:02:44.000 --> 00:02:47.470
+&gt;&gt; Yep, we're assuming that
+our goal was to play the game,
+
+00:02:47.470 --> 00:02:50.840
+not keep a list of all the equally
+good moves on a given level.
+
+00:02:50.840 --> 00:02:51.870
+&gt;&gt; That's exciting.
+
+00:02:51.870 --> 00:02:55.440
+Looking at the entire tree, it seems we
+don't need to look at most of the nodes.
+
+00:02:55.440 --> 00:02:59.449
+We only need to look at 29 of
+the 78 nodes on the entire tree.
+
+00:02:59.449 --> 00:03:01.294
+That will save a lot of time.
+
+00:03:01.294 --> 00:03:04.723
+&gt;&gt; In fact, while our minimax
+algorithm runs in b to the d time,
+
+00:03:04.723 --> 00:03:08.894
+minimax with alpha-beta pruning can run
+b to the d over 2 time if the nodes
+
+00:03:08.894 --> 00:03:12.680
+are ordered optimally with
+the best moves being first.
+
+00:03:12.680 --> 00:03:16.489
+Even with random move ordering,
+alpha-beta pruning reduces the expected
+
+00:03:16.489 --> 00:03:18.760
+run time which is b to
+the three-quarters d.
+

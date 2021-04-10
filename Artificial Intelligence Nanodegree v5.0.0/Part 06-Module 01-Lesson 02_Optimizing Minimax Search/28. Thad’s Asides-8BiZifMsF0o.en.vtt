@@ -1,0 +1,100 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.410 --> 00:00:04.880
+Many problems in artificial intelligence
+are exponential in time or space, or
+
+00:00:04.880 --> 00:00:06.090
+both.
+
+00:00:06.090 --> 00:00:08.240
+In fact, NP hard problems are so
+
+00:00:08.240 --> 00:00:11.970
+common in AI that researchers
+joke half seriously
+
+00:00:11.970 --> 00:00:17.250
+that AI is the study of finding
+clever hacks to exponential problems.
+
+00:00:17.250 --> 00:00:21.072
+Often when a clever hacker is finally
+found, or when computers finally get
+
+00:00:21.072 --> 00:00:24.956
+fast enough to address that particular
+problem successfully, the world no
+
+00:00:24.956 --> 00:00:29.790
+longer thinks of the problem as one
+belonging to artificial intelligence.
+
+00:00:29.790 --> 00:00:32.259
+How many people think about the system
+
+00:00:32.259 --> 00:00:35.610
+that helps consumers choose
+plane flights as an AI?
+
+00:00:35.610 --> 00:00:38.830
+Or the system that helps determine
+when to deploy an airbag on an SUV?
+
+00:00:38.830 --> 00:00:40.890
+Yet at one point,
+
+00:00:40.890 --> 00:00:44.000
+these types of problems were
+considered to be part of AI.
+
+00:00:44.000 --> 00:00:48.230
+That idea leads me to another
+joke definition of AI.
+
+00:00:48.230 --> 00:00:52.300
+Artificial intelligence consists of all
+the NP hard problems that have not yet
+
+00:00:52.300 --> 00:00:52.800
+been solved.
+
+00:00:54.180 --> 00:00:58.190
+What matters to me are the problems
+that the field of AI tackles.
+
+00:00:58.190 --> 00:01:01.660
+On the way here, I was practicing
+this lecture with my taxi driver,
+
+00:01:01.660 --> 00:01:06.080
+Dilber, when I realized he was
+using AI while we were talking.
+
+00:01:06.080 --> 00:01:10.570
+To get me to Udacity headquarters,
+the navigation program on his smartphone
+
+00:01:10.570 --> 00:01:14.630
+had plotted a path that was better
+than the one I would have told him.
+
+00:01:14.630 --> 00:01:18.160
+And was communicating with him in a way
+that he was getting the information
+
+00:01:18.160 --> 00:01:19.520
+as he needed it.
+
+00:01:19.520 --> 00:01:20.940
+That is what is exciting about AI.
+
+00:01:20.940 --> 00:01:24.060
+You get a chance to work
+on everyday problems
+
+00:01:24.060 --> 00:01:25.610
+that can improve people's lives.
+

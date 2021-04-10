@@ -1,0 +1,132 @@
+{
+  "id": 1801,
+  "project_id": 419,
+  "upload_types": [
+    "zip"
+  ],
+  "file_filter_regex": "\\A(?!(((.*/)?(__MACOSX|\\.git|node_modules|bower_components|jspm_packages|\\.idea|build|.ipynb_checkpoints|\\.Trash-0|logs)(\\Z|/))))((.*\\.(css|docx|gradle|htm|html|java|js|markdown|md|pdf|py|rmd|rst|sql|swift|txt|xml|yaml|yml)\\Z)|((.*/)?(README|Readme|readme|Makefile)\\Z))",
+  "nomination_eligible": false,
+  "stand_out": "",
+  "hide_criteria": false,
+  "created_at": "2018-04-09T21:49:00.769Z",
+  "updated_at": "2020-04-01T20:05:10.758Z",
+  "hashtag": "",
+  "max_upload_size_mb": 500,
+  "estimated_sla": null,
+  "project_assistant_enabled": true,
+  "available_for_cert_project": false,
+  "language": "en-us",
+  "ndkeys": [
+    "nd898",
+    "nd898-ent",
+    "nd898-beta"
+  ],
+  "coursekeys": [],
+  "is_career": false,
+  "sections": [
+    {
+      "id": 3855,
+      "name": "Game Agent Implementation",
+      "created_at": "2018-05-08T01:28:24.744Z",
+      "updated_at": "2018-05-08T01:29:11.891Z",
+      "deleted_at": null,
+      "position": 0,
+      "rubric_id": 1801,
+      "rubric_items": [
+        {
+          "id": 11286,
+          "section_id": 3855,
+          "passed_description": "(AUTOGRADED) Game playing agent can return an action.\n- `.get_action()` method calls `self.queue.put()` at least once before the time limit expires",
+          "exceeded_description": "",
+          "created_at": "2018-05-08T01:29:44.010Z",
+          "updated_at": "2020-01-10T10:03:25.242Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "`.get_action()` method calls `self.queue.put()` at least once before the time limit expires",
+          "exceedable": false
+        },
+        {
+          "id": 11287,
+          "section_id": 3855,
+          "passed_description": "(AUTOGRADED) Game playing agent can play a full game.\n- `CustomPlayer` successfully plays as both player 1 and player 2 in a full game to a terminal state (i.e., the agent does not deadlock during search, return an invalid action, or raise an exception during a game)",
+          "exceeded_description": "",
+          "created_at": "2018-05-08T01:30:34.624Z",
+          "updated_at": "2018-05-14T20:27:21.582Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "`CustomPlayer` successfully plays as both player 1 and player 2 in a full game to a terminal state (i.e., the agent does not deadlock during search, return an invalid action, or raise an exception during a game)",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 3856,
+      "name": "Experimental Results & Report",
+      "created_at": "2018-05-08T01:29:12.085Z",
+      "updated_at": "2018-05-08T01:29:43.841Z",
+      "deleted_at": null,
+      "position": 1,
+      "rubric_id": 1801,
+      "rubric_items": [
+        {
+          "id": 11288,
+          "section_id": 3856,
+          "passed_description": "`CustomAgent` class implements **at least one** of the following:\n- Custom heuristic (must **not** be one of the heuristics from lectures, and cannot _only_ be a combination of the number of liberties available to each agent)\n- Opening book (must be at least 4 plies deep)\n- Implements an advanced technique not covered in lecture (e.g., killer heuristic, principle variation search, Monte Carlo tree search, etc.)",
+          "exceeded_description": "",
+          "created_at": "2018-05-08T01:32:38.354Z",
+          "updated_at": "2018-05-14T20:27:21.590Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "CustomAgent search function uses an advanced search technique",
+          "exceedable": false
+        },
+        {
+          "id": 11289,
+          "section_id": 3856,
+          "passed_description": "Submission includes a table or chart with data from an experiment to evaluate the performance of their agent. The experiment should include an appropriate performance baseline. (Suggested baselines shown below.)\r\n\r\n**Advanced Heuristic**\r\n- Baseline: #my_moves - #opponent_moves heuristic from lecture (should use `fair_matches` flag in run_match.py)\r\n**Opening book**\r\n- Baseline: randomly choosing an opening move (should _not_ use `fair_matches` flag in run_match.py)\r\n**Advanced Search Techniques**\r\n- Baseline: student must specify an appropriate baseline for comparison (student must decide whether or not `fair_matches` flag should be used)",
+          "exceeded_description": "",
+          "created_at": "2018-05-08T01:33:20.580Z",
+          "updated_at": "2018-05-11T17:57:03.930Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "Report includes a table or chart documenting an experiment to evaluate the performance of their agent",
+          "exceedable": false
+        },
+        {
+          "id": 11291,
+          "section_id": 3856,
+          "passed_description": "Submission includes a short answer to the applicable questions below. (A short answer should be at least 1-2 sentences at most a small paragraph.)\r\n\r\n**NOTE:** students only need to answer the questions relevant to the techniques they implemented. They may choose _one_ set of questions if their agent incorporates multiple techniques. \r\n\r\n**Advanced Heuristic**\r\n- What features of the game does your heuristic incorporate, and why do you think those features matter in evaluating states during search? \r\n- Analyze the search depth your agent achieves using your custom heuristic. Does search speed matter more or less than accuracy to the performance of your heuristic?\r\n\r\n\r\n**Opening book**\r\n- Describe your process for collecting statistics to build your opening book. How did you choose states to sample? And how did you perform rollouts to determine a winner?\r\n- What opening moves does your book suggest are most effective on an empty board for player 1 and what is player 2's best reply?\r\n\r\n\r\n**Advanced Search Techniques**\r\n- Choose a baseline search algorithm for comparison (for example, alpha-beta search with iterative deepening, etc.). How much performance difference does your agent show compared to the baseline?\r\n- Why do you think the technique you chose was more (or less) effective than the baseline?\r\n\r\n",
+          "exceeded_description": "",
+          "created_at": "2018-05-08T01:59:41.571Z",
+          "updated_at": "2018-05-11T17:57:03.938Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 2,
+          "criteria": "Report answers all required questions",
+          "exceedable": false
+        }
+      ]
+    }
+  ],
+  "project": {
+    "id": 419,
+    "name": "Build a Game Playing Agent",
+    "nanodegree_key": "nd898",
+    "is_cert_project": false,
+    "audit_project_id": null,
+    "hashtag": null,
+    "audit_rubric_id": 2899,
+    "entitlement_required": null,
+    "is_career": null,
+    "recruitment_family_id": 1,
+    "created_at": "2018-03-13T19:57:26.752Z",
+    "updated_at": "2021-04-09T10:01:38.960Z",
+    "price": "7.0",
+    "ungradeable_price": "3.0",
+    "audit_price": "0.0"
+  }
+}

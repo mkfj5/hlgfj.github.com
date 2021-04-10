@@ -1,0 +1,490 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Coding: Minimax Search</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Search in Multiagent Domains</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Lesson Plan - Week 8.html">01. Lesson Plan - Week 8</a>
+    </li>
+    <li class="">
+      <a href="02. Overview .html">02. Overview </a>
+    </li>
+    <li class="">
+      <a href="03. The Minimax Algorithm.html">03. The Minimax Algorithm</a>
+    </li>
+    <li class="">
+      <a href="04. Isolation.html">04. Isolation</a>
+    </li>
+    <li class="">
+      <a href="05. Building a Game Tree.html">05. Building a Game Tree</a>
+    </li>
+    <li class="">
+      <a href="06. Coding Building a Game Class.html">06. Coding: Building a Game Class</a>
+    </li>
+    <li class="">
+      <a href="07. Which of These Are Valid Moves.html">07. Which of These Are Valid Moves?</a>
+    </li>
+    <li class="">
+      <a href="08. Coding Game Class Functionality.html">08. Coding: Game Class Functionality</a>
+    </li>
+    <li class="">
+      <a href="09. Building a Game Tree (Contd.).html">09. Building a Game Tree (Contd.)</a>
+    </li>
+    <li class="">
+      <a href="10. Isolation Game Tree with Leaf Values.html">10. Isolation Game Tree with Leaf Values</a>
+    </li>
+    <li class="">
+      <a href="11. How Do We Tell the Computer Not to Lose.html">11. How Do We Tell the Computer Not to Lose?</a>
+    </li>
+    <li class="">
+      <a href="12. MIN and MAX Levels.html">12. MIN and MAX Levels</a>
+    </li>
+    <li class="">
+      <a href="13. Coding Scoring Min &amp; Max Levels.html">13. Coding: Scoring Min &amp; Max Levels</a>
+    </li>
+    <li class="">
+      <a href="14. Propagating Values Up the Tree.html">14. Propagating Values Up the Tree</a>
+    </li>
+    <li class="">
+      <a href="15. Computing MIN MAX Values.html">15. Computing MIN MAX Values</a>
+    </li>
+    <li class="">
+      <a href="16. Computing MIN MAX Solution.html">16. Computing MIN MAX Solution</a>
+    </li>
+    <li class="">
+      <a href="17. Choosing the Best Branch.html">17. Choosing the Best Branch</a>
+    </li>
+    <li class="">
+      <a href="18. Coding Minimax Search.html">18. Coding: Minimax Search</a>
+    </li>
+    <li class="">
+      <a href="19. Max Number of Nodes Visited.html">19. Max Number of Nodes Visited</a>
+    </li>
+    <li class="">
+      <a href="20. Max Moves.html">20. Max Moves</a>
+    </li>
+    <li class="">
+      <a href="21. The Branching Factor.html">21. The Branching Factor</a>
+    </li>
+    <li class="">
+      <a href="22. Number of Nodes in a Game Tree.html">22. Number of Nodes in a Game Tree</a>
+    </li>
+    <li class="">
+      <a href="23. The Branching Factor (Contd.).html">23. The Branching Factor (Contd.)</a>
+    </li>
+    <li class="">
+      <a href="24. Max Number of Nodes.html">24. Max Number of Nodes</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">18. Coding: Minimax Search</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="-minimax-decision-choosing-the-best-branch">## Minimax Decision: Choosing the Best Branch</h2>
+<p>Now it's time to bring it all together to complete the minimax algorithm.  The <code>minimax_decision()</code> function in the quiz below should implement the eponymous procedure from the pseudocode. It should loop over the legal moves from the current state and return the move that has the highest score. The scores are determined by mutually recursive calls between the min and max value helper functions until a terminal state is reached, and propagated back up the tree as the call stack unwinds. </p>
+<p>Just like in the previous quiz, the root node of the tree is itself a "max" node, so we call <code>min_value()</code> first on each legal move. </p>
+<p><strong>Hints:</strong> </p>
+<ul>
+<li>One way to implement this function has a body that looks very similar to the <code>max_value()</code> function, except that you must keep track of both the best score and best move (and return only the best move)</li>
+<li>There are also clever ways to do it using the built-in <a href="https://docs.python.org/2/library/functions.html#max" rel="noopener noreferrer" target="_blank">max</a> function and the optional keyword argument <code>key</code>.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+
+  <h4>Start Quiz:</h4>
+  <div>
+  <div class="nav nav-tabs nav-fill" role="tablist" id="question-tabs">
+    <a href="#624546-minimax-py" class="nav-item nav-link  active show" id="tab-624546-minimax-py" data-toggle="tab" role="tab"
+      aria-controls="624546-minimax-py" aria-selected="true">minimax.py</a>
+    <a href="#624546-minimax_helpers-py" class="nav-item nav-link " id="tab-624546-minimax_helpers-py" data-toggle="tab" role="tab"
+      aria-controls="624546-minimax_helpers-py" aria-selected="false">minimax_helpers.py</a>
+    <a href="#624546-gamestate-py" class="nav-item nav-link " id="tab-624546-gamestate-py" data-toggle="tab" role="tab"
+      aria-controls="624546-gamestate-py" aria-selected="false">gamestate.py</a>
+    <a href="#624546-testcode-py" class="nav-item nav-link " id="tab-624546-testcode-py" data-toggle="tab" role="tab"
+      aria-controls="624546-testcode-py" aria-selected="false">testcode.py</a>
+    <a href="#624546-solution-py" class="nav-item nav-link " id="tab-624546-solution-py" data-toggle="tab" role="tab"
+      aria-controls="624546-solution-py" aria-selected="false">solution.py</a>
+  </div>
+
+  <div class="tab-content" style="padding: 20px 0;" id="question-tab-contents">
+    <div class="tab-pane  active show" id="624546-minimax-py" aria-labelledby="tab-624546-minimax-py" role="tabpanel">
+      <pre><code></code>
+from minimax_helpers import *
+
+
+def minimax_decision(gameState):
+    &quot;&quot;&quot; Return the move along a branch of the game tree that
+    has the best possible value.  A move is a pair of coordinates
+    in (column, row) order corresponding to a legal move for
+    the searching player.
+    
+    You can ignore the special case of calling this function
+    from a terminal state.
+    &quot;&quot;&quot;
+    # TODO: Finish this function!
+    pass
+</code></pre>
+    </div>
+    <div class="tab-pane " id="624546-minimax_helpers-py" aria-labelledby="tab-624546-minimax_helpers-py" role="tabpanel">
+      <pre><code></code>
+def min_value(gameState):
+    &quot;&quot;&quot; Return the game state utility if the game is over,
+    otherwise return the minimum value over all legal successors
+    &quot;&quot;&quot;
+    if gameState.terminal_test():
+        return gameState.utility(0)
+    v &#x3D; float(&quot;inf&quot;)
+    for a in gameState.actions():
+        v &#x3D; min(v, max_value(gameState.result(a)))
+    return v
+
+
+def max_value(gameState):
+    &quot;&quot;&quot; Return the game state utility if the game is over,
+    otherwise return the maximum value over all legal successors
+    &quot;&quot;&quot;
+    if gameState.terminal_test():
+        return gameState.utility(0)
+    v &#x3D; float(&quot;-inf&quot;)
+    for a in gameState.actions():
+        v &#x3D; max(v, min_value(gameState.result(a)))
+    return v
+</code></pre>
+    </div>
+    <div class="tab-pane " id="624546-gamestate-py" aria-labelledby="tab-624546-gamestate-py" role="tabpanel">
+      <pre><code></code>
+# Please use this implementation for compatability with the test cases
+
+from copy import deepcopy
+
+xlim, ylim &#x3D; 3, 2  # board dimensions
+
+# The eight movement directions possible for a chess queen
+RAYS &#x3D; [(1, 0), (1, -1), (0, -1), (-1, -1),
+        (-1, 0), (-1, 1), (0, 1), (1, 1)]
+
+
+class GameState:
+    &quot;&quot;&quot;
+    Attributes
+    ----------
+    _board: list(list)
+        Represent the board with a 2d array _board[x][y]
+        where open spaces are 0 and closed spaces are 1
+    
+    _parity: bool
+        Keep track of active player initiative (which
+        player has control to move) where 0 indicates that
+        player one has initiative and 1 indicates player 2
+    
+    _player_locations: list(tuple)
+        Keep track of the current location of each player
+        on the board where position is encoded by the
+        board indices of their last move, e.g., [(0, 0), (1, 0)]
+        means player 1 is at (0, 0) and player 2 is at (1, 0)
+    &quot;&quot;&quot;
+    def __init__(self):
+        self._board &#x3D; [[0] * ylim for _ in range(xlim)]
+        self._board[-1][-1] &#x3D; 1  # block lower-right corner
+        self._parity &#x3D; 0
+        self._player_locations &#x3D; [None, None]
+        
+    def actions(self):
+        &quot;&quot;&quot; Return a list of legal actions for the active player &quot;&quot;&quot;
+        return self.liberties(self._player_locations[self._parity])
+    
+    def player(self):
+        &quot;&quot;&quot; Return the id of the active player &quot;&quot;&quot;
+        return self._parity
+    
+    def result(self, action):
+        &quot;&quot;&quot; Return a new state that results from applying the given
+        action in the current state
+        &quot;&quot;&quot;
+        assert action in self.actions(), &quot;Attempted forecast of illegal move&quot;
+        newBoard &#x3D; deepcopy(self)
+        newBoard._board[action[0]][action[1]] &#x3D; 1
+        newBoard._player_locations[self._parity] &#x3D; action
+        newBoard._parity ^&#x3D; 1
+        return newBoard
+    
+    def terminal_test(self):
+        &quot;&quot;&quot; return True if the current state is terminal,
+        and False otherwise
+        
+        Hint: an Isolation state is terminal if _either_
+        player has no remaining liberties (even if the
+        player is not active in the current state)
+        &quot;&quot;&quot;
+        return (not self._has_liberties(self._parity)
+            or not self._has_liberties(1 - self._parity))
+
+    def utility(self, player_id):
+        &quot;&quot;&quot; return +inf if the game is terminal and the
+        specified player wins, return -inf if the game
+        is terminal and the specified player loses, and
+        return 0 if the game is not terminal
+        &quot;&quot;&quot;
+        if not self.terminal_test(): return 0
+        player_id_is_active &#x3D; (player_id &#x3D;&#x3D; self.player())
+        active_has_liberties &#x3D; self._has_liberties(self.player())
+        active_player_wins &#x3D; (active_has_liberties &#x3D;&#x3D; player_id_is_active)
+        return float(&quot;inf&quot;) if active_player_wins else float(&quot;-inf&quot;)
+    
+    def liberties(self, loc):
+        &quot;&quot;&quot; Return a list of all open cells in the
+        neighborhood of the specified location.  The list 
+        should include all open spaces in a straight line
+        along any row, column or diagonal from the current
+        position. (Tokens CANNOT move through obstacles
+        or blocked squares in queens Isolation.)
+        &quot;&quot;&quot;
+        if loc is None: return self._get_blank_spaces()
+        moves &#x3D; []
+        for dx, dy in RAYS:  # check each movement direction
+            _x, _y &#x3D; loc
+            while 0 &lt;&#x3D; _x + dx &lt; xlim and 0 &lt;&#x3D; _y + dy &lt; ylim:
+                _x, _y &#x3D; _x + dx, _y + dy
+                if self._board[_x][_y]:  # stop at any blocked cell
+                    break
+                moves.append((_x, _y))
+        return moves
+    
+    def _has_liberties(self, player_id):
+        &quot;&quot;&quot; Check to see if the specified player has any liberties &quot;&quot;&quot;
+        return any(self.liberties(self._player_locations[player_id]))
+
+    def _get_blank_spaces(self):
+        &quot;&quot;&quot; Return a list of blank spaces on the board.&quot;&quot;&quot;
+        return [(x, y) for y in range(ylim) for x in range(xlim)
+                if self._board[x][y] &#x3D;&#x3D; 0]</code></pre>
+    </div>
+    <div class="tab-pane " id="624546-testcode-py" aria-labelledby="tab-624546-testcode-py" role="tabpanel">
+      <pre><code></code>
+import minimax
+import gamestate as game
+
+
+best_moves &#x3D; set([(0, 0), (2, 0), (0, 1)])
+rootNode &#x3D; game.GameState()
+minimax_move &#x3D; minimax.minimax_decision(rootNode)
+
+print(&quot;Best move choices: {}&quot;.format(list(best_moves)))
+print(&quot;Your code chose: {}&quot;.format(minimax_move))
+
+if minimax_move in best_moves:
+    print(&quot;That&#x27;s one of the best move choices. Looks like your minimax-decision function worked!&quot;)
+else:
+    print(&quot;Uh oh...looks like there may be a problem.&quot;)
+</code></pre>
+    </div>
+    <div class="tab-pane " id="624546-solution-py" aria-labelledby="tab-624546-solution-py" role="tabpanel">
+      <pre><code></code>
+from minimax_helpers import *
+
+# Solution using an explicit loop based on max_value()
+def _minimax_decision(gameState):
+    &quot;&quot;&quot; Return the move along a branch of the game tree that
+    has the best possible value.  A move is a pair of coordinates
+    in (column, row) order corresponding to a legal move for
+    the searching player.
+    
+    You can ignore the special case of calling this function
+    from a terminal state.
+    &quot;&quot;&quot;
+    best_score &#x3D; float(&quot;-inf&quot;)
+    best_move &#x3D; None
+    for m in gameState.actions():
+        v &#x3D; min_value(gameState.result(m))
+        if v &gt; best_score:
+            best_score &#x3D; v
+            best_move &#x3D; m
+    return best_move
+
+
+# This solution does the same thing using the built-in &#x60;max&#x60; function
+# Note that &quot;lambda&quot; expressions are Python&#x27;s version of anonymous functions
+def minimax_decision(gameState):
+    &quot;&quot;&quot; Return the move along a branch of the game tree that
+    has the best possible value.  A move is a pair of coordinates
+    in (column, row) order corresponding to a legal move for
+    the searching player.
+    
+    You can ignore the special case of calling this function
+    from a terminal state.
+    &quot;&quot;&quot;
+    # The built in &#x60;max()&#x60; function can be used as argmax!
+    return max(gameState.actions(),
+               key&#x3D;lambda m: min_value(gameState.result(m)))
+</code></pre>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="conclusion">Conclusion</h2>
+<p>That's it—you've completed the minimax algorithm! Your code should now correctly choose one of the winning branches of the game tree from an empty mini-isolation board, just like you did by hand in Thad's quiz. Moreover, if you implement the rules to another game (like tic-tac-toe) in the GameState class, your minimax code will work <em>without any changes</em> on that game, too!</p>
+<p>Future lessons will cover additional optimizations like depth-limiting, alpha-beta pruning, and iterative deepening that will allow minimax to work on even larger games (e.g.,  checkers, chess, etc.), and the project for this module will involve modifying and extending your code from this project to implement some of those techniques.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="19. Max Number of Nodes Visited.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('18. Coding: Minimax Search')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

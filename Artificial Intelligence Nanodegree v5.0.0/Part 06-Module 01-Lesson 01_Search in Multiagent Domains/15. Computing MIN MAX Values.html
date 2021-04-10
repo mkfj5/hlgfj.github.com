@@ -1,0 +1,358 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Computing MIN MAX Values</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Search in Multiagent Domains</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Lesson Plan - Week 8.html">01. Lesson Plan - Week 8</a>
+    </li>
+    <li class="">
+      <a href="02. Overview .html">02. Overview </a>
+    </li>
+    <li class="">
+      <a href="03. The Minimax Algorithm.html">03. The Minimax Algorithm</a>
+    </li>
+    <li class="">
+      <a href="04. Isolation.html">04. Isolation</a>
+    </li>
+    <li class="">
+      <a href="05. Building a Game Tree.html">05. Building a Game Tree</a>
+    </li>
+    <li class="">
+      <a href="06. Coding Building a Game Class.html">06. Coding: Building a Game Class</a>
+    </li>
+    <li class="">
+      <a href="07. Which of These Are Valid Moves.html">07. Which of These Are Valid Moves?</a>
+    </li>
+    <li class="">
+      <a href="08. Coding Game Class Functionality.html">08. Coding: Game Class Functionality</a>
+    </li>
+    <li class="">
+      <a href="09. Building a Game Tree (Contd.).html">09. Building a Game Tree (Contd.)</a>
+    </li>
+    <li class="">
+      <a href="10. Isolation Game Tree with Leaf Values.html">10. Isolation Game Tree with Leaf Values</a>
+    </li>
+    <li class="">
+      <a href="11. How Do We Tell the Computer Not to Lose.html">11. How Do We Tell the Computer Not to Lose?</a>
+    </li>
+    <li class="">
+      <a href="12. MIN and MAX Levels.html">12. MIN and MAX Levels</a>
+    </li>
+    <li class="">
+      <a href="13. Coding Scoring Min &amp; Max Levels.html">13. Coding: Scoring Min &amp; Max Levels</a>
+    </li>
+    <li class="">
+      <a href="14. Propagating Values Up the Tree.html">14. Propagating Values Up the Tree</a>
+    </li>
+    <li class="">
+      <a href="15. Computing MIN MAX Values.html">15. Computing MIN MAX Values</a>
+    </li>
+    <li class="">
+      <a href="16. Computing MIN MAX Solution.html">16. Computing MIN MAX Solution</a>
+    </li>
+    <li class="">
+      <a href="17. Choosing the Best Branch.html">17. Choosing the Best Branch</a>
+    </li>
+    <li class="">
+      <a href="18. Coding Minimax Search.html">18. Coding: Minimax Search</a>
+    </li>
+    <li class="">
+      <a href="19. Max Number of Nodes Visited.html">19. Max Number of Nodes Visited</a>
+    </li>
+    <li class="">
+      <a href="20. Max Moves.html">20. Max Moves</a>
+    </li>
+    <li class="">
+      <a href="21. The Branching Factor.html">21. The Branching Factor</a>
+    </li>
+    <li class="">
+      <a href="22. Number of Nodes in a Game Tree.html">22. Number of Nodes in a Game Tree</a>
+    </li>
+    <li class="">
+      <a href="23. The Branching Factor (Contd.).html">23. The Branching Factor (Contd.)</a>
+    </li>
+    <li class="">
+      <a href="24. Max Number of Nodes.html">24. Max Number of Nodes</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">15. Computing MIN MAX Values</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Computing MIN MAX Values</p></h3>
+  <div>
+  <div>
+    <h4>Question:</h4>
+
+    <video controls>
+  <source src="15. Computing MIN MAX Values-xVY-uOiCcRM.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="15. Computing MIN MAX Values-xVY-uOiCcRM.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="CN" src="15. Computing MIN MAX Values-xVY-uOiCcRM.zh-CN.vtt" label="CN">
+</video>
+
+
+  </div>
+
+  <h4>Start Quiz:</h4>
+  <div>
+  <div style="display: block;">
+    <div style="position: relative;">
+      <img src="img/5313610837.gif" style="width: 100%; max-height: 100%" alt="">
+      
+    <div style="
+    position: absolute; top: 20.139273835920175%; left: 64.80283665835411%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric2" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 37.15701219512195%; left: 43.722724438902745%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric3" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 37.250554323725055%; left: 64.84764650872819%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric4" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 37.319844789356985%; left: 85.78748441396509%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric5" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 54.420731707317074%; left: 43.81039588528679%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric6" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 54.27868625277162%; left: 57.718983790523694%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric7" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 54.5835643015521%; left: 71.77369077306733%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric8" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 54.24057649667405%; left: 85.99205112219451%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric9" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 71.63248337028824%; left: 57.74431109725686%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric10" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 71.31721175166297%; left: 86.04075748129677%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric11" aria-label="">
+      
+    </div>
+  
+    </div>
+  </div>
+</div>
+
+
+  <div>
+    <details>
+      <summary><strong>Solution:</strong></summary>
+      <div>
+        <video controls>
+  <source src="15. Computing MIN MAX Values-w46-PyfRAWo.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="15. Computing MIN MAX Values-w46-PyfRAWo.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="CN" src="15. Computing MIN MAX Values-w46-PyfRAWo.zh-CN.vtt" label="CN">
+</video>
+
+
+      </div>
+    </details>
+  </div>
+</div>
+
+
+  <div class="jumbotron" style="margin-top: 50px; margin-bottom: 50px;">
+    <h3>INSTRUCTOR NOTE:</h3>
+    <p>Note that the value of the top-most node shown here cannot be ascertained given just this portion of the tree.<br />
+It has been calculated here using other branches that are out of view.</p>
+  </div>
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="16. Computing MIN MAX Solution.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('15. Computing MIN MAX Values')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

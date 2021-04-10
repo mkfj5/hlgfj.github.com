@@ -1,0 +1,53 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.660 --> 00:00:04.689
+In most situations in this game
+tree our computer player O wins.
+
+00:00:04.689 --> 00:00:08.620
+But in a few situations,the game ends
+with our opponent X winning at level
+
+00:00:08.620 --> 00:00:09.830
+five.
+
+00:00:09.830 --> 00:00:12.170
+If our computer player
+makes a poor choice for
+
+00:00:12.170 --> 00:00:16.309
+its first move,
+X can win no matter what O does.
+
+00:00:17.310 --> 00:00:21.210
+Clearly we never want our computer
+player to make this bad first move.
+
+00:00:21.210 --> 00:00:24.680
+To avoid that situation we can keep
+a table of best first moves for
+
+00:00:24.680 --> 00:00:26.520
+this board configuration.
+
+00:00:26.520 --> 00:00:30.160
+This table to called an opening book,
+similar tables can be kept for
+
+00:00:30.160 --> 00:00:31.220
+end games.
+
+00:00:31.220 --> 00:00:34.550
+But how do we make discovering
+these bad moves automatic?
+
+00:00:34.550 --> 00:00:38.950
+Better yet how do we discover
+the best moves for a computer player?
+
+00:00:38.950 --> 00:00:42.880
+The answer is the mini max algorithm,
+a version of which we will see next.
+

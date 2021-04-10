@@ -1,0 +1,85 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.320 --> 00:00:01.670
+What's iterative deepening?
+
+00:00:01.670 --> 00:00:04.400
+&gt;&gt; Let's go back to our problem
+of making our computer respond to
+
+00:00:04.400 --> 00:00:06.530
+an opponent in two seconds or less.
+
+00:00:06.530 --> 00:00:09.810
+Before, we calculated the maximum depth
+we thought we could search in time
+
+00:00:09.810 --> 00:00:10.750
+safely.
+
+00:00:10.750 --> 00:00:13.760
+With iterative deepening,
+we are going to do something simpler.
+
+00:00:13.760 --> 00:00:16.219
+We are going to search the Level 1 and
+get an answer for
+
+00:00:16.219 --> 00:00:18.200
+what we think is the best move.
+
+00:00:18.200 --> 00:00:20.692
+We'll keep that answer in
+case we run out of time.
+
+00:00:20.692 --> 00:00:23.981
+But we'll start the process again and
+go to Level 2 this time.
+
+00:00:23.981 --> 00:00:26.847
+If we finish searching Level
+2 before time runs out,
+
+00:00:26.847 --> 00:00:30.810
+we'll keep its best move and restart
+the search from going from Level 3.
+
+00:00:30.810 --> 00:00:34.130
+We'll continue doing this process
+until we run out of time and
+
+00:00:34.130 --> 00:00:35.860
+then return our best answer.
+
+00:00:35.860 --> 00:00:36.000
+&gt;&gt; So
+
+00:00:36.000 --> 00:00:39.530
+you're saying we should do the same
+thing we did to determine quiescence?
+
+00:00:39.530 --> 00:00:42.570
+&gt;&gt; Basically quiescence
+is a good side effect.
+
+00:00:42.570 --> 00:00:44.620
+&gt;&gt; But
+that still doesn't answer my question.
+
+00:00:44.620 --> 00:00:46.900
+Isn't this process inefficient?
+
+00:00:46.900 --> 00:00:50.700
+&gt;&gt; Surprisingly, iterative deepening
+doesn't waste that much time.
+
+00:00:50.700 --> 00:00:53.200
+Because of the exponential
+nature of the problem
+
+00:00:53.200 --> 00:00:55.890
+the amount of time is dominated
+by the last level searched.
+

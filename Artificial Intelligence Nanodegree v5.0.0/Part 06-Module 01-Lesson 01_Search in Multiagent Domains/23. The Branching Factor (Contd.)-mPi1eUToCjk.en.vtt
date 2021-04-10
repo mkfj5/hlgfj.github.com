@@ -1,0 +1,36 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.270 --> 00:00:02.610
+What if we do average
+branching factor instead?
+
+00:00:02.610 --> 00:00:05.600
+&gt;&gt; That sounds like a good idea but,
+how do we do that?
+
+00:00:05.600 --> 00:00:06.930
+&gt;&gt; Just try it out.
+
+00:00:06.930 --> 00:00:08.760
+&gt;&gt; Sure, why not?
+
+00:00:08.760 --> 00:00:10.720
+I always say do the simple
+thing first and
+
+00:00:10.720 --> 00:00:13.040
+only add intelligence when necessary.
+
+00:00:13.040 --> 00:00:16.065
+Let's write a quick computer game
+player that moves randomly and
+
+00:00:16.065 --> 00:00:18.604
+just test see what our
+branching factor is on average.
+
+00:00:18.604 --> 00:00:28.604
+[BLANK_AUDIO]
+

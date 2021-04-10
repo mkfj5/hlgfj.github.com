@@ -1,0 +1,96 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.160 --> 00:00:03.590
+Waiting for a computer game
+player to make a turn is no fun.
+
+00:00:03.590 --> 00:00:04.910
+After two seconds of waiting,
+
+00:00:04.910 --> 00:00:08.060
+a human player is likely to
+start thinking of other things.
+
+00:00:08.060 --> 00:00:10.560
+We really need a way to
+choose a move quickly.
+
+00:00:10.560 --> 00:00:14.275
+&gt;&gt; Well, we can't search to end game but
+how can we search?
+
+00:00:14.275 --> 00:00:18.035
+&gt;&gt; Let's assume again that we can search
+ten to the ninth nodes per second.
+
+00:00:18.035 --> 00:00:22.195
+So in two seconds we can actually search
+two times ten to the ninth nodes.
+
+00:00:22.195 --> 00:00:25.635
+So we need to solve the equation eight
+to the X is less than two times ten
+
+00:00:25.635 --> 00:00:26.595
+to the ninth.
+
+00:00:26.595 --> 00:00:30.285
+We can do this by taking log
+base eight on both sides.
+
+00:00:30.285 --> 00:00:31.970
+&gt;&gt; That log base eight
+is pretty annoying.
+
+00:00:31.970 --> 00:00:35.145
+&gt;&gt; Yup,
+time to bring out some old math skills.
+
+00:00:35.145 --> 00:00:41.170
+We know that log A of X is equal to
+the log B of X over the log B of A.
+
+00:00:41.170 --> 00:00:44.340
+So we can use that formula
+to solve our problem.
+
+00:00:44.340 --> 00:00:47.260
+We'll use log base ten here for
+convenience.
+
+00:00:47.260 --> 00:00:50.626
+So we end up with X is
+less than log base ten
+
+00:00:50.626 --> 00:00:55.190
+of two times ten to the ninth
+over log base ten of eight.
+
+00:00:55.190 --> 00:00:58.810
+And we end up with X
+being less than 10.3.
+
+00:00:58.810 --> 00:01:01.840
+&gt;&gt; So we should be okay if we
+only search ten levels deep?
+
+00:01:01.840 --> 00:01:04.959
+&gt;&gt; Provided that our estimate of a
+branching factor of eight on average is
+
+00:01:04.959 --> 00:01:05.140
+good.
+
+00:01:05.140 --> 00:01:08.460
+To be on the safe side let's
+only go to depth nine.
+
+00:01:08.460 --> 00:01:12.800
+This idea of only going as far as we
+think we can to safely meet our deadline
+
+00:01:12.800 --> 00:01:14.200
+is called a depth limited search.
+

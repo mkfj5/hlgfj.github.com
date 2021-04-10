@@ -1,0 +1,39 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.330 --> 00:00:03.600
+Now try filling out the values for
+the entire Minimax tree.
+
+00:00:03.600 --> 00:00:07.129
+Again, using the number of my
+moves evaluation function.
+
+00:00:07.129 --> 00:00:10.179
+Propagate the numbers to
+the top of the Minimax tree.
+
+00:00:10.179 --> 00:00:13.189
+Since we can't fit the entire
+level three tree here,
+
+00:00:13.189 --> 00:00:15.759
+we'll use this abbreviated
+version instead.
+
+00:00:15.759 --> 00:00:19.170
+A link to the full tree has been
+provided in the instructor notes.
+
+00:00:19.170 --> 00:00:22.429
+Open it up and compute all the values
+starting at the bottom and
+
+00:00:22.429 --> 00:00:24.089
+propagate them up to the top.
+
+00:00:24.089 --> 00:00:27.390
+Then, report back the values for
+a level one and the root node here.
+

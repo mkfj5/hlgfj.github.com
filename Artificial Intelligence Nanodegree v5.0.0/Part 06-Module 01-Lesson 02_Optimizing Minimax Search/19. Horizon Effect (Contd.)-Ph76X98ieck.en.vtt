@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.071 --> 00:00:01.650
+So what do we do?
+
+00:00:01.650 --> 00:00:04.450
+&gt;&gt; Well, perhaps we should include a
+check in the evaluation function to see
+
+00:00:04.450 --> 00:00:07.010
+if a partition is formed
+by the next move.
+
+00:00:07.010 --> 00:00:10.350
+And if so, start counting the number
+of moves left to each player.
+
+00:00:10.350 --> 00:00:14.000
+&gt;&gt; That sounds like a good idea, but
+how much is it going to cost us?
+
+00:00:14.000 --> 00:00:15.290
+&gt;&gt; What do you mean?
+
+00:00:15.290 --> 00:00:19.720
+&gt;&gt; Our evaluation function goes from
+a very simple function to compute to
+
+00:00:19.720 --> 00:00:24.300
+something that may involve a complicated
+check followed by a lot of counting.
+
+00:00:24.300 --> 00:00:28.600
+Simply counting the number of
+contiguous squares a player can use is
+
+00:00:28.600 --> 00:00:31.480
+similar to searching more
+levels down in the search tree.
+
+00:00:31.480 --> 00:00:33.270
+We know that is very time consuming.
+
+00:00:34.340 --> 00:00:35.500
+More to the point,
+
+00:00:35.500 --> 00:00:39.650
+we just doubled the amount of time
+the evaluation function takes.
+
+00:00:39.650 --> 00:00:42.410
+That time becomes
+multiplied exponentially
+
+00:00:42.410 --> 00:00:45.490
+due to the branching factor
+as the search goes deeper.
+
+00:00:45.490 --> 00:00:46.020
+&gt;&gt; Ouch!
+
+00:00:46.020 --> 00:00:49.410
+Are complicated evaluation
+functions always not worth it?
+
+00:00:49.410 --> 00:00:51.550
+&gt;&gt; It really depends on the game.
+
+00:00:51.550 --> 00:00:55.670
+Changing the rules of isolation slightly
+can dramatically change whether it is
+
+00:00:55.670 --> 00:00:59.410
+better to use a simple evaluation
+function and search deeper.
+
+00:00:59.410 --> 00:01:04.800
+Or use a complicated evaluation function
+that catches these dangerous situations.
+
+00:01:04.800 --> 00:01:08.080
+I've tried isolation variants
+like having the players move
+
+00:01:08.080 --> 00:01:09.690
+a knight in chess.
+
+00:01:09.690 --> 00:01:12.060
+Or allowing a wrap
+around on the borders or
+
+00:01:12.060 --> 00:01:15.310
+even having each player
+control two pieces.
+
+00:01:15.310 --> 00:01:19.860
+And I'm often surprised at
+which strategy seems to win.
+
+00:01:19.860 --> 00:01:23.200
+It always pays to think carefully
+about the evaluation function.
+
+00:01:23.200 --> 00:01:25.790
+Whether it's capturing
+the desired behavior and
+
+00:01:25.790 --> 00:01:27.390
+how efficiently it can be implemented.
+
