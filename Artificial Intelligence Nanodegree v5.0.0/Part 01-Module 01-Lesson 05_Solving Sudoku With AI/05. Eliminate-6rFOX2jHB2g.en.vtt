@@ -1,0 +1,91 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.330 --> 00:00:01.556
+Okay, here's our first technique.
+
+00:00:01.556 --> 00:00:04.109
+It's called Eliminate,
+and it works as follows.
+
+00:00:04.110 --> 00:00:08.550
+Let's start with a simple board, and
+let's say we have one box filled in.
+
+00:00:08.550 --> 00:00:11.170
+For example,
+this box is filled in with a seven.
+
+00:00:11.169 --> 00:00:12.849
+So what do we know?
+
+00:00:12.849 --> 00:00:14.849
+Well, we know that every row, column,
+
+00:00:14.849 --> 00:00:17.478
+or three-by-three square must
+contain exactly one seven.
+
+00:00:19.160 --> 00:00:22.730
+So in particular, any box in
+the same row can't contain a 7,
+
+00:00:22.730 --> 00:00:25.899
+any box in the same column
+also can't contain a 7.
+
+00:00:25.899 --> 00:00:30.901
+And finally, any box in the same
+3x3 square can't contain a 7.
+
+00:00:30.902 --> 00:00:35.049
+So we've gathered some information on
+the board just by looking at one box.
+
+00:00:35.049 --> 00:00:38.811
+So let's see how to apply this in real
+life, let's look at this Sudoku and
+
+00:00:38.811 --> 00:00:40.109
+this highlighted box here.
+
+00:00:41.109 --> 00:00:44.729
+And let's look at all the possibilities
+for the values of this box.
+
+00:00:44.729 --> 00:00:48.109
+We'll highlight in blue the boxes
+in the same units as it.
+
+00:00:48.109 --> 00:00:51.460
+First, we can see that the value
+of this box cannot be a 1,
+
+00:00:51.460 --> 00:00:54.990
+since there's a 1 in the same 3x3 box.
+
+00:00:54.990 --> 00:00:58.279
+Same thing with 2,
+since there's a 2 in the same column.
+
+00:00:58.279 --> 00:01:03.117
+We continue this process for
+
+00:01:03.116 --> 00:01:08.566
+3, 5, 6, 7, 8, and 9.
+
+00:01:08.566 --> 00:01:12.540
+And we conclude that the only
+available value for this box is 4.
+
+00:01:12.540 --> 00:01:16.410
+Thus we assign the value 4 to this box.
+
+00:01:16.409 --> 00:01:18.310
+This is called
+the elimination technique.
+
+00:01:18.310 --> 00:01:19.549
+You'll have the chance to code it below.
+

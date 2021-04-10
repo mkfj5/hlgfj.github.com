@@ -1,0 +1,442 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Constraint Propagation</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Solving Sudoku With AI</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro.html">01. Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Solving a Sudoku.html">02. Solving a Sudoku</a>
+    </li>
+    <li class="">
+      <a href="03. Setting up the Board.html">03. Setting up the Board</a>
+    </li>
+    <li class="">
+      <a href="04. Encoding the Board.html">04. Encoding the Board</a>
+    </li>
+    <li class="">
+      <a href="05. Strategy 1 Elimination.html">05. Strategy 1: Elimination</a>
+    </li>
+    <li class="">
+      <a href="06. Strategy 2 Only Choice.html">06. Strategy 2: Only Choice</a>
+    </li>
+    <li class="">
+      <a href="07. Constraint Propagation.html">07. Constraint Propagation</a>
+    </li>
+    <li class="">
+      <a href="08. Harder Sudoku.html">08. Harder Sudoku</a>
+    </li>
+    <li class="">
+      <a href="09. Strategy 3 Search.html">09. Strategy 3: Search</a>
+    </li>
+    <li class="">
+      <a href="10. Coding the Solution.html">10. Coding the Solution</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">07. Constraint Propagation</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="constraint-propagation">Constraint Propagation</h3>
+<p>If you've made it this far, you've already gained hands on exposure to a powerful technique in AI - Constraint Propagation. Constraint Propagation is all about using local constraints in a space (in the case of Sudoku, the constraints of each square) to dramatically reduce the search space. As we enforce each constraint, we see how it introduces new constraints for other parts of the board that can help us further reduce the number of possibilities. We have an entire lesson devoted to Constraint Propagation but let's quickly see some other famous AI problems it helps us solve.</p>
+<h5 id="map-coloring">Map Coloring</h5>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/map-coloring.jpg" alt="No two adjacent items can be the same color in the map coloring problem." class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>No two adjacent items can be the same color in the map coloring problem.</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>In the map coloring problem, we must find a way to color the map such that no two adjacent items share the same color. Indeed, we'll see how we use constraint propagation to use this simple constraint to find a solution just as we use such constraints to solve Sudoku.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h5 id="crypto-arithmetic-puzzles">Crypto-Arithmetic Puzzles</h5>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screen-shot-2017-01-22-at-12.20.03-pm.png" alt="In the above, what digits do T, W, O, F, U, and R represent?" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>In the above, what digits do T, W, O, F, U, and R represent?</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>In Crypto-Arithmetic puzzles, each letter represents a digit, and no two letters represent the same digit. None of the numbers start with a leading zero. Our goal is to find a mapping from letters to digits that satisfies the equations. Here again, we'll find that the constraints imposed by the equation allow us to create an intelligent algorithm to solve the problem via Constraint Propagation.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="applying-constraint-propagation-to-sudoku">Applying Constraint Propagation to Sudoku</h3>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Constraint Propagation</p></h3>
+  <video controls>
+  <source src="07. Constraint Propagation-aSYDBcbvC5Y.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="07. Constraint Propagation-aSYDBcbvC5Y.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="CN" src="07. Constraint Propagation-aSYDBcbvC5Y.zh-CN.vtt" label="CN">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Now that you see how we apply Constraint Propagation to this problem, let's try to code it! In the following quiz, combine the functions <code>eliminate</code> and <code>only_choice</code> to write the function <code>reduce_puzzle</code>, which receives as input an unsolved puzzle and applies our two constraints repeatedly in an attempt to solve it.</p>
+<p>Some things to watch out for:</p>
+<ul>
+<li>The function needs to stop if the puzzle gets solved. How to do this?</li>
+<li>What if the function doesn't solve the sudoku? Can we make sure the function quits when applying the two strategies stops making progress?</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+
+  <h4>Start Quiz:</h4>
+  <div>
+  <div class="nav nav-tabs nav-fill" role="tablist" id="question-tabs">
+    <a href="#247765-function-py" class="nav-item nav-link  active show" id="tab-247765-function-py" data-toggle="tab" role="tab"
+      aria-controls="247765-function-py" aria-selected="true">function.py</a>
+    <a href="#247765-utils-py" class="nav-item nav-link " id="tab-247765-utils-py" data-toggle="tab" role="tab"
+      aria-controls="247765-utils-py" aria-selected="false">utils.py</a>
+    <a href="#247765-solution-py" class="nav-item nav-link " id="tab-247765-solution-py" data-toggle="tab" role="tab"
+      aria-controls="247765-solution-py" aria-selected="false">solution.py</a>
+  </div>
+
+  <div class="tab-content" style="padding: 20px 0;" id="question-tab-contents">
+    <div class="tab-pane  active show" id="247765-function-py" aria-labelledby="tab-247765-function-py" role="tabpanel">
+      <pre><code></code>from utils import *
+
+def reduce_puzzle(values):
+    stalled &#x3D; False
+    while not stalled:
+        # Check how many boxes have a determined value
+        solved_values_before &#x3D; len([box for box in values.keys() if len(values[box]) &#x3D;&#x3D; 1])
+
+        # Your code here: Use the Eliminate Strategy
+
+        # Your code here: Use the Only Choice Strategy
+
+        # Check how many boxes have a determined value, to compare
+        solved_values_after &#x3D; len([box for box in values.keys() if len(values[box]) &#x3D;&#x3D; 1])
+        # If no new values were added, stop the loop.
+        stalled &#x3D; solved_values_before &#x3D;&#x3D; solved_values_after
+        # Sanity check, return False if there is a box with zero available values:
+        if len([box for box in values.keys() if len(values[box]) &#x3D;&#x3D; 0]):
+            return False
+    return values
+</code></pre>
+    </div>
+    <div class="tab-pane " id="247765-utils-py" aria-labelledby="tab-247765-utils-py" role="tabpanel">
+      <pre><code></code>rows &#x3D; &#x27;ABCDEFGHI&#x27;
+cols &#x3D; &#x27;123456789&#x27;
+
+def cross(a, b):
+    return [s+t for s in a for t in b]
+
+boxes &#x3D; cross(rows, cols)
+
+row_units &#x3D; [cross(r, cols) for r in rows]
+column_units &#x3D; [cross(rows, c) for c in cols]
+square_units &#x3D; [cross(rs, cs) for rs in (&#x27;ABC&#x27;,&#x27;DEF&#x27;,&#x27;GHI&#x27;) for cs in (&#x27;123&#x27;,&#x27;456&#x27;,&#x27;789&#x27;)]
+unitlist &#x3D; row_units + column_units + square_units
+units &#x3D; dict((s, [u for u in unitlist if s in u]) for s in boxes)
+peers &#x3D; dict((s, set(sum(units[s],[]))-set([s])) for s in boxes)
+
+def display(values):
+    &quot;&quot;&quot;
+    Display the values as a 2-D grid.
+    Input: The sudoku in dictionary form
+    Output: None
+    &quot;&quot;&quot;
+    width &#x3D; 1+max(len(values[s]) for s in boxes)
+    line &#x3D; &#x27;+&#x27;.join([&#x27;-&#x27;*(width*3)]*3)
+    for r in rows:
+        print(&#x27;&#x27;.join(values[r+c].center(width)+(&#x27;|&#x27; if c in &#x27;36&#x27; else &#x27;&#x27;)
+                      for c in cols))
+        if r in &#x27;CF&#x27;: print(line)
+    return
+
+def grid_values(grid):
+    &quot;&quot;&quot;
+    Convert grid into a dict of {square: char} with &#x27;123456789&#x27; for empties.
+    Input: A grid in string form.
+    Output: A grid in dictionary form
+            Keys: The boxes, e.g., &#x27;A1&#x27;
+            Values: The value in each box, e.g., &#x27;8&#x27;. If the box has no value, then the value will be &#x27;123456789&#x27;.
+    &quot;&quot;&quot;
+    chars &#x3D; []
+    digits &#x3D; &#x27;123456789&#x27;
+    for c in grid:
+        if c in digits:
+            chars.append(c)
+        if c &#x3D;&#x3D; &#x27;.&#x27;:
+            chars.append(digits)
+    assert len(chars) &#x3D;&#x3D; 81
+    return dict(zip(boxes, chars))
+    
+def eliminate(values):
+    &quot;&quot;&quot;
+    Go through all the boxes, and whenever there is a box with a value, eliminate this value from the values of all its peers.
+    Input: A sudoku in dictionary form.
+    Output: The resulting sudoku in dictionary form.
+    &quot;&quot;&quot;
+    solved_values &#x3D; [box for box in values.keys() if len(values[box]) &#x3D;&#x3D; 1]
+    for box in solved_values:
+        digit &#x3D; values[box]
+        for peer in peers[box]:
+            values[peer] &#x3D; values[peer].replace(digit,&#x27;&#x27;)
+    return values
+
+def only_choice(values):
+    &quot;&quot;&quot;
+    Go through all the units, and whenever there is a unit with a value that only fits in one box, assign the value to this box.
+    Input: A sudoku in dictionary form.
+    Output: The resulting sudoku in dictionary form.
+    &quot;&quot;&quot;
+    for unit in unitlist:
+        for digit in &#x27;123456789&#x27;:
+            dplaces &#x3D; [box for box in unit if digit in values[box]]
+            if len(dplaces) &#x3D;&#x3D; 1:
+                values[dplaces[0]] &#x3D; digit
+    return values</code></pre>
+    </div>
+    <div class="tab-pane " id="247765-solution-py" aria-labelledby="tab-247765-solution-py" role="tabpanel">
+      <pre><code></code>from utils import *
+
+def reduce_puzzle(values):
+    &quot;&quot;&quot;
+    Iterate eliminate() and only_choice(). If at some point, there is a box with no available values, return False.
+    If the sudoku is solved, return the sudoku.
+    If after an iteration of both functions, the sudoku remains the same, return the sudoku.
+    Input: A sudoku in dictionary form.
+    Output: The resulting sudoku in dictionary form.
+    &quot;&quot;&quot;
+    stalled &#x3D; False
+    while not stalled:
+        # Check how many boxes have a determined value
+        solved_values_before &#x3D; len([box for box in values.keys() if len(values[box]) &#x3D;&#x3D; 1])
+        # Use the Eliminate Strategy
+        values &#x3D; eliminate(values)
+        # Use the Only Choice Strategy
+        values &#x3D; only_choice(values)
+        # Check how many boxes have a determined value, to compare
+        solved_values_after &#x3D; len([box for box in values.keys() if len(values[box]) &#x3D;&#x3D; 1])
+        # If no new values were added, stop the loop.
+        stalled &#x3D; solved_values_before &#x3D;&#x3D; solved_values_after
+        # Sanity check, return False if there is a box with zero available values:
+        if len([box for box in values.keys() if len(values[box]) &#x3D;&#x3D; 0]):
+            return False
+    return values
+</code></pre>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>So, that seemed to work! You should have got this answer.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/easy-solution.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="08. Harder Sudoku.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Constraint Propagation')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

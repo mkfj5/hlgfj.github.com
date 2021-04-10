@@ -1,0 +1,378 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Encoding the Board</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Solving Sudoku With AI</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro.html">01. Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Solving a Sudoku.html">02. Solving a Sudoku</a>
+    </li>
+    <li class="">
+      <a href="03. Setting up the Board.html">03. Setting up the Board</a>
+    </li>
+    <li class="">
+      <a href="04. Encoding the Board.html">04. Encoding the Board</a>
+    </li>
+    <li class="">
+      <a href="05. Strategy 1 Elimination.html">05. Strategy 1: Elimination</a>
+    </li>
+    <li class="">
+      <a href="06. Strategy 2 Only Choice.html">06. Strategy 2: Only Choice</a>
+    </li>
+    <li class="">
+      <a href="07. Constraint Propagation.html">07. Constraint Propagation</a>
+    </li>
+    <li class="">
+      <a href="08. Harder Sudoku.html">08. Harder Sudoku</a>
+    </li>
+    <li class="">
+      <a href="09. Strategy 3 Search.html">09. Strategy 3: Search</a>
+    </li>
+    <li class="">
+      <a href="10. Coding the Solution.html">10. Coding the Solution</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">04. Encoding the Board</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/labels.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Now, in order to implement an agent, let's start by coding the board in Python. Then, we'll code the necessary functions to solve the Sudoku. We'll record the puzzles in two ways — as a <code>string</code> and as a <code>dictionary</code>.</p>
+<p>The string will consist of a concatenation of all the readings of the digits in the rows, taking the rows from top to bottom. If the puzzle is not solved, we can use a <code>.</code> as a placeholder for an empty box.</p>
+<p>For example, the unsolved puzzle at the above left will be written as:<br />
+<code>..3.2.6..9..3.5..1..18.64....81.29..7.......8..67.82....26.95..8..2.3..9..5.1.3..</code></p>
+<p>And the solved puzzle at the above right, will be recorded as:<br />
+<code>483921657967345821251876493548132976729564138136798245372689514814253769695417382</code></p>
+<p>We'll implement the dictionary as follows. The keys will be strings corresponding to the boxes — namely, <code>'A1'</code>, <code>'A2'</code>, …, <code>'I9'</code>. The values will either be the digit in each box (if there is one) or a <code>'.'</code> (if not).</p>
+<p>So, let's get started. First, we'll record rows and columns as strings.</p>
+<pre><code class="python language-python">rows = 'ABCDEFGHI'
+cols = '123456789'</code></pre>
+<p>We'll start by writing a helper function, <code>cross(a, b)</code>, which, given two strings — <code>a</code> and <code>b</code> — will return the list formed by all the possible concatenations of a letter <code>s</code> in string <code>a</code> with a letter <code>t</code> in string <code>b</code>.</p>
+<p>So <code>cross('abc', 'def')</code> will return <code>['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']</code>.</p>
+<pre><code class="python language-python">def cross(a, b):
+      return [s+t for s in a for t in b]</code></pre>
+<p>Now, to create the labels of the boxes:</p>
+<pre><code class="python language-python">boxes = cross(rows, cols)
+boxes =
+    ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9',
+     'B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B9',
+     'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9',
+     'D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'D9',
+     'E1', 'E2', 'E3', 'E4', 'E5', 'E6', 'E7', 'E8', 'E9',
+     'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9',
+     'G1', 'G2', 'G3', 'G4', 'G5', 'G6', 'G7', 'G8', 'G9',
+     'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'H7', 'H8', 'H9',
+     'I1', 'I2', 'I3', 'I4', 'I5', 'I6', 'I7', 'I8', 'I9']</code></pre>
+<p>And for the units:</p>
+<pre><code class="python language-python">row_units = [cross(r, cols) for r in rows]
+# Element example:
+# row_units[0] = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9']
+# This is the top most row.
+
+column_units = [cross(rows, c) for c in cols]
+# Element example:
+# column_units[0] = ['A1', 'B1', 'C1', 'D1', 'E1', 'F1', 'G1', 'H1', 'I1']
+# This is the left most column.
+
+square_units = [cross(rs, cs) for rs in ('ABC','DEF','GHI') for cs in ('123','456','789')]
+# Element example:
+# square_units[0] = ['A1', 'A2', 'A3', 'B1', 'B2', 'B3', 'C1', 'C2', 'C3']
+# This is the top left square.
+
+unitlist = row_units + column_units + square_units</code></pre>
+<p>Now, we're ready to turn the string representation of a sudoku into a dictionary representation. That'll be your turn to shine!</p>
+<h2 id="implement-grid_values">Implement <code>grid_values()</code></h2>
+<h3 id="a-function-to-convert-the-string-representation-of-a-puzzle-into-a-dictionary-form">A function to convert the string representation of a puzzle into a dictionary form.</h3>
+<p>Recall that for the string:</p>
+<pre><code class="python language-python">'..3.2.6..9..3.5..1..18.64....81.29..7.......8..67.82....26.95..8..2.3..9..5.1.3..'</code></pre>
+<p>…we'd like to return the dictionary:</p>
+<pre><code class="python language-python">{
+  'A1': '.'
+  'A2': '.',
+  'A3': '3',
+  'A4': '.',
+  'A5': '2',
+  ...
+  'I9': '.'
+}</code></pre>
+<p>Implement a function called <code>grid_values()</code> that performs this task.</p>
+<p>Following is an example of what you should see when you implement this function correctly. The <code>display()</code> function shows a nice visual representation of the dictionary, and has been provided in <code>utils.py</code>.</p>
+<pre><code class="python language-python">&gt;&gt;&gt; from utils import display
+&gt;&gt;&gt; display(grid_values('..3.2.6..9..3.5..1..18.64....81.29..7.......8..67.82....26.95..8..2.3..9..5.1.3..'))
+. . 3 |. 2 . |6 . . 
+9 . . |3 . 5 |. . 1 
+. . 1 |8 . 6 |4 . . 
+------+------+------
+. . 8 |1 . 2 |9 . . 
+7 . . |. . . |. . 8 
+. . 6 |7 . 8 |2 . . 
+------+------+------
+. . 2 |6 . 9 |5 . . 
+8 . . |2 . 3 |. . 9 
+. . 5 |. 1 . |3 . . </code></pre>
+<p><strong>Note</strong>:</p>
+<ul>
+<li>All your code should go in <code>function.py</code>.</li>
+<li>You can use the helper functions and variables defined in <code>utils.py</code>.</li>
+<li>Hit <strong>Test Run</strong> to execute your code and <strong>Submit</strong> to verify it against our grader.</li>
+<li>Once you're done, compare your implementation with ours in <code>solution.py</code>.</li>
+</ul>
+<p>Give it a shot!</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+
+  <h4>Start Quiz:</h4>
+  <div>
+  <div class="nav nav-tabs nav-fill" role="tablist" id="question-tabs">
+    <a href="#257321-function-py" class="nav-item nav-link  active show" id="tab-257321-function-py" data-toggle="tab" role="tab"
+      aria-controls="257321-function-py" aria-selected="true">function.py</a>
+    <a href="#257321-utils-py" class="nav-item nav-link " id="tab-257321-utils-py" data-toggle="tab" role="tab"
+      aria-controls="257321-utils-py" aria-selected="false">utils.py</a>
+    <a href="#257321-solution-py" class="nav-item nav-link " id="tab-257321-solution-py" data-toggle="tab" role="tab"
+      aria-controls="257321-solution-py" aria-selected="false">solution.py</a>
+  </div>
+
+  <div class="tab-content" style="padding: 20px 0;" id="question-tab-contents">
+    <div class="tab-pane  active show" id="257321-function-py" aria-labelledby="tab-257321-function-py" role="tabpanel">
+      <pre><code></code>from utils import *
+
+# &#x60;grid&#x60; is defined in the test code scope as the following:
+# (note: changing the value here will _not_ change the test code)
+# grid &#x3D; &#x27;..3.2.6..9..3.5..1..18.64....81.29..7.......8..67.82....26.95..8..2.3..9..5.1.3..&#x27;
+
+def grid_values(grid):
+    &quot;&quot;&quot;Convert grid string into {&lt;box&gt;: &lt;value&gt;} dict with &#x27;.&#x27; value for empties.
+
+    Args:
+        grid: Sudoku grid in string form, 81 characters long
+    Returns:
+        Sudoku grid in dictionary form:
+        - keys: Box labels, e.g. &#x27;A1&#x27;
+        - values: Value in corresponding box, e.g. &#x27;8&#x27;, or &#x27;.&#x27; if it is empty.
+    &quot;&quot;&quot;
+    pass
+</code></pre>
+    </div>
+    <div class="tab-pane " id="257321-utils-py" aria-labelledby="tab-257321-utils-py" role="tabpanel">
+      <pre><code></code>rows &#x3D; &#x27;ABCDEFGHI&#x27;
+cols &#x3D; &#x27;123456789&#x27;
+
+def cross(a, b):
+    return [s+t for s in a for t in b]
+
+boxes &#x3D; cross(rows, cols)
+
+row_units &#x3D; [cross(r, cols) for r in rows]
+column_units &#x3D; [cross(rows, c) for c in cols]
+square_units &#x3D; [cross(rs, cs) for rs in (&#x27;ABC&#x27;,&#x27;DEF&#x27;,&#x27;GHI&#x27;) for cs in (&#x27;123&#x27;,&#x27;456&#x27;,&#x27;789&#x27;)]
+unitlist &#x3D; row_units + column_units + square_units
+units &#x3D; dict((s, [u for u in unitlist if s in u]) for s in boxes)
+peers &#x3D; dict((s, set(sum(units[s],[]))-set([s])) for s in boxes)
+
+def display(values):
+    &quot;&quot;&quot;
+    Display the values as a 2-D grid.
+    Input: The sudoku in dictionary form
+    Output: None
+    &quot;&quot;&quot;
+    width &#x3D; 1+max(len(values[s]) for s in boxes)
+    line &#x3D; &#x27;+&#x27;.join([&#x27;-&#x27;*(width*3)]*3)
+    for r in rows:
+        print(&#x27;&#x27;.join(values[r+c].center(width)+(&#x27;|&#x27; if c in &#x27;36&#x27; else &#x27;&#x27;)
+                      for c in cols))
+        if r in &#x27;CF&#x27;: print(line)
+    return
+</code></pre>
+    </div>
+    <div class="tab-pane " id="257321-solution-py" aria-labelledby="tab-257321-solution-py" role="tabpanel">
+      <pre><code></code>from utils import *
+
+def grid_values(grid):
+    &quot;&quot;&quot;Convert grid string into {&lt;box&gt;: &lt;value&gt;} dict with &#x27;.&#x27; value for empties.
+
+    Args:
+        grid: Sudoku grid in string form, 81 characters long
+    Returns:
+        Sudoku grid in dictionary form:
+        - keys: Box labels, e.g. &#x27;A1&#x27;
+        - values: Value in corresponding box, e.g. &#x27;8&#x27;, or &#x27;.&#x27; if it is empty.
+    &quot;&quot;&quot;
+    assert len(grid) &#x3D;&#x3D; 81, &quot;Input grid must be a string of length 81 (9x9)&quot;
+    return dict(zip(boxes, grid))
+</code></pre>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="05. Strategy 1 Elimination.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Encoding the Board')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

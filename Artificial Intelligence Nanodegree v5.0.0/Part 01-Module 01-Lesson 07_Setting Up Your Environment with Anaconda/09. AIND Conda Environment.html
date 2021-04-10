@@ -1,0 +1,205 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AIND Conda Environment</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Setting Up Your Environment with Anaconda</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Demonstration.html">01. Demonstration</a>
+    </li>
+    <li class="">
+      <a href="02. What is Anaconda.html">02. What is Anaconda?</a>
+    </li>
+    <li class="">
+      <a href="03. Installing Anaconda.html">03. Installing Anaconda</a>
+    </li>
+    <li class="">
+      <a href="04. Managing Packages.html">04. Managing Packages</a>
+    </li>
+    <li class="">
+      <a href="05. Managing Environments.html">05. Managing Environments</a>
+    </li>
+    <li class="">
+      <a href="06. More Environment Actions.html">06. More Environment Actions</a>
+    </li>
+    <li class="">
+      <a href="07. Summary and Best Practices.html">07. Summary and Best Practices</a>
+    </li>
+    <li class="">
+      <a href="08. Python versions at Udacity.html">08. Python versions at Udacity</a>
+    </li>
+    <li class="">
+      <a href="09. AIND Conda Environment.html">09. AIND Conda Environment</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">09. AIND Conda Environment</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="ai-nanodegree-conda-environment">AI Nanodegree Conda Environment</h2>
+<p>Follow these instructions to create and configure your environment for the AI Nanodegree program. An environment file for supported OSes, which will install Python 3 and all the necessary packages used in the AI Nanodegree program is included in the supporting materials below. (The same file should support Windows, Linux, and OSX.)</p>
+<h3 id="create-the-environment">Create the Environment</h3>
+<ol>
+<li>Download the <code>aind-universal.yml</code> file at the bottom of this page (right click, save file). <strong>NOTE:</strong> Some browsers will automatically append a ".txt" extension to the yml file; if your browser does this, then you will need to remove the extension or alter the creation command to correct it.</li>
+<li>Open a terminal and run <code>conda env create -f aind-universal-v4.yml</code> to create the environment.</li>
+<li>Activate the environment<ul>
+<li>run <code>source activate aind</code> (OSX &amp; Linux)</li>
+<li>run <code>activate aind</code> (Windows)</li></ul></li>
+</ol>
+<p><strong>WARNING: SOME OPERATING SYSTEMS MAY PRODUCE ERRORS WHILE INSTALLING Z3 -- DO NOT PANIC.</strong> The exercise using Z3 can be run directly in the classroom.</p>
+<h3 id="resolving-installation-errors">Resolving Installation Errors</h3>
+<p>It can be challenging to configure Z3, particularly on some versions of Windows. <strong>Windows users are strongly encouraged to complete the CSP exercise in the classroom workspace in order to avoid installing this package.</strong> You may use the information below to attempt installing Z3 on Windows, but that platform is not well-supported by the Z3 library maintainers.</p>
+<p>NOTE: You may need a C/C++ compiler to build some of the required packages if your system cannot find an installable binary. OSX &amp; Linux users can use gcc &amp; g++/clang (OSX users will need the XCode Command Line Tools available by running <code>xcode-select --install</code> from a Terminal.) Windows users can download &amp; install Visual C++ Build Tools <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools" rel="noopener noreferrer" target="_blank">here</a>. </p>
+<p>Activate the conda environment (<code>source activate aind</code> or <code>activate aind</code>, depending on your OS), then try installing with <code>pip</code>:</p>
+<pre><code>(aind) ~$ pip install z3-solver</code></pre>
+<h2 id="a-word-on-python-versions">A Word on Python Versions</h2>
+<p>We suggest using <strong>Python 3.5</strong> for cross-platform compatibility of support libraries for all projects and exercises, however the Udacity <em>classroom quizzes</em> currently use Python 3.4.3 and Workspaces use python 3.6. The Project Assistant (where much of your code will be scored) uses Python 3.5. The conda environment will install the correct version, but you should still remain mindful, as the base anaconda python installation is Python 3.6. You should be mindful of using language features that are specific to new versions that will raise SyntaxErrors or create other runtime issues (you cannot depend on the order of dictionary keys, for example).</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('09. AIND Conda Environment')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

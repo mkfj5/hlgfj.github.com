@@ -1,0 +1,133 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.395
+A lot of times, you'll be working with projects that require different library versions,
+
+00:00:04.395 --> 00:00:07.310
+or different versions of Python even.
+
+00:00:07.310 --> 00:00:10.165
+In my experience and many other people's,
+
+00:00:10.165 --> 00:00:14.940
+it's really difficult to get all these versions to play nicely together on one computer.
+
+00:00:14.940 --> 00:00:17.685
+To solve this problem, we use virtual environments,
+
+00:00:17.685 --> 00:00:21.019
+managed with libraries such as virtualenv.
+
+00:00:21.019 --> 00:00:24.855
+Virtual environments let you separate libraries required by different projects,
+
+00:00:24.855 --> 00:00:27.330
+so you can avoid conflicts.
+
+00:00:27.330 --> 00:00:29.625
+If you're working with data though,
+
+00:00:29.625 --> 00:00:31.405
+Anaconda is the way to go.
+
+00:00:31.405 --> 00:00:37.625
+Anaconda is a distribution of libraries in softwares specifically built for data science.
+
+00:00:37.625 --> 00:00:39.490
+It comes with conda,
+
+00:00:39.490 --> 00:00:44.205
+a package and environment manager that will make your life a thousand times better.
+
+00:00:44.205 --> 00:00:47.170
+Now, I'll show you a bit about using conda.
+
+00:00:47.170 --> 00:00:50.984
+I generally create a new environment for each project I start,
+
+00:00:50.984 --> 00:00:54.715
+this way, I can keep the necessary package versions separate.
+
+00:00:54.715 --> 00:00:57.965
+For example, if I want to start a new project using Python 3,
+
+00:00:57.965 --> 00:01:00.305
+which you should be using for all new projects,
+
+00:01:00.305 --> 00:01:02.819
+I can create an environment for it.
+
+00:01:02.819 --> 00:01:06.345
+Type in conda create.
+
+00:01:06.345 --> 00:01:12.680
+Give it a name tea_facts.
+
+00:01:12.680 --> 00:01:14.725
+But that tea_facts about T,
+
+00:01:14.725 --> 00:01:18.923
+and the Python version 3,
+
+00:01:18.923 --> 00:01:26.234
+and Enter.
+
+00:01:26.234 --> 00:01:27.730
+This will create the environment for me.
+
+00:01:27.730 --> 00:01:36.593
+Now, I can enter the environment like so, source activate tea_facts.
+
+00:01:36.593 --> 00:01:39.515
+This is the command on Mac and Linux,
+
+00:01:39.515 --> 00:01:42.100
+on Windows is just activate.
+
+00:01:42.100 --> 00:01:43.445
+Now, I'm in the environment,
+
+00:01:43.445 --> 00:01:46.085
+you can see the name in the prompt.
+
+00:01:46.085 --> 00:01:49.190
+And you can see here, the packages that are installed.
+
+00:01:49.190 --> 00:01:51.185
+These are just the default packages.
+
+00:01:51.185 --> 00:01:54.870
+Now, I can start installing what I want for this project.
+
+00:01:54.870 --> 00:01:57.800
+Let's install NumPy and pandas for working with
+
+00:01:57.800 --> 00:02:03.340
+the tea data and matplotlib for making visualizations.
+
+00:02:14.050 --> 00:02:18.180
+Then I'll install Jupyter Notebooks,
+
+00:02:18.180 --> 00:02:33.099
+which I like to use to develop code.
+
+00:02:33.099 --> 00:02:42.870
+And again, looking at the install packages,
+
+00:02:42.870 --> 00:02:45.505
+I have all these ready to use for my project.
+
+00:02:45.505 --> 00:02:48.240
+And these are separated from other environments.
+
+00:02:48.240 --> 00:02:52.535
+So, I won't run into any conflicting conversion issues.
+
+00:02:52.535 --> 00:02:55.820
+Okay. Now it's your turn to learn how to use conda for your own projects.
+
+00:02:55.820 --> 00:03:00.000
+This lesson will take around 30 minutes up to an hour. Have fun.
+

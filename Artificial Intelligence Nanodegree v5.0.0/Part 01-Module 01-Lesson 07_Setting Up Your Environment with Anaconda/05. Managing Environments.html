@@ -1,0 +1,283 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Managing Environments</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Setting Up Your Environment with Anaconda</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Demonstration.html">01. Demonstration</a>
+    </li>
+    <li class="">
+      <a href="02. What is Anaconda.html">02. What is Anaconda?</a>
+    </li>
+    <li class="">
+      <a href="03. Installing Anaconda.html">03. Installing Anaconda</a>
+    </li>
+    <li class="">
+      <a href="04. Managing Packages.html">04. Managing Packages</a>
+    </li>
+    <li class="">
+      <a href="05. Managing Environments.html">05. Managing Environments</a>
+    </li>
+    <li class="">
+      <a href="06. More Environment Actions.html">06. More Environment Actions</a>
+    </li>
+    <li class="">
+      <a href="07. Summary and Best Practices.html">07. Summary and Best Practices</a>
+    </li>
+    <li class="">
+      <a href="08. Python versions at Udacity.html">08. Python versions at Udacity</a>
+    </li>
+    <li class="">
+      <a href="09. AIND Conda Environment.html">09. AIND Conda Environment</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">05. Managing Environments</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="managing-environments">Managing Environments</h1>
+<p>As you saw on the previous page, <code>conda</code> can be used to create environments to isolate your projects. To create an environment, use the following command in your Terminal/Anaconda Prompt. </p>
+<pre><code>conda create -n env_name [python=X.X] [LIST_OF_PACKAGES]</code></pre>
+<p><br />
+Here <code>-n env_name</code> sets the name of your environment (<code>-n</code> for name) and <code>LIST_OF_PACKAGES</code> is the list of packages you want to be installed in the environment. If you wish to install a specific version of Python to be installed, say 3.7, use <code>python=3.7</code>. For example, to create an environment named <code>my_env</code> with Python 3.7, and install NumPy and Keras in it, use the command below. </p>
+<pre><code>conda create -n my_env python=3.7 numpy Keras</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/conda-create-env.png" alt="Create &#x60;my_env&#x60; environment with the NumPy package in it. " class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Create <code>my_env</code> environment with the NumPy package in it. </p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>When creating an environment, you can specify which version of Python to install in the environment. This is useful when you're working with code in both Python 2.x and Python 3.x. To create an environment with a specific Python version, use either of the following commands:</p>
+<pre><code>conda create -n py3_env python=3</code></pre>
+<p><br />
+or </p>
+<pre><code>conda create -n py2_env python=2</code></pre>
+<p>I actually have both of these environments on my personal computer. I use them as general environments not tied to any specific project, but rather for general work with each Python version easily accessible. These commands will install the most recent version of Python 3 and 2, respectively. To install a specific version, use <code>conda create -n py python=3.6</code> for Python 3.6.</p>
+<h2 id="entering-activate-an-environment">Entering (Activate) an environment</h2>
+<p>Once you have an environment created, you can enter into it by using: </p>
+<pre><code class="bash language-bash"># For  conda 4.6 and later versions on Linux/macOS/Windows, use
+conda activate my_env
+#For conda versions prior to 4.6 on Linux/macOS, use 
+source activate my_env
+#For conda versions prior to 4.6 on Windows, use 
+activate my_env</code></pre>
+<video controls loop autoplay>
+<source src="media/unnamed-198080-0.mp4" type="video/mp4">
+</video>
+<p>When you're in the environment, you'll see the environment name in the terminal prompt. Something like <code>(my_env) ~ $</code>. </p>
+<h2 id="list-the-installed-packages-in-the-current-environment">List the Installed Packages in the Current Environment</h2>
+<p>The environment has only a few packages installed by default, plus the ones you installed when creating it. You can check this out with </p>
+<pre><code>conda list</code></pre>
+<p>Installing packages in the environment is the same as before: <code>conda install package_name</code>. Only this time, the specific packages you install will only be available when you're in the environment. </p>
+<h2 id="deactivate-an-environment">Deactivate an Environment</h2>
+<p>To leave the environment, type <code>conda deactivate</code> (on OSX/Linux) or <code>deactivate</code> (Windows).</p>
+<pre><code class="bash language-bash"># For  conda 4.6 and later versions on Linux/macOS/Windows, use
+conda deactivate
+#For conda versions prior to 4.6 on Linux/macOS, use 
+source deactivate
+#For conda versions prior to 4.6 on Windows, use 
+deactivate</code></pre>
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="https://docs.python.org/3/tutorial/venv.html" rel="noopener noreferrer" target="_blank">Managing virtual environments and packages with <code>pip</code> </a> </li>
+<li><a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#managing-environments" rel="noopener noreferrer" target="_blank">Managing virtual environments with <code>conda</code></a></li>
+<li><a href="https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf" rel="noopener noreferrer" target="_blank">A comprehensive cheat sheet of <strong>Conda 4.6</strong> commands</a>  </li>
+<li><a href="https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf" rel="noopener noreferrer" target="_blank">A comprehensive cheat sheet of Conda version prior to 4.6 commands</a> </li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Create environment quiz</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What command would you use to create an environment named <code>data</code> installed with Python 3.6, numpy, and pandas?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1477602911049" name="199392" id="a1477602911049">
+        <label for="a1477602911049"><p>conda env create -n data python=3.6 numpy pandas</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1477603599067" name="199392" id="a1477603599067">
+        <label for="a1477603599067"><p>conda create data python=3.6 numpy pandas</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1477603600155" name="199392" id="a1477603600155">
+        <label for="a1477603600155"><p>conda create -n data python=3.6</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1477603618435" name="199392" id="a1477603618435">
+        <label for="a1477603618435"><p>conda create -n data python=3.6 numpy pandas</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    conda create -n data python=3.6 numpy pandas
+  </details>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="06. More Environment Actions.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Managing Environments')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

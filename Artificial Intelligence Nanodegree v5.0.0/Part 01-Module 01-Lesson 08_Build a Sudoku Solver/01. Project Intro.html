@@ -1,0 +1,222 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project Intro</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Build a Sudoku Solver</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Project Intro.html">01. Project Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Project Workspace.html">02. Project Workspace</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Build a Sudoku Solver.html">Project Description - Build a Sudoku Solver</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Build a Sudoku Solver.html">Project Rubric - Build a Sudoku Solver</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">01. Project Intro</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="introduction">Introduction</h2>
+<p>In this project, you will extend the Sudoku-solving agent developed in the classroom lectures to solve diagonal Sudoku puzzles. A diagonal Sudoku puzzle is identical to traditional Sudoku puzzles with the added constraint that the boxes on the two main diagonals of the board must also contain the digits 1-9 in each cell (just like the rows, columns, and 3x3 blocks). You will also implement another strategy called "Naked Twins", described <a href="http://www.sudokudragon.com/tutorialnakedtwins.htm" rel="noopener noreferrer" target="_blank">here</a>.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/sudokustrategy.png" alt="Pseudocode for the naked twins Sudoku strategy." class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Pseudocode for the naked twins Sudoku strategy.</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="getting-started">Getting Started</h2>
+<p>The easiest way to complete the project is to click "next" below to open a Workspace that has already been configured with the required files and libraries to support the project. If you use the Workspace, you do NOT need to perform any of the setup steps outlined below ( 1 - 3 steps).</p>
+<p>If you would prefer to complete the exercise in your own local environment, then follow the steps below:</p>
+<p><strong>Setup</strong></p>
+<ol>
+<li><p>Follow the instructions from before the first project to install and activate the aind conda environment in a terminal window.</p></li>
+<li><p>Clone the AIND coursework files from github (or open your local copy)</p></li>
+</ol>
+<pre><code>(aind) $ git clone https://github.com/udacity/artificial-intelligence</code></pre>
+<ol start="3">
+<li>Open the artificial-intelligence/Projects/1_Sudoku folder in your preferred IDE or text editor, and follow the instructions in the project readme to complete the TODO items </li>
+</ol>
+<p>**Running Test Cases **</p>
+<ol start="4">
+<li>You can run a few local test cases by running the following command within the project folder in your terminal:</li>
+</ol>
+<pre><code>(aind) Projects/1_Sudoku $ python -m unittest -v</code></pre>
+<ol start="5">
+<li>You must pass a more challenging set of test cases hosted on a remote server before you can complete the project by running the following command within the project folder in your terminal. You can find more information on the Project Assistant <a href="https://sites.google.com/knowlabs.com/project-assistant/home" rel="noopener noreferrer" target="_blank">here</a>, including the PA FAQ <a href="https://project-assistant.udacity.com/faq" rel="noopener noreferrer" target="_blank">here</a>, and the PA Troubleshooting Guide <a href="https://sites.google.com/knowlabs.com/project-assistant/home/troubleshooting" rel="noopener noreferrer" target="_blank">here</a>.  </li>
+</ol>
+<pre><code>(aind) Projects/1_Sudoku $ udacity submit</code></pre>
+<p><strong>NOTE:</strong> Students who authenticate with Facebook or Google accounts <em>must</em> follow the instructions on the FAQ page to obtain an authentication token.</p>
+<p><strong>Submitting the work</strong></p>
+<ol start="6">
+<li>Once your code passes all of the local test cases and all of the remote test cases from running <code>udacity submit</code>, you need to submit the <strong>exact</strong> zip file created by the remote test script (named something like "sudoku-######.zip") in the classroom for this project.</li>
+</ol>
+<h2 id="evaluation">Evaluation</h2>
+<p>This project is evaluated according to the rubric <a href="https://review.udacity.com/#!/rubrics/1791/view" rel="noopener noreferrer" target="_blank">here</a>. You will receive full credit on this project for passing all of the test cases; unlike the other projects in the AIND program there is no manual code review for submissions that pass all test cases for the Sudoku solver.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="02. Project Workspace.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('01. Project Intro')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
