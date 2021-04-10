@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.410 --> 00:00:02.520
+The answer is this one,
+
+00:00:02.520 --> 00:00:05.939
+220 is less than 229 or 239.
+
+00:00:05.940 --> 00:00:07.605
+Take it out the frontier,
+
+00:00:07.605 --> 00:00:09.509
+put it on the explored,
+
+00:00:09.509 --> 00:00:15.539
+add in two more pairs and sum them up.
+
+00:00:15.539 --> 00:00:19.519
+So 220 plus 146 is
+
+00:00:19.519 --> 00:00:28.869
+366 and 220 plus 97 is 317.
+
+00:00:30.109 --> 00:00:33.530
+Now notice that we're closing in on Bucharest.
+
+00:00:33.530 --> 00:00:35.855
+We've got two neighbors almost there,
+
+00:00:35.854 --> 00:00:38.679
+but neither of them is their turn yet.
+
+00:00:38.679 --> 00:00:42.454
+Instead, the cheapest path is this one over here.
+
+00:00:42.454 --> 00:00:44.710
+So move it to the explored list,
+
+00:00:44.710 --> 00:00:53.265
+add 70 to the path costs so far and we get 299.
+
+00:00:53.265 --> 00:00:59.789
+Now the cheapest node is 239 here, so we expand.
+
+00:00:59.789 --> 00:01:05.534
+Finally, hint to Bucharest at a cost of 460,
+
+00:01:05.534 --> 00:01:08.729
+and now the question is, are we done?
+
+00:01:08.730 --> 00:01:10.829
+Can we terminate the algorithm?
+

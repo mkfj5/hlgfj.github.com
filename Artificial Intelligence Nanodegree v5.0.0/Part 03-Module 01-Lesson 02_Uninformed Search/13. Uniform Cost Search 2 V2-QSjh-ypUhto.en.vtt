@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.070 --> 00:00:04.035
+Of the three paths on the frontier,
+
+00:00:04.035 --> 00:00:07.019
+we have ones with cost of 146,
+
+00:00:07.019 --> 00:00:11.250
+140, and 118 and that's the cheapest.
+
+00:00:11.250 --> 00:00:12.810
+So this one gets expanded,
+
+00:00:12.810 --> 00:00:14.550
+we take it up to frontier,
+
+00:00:14.550 --> 00:00:16.545
+move it to explored,
+
+00:00:16.545 --> 00:00:18.960
+add in its successors.
+
+00:00:18.960 --> 00:00:25.679
+In this case it's only one and that has a path total of 229.
+
+00:00:25.679 --> 00:00:27.539
+Which path do we expand next?
+
+00:00:27.539 --> 00:00:31.155
+Well, we got 146, 140, and 229.
+
+00:00:31.155 --> 00:00:33.594
+So 140 is the lowest,
+
+00:00:33.594 --> 00:00:34.939
+take it up frontier,
+
+00:00:34.939 --> 00:00:36.649
+put it on explored,
+
+00:00:36.649 --> 00:00:38.619
+add in this path,
+
+00:00:38.619 --> 00:00:40.544
+the total cost 220,
+
+00:00:40.545 --> 00:00:44.385
+add this path with total cost 239,
+
+00:00:44.384 --> 00:00:46.350
+and now the question is,
+
+00:00:46.350 --> 00:00:49.149
+which path do we expand next?
+

@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.970 --> 00:00:07.434
+Cheapest-First says that we pick the path with the lowest total cost,
+
+00:00:07.434 --> 00:00:09.115
+and that would be this path.
+
+00:00:09.115 --> 00:00:11.000
+It has a cost of 75,
+
+00:00:11.000 --> 00:00:15.690
+compared to the cost of 118 and 140 for the other paths.
+
+00:00:15.689 --> 00:00:17.439
+So we get here,
+
+00:00:17.440 --> 00:00:20.320
+we take that path off the frontier,
+
+00:00:20.320 --> 00:00:22.774
+put it on the explored list,
+
+00:00:22.774 --> 00:00:24.864
+add in its neighbors,
+
+00:00:24.864 --> 00:00:26.979
+not going back to a rod,
+
+00:00:26.980 --> 00:00:29.109
+but adding in this new path,
+
+00:00:29.109 --> 00:00:31.719
+summing up the total cost of that path,
+
+00:00:31.719 --> 00:00:38.545
+71 plus 75 is 146 for this path.
+
+00:00:38.545 --> 00:00:40.179
+Now the question is,
+
+00:00:40.179 --> 00:00:43.310
+which path gets expanded next?
+
