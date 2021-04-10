@@ -1,0 +1,1708 @@
+{
+  "data": {
+    "lesson": {
+      "id": 559369,
+      "key": "3ac59f16-d59d-4cc4-8663-6c1d3fb778da",
+      "title": "Inference in Bayes Nets",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Sebastian explains probabilistic inference using Bayes Nets, i.e. how to use evidence to calculate probabilities from the network.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/3ac59f16-d59d-4cc4-8663-6c1d3fb778da/559369/1538955312065/Inference+in+Bayes+Nets+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/3ac59f16-d59d-4cc4-8663-6c1d3fb778da/559369/1538955305575/Inference+in+Bayes+Nets+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 255697,
+          "key": "ffba7f82-b226-453a-b1b9-fde306ebdf85",
+          "title": "Probabilistic Inference",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ffba7f82-b226-453a-b1b9-fde306ebdf85",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269247,
+              "key": "93fc7660-7dff-4ecb-8659-d5174704adec",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Probabilistic Inference\nIn this lesson, you will learn about probabilistic inference using Bayes Nets, i.e. how to answer questions that you are interested in, given certain inputs.\n\nWe will first look into **enumeration** algorithm to make exact inferences. The enumeration algorithm takes *query* and *bayes network* as the inputs and output a *probability distribution* after computing the sums of products of conditional probabilities from the network. However, enumeration is hard to compute on large networks. We will learn **variable elimination** algorithm to reduce the computations. \n\nHowever, to compute *exact inferences* by enumeration and variable elimination can be computationally expensive in large and well-connected networks. We can use **samplings** to *approximate inferences* instead. We will cover different sampling techniques, such as *direct sampling*, *rejection sampling*, *likelihood weighting*, and *Gibbs sampling*.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 255698,
+          "key": "62e88060-4747-4201-9bf6-5ba235f3e74a",
+          "title": "Quiz: Overview and Example",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "62e88060-4747-4201-9bf6-5ba235f3e74a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269110,
+              "key": "cf5fbf99-642c-492d-9f92-e4df049aa847",
+              "title": "01 - Overview And Example V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "YZt5PKPVvCg",
+                "china_cdn_id": "YZt5PKPVvCg.mp4"
+              }
+            },
+            {
+              "id": 255781,
+              "key": "c1bd8343-bad5-421e-89af-c00c12c302e8",
+              "title": "Overview And Example 1",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "c1bd8343-bad5-421e-89af-c00c12c302e8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Is node B an Evidence node, a Hidden node, or a Query node?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Evidence",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Hidden",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Query",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255782,
+              "key": "27ad7c8c-d25f-4a8e-92f2-fe6cdef27199",
+              "title": "Overview and Example 2",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "27ad7c8c-d25f-4a8e-92f2-fe6cdef27199",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": " Is node E an Evidence node, a Hidden node, or a Query node?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Evidence",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Hidden",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Query",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255783,
+              "key": "91bb8033-6bfb-40fb-ab5a-ac3685eb0081",
+              "title": "Overview And Example 3",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "91bb8033-6bfb-40fb-ab5a-ac3685eb0081",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Is node A an Evidence node, a Hidden node, or a Query node?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Evidence",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Hidden",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Query",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255784,
+              "key": "81c3b12e-97f8-4ae9-bc36-4ee9c144386a",
+              "title": "Overview And Example 4",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "81c3b12e-97f8-4ae9-bc36-4ee9c144386a",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Is node J an Evidence node, a Hidden node, or a Query node?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Evidence",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Hidden",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Query",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255785,
+              "key": "caa662cd-d965-403f-9aa2-124b6df85b23",
+              "title": "Overview And Example 5",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "caa662cd-d965-403f-9aa2-124b6df85b23",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Is node M an Evidence node, a Hidden node, or a Query node?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Evidence",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Hidden",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Query",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 269111,
+              "key": "63eea313-0609-47c1-8eac-c8103e496e85",
+              "title": "02 - Overview And Example Solution V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "MQqZozRhDng",
+                "china_cdn_id": "MQqZozRhDng.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255699,
+          "key": "32d6c8ee-e14f-49b0-b194-23ead457098d",
+          "title": "Quiz: Enumeration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "32d6c8ee-e14f-49b0-b194-23ead457098d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 279115,
+              "key": "d8e0512e-fb26-4162-9353-0b463ab4121d",
+              "title": "03 - Enumeration V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "nJqloQLLYaI",
+                "china_cdn_id": "nJqloQLLYaI.mp4"
+              }
+            },
+            {
+              "id": 255786,
+              "key": "1d96b952-8465-494c-9c2c-1c5eebd67f16",
+              "title": "Enumeration 1",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "1d96b952-8465-494c-9c2c-1c5eebd67f16",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the first term?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*.001\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.001\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255787,
+              "key": "521964a4-7c7f-40c8-ab93-c94b4f51365b",
+              "title": "Enumeration 2",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "521964a4-7c7f-40c8-ab93-c94b4f51365b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the second term?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*.002\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.002\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255788,
+              "key": "bc0f60a7-9419-4475-912b-2acb8e3da0a6",
+              "title": "Enumeration 3",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "bc0f60a7-9419-4475-912b-2acb8e3da0a6",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the third term?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*.95\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.95\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255789,
+              "key": "52bbd81f-79ac-4584-85df-fc395cd64163",
+              "title": "Enumeration 4",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "52bbd81f-79ac-4584-85df-fc395cd64163",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the fourth term?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*.9\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.9\\s*$"
+                  },
+                  {
+                    "expression": ".^\\s*90\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.90\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255790,
+              "key": "adaf86e9-3e78-4e6a-a0d1-d147269f444a",
+              "title": "Enumeration 5",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "adaf86e9-3e78-4e6a-a0d1-d147269f444a",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the fifth term?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*.7\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.7\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.70\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.70\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255791,
+              "key": "8ba9eaf6-97f1-410e-ba60-68ddea2a453f",
+              "title": "Enumeration 6",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "8ba9eaf6-97f1-410e-ba60-68ddea2a453f",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the product of the five terms?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*.000001197\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.000001197\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 279116,
+              "key": "a9151238-4288-4347-81db-2c05436869b0",
+              "title": "04 - Enumeration Solution V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "POwkCkWVfMM",
+                "china_cdn_id": "POwkCkWVfMM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255700,
+          "key": "bcf661c5-2c93-4f97-b379-5b642145bcdf",
+          "title": "Quiz: Speeding Up Enumeration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bcf661c5-2c93-4f97-b379-5b642145bcdf",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 279117,
+              "key": "54ad2b38-f253-49b6-bbbc-99fc6b6a73f9",
+              "title": "05 - Speeding Up Enumeration V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "oG8Ivz5wfHQ",
+                "china_cdn_id": "oG8Ivz5wfHQ.mp4"
+              }
+            },
+            {
+              "id": 255792,
+              "key": "dc298424-a0d7-4444-ab37-856de0405145",
+              "title": "Speeding Up Enumeration",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "dc298424-a0d7-4444-ab37-856de0405145",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Given these two nodes, is the node for Mary Calls dependent or independent of the node for John Calls?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Dependent",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Independent",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 269114,
+              "key": "ebd105cb-ee86-4f99-9755-e069ae98cc8a",
+              "title": "06 - Speeding Up Enumeration Solution V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "C-xIAwQiPM0",
+                "china_cdn_id": "C-xIAwQiPM0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255701,
+          "key": "175de0f1-29f7-4705-b8eb-178e6015265c",
+          "title": "Quiz: Speeding Up Enumeration 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "175de0f1-29f7-4705-b8eb-178e6015265c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 257708,
+              "key": "f8edb01f-2e68-483c-a33b-4cdac04dea29",
+              "title": "Speeding Up Enumeration 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "mXbZzXLtqMU",
+                "china_cdn_id": "mXbZzXLtqMU.mp4"
+              }
+            },
+            {
+              "id": 255793,
+              "key": "3771f305-497f-42f4-8583-2e2e15394727",
+              "title": "Speeding Up Enumeration 2",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "3771f305-497f-42f4-8583-2e2e15394727",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What other variables is A dependent on in this network?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "J",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "M",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "None of the above",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 257709,
+              "key": "15f28f29-dbe5-4ca2-bf19-d4be6cdc3148",
+              "title": "Speeding Up Enumeration 2 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "PH9BBj_9Lu8",
+                "china_cdn_id": "PH9BBj_9Lu8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255702,
+          "key": "e258812b-6ad4-4aa2-9590-6fc2958a0f4a",
+          "title": "Quiz: Speeding Up Enumeration 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e258812b-6ad4-4aa2-9590-6fc2958a0f4a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 257695,
+              "key": "2091286a-2a9f-41c1-a013-d51169a5b3d0",
+              "title": "Speeding Up Enumeration 3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "k_y4CCy6mik",
+                "china_cdn_id": "k_y4CCy6mik.mp4"
+              }
+            },
+            {
+              "id": 255794,
+              "key": "a888efc3-1b1e-4ac8-822a-525c9cafcf21",
+              "title": "Speeding Up Enumeration 3",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "a888efc3-1b1e-4ac8-822a-525c9cafcf21",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": " What other variables is B dependent on in this network?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "J",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "M",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "A",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "None of the above",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 257696,
+              "key": "37280f65-dd6b-4b0d-a037-fece68f805e4",
+              "title": "Speeding Up Enumeration 3 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "I3oaxFblVfI",
+                "china_cdn_id": "I3oaxFblVfI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255703,
+          "key": "58c869d2-445a-483d-924c-ff680f02e233",
+          "title": "Quiz: Speeding Up Enumeration 4",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "58c869d2-445a-483d-924c-ff680f02e233",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 257697,
+              "key": "987538f7-664f-40e2-8a39-507fb6249850",
+              "title": "Speeding Up Enumeration 4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-aL9gH8GLwQ",
+                "china_cdn_id": "-aL9gH8GLwQ.mp4"
+              }
+            },
+            {
+              "id": 255795,
+              "key": "34bcef3e-0149-4908-9b38-3e01ce8ac4cc",
+              "title": "Speeding Up Enumeration 4",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "34bcef3e-0149-4908-9b38-3e01ce8ac4cc",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What other variables is E dependent on in this network?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "J",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "M",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "A",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "B",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk5",
+                    "text": "None of the above.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 257698,
+              "key": "4fc4a0d4-160f-4cd3-9daa-474a5e593c78",
+              "title": "Speeding Up Enumeration 4 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "PS5NGz-DLQo",
+                "china_cdn_id": "PS5NGz-DLQo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255704,
+          "key": "1bf0ccba-abbd-4704-beb1-8781f10a2655",
+          "title": "Causal Direction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1bf0ccba-abbd-4704-beb1-8781f10a2655",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 527876,
+              "key": "14427cbc-f68e-4001-842b-5f19b585130d",
+              "title": "CausalDirection",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Qp0uCJn45D4",
+                "china_cdn_id": "Qp0uCJn45D4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255705,
+          "key": "b4101ffa-a746-4f3f-a5bd-b7d5e742bffd",
+          "title": "Quiz: Variable Elimination",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b4101ffa-a746-4f3f-a5bd-b7d5e742bffd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 270024,
+              "key": "e6c4627f-cec9-44ac-8f0f-6e78adb83777",
+              "title": "Variable Elimination",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "af4KcnDGY0g",
+                "china_cdn_id": "af4KcnDGY0g.mp4"
+              }
+            },
+            {
+              "id": 255796,
+              "key": "05c47f10-4c09-4b5d-aa55-a871e7e5898b",
+              "title": "Variable Elimination 1",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "05c47f10-4c09-4b5d-aa55-a871e7e5898b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the value for +t?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.17\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.17\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255798,
+              "key": "a6e7daba-be89-4e50-86d8-21e68a13e734",
+              "title": "Variable Elimination 2",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "a6e7daba-be89-4e50-86d8-21e68a13e734",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the value for -t?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.83\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.83\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 270025,
+              "key": "5629f17a-109c-44e3-9bc0-973950bcc1a4",
+              "title": "Variable Elimination Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "X87xouO8AWw",
+                "china_cdn_id": "X87xouO8AWw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255707,
+          "key": "71ea6540-5db8-478b-a202-3b6a6978aa41",
+          "title": "Quiz: Variable Elimination 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71ea6540-5db8-478b-a202-3b6a6978aa41",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269129,
+              "key": "6ed0a69e-d9e8-4e6e-af0f-68799e85ca34",
+              "title": "VariableElimination2 ",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AWPzJsQ7KoA",
+                "china_cdn_id": "AWPzJsQ7KoA.mp4"
+              }
+            },
+            {
+              "id": 255799,
+              "key": "c649002a-d975-451b-a5f5-e5cc8932694c",
+              "title": "Variable Elimination 2 Part 1",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "c649002a-d975-451b-a5f5-e5cc8932694c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the value of +t +l?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*.051\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.051\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255800,
+              "key": "28e32412-fd2c-4d34-aeae-5859a2f564fc",
+              "title": "Variable Elimination 2 Part 2",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "28e32412-fd2c-4d34-aeae-5859a2f564fc",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the value of +t -l?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*.119\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.119\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255801,
+              "key": "6ad01536-7792-41ba-9753-ff2c27d17ea8",
+              "title": "Variable Elimination 2 Part 3",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "6ad01536-7792-41ba-9753-ff2c27d17ea8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the value of -t +l?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*.083\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.083\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255802,
+              "key": "53941f8f-0e24-4789-abe9-512cf18f5d01",
+              "title": "Variable Elimination 2 Part 4",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "53941f8f-0e24-4789-abe9-512cf18f5d01",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the value of -t -l?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*.747\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.747\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 269130,
+              "key": "8a451c05-3765-4f6e-91a8-764a3d9c8af6",
+              "title": "Variable Elimination2 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "PdDKlFtAIHg",
+                "china_cdn_id": "PdDKlFtAIHg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255708,
+          "key": "69bb6fd0-2689-4cd2-988a-18067e1aed51",
+          "title": "Quiz: Variable Elimination 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "69bb6fd0-2689-4cd2-988a-18067e1aed51",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269131,
+              "key": "6fbb364f-eddb-43ba-bf1f-93df836dc825",
+              "title": "Variable Elimination3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ESweiuu8eKI",
+                "china_cdn_id": "ESweiuu8eKI.mp4"
+              }
+            },
+            {
+              "id": 255803,
+              "key": "749ec09e-622c-4e66-8f1d-e3c333b3dd8b",
+              "title": "Variable Elimination 3 Part 1",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "749ec09e-622c-4e66-8f1d-e3c333b3dd8b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the value of +l?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.134\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.134\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255804,
+              "key": "e2df63e9-6f22-4f55-bc93-e14ae078b15d",
+              "title": "Variable Elimination 3 Part 2",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e2df63e9-6f22-4f55-bc93-e14ae078b15d",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the value of -l?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*.866\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.866\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 269132,
+              "key": "02b8d895-9f32-463e-8bbe-5e01b4c52922",
+              "title": "Variable Elimination3 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Gr8Es-E5Gc0",
+                "china_cdn_id": "Gr8Es-E5Gc0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255709,
+          "key": "6255e454-907a-4cb1-aa08-b6e84fb16ad9",
+          "title": "Variable Elimination 4",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6255e454-907a-4cb1-aa08-b6e84fb16ad9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 279120,
+              "key": "89facc51-faa6-4b0a-91b5-d346fb9e4828",
+              "title": "Variable Elimination4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "yLaTiXHiQ8I",
+                "china_cdn_id": "yLaTiXHiQ8I.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255710,
+          "key": "85313e7e-aa1e-462a-9db7-a55875257e52",
+          "title": "Approximate Inference",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "85313e7e-aa1e-462a-9db7-a55875257e52",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 277405,
+              "key": "a0599b5c-ab8f-4637-bf07-121a49d3ff2b",
+              "title": "Approximate Inference",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "sdQWdN8EjCE",
+                "china_cdn_id": "sdQWdN8EjCE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255711,
+          "key": "0a4fd4bd-3324-4c33-9fd8-9b53c8a4a476",
+          "title": "Quiz: Sampling Example",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0a4fd4bd-3324-4c33-9fd8-9b53c8a4a476",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 348297,
+              "key": "d9928c92-a0df-4c5d-919d-26c394e2c186",
+              "title": "Sampling Example",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "bLTIEwA-vTo",
+                "china_cdn_id": "bLTIEwA-vTo.mp4"
+              }
+            },
+            {
+              "id": 255806,
+              "key": "502694ce-225f-429e-8ff5-8b4bc1bfde20",
+              "title": "Sampling Example",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "502694ce-225f-429e-8ff5-8b4bc1bfde20",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which rows should we consider?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "+s +r +w: 0.99",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "+s +r -w: 0.01",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "+s -r +w: 0.90",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "+s -r -w: 0.10",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk5",
+                    "text": "-s +r +w: 0.90",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk6",
+                    "text": "-s +r -w: 0.10",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk7",
+                    "text": "-s -r +w: 0.01",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk8",
+                    "text": "-s -r -w: 0.99",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255807,
+              "key": "10f648a6-ef2c-4fed-8ac2-33252eced24d",
+              "title": "Sampling Example 2",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "10f648a6-ef2c-4fed-8ac2-33252eced24d",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Are we more likely to have a positive or negative w?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Positive",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Negative",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 348298,
+              "key": "ce557fae-0656-4f1a-b602-0994d4b00b74",
+              "title": "Sampling Example Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JSA1vKbqgWo",
+                "china_cdn_id": "JSA1vKbqgWo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255712,
+          "key": "8b53d87d-96ba-498b-a907-6f07938deaf5",
+          "title": "Approximate Inference 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8b53d87d-96ba-498b-a907-6f07938deaf5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 348299,
+              "key": "425d0160-5274-45eb-a7a2-749b2f5575a6",
+              "title": "Approximate Inference2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "fL5oNp3ixnw",
+                "china_cdn_id": "fL5oNp3ixnw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255713,
+          "key": "1a7d62d9-a932-4892-8fd5-6fb87cb94b58",
+          "title": "Rejection Sampling",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1a7d62d9-a932-4892-8fd5-6fb87cb94b58",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 273052,
+              "key": "cc11b52d-c837-4b0a-baea-4576a0df3d09",
+              "title": "Rejection Sampling",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JAqHB2z0quY",
+                "china_cdn_id": "JAqHB2z0quY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255714,
+          "key": "17efe731-041a-4c82-a47a-c7f70229a5ee",
+          "title": "Quiz: Likelihood Weighting",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "17efe731-041a-4c82-a47a-c7f70229a5ee",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268452,
+              "key": "cfaec79f-5720-4bf0-be99-3b717c0af549",
+              "title": "26 - Likelihood Weighting V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hB3Gk9OwYo8",
+                "china_cdn_id": "hB3Gk9OwYo8.mp4"
+              }
+            },
+            {
+              "id": 255808,
+              "key": "626e542b-9757-4f8c-b3f9-1d1d31f7f282",
+              "title": "Likelihood Weighting",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "626e542b-9757-4f8c-b3f9-1d1d31f7f282",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What should the weight be?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*.99\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.99\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 268453,
+              "key": "42a123a4-7500-4494-9221-5ad2f7f84458",
+              "title": "27 - Likelihood Weighting Solution V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "TNOvUTffF2o",
+                "china_cdn_id": "TNOvUTffF2o.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255715,
+          "key": "c3814e13-c8bb-49e0-bea9-43d6a5a1ec4b",
+          "title": "Likelihood Weighting 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c3814e13-c8bb-49e0-bea9-43d6a5a1ec4b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268454,
+              "key": "161704c8-0844-4e79-bc4d-b45fb87e3bbd",
+              "title": "28 - Likelihood Weighting 1 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "6cYfKSB3kKQ",
+                "china_cdn_id": "6cYfKSB3kKQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255716,
+          "key": "556732bc-875c-41b2-95ce-92d5d070f0a4",
+          "title": "Likelihood Weighting 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "556732bc-875c-41b2-95ce-92d5d070f0a4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 257718,
+              "key": "29f170ca-0590-4710-a3e0-9342c53146c4",
+              "title": "Likelihood Weighting 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "DzywAt59K4I",
+                "china_cdn_id": "DzywAt59K4I.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255719,
+          "key": "82ac8e5c-9181-493f-85d8-33f0e0f66cc0",
+          "title": "Gibbs Sampling",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82ac8e5c-9181-493f-85d8-33f0e0f66cc0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 257721,
+              "key": "1fa51213-7614-4a90-870b-e6f224729d26",
+              "title": "Gibbs Sampling",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "z5QAAcmg1KQ",
+                "china_cdn_id": "z5QAAcmg1KQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255720,
+          "key": "a5307e45-2728-477e-9b3f-de5b1b64d911",
+          "title": "Quiz: Monty Hall Problem",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a5307e45-2728-477e-9b3f-de5b1b64d911",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 257722,
+              "key": "ab6f007e-91ec-421f-af4a-3d46d6caed8d",
+              "title": "Monty Hall Problem",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "9I0jIlsiQEc",
+                "china_cdn_id": "9I0jIlsiQEc.mp4"
+              }
+            },
+            {
+              "id": 273145,
+              "key": "71288704-fd8b-4426-a8be-38a3fcefa333",
+              "title": "Probability without Switching",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "71288704-fd8b-4426-a8be-38a3fcefa333",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability of winning if you choose not to switch? (Enter your answer as a whole number fraction, or as a decimal with up to four decimal places.)",
+                "matchers": [
+                  {
+                    "expression": "^\\s*1\\s*/\\s*3\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0?[\\.,]{1}3+\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 273146,
+              "key": "089b14e0-6eed-4891-a256-9fb6778df7df",
+              "title": "Probability with Switching",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "089b14e0-6eed-4891-a256-9fb6778df7df",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability of winning if you choose to switch? (Enter your answer as a whole number fraction, or as a decimal with up to four decimal places.)",
+                "matchers": [
+                  {
+                    "expression": "^\\s*2\\s*/\\s*3\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0?[\\.,]{1}6+7?\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 257723,
+              "key": "16a2dbe8-1f48-455f-b29c-13e9090f9fb7",
+              "title": "Monty Hall Problem Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "cbGvxe8psFc",
+                "china_cdn_id": "cbGvxe8psFc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255722,
+          "key": "f5d3ec08-54b4-4aef-9894-e6929229ae2a",
+          "title": "Monty Hall Letter",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f5d3ec08-54b4-4aef-9894-e6929229ae2a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 257725,
+              "key": "d5157bac-8090-4311-bdc7-afc431d4d526",
+              "title": "Monty Hall Letter ",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gLIwvTmu7N0",
+                "china_cdn_id": "gLIwvTmu7N0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1085561,
+          "key": "b2528bdb-997f-4aea-8670-cc3bfd9f0e80",
+          "title": "Coding: Alarm Bayes Nets with pgmpy",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b2528bdb-997f-4aea-8670-cc3bfd9f0e80",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1085563,
+              "key": "048e40a9-cdf9-47da-b1eb-6c35175147cb",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r845473c1085561xJUPYTERnz5z0c95",
+              "pool_id": "jupyter",
+              "view_id": "jupyter-wx55e",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowGrade": false,
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Build%20AlarmNet%20with%20`pgmpy`%20library.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 1085530,
+          "key": "a1d81678-06a6-4bad-b119-c1323d104ff0",
+          "title": "Recap",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a1d81678-06a6-4bad-b119-c1323d104ff0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1085529,
+              "key": "40fefcaa-9157-4f94-9f6b-82761021c9c7",
+              "title": "Recap - Inferences in Bayes Nets",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this lesson, we learned how to make inferences (query) from Bayes Nets based on the `evidence` variables and the conditional probabilities as configured in the Bayes Nets. of the `evidence` variables as defined in the network.\n\nThere are two algorithms that to compute *exact inferences*:\n1. **Enumeration**:  the query’s conditional probability is computed by summing the terms\nfrom the full joint distribution.\n2. **Variable Elimination**: an algorithm to reduce the enumeration computation by doing the repeated calculations once and store the results for later re-use. \n\nHowever, it is computationally expensive to make exact inference from a large and highly connected Bayes Network. In these cases, we can approximate inferences by sampling. Sampling is a technique to select and count the occurances of the query and evidence variables to estimate the probability distributions in the network. We looked at four sampling techniques as follows:\n1. **Direct sampling**: the simplest form of samples generation from a known probability distribution. For example, to sample the odds of `Head` or `Tail` in a coin flip, we can randomly generate the events based on uniform probability distribution (assuming we use a non-bias coin).\n2. **Rejection sampling**: generates samples from the known distribution in the network and rejects the non-matching evidence.\n3. **Likelihood sampling**: is similar to rejection sampling but generating only events that are consistent with the evidence.\n4. **Gibbs sampling**: initiates an arbitrary state and generates the next state by randomly sampling a non-evidence variable, while keeping all evidence variables fixed.\n\nIn the final lesson, we will learn the Hidden Markov Model (HMM) and its application in the Natural Language Processing task to tag Parts of Speech. HMM assumes unobservable states and computes the transition and emission probabilities from one state to another.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    }
+  ]
+}

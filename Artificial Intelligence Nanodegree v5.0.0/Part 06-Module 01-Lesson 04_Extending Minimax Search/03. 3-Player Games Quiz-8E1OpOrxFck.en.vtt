@@ -1,0 +1,27 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.300 --> 00:00:02.960
+Fill in the values of this
+three-player game tree,
+
+00:00:02.960 --> 00:00:05.880
+which alternates levels between players.
+
+00:00:05.880 --> 00:00:07.840
+The values of each
+node are in the order,
+
+00:00:07.840 --> 00:00:12.040
+player one score, player two score,
+and player three score.
+
+00:00:12.040 --> 00:00:14.180
+Each agent tries to
+maximize their own score,
+
+00:00:14.180 --> 00:00:17.490
+so will propagate up the values
+based on which agent's move it is.
+

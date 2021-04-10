@@ -1,0 +1,46 @@
+{
+  "data": {
+    "lesson": {
+      "id": 559693,
+      "key": "9b64cbc5-b404-47dd-a686-221464c8c1dd",
+      "title": "Additional Topics in PGMs",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Reading list of select topics to continue learning about probabilistic graphical models.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": null,
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 559744,
+          "key": "e06aa175-d3eb-4fb2-9370-dddf5727b7fd",
+          "title": "Reading List",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e06aa175-d3eb-4fb2-9370-dddf5727b7fd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 593184,
+              "key": "de3cbb9d-d47a-40c5-89ce-b2732fc7d3b5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Software Packages\n- [PyMC3](https://docs.pymc.io/notebooks/bayesian_neural_network_advi.html)\n\n## Readings on Bayes Nets\n- [Gibbs Sampling](https://en.wikipedia.org/wiki/Gibbs_sampling) & [Metropolis-Hastings](https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm)\n- [Markov Chain Monte Carlo Sampling](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo)\n- [Variational Inference](https://docs.pymc.io/api/inference.html)\n- [Bayesian Neural Networks](https://arxiv.org/abs/1801.07710)\n\n## Readings on HMMs\n- Rabiner’s famous [_Tutorial on hidden Markov models and selected applications in speech recognition_](http://www.cs.ubc.ca/~murphyk/Bayes/rabiner.pdf) [[errata](http://alumni.media.mit.edu/~rahimi/rabiner/rabiner-errata/)]\n\n- (_Optional_) Thad Starner's MS thesis: [_Visual Recognition of American Sign Language Using Hidden Markov Models_](http://dspace.mit.edu/handle/1721.1/29089) [[PDF](http://dspace.mit.edu/bitstream/handle/1721.1/29089/32601581-MIT.pdf)]\n\n## Other Readings\n- [Two Decades of Statistical Modeling: Where do We Go From Here?](https://www.cs.cmu.edu/~roni/papers/survey-slm-IEEE-PROC-0004.pdf)\n- [Probabilistic Programming & Bayesian Methods for Hackers](https://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/)\n- [HTK Handbook](http://www.dsic.upv.es/docs/posgrado/20/RES/materialesDocentes/alejandroViewgraphs/htkbook.pdf) (especially Chapter 14)\n- [Speech & Language Processing](https://web.stanford.edu/~jurafsky/slp3/)\n- [POS Annotation Compatibility Report (2006)](https://nlp.cs.nyu.edu/meyers/Annotation%20Compatibility%20Working%20Group%20Report%202006.html)\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

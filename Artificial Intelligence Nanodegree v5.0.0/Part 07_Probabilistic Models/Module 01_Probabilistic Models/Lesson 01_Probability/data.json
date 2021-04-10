@@ -1,0 +1,1176 @@
+{
+  "data": {
+    "lesson": {
+      "id": 559361,
+      "key": "7ab0c89d-39f9-4051-a979-e99f063940bd",
+      "title": "Probability",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Sebastian Thrun briefly reviews basic probability theory including discrete distributions, independence, joint probabilities, and conditional distributions to model uncertainty in the real world.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/7ab0c89d-39f9-4051-a979-e99f063940bd/559361/1538955277488/Probability+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/7ab0c89d-39f9-4051-a979-e99f063940bd/559361/1538955272479/Probability+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 590564,
+          "key": "2516fbf9-9443-4ba6-9468-39fadffc0b5f",
+          "title": "Lesson Plan - Week 10",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2516fbf9-9443-4ba6-9468-39fadffc0b5f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 593175,
+              "key": "2ea8cbc2-0eb9-423e-a673-8b3511d9888c",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Lesson Plan: Week 10\n---\nThis week we'll talk about probabilistic models, which will allow your agents to handle uncertainty in the real world with the concept of a \"belief state\" (a probability distribution over the possible world states). These ideas have been used in robot localization and other real-world tasks, including use in [neural networks](https://docs.pymc.io/notebooks/bayesian_neural_network_advi.html).\n\nIn the Planning lessons, we have learned knowledge-based AI agents that utilize `belief state` to reason and plan under uncertainty. In this course, we will learn Probabilistic Models and Bayes Networks as the tools for the AI agents to *quantify* and act under the uncertainty of the surrounding world. Unlike the logical assertions, which see the possible worlds in a set of strict rules, the probabilistic assertions quantify how probable the various worlds are.\n\nWe will start this course by refreshing the basic probability terminologies and formulas, including joint probability, conditional probability and Bayes Rule. In the `Naive Bayes` lesson, we will learn a machine learning algorithm that applies Bayes Rule and assumes that each input variable is independent. In the following `Bayes Nets` and `Inference in Bayes Nets` lessons, we will use a special case of graph structure to represent a set of variables and their conditional dependencies, build Bayes Nets with probability distributions, and make inferences from the Bayes Nets based on the queries and evidences. For the final project in this course, we will apply the `Hidden Markov Model`, a statistical model to compute the transition and unobservable events to estimate the probability of an event.\n\n## Classroom\n- Watch lessons on **Probability** and **Naïve Bayes**\n- Complete the classroom exercise on building a naïve Bayes spam classifier \n\n## Readings\n- AIMA **Chapter 13**",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1085461,
+              "key": "431174fb-043e-4986-af82-00ac3d3c71d5",
+              "title": "Course Map",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/October/5f849eb6_c6-course-map/c6-course-map.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/431174fb-043e-4986-af82-00ac3d3c71d5",
+              "caption": "Probabilistic Models",
+              "alt": "",
+              "width": 660,
+              "height": 444,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 246379,
+          "key": "a78233f0-9d35-4990-9970-2fdeaccdbb50",
+          "title": "Intro to Probability and Bayes Nets",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a78233f0-9d35-4990-9970-2fdeaccdbb50",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 282676,
+              "key": "ca44a724-864d-45eb-830a-465573ea33e0",
+              "title": "01 - Intro To Probability And Bayes Nets",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "V-ngFH2nakU",
+                "china_cdn_id": "V-ngFH2nakU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246380,
+          "key": "fa41f905-f262-4f93-8701-d5ce41cb5236",
+          "title": "Quiz: Probability / Coin Flip",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fa41f905-f262-4f93-8701-d5ce41cb5236",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 249218,
+              "key": "18a0dc05-434b-46f0-816c-71a9eb7e7e1d",
+              "title": "Probability Coin Flip",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "0Ggcz7RD8EY",
+                "china_cdn_id": "0Ggcz7RD8EY.mp4"
+              }
+            },
+            {
+              "id": 252544,
+              "key": "4d2d65ef-4697-4eff-9db8-0062de7bd1f7",
+              "title": "Probability / Coin Flip",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "4d2d65ef-4697-4eff-9db8-0062de7bd1f7",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Suppose the probability of heads is 0.5. What’s the probability of coming up tails? \n\n(Assume these are the only two possible outcomes)\n",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.5\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.5\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 268419,
+              "key": "bfbc6b60-e060-42e5-ac87-3f8f1338e48d",
+              "title": "03 - Probability Coin Flip 1b",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "mINSoCOFxPo",
+                "china_cdn_id": "mINSoCOFxPo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246381,
+          "key": "d3ac5879-9940-4b37-a5b2-99023752ac6a",
+          "title": "Quiz: Coin Flip 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d3ac5879-9940-4b37-a5b2-99023752ac6a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 277408,
+              "key": "7470ba3a-e5f5-4773-bfbf-38dfbb94e578",
+              "title": "04 - Coin Flip 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Yxbhuhr6dCk",
+                "china_cdn_id": "Yxbhuhr6dCk.mp4"
+              }
+            },
+            {
+              "id": 252546,
+              "key": "01d975bd-14fb-4bdb-ae51-f40c2ed707a1",
+              "title": "Coin Flip 2",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "01d975bd-14fb-4bdb-ae51-f40c2ed707a1",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Suppose the probability of heads is 0.25. What’s the probability of coming up tails? \n\n(Assume these are the only two possible outcomes)",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.75\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.75\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*3/4\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 277409,
+              "key": "ee7ee723-e18b-4fc6-be68-fadf1f2c1944",
+              "title": "05 - Coin Flip 2 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Dn-ROeHHl48",
+                "china_cdn_id": "Dn-ROeHHl48.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246382,
+          "key": "41e97024-170e-4b9e-94e3-e27254c6fc9a",
+          "title": "Quiz: Coin Flip 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "41e97024-170e-4b9e-94e3-e27254c6fc9a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 257529,
+              "key": "d549e382-0955-4dd1-bbe6-d619caab9552",
+              "title": "Coin Flip 3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Ufj-yruhsJA",
+                "china_cdn_id": "Ufj-yruhsJA.mp4"
+              }
+            },
+            {
+              "id": 252547,
+              "key": "b52f5c40-4a1c-4786-af37-ffa47c0c6048",
+              "title": "Coin Flip 3",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b52f5c40-4a1c-4786-af37-ffa47c0c6048",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability that the coin comes up heads three times in a row assuming that the coin flips are independent and the ‘heads’ outcome has a probability of 0.5?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.125\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.125\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*1/8\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 268420,
+              "key": "2c76682f-fd1e-46c9-8191-cbd89b760704",
+              "title": "07 - Coin Flip 3 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uw0zTpgfLMI",
+                "china_cdn_id": "uw0zTpgfLMI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246383,
+          "key": "0d4c4d0b-55fb-4248-af07-9b9ac44ded2f",
+          "title": "Quiz: Coin Flip 4",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0d4c4d0b-55fb-4248-af07-9b9ac44ded2f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269940,
+              "key": "871aca7e-6c59-441f-b6ac-499ba2c84e6a",
+              "title": "08 - Coin Flip 4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "xWZJrnucjHM",
+                "china_cdn_id": "xWZJrnucjHM.mp4"
+              }
+            },
+            {
+              "id": 252549,
+              "key": "1ab33603-01cb-4d9a-afab-68f0b5dbd181",
+              "title": "Coin Flip 4",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "1ab33603-01cb-4d9a-afab-68f0b5dbd181",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability that the coin lands on the same side four times in a row, assuming the probability of each side is 0.5 on each coin flip?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.125\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.125\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*1/8\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 268422,
+              "key": "a8192cfa-5a73-47c7-8d58-846fe607cf84",
+              "title": "09 - Coin Flip 4 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-NgSZRj6KjY",
+                "china_cdn_id": "-NgSZRj6KjY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246384,
+          "key": "f9b95d4b-2498-4b75-855a-2e9f9f307888",
+          "title": "Quiz: Coin Flip 5",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f9b95d4b-2498-4b75-855a-2e9f9f307888",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268423,
+              "key": "c40e9bc6-d2c1-442d-8983-3447bd19a455",
+              "title": "10 - Coin Flip 5",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "fbRBknRGNE8",
+                "china_cdn_id": "fbRBknRGNE8.mp4"
+              }
+            },
+            {
+              "id": 252551,
+              "key": "ba671090-995a-416c-9208-b78be2506d11",
+              "title": "Coin Flip 5",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "ba671090-995a-416c-9208-b78be2506d11",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What’s the probability that, in four coin flips, there are at least three heads? Assume that the probability of a ‘heads’ outcome is 0.5 and the coin flips are independent.",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.3125\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.3125\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*5/16\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 268451,
+              "key": "9bd2c5cb-bf0f-4aaa-9d85-3939654acfdf",
+              "title": "11 - Coin Flip 5 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jrEWZZQv1dE",
+                "china_cdn_id": "jrEWZZQv1dE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246385,
+          "key": "d194a7fb-192b-4de2-b747-c5744c146339",
+          "title": "Probability Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d194a7fb-192b-4de2-b747-c5744c146339",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 282677,
+              "key": "144b8201-35a8-4b09-9339-711d28f9071b",
+              "title": "12 - Probability Summary",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hUdWHRhxeVE",
+                "china_cdn_id": "hUdWHRhxeVE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246387,
+          "key": "ffa057d9-2b4b-4292-a729-9fe249260ed7",
+          "title": "Quiz: Dependence",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ffa057d9-2b4b-4292-a729-9fe249260ed7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 250064,
+              "key": "f200c4f2-3f1e-491e-ab4b-f620d2a652a5",
+              "title": "Dependence",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "kDpjr9m7Tlo",
+                "china_cdn_id": "kDpjr9m7Tlo.mp4"
+              }
+            },
+            {
+              "id": 252554,
+              "key": "74533a27-11af-48cd-b1f7-b06db774d3a5",
+              "title": "Dependence",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "74533a27-11af-48cd-b1f7-b06db774d3a5",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Given the conditions stated above, what is the probability of the second coin flip coming up heads?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.55\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.55\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 250065,
+              "key": "6192d2e9-7b4f-47aa-bd67-7c73161c35d6",
+              "title": "Dependence Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-xEKsTfKmzY",
+                "china_cdn_id": "-xEKsTfKmzY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246388,
+          "key": "c5d9baef-4c75-4024-9041-1264a5d47264",
+          "title": "What We Learned",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c5d9baef-4c75-4024-9041-1264a5d47264",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 273082,
+              "key": "238f1a87-40f4-403d-9303-d3c38f73813c",
+              "title": "15 - What We Learned V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "b-qHc_3oMLY",
+                "china_cdn_id": "b-qHc_3oMLY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246396,
+          "key": "d09ed37b-9df9-4f4f-8a43-5d6b4759ea89",
+          "title": "Quiz: Weather",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d09ed37b-9df9-4f4f-8a43-5d6b4759ea89",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 282678,
+              "key": "21c4734f-34ad-4da5-8f5d-7929c93af88c",
+              "title": "16 - P3 Weather",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "4knLEHXVh3I",
+                "china_cdn_id": "4knLEHXVh3I.mp4"
+              }
+            },
+            {
+              "id": 252555,
+              "key": "856a3f1c-90d5-4976-9f7a-198f4f302eae",
+              "title": "Weather",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "856a3f1c-90d5-4976-9f7a-198f4f302eae",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability of a rainy day given that the previous day was sunny? Assume ‘rainy’ and ‘sunny’ are the only two possible outcomes.\n",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.2\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.2\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 282679,
+              "key": "be08ac99-dd11-4bed-91a8-c9eb94e7525b",
+              "title": "17 - P3 Weather Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "J42qxWrp5xE",
+                "china_cdn_id": "J42qxWrp5xE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246397,
+          "key": "50e60fd4-b286-4be7-bd26-f4bc417cec97",
+          "title": "Quiz: Weather 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "50e60fd4-b286-4be7-bd26-f4bc417cec97",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 282680,
+              "key": "91c935f6-5ec6-4ddb-b3bb-adeb39b7b730",
+              "title": "18 - P3 Weather 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "bocI50NbWXo",
+                "china_cdn_id": "bocI50NbWXo.mp4"
+              }
+            },
+            {
+              "id": 252556,
+              "key": "a06e7389-c9d9-46d9-8e98-d6bbe399cd89",
+              "title": "Weather 2",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "a06e7389-c9d9-46d9-8e98-d6bbe399cd89",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability of a rainy day given that the previous day was rainy? Assume ‘rainy’ and ‘sunny’ are the only two possible outcomes.",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.4\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.4\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 282681,
+              "key": "42b41039-f382-4bec-8ce4-554cb730d754",
+              "title": "19 - Weather 2 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "GX_EdILTIzo",
+                "china_cdn_id": "GX_EdILTIzo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246398,
+          "key": "1caf3c67-6b63-4745-8f08-767c1ed39ea4",
+          "title": "Quiz: Weather 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1caf3c67-6b63-4745-8f08-767c1ed39ea4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 282682,
+              "key": "8b3686bf-ec7b-44e3-9fbf-7889aa9cd7c4",
+              "title": "20 - Weather 3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CPKgIXA5TQo",
+                "china_cdn_id": "CPKgIXA5TQo.mp4"
+              }
+            },
+            {
+              "id": 252557,
+              "key": "4c265627-888d-402f-bbbd-a983331cf8f0",
+              "title": "Weather 3 Part 1",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "4c265627-888d-402f-bbbd-a983331cf8f0",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability that day 2 is sunny?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.78\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.78\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 252558,
+              "key": "579f1876-1b54-4434-82bc-0fd020e8376e",
+              "title": "Weather 3 Part 2",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "579f1876-1b54-4434-82bc-0fd020e8376e",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability that day 3 is sunny?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.756\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.756\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 282683,
+              "key": "ef07e98f-fa53-4f3d-80b6-616028c6c733",
+              "title": "21 - Weather 3 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "DSPRVaS23Oo",
+                "china_cdn_id": "DSPRVaS23Oo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246399,
+          "key": "7ecba28b-3210-4012-bb07-6f25530af286",
+          "title": "Quiz: Cancer",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7ecba28b-3210-4012-bb07-6f25530af286",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 257732,
+              "key": "0b96ada0-7597-4a0d-a6ad-487b6f2ac67c",
+              "title": "Cancer",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CS-Pxxe1i5w",
+                "china_cdn_id": "CS-Pxxe1i5w.mp4"
+              }
+            },
+            {
+              "id": 252560,
+              "key": "e1e4414b-17b5-4e82-a001-32054c9bf179",
+              "title": "Cancer",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e1e4414b-17b5-4e82-a001-32054c9bf179",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability of not having this cancer? Assume having it and not having it are the only two possible outcomes.\n",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.99\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.99\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 258900,
+              "key": "6a03d63f-8d10-4e64-814a-ae7b6ab81cb4",
+              "title": "Cancer Answer",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "cyiS7ISjJZo",
+                "china_cdn_id": "cyiS7ISjJZo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246400,
+          "key": "fac19314-7ecd-4515-98f3-a9d95392c80e",
+          "title": "Quiz: Cancer 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fac19314-7ecd-4515-98f3-a9d95392c80e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 278885,
+              "key": "25973896-2018-4ef1-9c68-3fe6bb0fd5cb",
+              "title": "Cancer 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Y_YYMwGcq7M",
+                "china_cdn_id": "Y_YYMwGcq7M.mp4"
+              }
+            },
+            {
+              "id": 252562,
+              "key": "f4d573e0-1bcf-4bf0-b453-d2fb3139d028",
+              "title": "Cancer 2",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "f4d573e0-1bcf-4bf0-b453-d2fb3139d028",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability of the test coming out negative given that the cancer is present?\n",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.1\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.1\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 268428,
+              "key": "6a884b8e-bb5b-42d1-a745-9e515a02e459",
+              "title": "Cancer 02 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "s-lK9-5hdE4",
+                "china_cdn_id": "s-lK9-5hdE4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246401,
+          "key": "57306684-aa36-4fa4-9a64-f5920d327819",
+          "title": "Quiz: Cancer 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "57306684-aa36-4fa4-9a64-f5920d327819",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268429,
+              "key": "702b11c8-d392-4bbe-b7c6-b7d3c785a5be",
+              "title": "Cancer 03",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SwINPOdHqaM",
+                "china_cdn_id": "SwINPOdHqaM.mp4"
+              }
+            },
+            {
+              "id": 252563,
+              "key": "a41d9536-dce4-4929-bb20-c7d60ac8ed7a",
+              "title": "Cancer 3 Part 1",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "a41d9536-dce4-4929-bb20-c7d60ac8ed7a",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability of both having a positive test and having the cancer?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.009\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.009\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 252565,
+              "key": "22c0fdba-9d52-4187-99a6-c869eea8fd6c",
+              "title": "Cancer 3 Part 2",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "22c0fdba-9d52-4187-99a6-c869eea8fd6c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability of both having a negative test and having the cancer?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.001\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.001\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 252566,
+              "key": "4e7180bb-451c-445d-b638-7f41a3185730",
+              "title": "Cancer 3 Part 3",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "4e7180bb-451c-445d-b638-7f41a3185730",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability of both having a positive test and not having the cancer?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.198\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.198\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 252567,
+              "key": "6ea880b6-b639-422f-91c1-9f889652d3e8",
+              "title": "Cancer 3 Part 4",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "6ea880b6-b639-422f-91c1-9f889652d3e8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability of both having a negative test and not having the cancer?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.792\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.792\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 268430,
+              "key": "907fdbbc-13c0-40e5-89d9-9817f0b42fe5",
+              "title": "Cancer 03 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "tMxVjJFFcbY",
+                "china_cdn_id": "tMxVjJFFcbY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246395,
+          "key": "e17c136a-cde7-4ed1-9d87-0fa03fa99758",
+          "title": "Quiz: Cancer 4",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e17c136a-cde7-4ed1-9d87-0fa03fa99758",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268431,
+              "key": "70bb55e7-98b5-4814-8dfa-a430b0d6d033",
+              "title": "Cancer 04",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "j21u-CImscA",
+                "china_cdn_id": "j21u-CImscA.mp4"
+              }
+            },
+            {
+              "id": 252568,
+              "key": "5ccd3583-0f99-4c3b-bb3c-c9008bb637f1",
+              "title": "Cancer 4",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "5ccd3583-0f99-4c3b-bb3c-c9008bb637f1",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability of having cancer given that you have received a positive test? (Round to the nearest thousandth)",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.043\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.043\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 268432,
+              "key": "59cf1633-ab94-4a73-8a96-579caa2b6da8",
+              "title": "Cancer 04 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "0kysZ1l_f8Y",
+                "china_cdn_id": "0kysZ1l_f8Y.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246402,
+          "key": "6cbe341f-73ff-4137-8859-589352c79955",
+          "title": "Bayes Rule",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6cbe341f-73ff-4137-8859-589352c79955",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 289098,
+              "key": "18a772ac-f16a-4e7f-9c92-1adb2dbc4b35",
+              "title": "Bayes Rule",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "3AWOaMo8Vi8",
+                "china_cdn_id": "3AWOaMo8Vi8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1085462,
+          "key": "0fcb858a-e757-4805-952d-8aff83717e96",
+          "title": "Probability Recap",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0fcb858a-e757-4805-952d-8aff83717e96",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1085460,
+              "key": "e5d94e23-9336-4dfb-b0f0-d09867ab5353",
+              "title": "Probability Formulas",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Basic Probability Formulas\n\n- Probability of event A occurring: **P(A)**\n- Probability of event A not occurring: **P(¬A) = 1 - P(A)**\n- Probability of sequential events: **P(A,A,A) = P(A) x P(A) x P(A)**\n- Joint probability of both event A and event B occurring: **P(A,B) = P(A and B) = P(A∧B)**\n- Conditional probability of event A given event B occurring: **P(A|B)**\n\n## Independent Events\n\nEvent A and B are independent if knowing one event does not provide any information about the other event. Mathematical notations for independence events are as follows:\n\n<img src=\"https://latex.codecogs.com/gif.latex?\n\\begin{align*}\n  P({A}\\cap { B}) &= P({A})P({B}) \\\\\n  P({A}|{B}) &= P({A})\\\\\n\\end{align*}\" />\n\n## Conditional Independence\n\nTwo independent events of A and B can become conditionally independent in the presence of event C.\n\n<img src=\"https://latex.codecogs.com/gif.latex?\n\\begin{align*}\n  P({A}\\cap {B}|{C}) = P({A}|{C})P({B}|{C})\n\\end{align*}\" />\n\n## Bayes's Rule\n\nBayes's rule describes the probability of an event based on prior knowledge of conditions that might be related to the event. Mathematical notation of Bayes's Rule:\n\n<img src=\"https://latex.codecogs.com/gif.latex?\n\\begin{align*}\n  P({A}|{B})  = \\frac{P({B}|{A})P({A})}{P({B})}\n\\end{align*}\" />\n\n*Re-writing Bayes's Rule to simplify computation*\n\n<img src=\"https://latex.codecogs.com/gif.latex?\n\\begin{align*}\n  P(A|B,C) = \\frac{P(B,C|A)P(A)}{P(B,C)}  = \\frac{P(A,B,C)}{P(B,C)}\n\\end{align*}\" />\n\n## Law of Total Probabilities\n\nThe law of total probabilities expresses the total probability of an outcome by combining several distinct events.\n\n<img src=\"https://latex.codecogs.com/gif.latex?\n\\begin{align*} \n  P({A}) &= P({A}|{B}_1)P({B}_1) + P({A}|{B}_2)P({B}_2) + \\dots + P({A}|{B}_n)P({B}_n)\\\\\n  P({A}) &= P({A} \\cap {B}_1)+ P({A} \\cap {B}_2)+ \\dots + P({A} \\cap {B}_n)\\\\\n  P({A|C}) &= P({A}|{B}_1,C)P({B}_1|C) + P({A}|{B}_2,C)P({B}_2|C) + \\dots + P({A}|{B}_n,C)P({B}_n|C)\\\\\n  P({A|C}) &= P({A} \\cap {B}_1|C)+ P({A} \\cap {B}_2|C)+ \\dots + P({A} \\cap {B}_n|C)\n\\end{align*}\" />",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

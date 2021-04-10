@@ -1,0 +1,62 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.300 --> 00:00:02.450
+To show how probabilistic games work,
+
+00:00:02.450 --> 00:00:06.190
+I've invented a version of
+isolation called Sloppy Isolation.
+
+00:00:06.190 --> 00:00:09.970
+In this game, players may not
+actually move where they intended.
+
+00:00:09.970 --> 00:00:13.177
+For example,
+if our player is trying to go to here,
+
+00:00:13.177 --> 00:00:16.989
+it only has an 80% chance of
+hitting the square intended.
+
+00:00:16.989 --> 00:00:20.450
+There's a 10% chance the player
+will undershoot its goal.
+
+00:00:20.450 --> 00:00:24.440
+And there's a 10% chance the computer
+player will overshoot its goal.
+
+00:00:24.440 --> 00:00:29.560
+But suppose the computer player is in a
+place where moving is very constrained.
+
+00:00:29.560 --> 00:00:30.980
+For example, here,
+
+00:00:30.980 --> 00:00:35.230
+if the computer player is moving to the
+right, it can't go beyond the border.
+
+00:00:35.230 --> 00:00:39.850
+In that case, there's 100% chance
+it'll land on the intended square.
+
+00:00:39.850 --> 00:00:45.210
+If the computer player is trying to move
+to the last square here, there's a 90%
+
+00:00:45.210 --> 00:00:50.680
+chance of it hitting its intended square
+and a 10% chance of it falling short.
+
+00:00:50.680 --> 00:00:55.126
+Similarly, if our computer player is
+just trying to move over by one, there's
+
+00:00:55.126 --> 00:00:59.855
+a 90% chance it will hit the square
+once and a 10% chance it will overshoot.
+

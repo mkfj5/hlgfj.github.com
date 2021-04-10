@@ -1,0 +1,42 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.104 --> 00:00:04.220
+What if I want to make a computer player
+for a stochastic game, like Backgammon?
+
+00:00:04.220 --> 00:00:05.152
+&gt;&gt; Well, in Backgammon,
+
+00:00:05.152 --> 00:00:08.830
+your moves are limited each turn
+based on the roles of two dice.
+
+00:00:08.830 --> 00:00:11.260
+Since you can't know the result
+of the dice ahead of time,
+
+00:00:11.260 --> 00:00:15.210
+it would seem at first that you
+can't do a game-tree for it.
+
+00:00:15.210 --> 00:00:17.360
+In actuality, you can.
+
+00:00:17.360 --> 00:00:20.110
+And then use an algorithm
+called expect to max,
+
+00:00:20.110 --> 00:00:23.130
+to make best-choice
+decisions on your moves.
+
+00:00:23.130 --> 00:00:25.940
+To show how we handle
+probabilistic games,
+
+00:00:25.940 --> 00:00:29.410
+I've invented a variant of
+isolation I call sloppy isolation.
+

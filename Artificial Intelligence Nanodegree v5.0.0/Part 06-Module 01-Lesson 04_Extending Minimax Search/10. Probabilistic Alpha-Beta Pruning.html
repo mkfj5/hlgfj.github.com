@@ -1,0 +1,523 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Probabilistic Alpha-Beta Pruning</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Extending Minimax Search</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. 3-Player Games.html">02. 3-Player Games</a>
+    </li>
+    <li class="">
+      <a href="03. 3-Player Games Quiz.html">03. 3-Player Games Quiz</a>
+    </li>
+    <li class="">
+      <a href="04. 3-Player Alpha-Beta Pruning.html">04. 3-Player Alpha-Beta Pruning</a>
+    </li>
+    <li class="">
+      <a href="05. Multi-player Alpha-Beta Pruning Reading.html">05. Multi-player Alpha-Beta Pruning Reading</a>
+    </li>
+    <li class="">
+      <a href="06. Probabilistic Games.html">06. Probabilistic Games</a>
+    </li>
+    <li class="">
+      <a href="07. Sloppy Isolation.html">07. Sloppy Isolation</a>
+    </li>
+    <li class="">
+      <a href="08. Sloppy Isolation Expectimax.html">08. Sloppy Isolation Expectimax</a>
+    </li>
+    <li class="">
+      <a href="09. Expectimax Alpha-Beta Pruning.html">09. Expectimax Alpha-Beta Pruning</a>
+    </li>
+    <li class="">
+      <a href="10. Probabilistic Alpha-Beta Pruning.html">10. Probabilistic Alpha-Beta Pruning</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">10. Probabilistic Alpha-Beta Pruning</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Probabilistic Alpha-Beta Pruning</p></h3>
+  <div>
+  <div>
+    <h4>Question:</h4>
+
+    <video controls>
+  <source src="10. Probabilistic Alpha-Beta Pruning-TxIePyar1Ic.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="10. Probabilistic Alpha-Beta Pruning-TxIePyar1Ic.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="CN" src="10. Probabilistic Alpha-Beta Pruning-TxIePyar1Ic.zh-CN.vtt" label="CN">
+</video>
+
+
+  </div>
+
+  <h4>Start Quiz:</h4>
+  <div>
+  <div style="display: block;">
+    <div style="position: relative;">
+      <img src="img/5447599158.gif" style="width: 100%; max-height: 100%" alt="">
+      
+    <div style="
+    position: absolute; top: 63.69751447876448%; left: 9.490363735070575%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 63.561776061776065%; left: 20.270086862106407%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 63.477316602316606%; left: 31.482423995656895%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 63.60400579150579%; left: 43.20202225841477%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 63.743763858093125%; left: 54.17705735660848%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 63.608647450110865%; left: 66.32831982543641%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 63.70218957871396%; left: 77.03787406483791%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 63.53589246119734%; left: 87.85068578553617%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 37.82566518847006%; left: 19.710489401496257%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 37.86031042128603%; left: 48.0946072319202%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 38.144401330376944%; left: 76.48067331670822%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 18.32732815964523%; left: 47.84328241895262%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 76.71147450110864%; left: 9.082761845386534%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check1" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 76.61100332594235%; left: 12.305174563591024%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check2" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 76.57635809312639%; left: 20.018313591022444%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check3" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 76.5659645232816%; left: 23.2660536159601%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check4" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 76.81541019955654%; left: 30.766832917705734%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check5" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 76.43431263858092%; left: 34.047693266832916%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check6" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 76.6560421286031%; left: 42.966801745635905%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check7" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 76.40659645232816%; left: 46.150249376558605%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check8" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 76.54864190687361%; left: 53.693890274314214%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check9" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 76.57982261640798%; left: 56.95331982543641%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check10" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 76.60407427937915%; left: 65.74189526184539%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check11" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 76.44124168514412%; left: 68.98573877805487%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check12" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 76.42738359201773%; left: 76.62679239401497%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check13" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 76.5728935698448%; left: 79.92518703241896%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check14" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 76.61793237250555%; left: 87.59156795511221%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check15" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 76.80501662971176%; left: 90.7224127182045%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check16" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 51.330376940133036%; left: 17.01410536159601%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check17" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 51.33730598669624%; left: 21.477556109725686%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check18" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 51.444706208425714%; left: 25.968282418952622%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check19" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 51.531319290465625%; left: 47.436097256857856%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check20" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 51.54171286031042%; left: 52.29894014962594%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check21" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 51.46202882483371%; left: 73.68882481296758%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check22" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 51.4585643015521%; left: 78.15617206982543%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check23" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 51.403131929046566%; left: 82.72288029925187%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check24" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 28.66546563192905%; left: 38.832605985037404%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check25" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 28.544207317073173%; left: 49.93375935162095%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check26" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 28.62389135254989%; left: 61.00763715710723%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check27" aria-label="">
+      
+    </div>
+  
+    </div>
+  </div>
+</div>
+
+
+  <div>
+    <details>
+      <summary><strong>Solution:</strong></summary>
+      <div>
+        <video controls>
+  <source src="10. Probabilistic Alpha-Beta Pruning-YS5CmZbGMww.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="10. Probabilistic Alpha-Beta Pruning-YS5CmZbGMww.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="CN" src="10. Probabilistic Alpha-Beta Pruning-YS5CmZbGMww.zh-CN.vtt" label="CN">
+</video>
+
+
+      </div>
+    </details>
+  </div>
+</div>
+
+
+  <div class="jumbotron" style="margin-top: 50px; margin-bottom: 50px;">
+    <h3>INSTRUCTOR NOTE:</h3>
+    <p><strong>Note</strong>: In the topmost (root) node of the tree, you may drop the inequality sign (here a lower bound, e.g. reduce <code>&gt;=7</code> to <code>7</code>) after you've gone through all the sub-trees, or you may leave it in.</p>
+<p>For the purposes of alpha-beta pruning, a lower bound is sufficient for a MAX node, because if you need to choose among sibling MAX nodes at the same level, you only need to pick the one with the <em>greatest</em> lower bound. Similarly, for MIN nodes you pick the one with the <em>least</em> upper bound.</p>
+  </div>
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('10. Probabilistic Alpha-Beta Pruning')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

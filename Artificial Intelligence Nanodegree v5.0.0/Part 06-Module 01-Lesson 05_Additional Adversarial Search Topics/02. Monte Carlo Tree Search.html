@@ -1,0 +1,256 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Monte Carlo Tree Search</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Additional Adversarial Search Topics</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Improving Minimax.html">01. Improving Minimax</a>
+    </li>
+    <li class="">
+      <a href="02. Monte Carlo Tree Search.html">02. Monte Carlo Tree Search</a>
+    </li>
+    <li class="">
+      <a href="03. Reading List.html">03. Reading List</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. Monte Carlo Tree Search</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="-monte-carlo-tree-search"># Monte Carlo Tree Search</h2>
+<p>Monte Carlo Tree Search is an alternative to Minimax search that has been used successfully in many modern applications. MCTS is a general search technique that can be trivially extended to adversarial search. The main benefit of MCTS vs Minimax is that it is an aheuristic search—you do not need a good search heuristic in the domain to get reasonable results, and it works better than minimax in extremely large domains (most Go agents—including AlphaGo and AlphaZero—use MCTS).</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screen-shot-2018-05-06-at-5.07.33-pm.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="how-it-works">How it Works</h2>
+<p>MCTS works by combining tree search with simulation; rather than using a heuristic to estimate the value of each leaf node of the search tree, it instead quickly simulates the remaining game according to some default policy, and uses many replications of those rollouts to estimate the value of each possible action. The MCTS algorithm includes four phases: Selection, Expansion, Simulation, and Backpropagation. Pseudocode for each phase is shown below, along with the backup step for 2-player games.</p>
+<p>It is possible to perform MCTS with uniform sampling of the action space, but that tends to be inefficient in terms of sampling. Upper Confidence Bound for Trees (UCT) is an alternative sampling strategy that tries to sample more promising actions more frequently than other actions. It has been shown that MCTS converges to the minimax value of a search tree as the number of simulations goes towards infinity.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screen-shot-2018-05-06-at-5.07.48-pm.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screen-shot-2018-05-06-at-5.07.58-pm.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="-the-mcts-reward-function">### The MCTS Reward Function</h2>
+<p>The reward function in MCTS does not rely on a heuristic, but the semantics of the reward can be confusing. In the formulation presented in the pseudocode above, the default policy should return <strong>+1</strong> if the agent holding initiative at the start of a simulation <em>loses</em> and <strong>-1</strong> if the active agent when the simulation starts <em>wins</em> because nodes store the reward <em>relative to their parent in the game tree</em>.</p>
+<h4 id="but_why_">But…<em>why?</em></h4>
+<p>The BestChild() function chooses the action <em>a</em> that maximizes <em>Q</em> over the child nodes <em>v'</em> of the input node <em>v</em>, so the value of Q should be higher if taking action <em>a</em> from state <em>v</em> will lead to the player with initiative in state <em>v</em> (the parent) winning from state <em>v'</em> (the child), and lower if taking the action will lead to a loss.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/mcts-rewards.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>The figure above illustrates the simplest representation of the four possible cases for new node expansion. </p>
+<ol>
+<li><p>Starting from <em>v=v<sub>0</sub></em>, search may expand action <em>a<sub>0,0</sub></em> to reach <em>v<sub>1</sub></em>, where the simulation results in a win for player 1. Notice that player <strong>2</strong> has initiative on the board when the simulation is performed, so the utility of the final state to the active player in state <em>v<sub>1</sub></em> (i.e., player 2) is -∞, however the MCTS reward should be +1 because player 1 benefits from choosing action <em>a<sub>0,0</sub></em>.</p></li>
+<li><p>Starting from <em>v=v<sub>0</sub></em>, search may expand action <em>a<sub>0,1</sub></em> to reach <em>v<sub>2</sub></em>, where the simulation results in a win for player 2. The utility of the final simulation state to the active player in state <em>v<sub>2</sub></em> (i.e., player 2) is ∞, however the MCTS reward should be -1 in order to discourage Player 1 from choosing action <em>a<sub>0,1</sub></em>.</p></li>
+<li><p>Starting from <em>v=v<sub>0</sub></em>, search may expand action <em>a<sub>0,2</sub></em> to reach <em>v<sub>3</sub></em>, then expands action <em>a<sub>3,0</sub></em> to reach <em>v<sub>4</sub></em> where the simulation results in a win for player 1. The utility of the final simulation state to the active player in the initial simulation state <em>v<sub>4</sub></em> (i.e., player 1) is ∞, however the MCTS reward should be -1 in order to discourage Player 2 (the parent of <em>v<sub>4</sub></em>) from choosing action <em>a<sub>3,0</sub></em>; the BackupNegamax() function inverts the reward before propagating back to <em>v<sub>3</sub></em> which makes Player 1 <em>more</em> likely to choose action <em>a<sub>3,0</sub></em>—which makes sense because the simulation on this branch led to a win for Player 1.</p></li>
+<li><p>Starting from <em>v=v<sub>0</sub></em>, search may expand action <em>a<sub>0,2</sub></em> to reach <em>v<sub>3</sub></em>, then expands action <em>a<sub>3,1</sub></em> to reach <em>v<sub>5</sub></em> where the simulation results in a win for player 2. The utility of the final simulation state to the active player in the initial simulation state <em>v<sub>4</sub></em> (i.e., player 1) is -∞, however the MCTS reward should be 1 in order to encourage Player 2 (the parent of <em>v<sub>5</sub></em>) to choosing action <em>a<sub>3,1</sub></em>; the BackupNegamax() function inverts the reward before propagating back to <em>v<sub>3</sub></em> which makes Player 1 <em>less</em> likely to choose action <em>a<sub>3,0</sub></em>—which makes sense because the simulation on this branch led to a loss for Player 1.</p></li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Reading List.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Monte Carlo Tree Search')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

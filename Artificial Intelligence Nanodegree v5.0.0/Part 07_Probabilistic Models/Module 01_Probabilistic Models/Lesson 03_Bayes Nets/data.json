@@ -1,0 +1,1459 @@
+{
+  "data": {
+    "lesson": {
+      "id": 559362,
+      "key": "1e2296ed-a8a2-4e10-acc0-6c1d87aff78a",
+      "title": "Bayes Nets",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Sebastian explains using Bayes Nets as a compact graphical model to encode probability distributions for efficient analysis.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/1e2296ed-a8a2-4e10-acc0-6c1d87aff78a/559362/1538955092704/Bayes+Nets+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/1e2296ed-a8a2-4e10-acc0-6c1d87aff78a/559362/1538955085614/Bayes+Nets+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 590566,
+          "key": "28ab1244-b607-401f-a48f-e684e4c12e0a",
+          "title": "Lesson Plan - Week 11",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "28ab1244-b607-401f-a48f-e684e4c12e0a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 593183,
+              "key": "61d0a358-ec31-42a8-8fa5-9d54d04b32a8",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Lesson Plan: Week 11\n---\nThis week we'll continue talking about probabilistic graphical models by expanding on Bayes nets, which explicitly encode the dependencies between variables to model joint probability distributions. They are particularly useful because they provide a compact representation for practically arbitrary distributions, and efficient algorithms exist to sample and perform inference over the joint distribution.\n## Classroom\n- Watch **Bayes Nets** and **Inference in Bayes Nets**\n\n## Reading\n- AIMA **Chapter 14**\n\n## Bayes Nets Components\n\nBayes Nets is a graph that has no directed cycles, also known as a directed acyclic graph, or DAG. To build Bayes Nets, we need to specify the followings:\n1. **Random Variables**: Each node corresponds to a random variable.\n2. **Conditional Relations**: A set of directed links or arrows connects pairs of nodes.\n3. **Probability Distributions**: Each node has a conditional probability distribution that quantifies the effect of the parents on the node.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1085503,
+              "key": "2d42c5fd-22c9-47b9-8344-2bf97a4b7680",
+              "title": "Example of Bayes Nets",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/October/5f84affa_l3-1-example-of-bayes-nets/l3-1-example-of-bayes-nets.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2d42c5fd-22c9-47b9-8344-2bf97a4b7680",
+              "caption": "Example of Bayes Nets",
+              "alt": "",
+              "width": 554,
+              "height": 292,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 194107,
+          "key": "64119686570923",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "64119686570923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193754,
+              "key": "6411968657",
+              "title": "Introduction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "U_RQorl0LHg",
+                "china_cdn_id": "U_RQorl0LHg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255674,
+          "key": "b61d9ca5-29bc-44e1-b4e1-23ac75a5377b",
+          "title": "Quiz: Bayes Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b61d9ca5-29bc-44e1-b4e1-23ac75a5377b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268434,
+              "key": "8aa88b54-b551-4adc-89df-cc7f1a95bf94",
+              "title": "29 - Bayes Network Merged FINAL",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "4BDrdyCG4xc",
+                "china_cdn_id": "4BDrdyCG4xc.mp4"
+              }
+            },
+            {
+              "id": 255743,
+              "key": "f0523641-7f39-4c6c-bc7e-b29741344e72",
+              "title": "Exercise: Bayes Network",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "f0523641-7f39-4c6c-bc7e-b29741344e72",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "How many parameters does it take to specify the entire joint probability within A and B?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*3\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255898,
+              "key": "222127ee-6f4c-4c9e-985a-5184c7600de3",
+              "title": "Bayes Network Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "XJGEZzHgAxk",
+                "china_cdn_id": "XJGEZzHgAxk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255675,
+          "key": "36388129-bf2e-41e3-91ce-935faea616bd",
+          "title": "Computing Bayes Rule",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "36388129-bf2e-41e3-91ce-935faea616bd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268446,
+              "key": "08077331-78dc-408a-8a2d-6684461ec7bf",
+              "title": "31 - Computing Bayes Rules Merged FINAL",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JW6a4FYCsh0",
+                "china_cdn_id": "JW6a4FYCsh0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255676,
+          "key": "20d5b8e0-6a80-4851-b32f-081f2c532846",
+          "title": "Quiz: Two Test Cancer",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "20d5b8e0-6a80-4851-b32f-081f2c532846",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269135,
+              "key": "ca56ed94-424b-4c67-a035-a8286f860ce4",
+              "title": "32 - Two Test Cancer V6",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1N7JOX1LgVc",
+                "china_cdn_id": "1N7JOX1LgVc.mp4"
+              }
+            },
+            {
+              "id": 258975,
+              "key": "b07b7637-3039-4614-af34-b407902f5433",
+              "title": "Two Test Cancer",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b07b7637-3039-4614-af34-b407902f5433",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Given these probabilities and two positive results, what is the probability of having cancer? (Compute to the four decimal places)",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.16\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.17\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.1698\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.17\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.1698\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 269115,
+              "key": "d71cfb9f-ff15-4a3e-a5f0-3d049cd8c5c6",
+              "title": "33 - Two Test Cancer Solution V4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uhQfzm0VyAQ",
+                "china_cdn_id": "uhQfzm0VyAQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255677,
+          "key": "8f352ebc-f15d-4e0b-be9c-666a9d0d2bcb",
+          "title": "Quiz: Two Test Cancer 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8f352ebc-f15d-4e0b-be9c-666a9d0d2bcb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269117,
+              "key": "8ca76eaf-d20e-4ae7-8715-08946a137fc6",
+              "title": "34 - Two Test Cancer 2 V4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Pyfg_1c7IvE",
+                "china_cdn_id": "Pyfg_1c7IvE.mp4"
+              }
+            },
+            {
+              "id": 258977,
+              "key": "655081ef-ddfe-4982-845d-c3ea471e88bb",
+              "title": "Untitled",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "655081ef-ddfe-4982-845d-c3ea471e88bb",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Given these probabilities, one positive result, and one negative result, what is the probability of having cancer? (Compute to four decimal places.)",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.005\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.006\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.005\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.006\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.0056\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.0056\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 269118,
+              "key": "2eacc416-ac30-4c68-acc6-2e17a9e944f2",
+              "title": "35 - Two Test Cancer 2 Solution V4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AdJXxJiwOWY",
+                "china_cdn_id": "AdJXxJiwOWY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255678,
+          "key": "66d4da08-31e7-4326-8574-c6c0af7c412c",
+          "title": "Quiz: Conditional Independence",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "66d4da08-31e7-4326-8574-c6c0af7c412c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268450,
+              "key": "75b6588b-7a08-4eec-b422-ea6ffaecf542",
+              "title": "Conditional Independence",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "nZXNdVUauDY",
+                "china_cdn_id": "nZXNdVUauDY.mp4"
+              }
+            },
+            {
+              "id": 255771,
+              "key": "372fb059-3c07-4026-a8a0-956012bb989d",
+              "title": "Conditional Independence",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "372fb059-3c07-4026-a8a0-956012bb989d",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Are B and C independent?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Yes",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "No",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255909,
+              "key": "ab48caad-8102-4f6b-8822-1b8b86914bc9",
+              "title": "Conditional Independence",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "HaNbvRP7zZY",
+                "china_cdn_id": "HaNbvRP7zZY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255679,
+          "key": "6e0de9c8-3d58-43c7-8262-52c31ab95ec6",
+          "title": "Quiz: Conditional Independence 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6e0de9c8-3d58-43c7-8262-52c31ab95ec6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268447,
+              "key": "3434f4e9-0a15-4815-ac4a-618933a76ec4",
+              "title": "Conditional Independence2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-jVanw4EL5A",
+                "china_cdn_id": "-jVanw4EL5A.mp4"
+              }
+            },
+            {
+              "id": 258979,
+              "key": "d6f83b80-53dd-4f39-8793-24bc471af9f0",
+              "title": "Conditional Independence 2",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d6f83b80-53dd-4f39-8793-24bc471af9f0",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability of the test being positive if we know the first test was positive? (Compute to three decimal places.)",
+                "matchers": [
+                  {
+                    "expression": "^\\s*.230\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.230\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 268448,
+              "key": "90c6f928-9e2e-493c-8017-bfd59f480657",
+              "title": "Conditional Independence2 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "oLRICkGjBoM",
+                "china_cdn_id": "oLRICkGjBoM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255681,
+          "key": "eb64b8ef-78ea-4479-8170-6b62bf167e90",
+          "title": "Quiz: Absolute And Conditional",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "eb64b8ef-78ea-4479-8170-6b62bf167e90",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 255913,
+              "key": "3318e0fc-f77e-4981-9879-7a537d50988a",
+              "title": "Absolute And Conditional",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "FtymJ6N4JhY",
+                "china_cdn_id": "FtymJ6N4JhY.mp4"
+              }
+            },
+            {
+              "id": 255772,
+              "key": "c26c39b8-30f1-4761-b581-e227a228264c",
+              "title": "Absolute And Conditional Part 1",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "c26c39b8-30f1-4761-b581-e227a228264c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Does absolute independence imply conditional independence?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Yes/True",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "No/False",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255773,
+              "key": "9be77790-bc0d-4c3f-ba18-2f1829a68af3",
+              "title": "Absolute and Conditional Part 2",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "9be77790-bc0d-4c3f-ba18-2f1829a68af3",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Does conditional independence imply absolute independence?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Yes/True",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "No/False",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255914,
+              "key": "23c7f7f3-c1b1-4c2b-8aed-12fb2a955558",
+              "title": "Absolute And Conditional Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CVxAykCb-xQ",
+                "china_cdn_id": "CVxAykCb-xQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255682,
+          "key": "b8a3fa4b-c60b-4926-b2f2-fcad8cf96871",
+          "title": "Quiz: Confounding Cause",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b8a3fa4b-c60b-4926-b2f2-fcad8cf96871",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 255915,
+              "key": "a359bff6-ddc7-421f-bc90-2b41c570928d",
+              "title": "Confounding Cause",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "mI88dXJ0WFQ",
+                "china_cdn_id": "mI88dXJ0WFQ.mp4"
+              }
+            },
+            {
+              "id": 255774,
+              "key": "e940f60d-e7ad-47ab-8e88-348a79233124",
+              "title": "Confounding Cause",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e940f60d-e7ad-47ab-8e88-348a79233124",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability of a raise given that it is sunny?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*0.01\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.01\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.010\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*.010\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255916,
+              "key": "b3529490-8934-4cb7-b17b-a738d7c20825",
+              "title": "Confounding Cause Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "3vMJe0wNjq4",
+                "china_cdn_id": "3vMJe0wNjq4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255685,
+          "key": "976d4346-1fba-4947-9409-b4339b8adff6",
+          "title": "Quiz: Explaining Away",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "976d4346-1fba-4947-9409-b4339b8adff6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 279109,
+              "key": "79a7ccd7-efde-474a-8bcc-72fc71d9c2fa",
+              "title": "44 - Explaining Away V5",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "6oUOPmummBA",
+                "china_cdn_id": "6oUOPmummBA.mp4"
+              }
+            },
+            {
+              "id": 258980,
+              "key": "eb8462e3-01e0-4394-91ca-9575a9c3864c",
+              "title": "Explaining Away",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "eb8462e3-01e0-4394-91ca-9575a9c3864c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What’s the probability of a raise given that I’m happy and it’s sunny?  (Compute to four decimal places)",
+                "matchers": [
+                  {
+                    "expression": "^\\s*.0142\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.0142\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 279110,
+              "key": "1c946d4f-e369-4169-8366-95ea5b175cc1",
+              "title": "45 - Explaining Away Solution V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gvtMwxu53tA",
+                "china_cdn_id": "gvtMwxu53tA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255686,
+          "key": "5b83395a-66b7-44ad-8700-3100d5fc19a9",
+          "title": "Quiz: Explaining Away 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5b83395a-66b7-44ad-8700-3100d5fc19a9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 279111,
+              "key": "d7fdf62c-5462-4cb4-8453-6d5968ec6d0c",
+              "title": "46 - Explaining Away 2 V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JXjBx1JePS0",
+                "china_cdn_id": "JXjBx1JePS0.mp4"
+              }
+            },
+            {
+              "id": 258981,
+              "key": "03704ea6-1b0e-4c0e-a0ba-30bf343cef0e",
+              "title": "Explaining Away 2",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "03704ea6-1b0e-4c0e-a0ba-30bf343cef0e",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability of a raise given that all I know is that I’m happy? (Compute to four decimal places)",
+                "matchers": [
+                  {
+                    "expression": "^\\s*.0185\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.0185\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 279112,
+              "key": "5ad03fd3-76ec-4d2d-b18b-0e67be5e1aa8",
+              "title": "47 - Explaining Away 2 Solution V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "t8FAUMTzXcE",
+                "china_cdn_id": "t8FAUMTzXcE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255687,
+          "key": "3c174aef-8887-450f-a59a-97016df0830c",
+          "title": "Quiz: Explaining Away 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3c174aef-8887-450f-a59a-97016df0830c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 279113,
+              "key": "4c3a269e-611e-4db2-a227-66e27ec1d965",
+              "title": "48 - Explaining Away 3 V4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "LhvJp72WI8E",
+                "china_cdn_id": "LhvJp72WI8E.mp4"
+              }
+            },
+            {
+              "id": 258982,
+              "key": "2fdd70d2-2aad-4bac-b617-95d0cb1c708c",
+              "title": "Explaining Away 3",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "2fdd70d2-2aad-4bac-b617-95d0cb1c708c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the probability of a raise given that I look happy and it’s not sunny? (Compute to four decimal places)",
+                "matchers": [
+                  {
+                    "expression": "^\\s*.0833\\s*$"
+                  },
+                  {
+                    "expression": "^\\s*0.0833\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 279114,
+              "key": "67a9d581-36d4-4f4c-828d-0d7f152e6ec2",
+              "title": "49 - Explaining Away 3 Solution V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zx2Y-bfEa-g",
+                "china_cdn_id": "zx2Y-bfEa-g.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255688,
+          "key": "4196fd87-c7fa-4f0e-ab31-845d73d72306",
+          "title": "Conditional Dependence",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4196fd87-c7fa-4f0e-ab31-845d73d72306",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 257693,
+              "key": "65d9e4e5-455f-4679-b092-a004a52f4e7f",
+              "title": "Conditional Dependence",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "eyFHJV804Dw",
+                "china_cdn_id": "eyFHJV804Dw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255689,
+          "key": "72b0fab7-8d7d-49b1-8bc5-aa2d8c4656ee",
+          "title": "Quiz: General Bayes Net",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "72b0fab7-8d7d-49b1-8bc5-aa2d8c4656ee",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 348295,
+              "key": "77015b75-d323-4772-aa92-d1ce06b5774d",
+              "title": "51 - General Bayes Net",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_Nc0cJwRMgI",
+                "china_cdn_id": "_Nc0cJwRMgI.mp4"
+              }
+            },
+            {
+              "id": 255775,
+              "key": "b9f15a7d-6e11-4dc8-b0b0-3c8ba5358aa1",
+              "title": "General Bayes Net",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b9f15a7d-6e11-4dc8-b0b0-3c8ba5358aa1",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "How many probability values are required to specify this Bayes Network?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*13\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255928,
+              "key": "164a0508-f67a-41c8-8fee-1ea18fcbcc73",
+              "title": "General Bayes Net Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "k8wHRrX5otE",
+                "china_cdn_id": "k8wHRrX5otE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255690,
+          "key": "c8b2a03a-81cc-4644-9ddf-f850692a28db",
+          "title": "Quiz: General Bayes Net 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c8b2a03a-81cc-4644-9ddf-f850692a28db",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 255929,
+              "key": "589d6c1c-8b7e-49f8-bb72-8d24139d3da9",
+              "title": "General Bayes Net 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "BHU_9rGHKGo",
+                "china_cdn_id": "BHU_9rGHKGo.mp4"
+              }
+            },
+            {
+              "id": 255776,
+              "key": "c3162df8-e753-4d3f-be2e-f20c7ea0815d",
+              "title": "General Bayes Net 2",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "c3162df8-e753-4d3f-be2e-f20c7ea0815d",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "How many parameters do we need to specify?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*19\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255930,
+              "key": "20b6e5ea-2cb0-41aa-9123-d87975f5ab5d",
+              "title": "General Bayes Net 2 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "3KBd9ppAywI",
+                "china_cdn_id": "3KBd9ppAywI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255691,
+          "key": "154e7d1a-3d60-47b5-8174-5e513f48389e",
+          "title": "Quiz: General Bayes Net 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "154e7d1a-3d60-47b5-8174-5e513f48389e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 255931,
+              "key": "f3ca5346-bc29-4562-937c-be202e9dbbf4",
+              "title": "General Bayes Net 3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "m-sPyxpsaFQ",
+                "china_cdn_id": "m-sPyxpsaFQ.mp4"
+              }
+            },
+            {
+              "id": 255777,
+              "key": "9e98bf64-66e7-4570-9fe9-1d45abc4cc10",
+              "title": "General Bayes Net 3",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "9e98bf64-66e7-4570-9fe9-1d45abc4cc10",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "How many parameters do we need to specify?",
+                "matchers": [
+                  {
+                    "expression": "^\\s*47\\s*$"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 255932,
+              "key": "4630096b-a8f4-4040-9400-7080e0520698",
+              "title": "General Bayes Net 3 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "j_2P_xAS_z0",
+                "china_cdn_id": "j_2P_xAS_z0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255692,
+          "key": "559cb4d2-58cc-462f-ade5-e9f6d735290f",
+          "title": "Value Of A Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "559cb4d2-58cc-462f-ade5-e9f6d735290f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 255933,
+              "key": "c5c97b87-8fe1-4947-a355-7d5422541652",
+              "title": "Value Of A Network",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "kdqo5pCXSxg",
+                "china_cdn_id": "kdqo5pCXSxg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255693,
+          "key": "ca390efa-4a19-4f65-b717-4493765c66e5",
+          "title": "Quiz: D Separation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ca390efa-4a19-4f65-b717-4493765c66e5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 256085,
+              "key": "b656c564-bf87-4739-8575-0b4bcb9da338",
+              "title": "D Separation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zhTRI7NG-Y0",
+                "china_cdn_id": "zhTRI7NG-Y0.mp4"
+              }
+            },
+            {
+              "id": 255778,
+              "key": "9e092d40-42be-4238-8ff4-943540ab988c",
+              "title": "D Separation",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "9e092d40-42be-4238-8ff4-943540ab988c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following statements are true?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "C ⊥ A",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "C ⊥ A | B",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "C ⊥ D",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "C ⊥ D | A",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk5",
+                    "text": "E ⊥ C | D",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk6",
+                    "text": "None of the above",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 256086,
+              "key": "41a490e3-2d83-4c74-b3f5-26f2ecd95854",
+              "title": "D Separation Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "5jaaaLnKxeg",
+                "china_cdn_id": "5jaaaLnKxeg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255694,
+          "key": "d2007613-17e7-4b61-9555-6906a012e454",
+          "title": "Quiz: D Separation 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d2007613-17e7-4b61-9555-6906a012e454",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 348314,
+              "key": "31d8f1ed-30f0-4c2d-87ae-2e4cc5adf949",
+              "title": "60 - D Separation 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2YFcQLx1wck",
+                "china_cdn_id": "2YFcQLx1wck.mp4"
+              }
+            },
+            {
+              "id": 255779,
+              "key": "413cf6a0-45e7-49ca-aee6-56bf0e5e0a64",
+              "title": "D Separation 2",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "413cf6a0-45e7-49ca-aee6-56bf0e5e0a64",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following statements are true?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "A ⊥ E",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "A ⊥ E | B",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "A ⊥ E | C",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "A ⊥ B",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk5",
+                    "text": "A ⊥ B | C",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk6",
+                    "text": "None of the above",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 256088,
+              "key": "80e5bee5-6b8b-4b2c-85b7-8a8ffbfe5f17",
+              "title": "D Separation 2 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gbb8ZI_zwY4",
+                "china_cdn_id": "gbb8ZI_zwY4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255695,
+          "key": "e5173c56-271b-4544-816a-80bb6b463150",
+          "title": "Quiz: D Separation 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e5173c56-271b-4544-816a-80bb6b463150",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 348315,
+              "key": "6e0d41c8-29f9-439a-ad1f-94aaffc04f5e",
+              "title": "62 - D Separation 3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "p1Ru4D0wW9c",
+                "china_cdn_id": "p1Ru4D0wW9c.mp4"
+              }
+            },
+            {
+              "id": 255780,
+              "key": "febf62c8-3a9c-43e1-a3c6-d00a771fc31d",
+              "title": "D Separation 3",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "febf62c8-3a9c-43e1-a3c6-d00a771fc31d",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": " Which of the following statements are true?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "F ⊥ A",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "F ⊥ A | D",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "F ⊥ A | G",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "F ⊥ A | H",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk5",
+                    "text": "None of the above",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 348316,
+              "key": "2b5721c6-e29e-44ec-8d3f-ad3420ae747b",
+              "title": "63 - D Separation 3 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ARsMukTMcaI",
+                "china_cdn_id": "ARsMukTMcaI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1085508,
+          "key": "23a814ec-02b3-48e6-93ff-e2ba7daab8bb",
+          "title": "Bayes Nets Recap",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "23a814ec-02b3-48e6-93ff-e2ba7daab8bb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1085506,
+              "key": "ad58e4e4-547a-4c5a-b205-eca45963d195",
+              "title": "Recap",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Bayes Nets consist of:\n1. random variables\n2. conditional independence among the variables\n3. Probability distributions of the variables\n\nTwo events are **absolute independence** if the nodes are not connected. However, these two events can become **conditional independence** at the presence of event C.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1085507,
+              "key": "224aa1dd-d264-4651-8144-5169a183277f",
+              "title": "Absolute and Conditional Independence",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/October/5f84b0ec_absolute-vs-conditional/absolute-vs-conditional.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/224aa1dd-d264-4651-8144-5169a183277f",
+              "caption": "Absolute and Conditional Independence",
+              "alt": "",
+              "width": 491,
+              "height": 226,
+              "instructor_notes": null
+            },
+            {
+              "id": 1085501,
+              "key": "3fc75b51-3c24-4ac2-9a02-6e6608149929",
+              "title": "Recap - Type of Networks",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "There are two different types of network:\n1. One hidden event that causes two or more observable events, and\n2. Two or more independent events that are the confounding cause of an event.\n\nThe second type of network is also known as the **explaining away** effect. This effect happens when two absolute independent events can become conditionally independent in the presence of another event.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1085504,
+              "key": "bb386730-c5d7-49a9-93ed-5fda1d20ee46",
+              "title": "Recap - Type of Network",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/October/5f84b0a7_recap-type-of-network/recap-type-of-network.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/bb386730-c5d7-49a9-93ed-5fda1d20ee46",
+              "caption": "Different Type of Bayes Nets",
+              "alt": "",
+              "width": 430,
+              "height": 242,
+              "instructor_notes": null
+            },
+            {
+              "id": 1085505,
+              "key": "163ce255-54be-4318-b5c4-af5f3cfcc62b",
+              "title": "Recap - Normalization Constant",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "To simplify the computations in Bayes Nets, we can rewrite the conditional probabilities with **normalization constant**, denoted as **ɑ** (alpha). Given the Bayes Rule, `P(a|b) = P(b|a) P(a) / P(b)`, we can rewrite *P prime* as `P’ = α P(b|a) P(a)`, where α is a **normalization constant**. Since we know that `P(a|b) + P(¬a | b) = 1`, we can compute `P’(¬a | b)` and get the real probability of `P(a|b)` by multiplying the normalization constant.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1085502,
+              "key": "1402b4fb-4619-4a46-853d-cc9a7619a78a",
+              "title": "Recap - Normalization Constant",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/October/5f84b149_recap-normalization-constant/recap-normalization-constant.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1402b4fb-4619-4a46-853d-cc9a7619a78a",
+              "caption": "Normalization Constant",
+              "alt": "",
+              "width": 597,
+              "height": 371,
+              "instructor_notes": null
+            },
+            {
+              "id": 1085500,
+              "key": "2aad28ea-24e1-4cf5-a37e-735ffc63ae16",
+              "title": "Recap - Next Lesson",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now that we know how to build Bayes Nets, understand the conditional relationship among the nodes, and compute joint and conditional probabilities, we can make inferences based on query and evidence variables. In the following lesson, we will look at the techniques to compute inferences, how to simplify the computation, and how to approximate inferences by sampling when we deal with very large and connected Bayes Nets.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

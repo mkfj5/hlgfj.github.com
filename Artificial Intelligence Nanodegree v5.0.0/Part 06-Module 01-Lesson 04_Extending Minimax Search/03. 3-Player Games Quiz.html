@@ -1,0 +1,399 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3-Player Games Quiz</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Extending Minimax Search</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. 3-Player Games.html">02. 3-Player Games</a>
+    </li>
+    <li class="">
+      <a href="03. 3-Player Games Quiz.html">03. 3-Player Games Quiz</a>
+    </li>
+    <li class="">
+      <a href="04. 3-Player Alpha-Beta Pruning.html">04. 3-Player Alpha-Beta Pruning</a>
+    </li>
+    <li class="">
+      <a href="05. Multi-player Alpha-Beta Pruning Reading.html">05. Multi-player Alpha-Beta Pruning Reading</a>
+    </li>
+    <li class="">
+      <a href="06. Probabilistic Games.html">06. Probabilistic Games</a>
+    </li>
+    <li class="">
+      <a href="07. Sloppy Isolation.html">07. Sloppy Isolation</a>
+    </li>
+    <li class="">
+      <a href="08. Sloppy Isolation Expectimax.html">08. Sloppy Isolation Expectimax</a>
+    </li>
+    <li class="">
+      <a href="09. Expectimax Alpha-Beta Pruning.html">09. Expectimax Alpha-Beta Pruning</a>
+    </li>
+    <li class="">
+      <a href="10. Probabilistic Alpha-Beta Pruning.html">10. Probabilistic Alpha-Beta Pruning</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">03. 3-Player Games Quiz</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>3-Player Games Quiz</p></h3>
+  <div>
+  <div>
+    <h4>Question:</h4>
+
+    <video controls>
+  <source src="03. 3-Player Games Quiz-8E1OpOrxFck.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. 3-Player Games Quiz-8E1OpOrxFck.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="CN" src="03. 3-Player Games Quiz-8E1OpOrxFck.zh-CN.vtt" label="CN">
+</video>
+
+
+  </div>
+
+  <h4>Start Quiz:</h4>
+  <div>
+  <div style="display: block;">
+    <div style="position: relative;">
+      <img src="img/5395659202.gif" style="width: 100%; max-height: 100%" alt="">
+      
+    <div style="
+    position: absolute; top: 66.63317627494457%; left: 19.118220074812967%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric1" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 66.81679600886919%; left: 22.872506234413965%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric2" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 66.67128603104213%; left: 26.581982543640898%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric3" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 66.84797671840354%; left: 38.051355985037404%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric4" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 66.77175720620842%; left: 41.776418329177055%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric5" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 66.68514412416852%; left: 45.48004987531172%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric6" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 66.96577050997783%; left: 56.70978802992519%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric7" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 66.95191241685144%; left: 60.52252182044888%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric8" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 67.03506097560977%; left: 64.26511845386533%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric9" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 66.85490576496674%; left: 75.911783042394%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric10" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 66.96230598669624%; left: 79.54722568578553%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric11" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 67.00734478935698%; left: 83.24696072319202%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric12" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 44.18306541019955%; left: 30.008961970074814%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric13" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 44.089523281596456%; left: 33.66778366583541%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric14" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 44.05487804878049%; left: 37.44544887780549%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric15" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 44.293930155210646%; left: 65.70877493765586%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric16" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 44.24542682926829%; left: 69.39292394014963%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric17" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 44.36668514412417%; left: 73.2485193266833%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric18" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 21.341463414634145%; left: 47.200358478803%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric19" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 21.324140798226164%; left: 51.01698877805486%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric20" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 21.31721175166297%; left: 54.70503428927681%; width: 3.7406483790523692%; height: 7.095343680709535%;
+  ">
+      
+        <input type="number" style="width: 100%; height: 100%;" name="null" id="numeric21" aria-label="">
+      
+    </div>
+  
+    </div>
+  </div>
+</div>
+
+
+  <div>
+    <details>
+      <summary><strong>Solution:</strong></summary>
+      <div>
+        <video controls>
+  <source src="03. 3-Player Games Quiz-lUca2VPCR7k.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. 3-Player Games Quiz-lUca2VPCR7k.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="CN" src="03. 3-Player Games Quiz-lUca2VPCR7k.zh-CN.vtt" label="CN">
+</video>
+
+
+      </div>
+    </details>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="04. 3-Player Alpha-Beta Pruning.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. 3-Player Games Quiz')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

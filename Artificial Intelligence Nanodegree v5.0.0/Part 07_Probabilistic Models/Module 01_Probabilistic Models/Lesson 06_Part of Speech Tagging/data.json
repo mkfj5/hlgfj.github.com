@@ -1,0 +1,108 @@
+{
+  "data": {
+    "lesson": {
+      "id": 578734,
+      "key": "fae3c510-e960-4ec9-8eca-50bf013c515a",
+      "title": "Part of Speech Tagging",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this project you will build a hidden Markov model (HMM) to perform part of speech tagging, a common pre-processing step in Natural Language Processing.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": null,
+      "project": {
+        "key": "347cbaa1-9ec7-40fa-a6ed-a93f92657e00",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 28800,
+        "semantic_type": "Project",
+        "title": "Part of Speech Tagging",
+        "description": "## Introduction\nIn this notebook, you'll use the [Pomegranate](https://github.com/jmschrei/pomegranate) library to build a hidden Markov model for part of speech tagging with a [universal tagset](http://www.petrovi.de/data/universal.pdf). Hidden Markov models have been able to achieve >96% tag accuracy with larger tagsets on realistic text corpora. Hidden Markov models have also been used for speech recognition and speech generation, machine translation, gene recognition for bioinformatics, and human gesture recognition for computer vision, and more.\n\nThe notebook already contains some code to get you started. You only need to add some new functionality in the areas indicated to complete the project; you will not need to modify the included code beyond what is requested. Sections that begin with **'IMPLEMENTATION'** in the header indicate that you must provide code in the block that follows. Instructions will be provided for each section, and the specifics of the implementation are marked in the code block with a `'TODO'` statement. Please be sure to read the instructions carefully!\n\n## Evaluation\n\nYour project will be reviewed by a Udacity reviewer against the project rubric [here](https://review.udacity.com/#!/rubrics/1429/view). Review this rubric thoroughly, and self-evaluate your project before submission. All criteria found in the rubric must meet specifications for you to pass.\n\n## Submission\nOnce you have completed all of the code implementations, you need to finalize your work by exporting the iPython Notebook as an HTML document. Before exporting the notebook to html, all of the code cells need to have been run so that reviewers can see the final implementation and output. You must then export the notebook by running the last cell in the notebook, or by using the menu above and navigating to File -> Download as -> HTML (.html) Your submissions should include both the html and ipynb files.\n\nAdd the \"hmm tagger.ipynb\" and \"hmm tagger.html\" files to a zip archive and submit it with the button below. (**NOTE:** If you complete the project in the workspace, then you can submit directly using the \"submit\" button in the workspace.)\n\n## Project Submission Checklist\n\n**Before submitting your project, please review and confirm the following items.** \n<input type=\"checkbox\"> I am confident all rubric items have been met and my project will pass as submitted. \n<input type=\"checkbox\"> Project builds correctly without errors and runs.\n<input type=\"checkbox\"> All required functionality exists and my project behaves as expected per the project's specifications.\n\n**Once you have checked all these items, you are ready to submit!**\n",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "1429",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": null
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 590401,
+          "key": "39809924-b818-4fd3-9566-3d841a0b0325",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "39809924-b818-4fd3-9566-3d841a0b0325",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 590403,
+              "key": "8c06f244-f44e-47a4-a025-fea8d3ff459e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Introduction\n\nIn this notebook, you'll use the [Pomegranate](https://github.com/jmschrei/pomegranate) library to build a hidden Markov model for part of speech tagging with a [universal tagset](http://www.petrovi.de/data/universal.pdf). Hidden Markov models have been able to achieve >96% tag accuracy with larger tagsets on realistic text corpora. Hidden Markov models have also been used for speech recognition and speech generation, machine translation, gene recognition for bioinformatics, and human gesture recognition for computer vision, and more.\n\nThe notebook already contains some code to get you started. You only need to add some new functionality in the areas indicated to complete the project; you will not need to modify the included code beyond what is requested. Sections that begin with **'IMPLEMENTATION'** in the header indicate that you must provide code in the block that follows. Instructions will be provided for each section, and the specifics of the implementation are marked in the code block with a `'TODO'` statement. Please be sure to read the instructions carefully!\n\n## Getting Started\n\nYou can choose one of two ways to complete the project. The first method is to use the Workspace embedded in the classroom in the next lesson. The Workspace has already been configured with all the required project files for you to complete the project. Simply open the lesson, complete the sections indicated in the Jupyter notebook, and then click the \"submit project\" button.\n\nAlternatively, you can download a copy of the AIND project materials [here](https://github.com/udacity/artificial-intelligence) and then run a Jupyter server locally on your machine to complete Project 4: part of speech tagging. (NOTE: these steps are **not** required if you are using the project Workspace.)\n\n1. Open a terminal and activate the AIND conda environment (refer to the instructions in the intro lesson). (**NOTE:** the project repository includes a conda environment specification file called \"hmm-tagger.yaml\", but you do **not** need this file to complete the project if you already have the aind conda environment installed from earlier assignments.)\n    \n2. Clone the AIND repo:\n```\n$ git clone https://github.com/udacity/artificial-intelligence\n```\n\n3. Switch to the project folder and launch a Jupyter server:\n```\n$ cd artificial-intelligence/Projects/4_hmm tagger\n$ jupyter notebook\n```\n\nDepending on your system settings, Jupyter will either open a browser window, or the terminal will print a URL with a security token. If the terminal prints a URL, simply copy the URL and paste it into a browser window to load the Jupyter browser. Once you load the Jupyter browser, select the project notebook (HMM tagger.ipynb) and follow the instructions inside to complete the project.\n\nSee below for project submission instructions.\n\n## Evaluation\n\nYour project will be reviewed by a Udacity reviewer against the project rubric [here](https://review.udacity.com/#!/rubrics/1429/view). Review this rubric thoroughly, and self-evaluate your project before submission. All criteria found in the rubric must meet specifications for you to pass.\n\n## Submission\n\nOnce you have completed all of the code implementations, you need to finalize your work by exporting the iPython Notebook as an HTML document. Before exporting the notebook to html, all of the code cells need to have been run so that reviewers can see the final implementation and output. You must then export the notebook by running the last cell in the notebook, or by using the menu above and navigating to File -> Download as -> HTML (.html) Your submissions should include both the html and ipynb files.\n\nAdd the \"hmm tagger.ipynb\" and \"hmm tagger.html\" files to a zip archive and submit it with the button below. (**NOTE:** If you complete the project in the workspace, then you can submit directly using the \"submit\" button in the workspace.)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 502154,
+          "key": "da3e1cb0-2ae2-4cfc-8752-3cd22ac9bbcb",
+          "title": "Workspace: Part of Speech Tagging",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "da3e1cb0-2ae2-4cfc-8752-3cd22ac9bbcb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 550739,
+              "key": "a1026acd-286c-4337-b667-4be04b2027d2",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view9326df77",
+              "pool_id": "jupyter",
+              "view_id": "9326df77-1f3d-4a45-a966-de916e5b9bfd",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": true,
+                    "defaultPath": "/tree/hmm-tagger"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    }
+  ]
+}
