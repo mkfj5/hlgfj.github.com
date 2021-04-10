@@ -1,0 +1,237 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.620 --> 00:00:01.439
+Welcome back.
+
+00:00:01.439 --> 00:00:06.070
+In the previous unit, we went over
+the basics of probability theory and
+
+00:00:06.070 --> 00:00:10.300
+saw how a Bayes network
+could concisely represent
+
+00:00:10.300 --> 00:00:12.510
+a joint probability distribution,
+
+00:00:12.509 --> 00:00:16.759
+including the representation of
+independence between the variable.
+
+00:00:16.760 --> 00:00:20.770
+In this unit, we will see how
+to do probabilistic inference.
+
+00:00:20.769 --> 00:00:24.859
+That is, how to answer probability
+questions using Bayes Nets.
+
+00:00:24.859 --> 00:00:25.969
+Let's put up a simple Bayes net.
+
+00:00:25.969 --> 00:00:29.283
+We'll use the familiar
+example of the earthquake,
+
+00:00:29.283 --> 00:00:33.969
+where we can have a burglary or
+an earthquake setting of the alarm.
+
+00:00:33.969 --> 00:00:38.370
+And if the alarm goes off,
+either John or Mary might call.
+
+00:00:38.371 --> 00:00:41.517
+Now, what kinds of questions can
+we ask to do inference about?
+
+00:00:41.517 --> 00:00:45.163
+The simplest type of question is the
+same question we ask with an ordinary
+
+00:00:45.162 --> 00:00:47.805
+subroutine or
+function in a programming language.
+
+00:00:47.805 --> 00:00:50.126
+Namely, given some inputs,
+what are the outputs?
+
+00:00:50.127 --> 00:00:53.108
+So in this case, we could say,
+
+00:00:53.107 --> 00:00:57.939
+given the inputs of B and
+E, what are the outputs?
+
+00:00:57.939 --> 00:01:02.234
+J and M, rather than call them input and
+output variable,
+
+00:01:02.234 --> 00:01:08.120
+in probabilistic inference, we'll call
+them evidence and query variables.
+
+00:01:08.120 --> 00:01:12.145
+That is the variables that we know
+the values of are the evidence.
+
+00:01:12.144 --> 00:01:16.510
+And the ones that we want to find out
+the values of, are the query variables.
+
+00:01:16.510 --> 00:01:22.316
+Anything that is neither evidence nor
+query is known as a hidden variable.
+
+00:01:22.316 --> 00:01:25.150
+That is,
+we won't tell you what its value is,
+
+00:01:25.150 --> 00:01:28.372
+we won't figure out what
+its value is and report it.
+
+00:01:28.373 --> 00:01:31.058
+But we'll have to compute
+with it internally.
+
+00:01:31.058 --> 00:01:34.536
+And now, furthermore,
+in probabilistic inference,
+
+00:01:34.536 --> 00:01:38.609
+the output is not a single number for
+each of the query variables.
+
+00:01:38.608 --> 00:01:41.111
+But rather it's
+a probability distribution.
+
+00:01:41.111 --> 00:01:45.506
+So the answer is going to be a complete
+joint probability distribution over
+
+00:01:45.506 --> 00:01:46.838
+the query variables.
+
+00:01:46.838 --> 00:01:50.801
+We call this the posterior distribution,
+given the evidence.
+
+00:01:50.801 --> 00:01:52.814
+And we can write it like this.
+
+00:01:52.813 --> 00:01:55.500
+It's the probability
+distribution of one or
+
+00:01:55.500 --> 00:01:59.468
+more query variables given the values
+of the evidence variables.
+
+00:01:59.468 --> 00:02:02.801
+And there can be 0 or
+more evidence variables, and
+
+00:02:02.802 --> 00:02:05.292
+each of them are given an exact value.
+
+00:02:05.292 --> 00:02:08.413
+And that's the computation
+we want to come up with.
+
+00:02:08.413 --> 00:02:12.243
+There's another question we can ask,
+which is the most likely explanation.
+
+00:02:12.243 --> 00:02:17.133
+That is, out of all the possible
+values for all the query variables,
+
+00:02:17.133 --> 00:02:21.364
+which combination of values
+has the highest probability.
+
+00:02:21.365 --> 00:02:26.540
+We write the formula like this
+asking which Q values are maxable,
+
+00:02:26.540 --> 00:02:28.806
+given the evidence values.
+
+00:02:28.806 --> 00:02:32.055
+Now, in an ordinary
+programming language,
+
+00:02:32.056 --> 00:02:34.457
+each function goes only one way.
+
+00:02:34.457 --> 00:02:38.406
+It has input variables,
+does some computation, and
+
+00:02:38.406 --> 00:02:42.364
+comes up with a result variable or
+result variables.
+
+00:02:42.364 --> 00:02:46.945
+One great thing about base nets is that
+we're not restricted to going only in
+
+00:02:46.945 --> 00:02:47.959
+one direction.
+
+00:02:47.959 --> 00:02:51.228
+We could go in the causal direction,
+
+00:02:51.228 --> 00:02:55.445
+giving as evidence the root
+nodes of the tree and
+
+00:02:55.445 --> 00:02:59.669
+asking as query values
+the nodes at the bottom.
+
+00:02:59.669 --> 00:03:01.650
+Or we could reverse that causal flow.
+
+00:03:01.651 --> 00:03:06.927
+For example, we could have J and
+M be the evidence variable and B and
+
+00:03:06.927 --> 00:03:12.028
+E be the query variables or
+we could have any other combination.
+
+00:03:12.028 --> 00:03:16.569
+For example, we could have
+M be the evidence variable.
+
+00:03:16.569 --> 00:03:19.754
+And J and B be the query variables.
+
+00:03:19.754 --> 00:03:21.329
+Here's a question for you.
+
+00:03:21.330 --> 00:03:25.773
+Imagine the situation where Mary has
+called to report that the alarm is
+
+00:03:25.772 --> 00:03:30.155
+going off and we want to know whether or
+not there has been a burglary.
+
+00:03:30.155 --> 00:03:35.367
+For each of the nodes, click on
+the circle to tell us if the node
+
+00:03:35.367 --> 00:03:39.894
+is an evidence node,
+a hidden node, or a query node.
+
+00:03:39.894 --> 00:03:42.229
+[BLANK_AUDIO]
+

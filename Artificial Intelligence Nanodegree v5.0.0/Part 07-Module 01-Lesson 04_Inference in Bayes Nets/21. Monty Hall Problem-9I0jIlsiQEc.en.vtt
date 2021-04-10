@@ -1,0 +1,77 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.470
+Now, just one more thing.
+
+00:00:01.470 --> 00:00:02.339
+I can't help but
+
+00:00:02.339 --> 00:00:06.109
+describe what is probably the most
+famous probability problem at all.
+
+00:00:06.110 --> 00:00:09.350
+It's called the Monty Hall Problem,
+after the game show host.
+
+00:00:09.349 --> 00:00:13.039
+The idea is that you're on a game
+show and there's three doors.
+
+00:00:13.039 --> 00:00:16.890
+Door number 1, door number 2,
+and door number 3.
+
+00:00:16.890 --> 00:00:19.420
+And behind each door is a prize.
+
+00:00:19.420 --> 00:00:22.937
+And you know that one of the doors
+contains an expensive sports car,
+
+00:00:22.937 --> 00:00:26.702
+which you would find desirable, and
+the other two doors contain a goat,
+
+00:00:26.702 --> 00:00:29.200
+which you would find less desirable.
+
+00:00:29.199 --> 00:00:34.234
+Now, you're given a choice, and
+let's say you choose door number one.
+
+00:00:34.234 --> 00:00:37.606
+But according to the conventions
+of the game, the host,
+
+00:00:37.606 --> 00:00:40.435
+Monty Hall,
+will now open one of the doors.
+
+00:00:40.435 --> 00:00:44.175
+Knowing that the door that
+he opens contains a goat.
+
+00:00:44.174 --> 00:00:46.226
+And he shows you door number three.
+
+00:00:46.226 --> 00:00:50.066
+And he now gives you the opportunity
+to stick with your choice or
+
+00:00:50.067 --> 00:00:51.817
+to switch to the other door.
+
+00:00:51.817 --> 00:00:53.405
+What I want you to tell me is,
+
+00:00:53.405 --> 00:00:57.439
+what is your probability of wining
+if you stick to door number one?
+
+00:00:57.439 --> 00:01:01.000
+And what is the probability of wining
+if you switch to door number two?
+

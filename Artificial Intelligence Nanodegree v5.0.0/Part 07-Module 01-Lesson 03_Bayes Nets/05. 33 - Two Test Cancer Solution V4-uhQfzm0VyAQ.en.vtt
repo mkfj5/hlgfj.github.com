@@ -1,0 +1,105 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.420 --> 00:00:06.092
+So the correct answer is 0.1698
+
+00:00:06.092 --> 00:00:10.525
+approximately.
+
+00:00:10.525 --> 00:00:15.370
+And to compute this,
+I used the trick I've shown you before.
+
+00:00:15.369 --> 00:00:20.550
+Let me write down the running count for
+cancer, and
+
+00:00:20.550 --> 00:00:28.032
+for not cancer, as I integrate
+the various multiplications in Bayes rule.
+
+00:00:28.033 --> 00:00:34.936
+My prior for cancer was 0.01,
+and for non-cancer was 0.99.
+
+00:00:34.936 --> 00:00:36.948
+Then I get my first +, and
+
+00:00:36.948 --> 00:00:41.710
+the probability of a plus given
+that we have cancer is 0.9.
+
+00:00:41.710 --> 00:00:46.593
+And the same for non cancer is 0.2.
+
+00:00:46.593 --> 00:00:49.987
+So according to
+the non-normalized Bayes rule,
+
+00:00:49.987 --> 00:00:54.623
+I now multiply these two things
+together to get my non-normalized
+
+00:00:54.622 --> 00:00:58.679
+probability of having
+cancer given the plus.
+
+00:00:58.679 --> 00:01:01.639
+Since multiplication is commutative,
+
+00:01:01.639 --> 00:01:07.126
+I can do the same thing again with
+my second test result, 0.9, 0.2.
+
+00:01:07.126 --> 00:01:11.867
+And I multiply all of these three things
+together to get my non normalized
+
+00:01:11.867 --> 00:01:14.911
+probability, P prime,
+to be the following.
+
+00:01:14.911 --> 00:01:18.478
+0.0081 if you multiply
+those things together.
+
+00:01:19.489 --> 00:01:25.539
+And 0.0396 if you multiply
+these guys together.
+
+00:01:25.539 --> 00:01:27.560
+And these are not a probability.
+
+00:01:27.560 --> 00:01:31.314
+If we add those for
+the two complementary,
+
+00:01:31.314 --> 00:01:35.602
+with cancer, non cancer, I get 0.0477.
+
+00:01:35.602 --> 00:01:37.973
+However, I now divide.
+
+00:01:37.974 --> 00:01:42.413
+That is, I normalize those non
+normalized probabilities over
+
+00:01:42.412 --> 00:01:44.920
+here by this factor over here.
+
+00:01:44.920 --> 00:01:47.409
+I actually get the correct
+posterior probability.
+
+00:01:47.409 --> 00:01:50.055
+P(C) given ++.
+
+00:01:50.055 --> 00:01:55.872
+And they look as follows,
+approximately 0.1698 and
+
+00:01:55.873 --> 00:01:59.021
+approximately 0.8301.
+

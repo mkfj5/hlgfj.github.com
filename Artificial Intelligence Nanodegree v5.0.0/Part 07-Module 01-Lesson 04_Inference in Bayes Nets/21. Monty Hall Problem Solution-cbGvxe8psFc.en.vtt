@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.290 --> 00:00:03.419
+The answer is that you have
+a one third chance of winning,
+
+00:00:03.419 --> 00:00:05.209
+if you stick with door number one.
+
+00:00:05.209 --> 00:00:07.779
+And a two thirds chance if you
+switch to door number two.
+
+00:00:07.780 --> 00:00:08.910
+How do we explain that?
+
+00:00:08.910 --> 00:00:10.609
+Why and why isn't it 50 50?
+
+00:00:10.609 --> 00:00:12.989
+While it's true that
+there's two possibilities.
+
+00:00:12.990 --> 00:00:16.740
+But we have learned from probability,
+that just because there are two options
+
+00:00:16.739 --> 00:00:19.019
+doesn't mean that both
+options are equally likely.
+
+00:00:19.019 --> 00:00:23.089
+It's easier to explain why the first
+door has a one third probability,
+
+00:00:23.089 --> 00:00:25.699
+because when you started
+the car could be in anyone or
+
+00:00:25.699 --> 00:00:27.989
+three places, you choose one of them.
+
+00:00:27.989 --> 00:00:29.529
+That probability was one-third.
+
+00:00:29.530 --> 00:00:32.170
+And that probability hasn't been changed
+
+00:00:32.170 --> 00:00:34.190
+by the revealing of one
+of the other doors.
+
+00:00:34.189 --> 00:00:36.007
+Why is door number two two-thirds?
+
+00:00:36.008 --> 00:00:40.138
+Well, one way to explain it is that
+the probability has to sum to one, and
+
+00:00:40.137 --> 00:00:43.210
+if one-third is here,
+the two thirds has to be here.
+
+00:00:43.210 --> 00:00:47.600
+But why doesn't the same argument
+that you use for one, hold for two?
+
+00:00:47.600 --> 00:00:53.210
+Why can't we say the probability of
+two holding the car was a third,
+
+00:00:53.210 --> 00:00:55.679
+before this door was revealed?
+
+00:00:55.679 --> 00:00:59.253
+Why has that changed two
+that has not changed one?
+
+00:00:59.253 --> 00:01:02.659
+And the reason is, because we've learned
+something about door number two.
+
+00:01:02.659 --> 00:01:06.429
+We've learned that it wasn't the door
+that was flipped over by the host.
+
+00:01:06.430 --> 00:01:10.262
+And so that additional information
+has updated the probability.
+
+00:01:10.262 --> 00:01:13.590
+Whereas we haven't learned anything
+additional about door number one,
+
+00:01:13.590 --> 00:01:17.409
+because it was never an option that
+the host might switch door number one.
+
+00:01:17.409 --> 00:01:20.831
+And in fact in this case
+if we reveal the door,
+
+00:01:20.831 --> 00:01:24.085
+we find that's where
+the car actually is.
+
+00:01:24.084 --> 00:01:27.498
+So you see, learning probability,
+may end up winning you something.
+

@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.730 --> 00:00:06.487
+The answer is approximately 0.0142.
+
+00:00:06.488 --> 00:00:10.266
+And as an exercise in expanding
+this term using Bayes' rule,
+
+00:00:10.266 --> 00:00:14.120
+using total probability,
+which I just do for you.
+
+00:00:14.119 --> 00:00:20.945
+Using Bayes' rule,
+you can transform this into P of H,
+
+00:00:20.945 --> 00:00:26.763
+given R, S times P of R
+given S over P of H given S.
+
+00:00:26.763 --> 00:00:30.487
+You observe the position
+independence of R and S,
+
+00:00:30.487 --> 00:00:33.539
+to simplify this to just P of R.
+
+00:00:33.539 --> 00:00:38.866
+And the denominator is expanded
+by folding in R and not R.
+
+00:00:38.866 --> 00:00:44.821
+You have (H | R,S) times
+P(R) plus P(H|-RS)
+
+00:00:44.822 --> 00:00:49.870
+times P(-R) which is total probability.
+
+00:00:49.869 --> 00:00:54.756
+You can now read off the numbers
+from the tables over here,
+
+00:00:54.756 --> 00:00:59.945
+which gives us 1 times 0.01
+divided by this expression is
+
+00:00:59.945 --> 00:01:06.057
+the same as the expression over here
+0.01 plus this thing over here.
+
+00:01:06.058 --> 00:01:10.522
+Which we can find over here
+to be 0.7 x this one over
+
+00:01:10.522 --> 00:01:15.097
+here which is one minus
+the value over here 0.99.
+
+00:01:15.096 --> 00:01:19.751
+Which gives us approximately 0.0142
+

@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.610 --> 00:00:02.884
+The answer is surprisingly simple.
+
+00:00:02.884 --> 00:00:08.240
+It is 0.01, but
+how do you know this so fast?
+
+00:00:08.240 --> 00:00:12.359
+Well, if we look at this
+Bayes Network both the sunny and
+
+00:00:12.359 --> 00:00:17.079
+the question whether they got
+a raise impact my happiness.
+
+00:00:17.079 --> 00:00:22.239
+But since I don't know anything about
+the happiness there's no way that
+
+00:00:22.239 --> 00:00:28.259
+just the weather might impact
+whether I get a raise or not.
+
+00:00:28.260 --> 00:00:32.548
+In fact,
+it might be independently sunny and
+
+00:00:32.548 --> 00:00:35.229
+might independently get a raise at work.
+
+00:00:35.229 --> 00:00:41.349
+There's no mechanism of which
+these two things would co-occur.
+
+00:00:41.350 --> 00:00:45.240
+Therefore the probability of
+a raise given it is sunny,
+
+00:00:45.240 --> 00:00:50.499
+is just the same as the probability of
+a raise given any weather which is 0.01.
+

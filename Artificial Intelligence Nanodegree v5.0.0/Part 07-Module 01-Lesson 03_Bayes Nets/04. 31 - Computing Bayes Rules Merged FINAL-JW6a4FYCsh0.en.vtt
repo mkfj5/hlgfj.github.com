@@ -1,0 +1,157 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.480 --> 00:00:04.220
+So we just encountered our
+very first Bayes network and
+
+00:00:04.219 --> 00:00:06.669
+did a number of
+interesting calculations.
+
+00:00:06.669 --> 00:00:11.199
+Let's now talk about Bayes Rule and
+look into more complex Bayes networks.
+
+00:00:11.199 --> 00:00:13.139
+I want to look at Bayes Rule again and
+
+00:00:13.140 --> 00:00:15.820
+make an observation that
+is being non-trivial.
+
+00:00:15.820 --> 00:00:21.120
+Here is Bayes Rule, and
+in practice what we find is
+
+00:00:21.120 --> 00:00:25.620
+this term here is relatively easy
+to compute, it's just a product.
+
+00:00:25.620 --> 00:00:28.530
+Whereas this term is
+really hard to compute.
+
+00:00:28.530 --> 00:00:33.890
+However, this term over here does not
+depend on what we assume for variable A.
+
+00:00:33.890 --> 00:00:35.500
+It's just a function of B.
+
+00:00:35.500 --> 00:00:36.359
+So suppose for
+
+00:00:36.359 --> 00:00:41.100
+a moment we also care about the
+complementary range of not A given B.
+
+00:00:41.100 --> 00:00:43.800
+For which Bayes will unfold as follows.
+
+00:00:43.799 --> 00:00:47.640
+Then we find that the normalizer
+P of B is identical
+
+00:00:47.640 --> 00:00:51.219
+whether we assume A on the left side or
+not A on the left side.
+
+00:00:51.219 --> 00:00:59.289
+We also know that P of A given B
+plus P of not A given B must be one.
+
+00:00:59.289 --> 00:01:01.579
+Because these are two
+complimentary events.
+
+00:01:01.579 --> 00:01:05.719
+It allows us to compute Bayes
+rule very differently by
+
+00:01:05.719 --> 00:01:08.010
+basically ignoring the normalizer.
+
+00:01:08.010 --> 00:01:09.890
+So here's how it goes.
+
+00:01:09.890 --> 00:01:11.927
+You compute P of A given B and
+
+00:01:11.927 --> 00:01:17.260
+you're going to call this prime
+because it's not a real probability.
+
+00:01:17.260 --> 00:01:20.179
+It will be just P of B
+given A times P of A,
+
+00:01:20.180 --> 00:01:25.600
+which is the normalizer to the
+denominator of the expression over here.
+
+00:01:25.599 --> 00:01:29.769
+We do the same thing not A.
+
+00:01:29.769 --> 00:01:33.626
+So in both cases,
+we compute the posterior probability not
+
+00:01:33.626 --> 00:01:36.390
+normalized while omitting
+the normalizer B.
+
+00:01:36.390 --> 00:01:40.569
+And then we can recover
+the original probabilities
+
+00:01:40.569 --> 00:01:44.539
+by normalizing based on
+those values over here.
+
+00:01:44.540 --> 00:01:48.470
+So the probability of A given B,
+the actual probability,
+
+00:01:48.469 --> 00:01:53.519
+is a normalizer eta times this
+not normalized form over here.
+
+00:01:53.519 --> 00:01:57.033
+The same is true for
+the negation of A, over here.
+
+00:01:57.034 --> 00:02:02.783
+And eta is just the normalizer
+results by adding these two values
+
+00:02:02.783 --> 00:02:09.189
+over here together as shown over
+here and dividing them by one.
+
+00:02:09.189 --> 00:02:10.859
+So take a look at this for a moment.
+
+00:02:11.939 --> 00:02:16.710
+What we've done is we deferred the
+calculation of the normalizer over here.
+
+00:02:16.710 --> 00:02:19.920
+By computing pseudo probabilities
+that are non-nominalized.
+
+00:02:19.919 --> 00:02:21.549
+This made the calculation much easier.
+
+00:02:21.550 --> 00:02:26.353
+And returned everything we just
+folded back in the normalizer based
+
+00:02:26.353 --> 00:02:31.164
+on the resulting pseudo probabilities
+and get the correct answer.
+
+00:02:31.163 --> 00:02:40.188
+[BLANK_AUDIO]
+

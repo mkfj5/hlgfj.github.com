@@ -1,0 +1,27 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.610 --> 00:00:04.589
+And here's our car network which we
+discussed at the very beginning of this
+
+00:00:04.589 --> 00:00:05.229
+unit.
+
+00:00:05.230 --> 00:00:09.775
+How many parameters do we
+need to specify this network?
+
+00:00:09.775 --> 00:00:14.507
+Remember, there are 16
+total variables and
+
+00:00:14.507 --> 00:00:22.890
+the naive join over those 16 will
+be 2 to the 16- 1, which is 65,535.
+
+00:00:22.890 --> 00:00:23.879
+Please write your answer
+into this box over here.
+

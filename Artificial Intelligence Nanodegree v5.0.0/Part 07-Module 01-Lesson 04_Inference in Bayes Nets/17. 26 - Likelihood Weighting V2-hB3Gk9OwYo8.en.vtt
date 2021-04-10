@@ -1,0 +1,89 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.430 --> 00:00:04.349
+In likelihood weighting, we're going to
+be collecting samples just like before.
+
+00:00:04.349 --> 00:00:07.761
+But we're going to add a probabilistic
+weight to each sample.
+
+00:00:07.761 --> 00:00:11.710
+Now, let's say we want to compute
+the probability of rain given
+
+00:00:11.711 --> 00:00:14.702
+that the sprinklers are on and
+the grass is wet.
+
+00:00:14.702 --> 00:00:19.149
+We start as before,
+we make a choice for cloudy.
+
+00:00:19.149 --> 00:00:23.309
+And let's say that, again,
+we choose cloudy being positive.
+
+00:00:23.309 --> 00:00:25.209
+We want to make a choice for sprinkler.
+
+00:00:25.210 --> 00:00:29.054
+But we're constrained to always
+choose sprinkler being positive, so
+
+00:00:29.054 --> 00:00:34.112
+we'll make that choice, and we know we
+were dealing with cloudy being positive.
+
+00:00:34.112 --> 00:00:35.434
+So, we're in this row and
+
+00:00:35.433 --> 00:00:38.692
+we were forced to make this choice
+of sprinkler being positive.
+
+00:00:38.692 --> 00:00:40.890
+And that has a probability of only 0.1.
+
+00:00:40.890 --> 00:00:42.807
+So, we'll put that 0.1 into the weight.
+
+00:00:42.807 --> 00:00:45.410
+Next, we'll look at the rain variable,
+and
+
+00:00:45.409 --> 00:00:48.179
+here we're not constrained in any way.
+
+00:00:48.179 --> 00:00:53.929
+So, we make a choice according to
+the probability tables with cloudy being
+
+00:00:53.929 --> 00:00:58.630
+positive and let's say that we
+choose the more popular choice and
+
+00:00:58.630 --> 00:01:00.184
+rain gets the positive value.
+
+00:01:00.183 --> 00:01:05.564
+Now, we look at wet grass,
+were constrained to choose positive and
+
+00:01:05.564 --> 00:01:08.314
+we know that the parents
+are also positive.
+
+00:01:08.314 --> 00:01:10.334
+So, we're dealing with this row here.
+
+00:01:10.334 --> 00:01:14.664
+Since it's a constrained choice,
+we're going to add in or multiply in
+
+00:01:14.665 --> 00:01:18.305
+an additional weight and I want you to
+tell me what that weight should be.
+

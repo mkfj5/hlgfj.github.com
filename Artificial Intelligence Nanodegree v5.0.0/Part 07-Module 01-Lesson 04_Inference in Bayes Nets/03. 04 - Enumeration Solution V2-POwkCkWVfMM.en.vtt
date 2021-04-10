@@ -1,0 +1,89 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.780 --> 00:00:03.948
+We get the answer by reading numbers
+off the conditional probability table.
+
+00:00:03.948 --> 00:00:10.242
+So the probability of B being positive
+0.001, of E being positive because we're
+
+00:00:10.242 --> 00:00:15.429
+dealing with the positive case now for
+the variable E, is 0.002.
+
+00:00:15.429 --> 00:00:19.283
+Probability of A being positive
+because we're dealing with that case,
+
+00:00:19.283 --> 00:00:20.869
+given that B is positive.
+
+00:00:20.870 --> 00:00:26.057
+And the case when E is positive,
+that we can read off here, is 0.95,
+
+00:00:26.056 --> 00:00:31.999
+probability that J is positive
+given that A is positive, is 0.9.
+
+00:00:31.001 --> 00:00:36.081
+To finally, probability that M is
+positive given that A is positive,
+
+00:00:36.081 --> 00:00:37.986
+we read up here as 0.7.
+
+00:00:37.985 --> 00:00:41.009
+We multiply all those together,
+
+00:00:41.009 --> 00:00:46.193
+it's going to be a small number
+because we got the 0.001 and
+
+00:00:46.194 --> 00:00:51.926
+the 0.002 here,
+that works out to 0.000001197.
+
+00:00:51.926 --> 00:00:56.707
+That seems like a really small number
+but remember we have normalized by
+
+00:00:56.707 --> 00:01:01.200
+the P(J +MJ) and this is only
+one of the four possibilities.
+
+00:01:01.200 --> 00:01:05.569
+We have to enumerate over all four
+possibilities for E and A and
+
+00:01:05.569 --> 00:01:10.274
+in the end, it works out that
+the probability of the burglary alarm
+
+00:01:10.274 --> 00:01:14.320
+being true given that John and
+Mary calls Is 0.284.
+
+00:01:14.320 --> 00:01:18.013
+And we get that number because
+intuitively it seems that the alarm is
+
+00:01:18.013 --> 00:01:21.609
+fairly reliable, John and
+Mary calling are very reliable.
+
+00:01:21.609 --> 00:01:24.390
+But the prior probability
+of burglary is low and
+
+00:01:24.390 --> 00:01:29.269
+those two terms combined together
+to give us the 0.284 value when
+
+00:01:29.269 --> 00:01:32.839
+we sum up each of the four
+terms of these products.
+

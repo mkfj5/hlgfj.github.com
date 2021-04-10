@@ -1,0 +1,133 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.980 --> 00:00:07.405
+This leads me to the general study of Conditional independence
+
+00:00:07.405 --> 00:00:12.370
+in Bayes Networks that works often called D-Separation or Reachability.
+
+00:00:12.370 --> 00:00:17.858
+D-Separation is best studied by so called Active Triplet's and Inactive Triplet's.
+
+00:00:17.858 --> 00:00:20.725
+We have Active Triplet's render
+
+00:00:20.725 --> 00:00:25.415
+variables dependent and Inactive Triplet's render them independent.
+
+00:00:25.415 --> 00:00:32.547
+Any chain of three variables like this makes the initial and final variable dependent,
+
+00:00:32.547 --> 00:00:34.300
+if all variables are known.
+
+00:00:34.300 --> 00:00:39.955
+However, if the central variable is known that it's behind the conditioning bar,
+
+00:00:39.955 --> 00:00:43.740
+then this variable and this variable become independent.
+
+00:00:43.740 --> 00:00:46.295
+So, if you have a structure like this and
+
+00:00:46.295 --> 00:00:50.605
+it's "cut off" by a known variable in the middle,
+
+00:00:50.605 --> 00:00:53.089
+that separates or d
+
+00:00:53.089 --> 00:00:57.245
+separates the left variable from the right variable and it will become independent.
+
+00:00:57.245 --> 00:01:00.425
+Similarly, any structure like this
+
+00:01:00.425 --> 00:01:04.025
+renders the left variable and the right variable dependent,
+
+00:01:04.025 --> 00:01:07.621
+unless, the center variable is known,
+
+00:01:07.621 --> 00:01:11.165
+in which case the left and right variable become independent.
+
+00:01:11.165 --> 00:01:14.440
+Another Active Triplet's now requires knowledge
+
+00:01:14.440 --> 00:01:17.823
+of a variable.This is the explain away case.
+
+00:01:17.823 --> 00:01:23.830
+If this variable is known for any reason it will be converted into a single variable,
+
+00:01:23.830 --> 00:01:28.259
+then this variable and this variable here become dependent.
+
+00:01:28.259 --> 00:01:32.020
+Contrast this to the case that all variable is now unknown.
+
+00:01:32.020 --> 00:01:35.560
+A situation like this means that this variable
+
+00:01:35.560 --> 00:01:38.455
+on the left and on the right are actually independent.
+
+00:01:38.455 --> 00:01:41.347
+In a single final example,
+
+00:01:41.347 --> 00:01:45.010
+we also get dependence if we have
+
+00:01:45.010 --> 00:01:50.285
+the following situation and direct successor of a conversion variable is known.
+
+00:01:50.285 --> 00:01:55.565
+So it is sufficient if a successor of these variables is known,
+
+00:01:55.565 --> 00:01:58.090
+the variable itself does not have to be known.
+
+00:01:58.090 --> 00:02:00.370
+And the reason is if you know this guy over
+
+00:02:00.370 --> 00:02:03.910
+here we need to get knowledge of this guy over here and,
+
+00:02:03.910 --> 00:02:07.345
+by virtue of that, the case over here essentially applies.
+
+00:02:07.345 --> 00:02:09.163
+iF YOU look at those rules,
+
+00:02:09.163 --> 00:02:13.540
+Those rules allow you to determine for any Bayes Network
+
+00:02:13.540 --> 00:02:18.725
+whether variables are dependent or not dependent given the evidence you have.
+
+00:02:18.725 --> 00:02:23.245
+If you color the notes dark for which you do have evidence,
+
+00:02:23.245 --> 00:02:26.370
+then you can use these rules to understand whether
+
+00:02:26.370 --> 00:02:29.470
+any two variables are condition dependent or not.
+
+00:02:29.470 --> 00:02:31.186
+So let me ask you for
+
+00:02:31.186 --> 00:02:37.965
+this relatively complicated Bayes Network the following questions: is F independent of A,
+
+00:02:37.965 --> 00:02:39.691
+is F independent of A given D, is F independent of A given G and is F independent
+
+00:02:39.691 --> 00:02:46.835
+of A given H?
+
+00:02:46.835 --> 00:02:49.430
+Please mark your answer as you see fit.
+

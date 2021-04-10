@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.440 --> 00:00:03.718
+So C is not independent of A.
+
+00:00:03.718 --> 00:00:09.063
+In fact, A influences C by virtue of B.
+
+00:00:09.063 --> 00:00:13.388
+But if you know B,
+then A becomes independent of C,
+
+00:00:13.387 --> 00:00:17.021
+which means the only
+determinant to C is B.
+
+00:00:17.021 --> 00:00:17.918
+If you know B for
+
+00:00:17.919 --> 00:00:21.856
+sure, then knowledge of A won't
+really tell you anything about C.
+
+00:00:21.856 --> 00:00:27.605
+C is also not independent of D, just
+the same way C is not independent of A.
+
+00:00:27.606 --> 00:00:31.410
+If I learn something about D,
+I can infer more about C.
+
+00:00:31.410 --> 00:00:36.980
+But if I do know A, then it's hard to
+imagine how knowledge of D would help
+
+00:00:36.979 --> 00:00:42.029
+me with C because I can't learn anything
+more about A than knowing A already.
+
+00:00:42.030 --> 00:00:44.950
+Therefore, given A,
+C and D are independent.
+
+00:00:44.950 --> 00:00:48.470
+The same is true for E and C.
+
+00:00:48.469 --> 00:00:51.670
+If you know D then E and
+C become independent.
+

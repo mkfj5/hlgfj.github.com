@@ -1,0 +1,30 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.380 --> 00:00:02.343
+So that's how variable
+elimination works.
+
+00:00:02.343 --> 00:00:07.099
+It's a continued process of joining
+together factors to form a larger factor
+
+00:00:07.099 --> 00:00:09.390
+and then eliminating
+variables by summing out.
+
+00:00:09.390 --> 00:00:12.734
+If we make a good choice of the order
+in which we apply these operations,
+
+00:00:12.734 --> 00:00:16.304
+then variable elimination can be much
+more efficient in just doing the whole
+
+00:00:16.304 --> 00:00:17.051
+enumeration.
+
+00:00:17.051 --> 00:00:21.018
+[BLANK_AUDIO]
+

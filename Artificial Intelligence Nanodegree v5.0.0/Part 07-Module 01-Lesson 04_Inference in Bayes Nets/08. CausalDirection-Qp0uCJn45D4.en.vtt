@@ -1,0 +1,13 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.960
+The moral is that base nets tend to be the most compact and thus,
+
+00:00:03.960 --> 00:00:08.324
+the easier to do inference on when they're written in the causal direction.
+
+00:00:08.324 --> 00:00:12.759
+That is, when the networks flow from causes to effects.
+

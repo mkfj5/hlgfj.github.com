@@ -1,0 +1,133 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.070
+So we are now ready to define
+
+00:00:02.070 --> 00:00:03.612
+Bayes networks in a more general way.
+
+00:00:03.612 --> 00:00:08.540
+Bayes networks define probability distributions over graphs of random variables.
+
+00:00:08.540 --> 00:00:12.465
+Here's an example of a graph of
+
+00:00:12.465 --> 00:00:15.137
+five variables and this Bayes network
+
+00:00:15.137 --> 00:00:18.350
+defines the distribution over those five random variables.
+
+00:00:18.350 --> 00:00:24.715
+Instead of enumerating all possibilities of combinations of these five random variables,
+
+00:00:24.715 --> 00:00:27.215
+the Bayes network is defined by
+
+00:00:27.215 --> 00:00:30.945
+probability distributions that are inherent to each individual node.
+
+00:00:30.945 --> 00:00:34.590
+For node A and B we just have a distribution,
+
+00:00:34.590 --> 00:00:40.160
+P(A) and P(B) because A and B have no incoming arcs.
+
+00:00:40.160 --> 00:00:43.400
+C is defined as a condition distribution,
+
+00:00:43.400 --> 00:00:45.060
+conditioned on A and B.
+
+00:00:45.060 --> 00:00:49.400
+And D and E are conditioned on C.
+
+00:00:49.400 --> 00:00:54.035
+The joint probability represented by a Bayes network is
+
+00:00:54.035 --> 00:00:58.330
+the product of various Bayes network probabilities
+
+00:00:58.330 --> 00:01:00.780
+that are defined over individual nodes,
+
+00:01:00.780 --> 00:01:05.780
+but each node's probability is only conditioned on the incoming arcs.
+
+00:01:05.780 --> 00:01:07.510
+So A has no incoming arc,
+
+00:01:07.510 --> 00:01:09.685
+therefore we just want the probability of A.
+
+00:01:09.685 --> 00:01:11.950
+C has two incoming arcs,
+
+00:01:11.950 --> 00:01:16.080
+so if we define the probability of C conditioned A and B.
+
+00:01:16.080 --> 00:01:19.725
+And D and E have one incoming arc as shown over here.
+
+00:01:19.725 --> 00:01:23.040
+The definition of this joint distribution by using
+
+00:01:23.040 --> 00:01:27.340
+the following factors has one really big advantage.
+
+00:01:27.340 --> 00:01:32.499
+Whereas the joint distribution over any five variables
+
+00:01:32.499 --> 00:01:39.960
+requires two to the five minus one which is 31 probability values.
+
+00:01:39.960 --> 00:01:44.950
+The Bayes network over here only requires 10 such values P(A)
+
+00:01:44.950 --> 00:01:50.650
+specific of one value from which we can derive P of not A, same for P(B).
+
+00:01:50.650 --> 00:01:56.760
+P (C) given AB is derived by a distribution over
+
+00:01:56.760 --> 00:02:03.240
+C conditioned on any combination of A and B of which there are four if A and B is binary.
+
+00:02:03.240 --> 00:02:07.931
+P(D) given C has two parameters.
+
+00:02:07.931 --> 00:02:11.580
+For P(D) given C and P(D) given not C and the
+
+00:02:11.580 --> 00:02:15.660
+same is true for P(E) given C. So if you add those up,
+
+00:02:15.660 --> 00:02:18.030
+you get 10 parameters in total.
+
+00:02:18.030 --> 00:02:24.360
+So the compactness of the Bayes network leads to a representation that's clearly
+
+00:02:24.360 --> 00:02:27.310
+significantly better to large networks than
+
+00:02:27.310 --> 00:02:32.175
+the combinatorial approach which goes to all combinations of variable values.
+
+00:02:32.175 --> 00:02:36.492
+That is a key advantage of Bayes networks and that is the reason that Bayes networks
+
+00:02:36.492 --> 00:02:41.200
+have been used so extensively for all kinds of problems.
+
+00:02:41.200 --> 00:02:42.685
+So here's a quiz.
+
+00:02:42.685 --> 00:02:45.840
+So how many probability values are required to specify this Bayes network?
+
+00:02:45.840 --> 00:02:49.580
+Please put your answer on the wall.
+

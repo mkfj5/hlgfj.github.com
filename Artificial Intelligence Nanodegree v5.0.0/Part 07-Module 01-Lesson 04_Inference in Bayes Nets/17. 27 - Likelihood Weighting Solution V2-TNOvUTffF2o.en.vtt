@@ -1,0 +1,24 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.330 --> 00:00:01.650
+The answer is, we're looking for
+
+00:00:01.649 --> 00:00:07.619
+the probability of having a positive w
+given the positive s and a positive R.
+
+00:00:07.620 --> 00:00:10.284
+So that's in this row, so it's 0.99.
+
+00:00:10.284 --> 00:00:16.545
+So we take our old weight and
+multiply it by 0.99,
+
+00:00:16.545 --> 00:00:21.137
+give us a final weight of 0.099 for
+
+00:00:21.137 --> 00:00:25.324
+a sample of +c, +s, +r and +w.
+

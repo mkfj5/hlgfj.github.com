@@ -1,0 +1,69 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.610 --> 00:00:05.080
+Now the answer follows the exact
+same scheme as before,
+
+00:00:05.080 --> 00:00:07.800
+with S being replaced by not S.
+
+00:00:07.799 --> 00:00:12.910
+So this should be an easier question for
+you to answer, P of R given H,
+
+00:00:12.910 --> 00:00:17.829
+and not S, can be inverted by
+Bayes rule to be as follows.
+
+00:00:17.829 --> 00:00:20.289
+Once we apply Bayes rule,
+as indicated over here,
+
+00:00:20.289 --> 00:00:23.699
+where we sort H to the left side and
+R to the right side,
+
+00:00:23.699 --> 00:00:29.669
+you can observe that this value over
+here can be readily found in the table.
+
+00:00:29.670 --> 00:00:32.320
+It's actually the 0.9 over there.
+
+00:00:32.320 --> 00:00:36.631
+This value over here,
+the raise is independent of the weather
+
+00:00:37.825 --> 00:00:40.380
+Bayes network, so it's just 0.01.
+
+00:00:40.380 --> 00:00:46.870
+And as before, we apply total
+probability, the expression over here.
+
+00:00:46.869 --> 00:00:49.728
+And we obtain of this
+course over here,
+
+00:00:49.728 --> 00:00:52.597
+that these two expressions are the same.
+
+00:00:52.597 --> 00:00:54.679
+P of H given not S not R.
+
+00:00:54.679 --> 00:00:57.012
+R is the value over here.
+
+00:00:57.012 --> 00:01:00.484
+And the 0.99 is the compliment
+of probability of R,
+
+00:01:00.484 --> 00:01:06.143
+taken from over here and
+that ends up to be 0.0833.
+
+00:01:06.143 --> 00:01:08.784
+This will be the right answer.
+

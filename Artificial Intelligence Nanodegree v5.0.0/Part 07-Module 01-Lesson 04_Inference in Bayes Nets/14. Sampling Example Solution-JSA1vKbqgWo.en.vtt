@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.760
+The answer to the question is that we look at the parents.
+
+00:00:02.760 --> 00:00:04.530
+We find that the sprinkler variable is
+
+00:00:04.530 --> 00:00:07.080
+negative so we're looking at this part of the table.
+
+00:00:07.080 --> 00:00:10.390
+And the rain variable is positive so we're looking at this part.
+
+00:00:10.390 --> 00:00:13.770
+So it would be these two rows that we would consider and, thus,
+
+00:00:13.770 --> 00:00:17.370
+we'd find there's a 0.9 probability for W,
+
+00:00:17.370 --> 00:00:19.350
+the grass being wet.
+
+00:00:19.350 --> 00:00:21.715
+And only 0.1 for it being negative.
+
+00:00:21.715 --> 00:00:23.520
+So the positive is more likely.
+
+00:00:23.520 --> 00:00:24.675
+And once we've done that,
+
+00:00:24.675 --> 00:00:28.585
+then we generated a complete sample and we can write down the sample here.
+
+00:00:28.585 --> 00:00:34.740
+We had +C, -S, +R and, assuming,
+
+00:00:34.740 --> 00:00:39.990
+we got a probability of a 0.9 and it came out in favor of the +W,
+
+00:00:39.990 --> 00:00:41.340
+that would be the end of the sample.
+
+00:00:41.340 --> 00:00:45.930
+Then, we could throw all this information out and start over again by
+
+00:00:45.930 --> 00:00:52.040
+having another 50-50 choice for cloudy and then working our way through the network.
+

@@ -1,0 +1,97 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.400 --> 00:00:02.710
+But there's a problem
+with rejection sampling.
+
+00:00:02.710 --> 00:00:06.400
+If the evidence is unlikely, you end
+up rejecting a lot of the samples.
+
+00:00:06.400 --> 00:00:11.380
+Let's go back to the alarm network
+where we had variables for burglary and
+
+00:00:11.380 --> 00:00:12.520
+for an alarm.
+
+00:00:12.519 --> 00:00:16.832
+And say we're interested in computing
+the probability of a burglary given that
+
+00:00:16.832 --> 00:00:17.937
+the alarm goes off.
+
+00:00:17.937 --> 00:00:21.487
+The problem is that burglaries
+are very infrequent, so
+
+00:00:21.486 --> 00:00:24.733
+most of the samples we would
+get would end up being,
+
+00:00:24.734 --> 00:00:28.529
+we start with generating a B,
+and we get a -B and then a -A.
+
+00:00:28.528 --> 00:00:31.570
+We go back and say, does this match?
+
+00:00:31.570 --> 00:00:31.893
+No?
+
+00:00:31.893 --> 00:00:36.045
+We have to reject the sample, so
+we generate another sample, and
+
+00:00:36.045 --> 00:00:38.090
+we get another minus -b, -a.
+
+00:00:38.090 --> 00:00:43.298
+We reject that, we get another -b,-a,
+and we keep rejecting and eventually
+
+00:00:43.298 --> 00:00:48.219
+we get a +b, but we'd end up spending
+a lot of time rejecting samples.
+
+00:00:48.219 --> 00:00:52.162
+So we're going to introduce a new
+method called Likelihood Weighting that
+
+00:00:52.162 --> 00:00:54.820
+generates samples so
+that we can keep everyone.
+
+00:00:54.820 --> 00:00:59.149
+With likelihood weighting, we fix
+the evidence variables, that is we say
+
+00:00:59.149 --> 00:01:03.864
+that A will always be positive, and then
+we sample the rest of the variables.
+
+00:01:03.865 --> 00:01:09.076
+So then, we get samples that we want,
+we would get
+
+00:01:09.075 --> 00:01:15.616
+a list like -b, + a,- b, +a, +b, +a.
+
+00:01:15.617 --> 00:01:18.507
+We get to keep every sample,
+but we have a problem.
+
+00:01:18.507 --> 00:01:22.637
+The resulting set of
+samples is inconsistent.
+
+00:01:22.637 --> 00:01:27.496
+We can fix that however, by assigning
+a probability to each sample and
+
+00:01:27.496 --> 00:01:28.537
+weighing them correctly.
+

@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.570 --> 00:00:04.360
+The next concept I'd like to
+teach you is called D-Separation.
+
+00:00:04.360 --> 00:00:08.679
+And let me start the discussion
+of this concept by a quiz.
+
+00:00:08.679 --> 00:00:10.410
+We have here a Bayes network and
+
+00:00:10.410 --> 00:00:14.160
+then when we ask to conditional
+independence question.
+
+00:00:14.160 --> 00:00:19.301
+Is C independent of A,
+please tell me yes or no.
+
+00:00:19.301 --> 00:00:24.478
+Is C independent of A given B,
+is C independent of D,
+
+00:00:24.478 --> 00:00:30.736
+is C independent of D given A, and
+is E independent of C given D.
+
+00:00:30.736 --> 00:00:32.588
+[BLANK_AUDIO]
+

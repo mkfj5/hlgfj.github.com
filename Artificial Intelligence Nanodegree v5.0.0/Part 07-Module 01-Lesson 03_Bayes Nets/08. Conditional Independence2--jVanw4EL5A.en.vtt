@@ -1,0 +1,33 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.810 --> 00:00:05.099
+So let me draw the cancer
+example again with two tests.
+
+00:00:05.099 --> 00:00:07.796
+Here's my cancer variable, and
+
+00:00:07.796 --> 00:00:12.529
+there's two condition independent tests,
+T1 and T2.
+
+00:00:12.529 --> 00:00:17.019
+And as before let me assume that
+the probability of cancer is 0.01.
+
+00:00:17.019 --> 00:00:22.359
+What I want you to compute for
+me Is the probability
+
+00:00:22.359 --> 00:00:30.009
+of the second test to be positive if we
+know that the first test was positive.
+
+00:00:30.010 --> 00:00:33.320
+So write this into the following box.
+
+00:00:33.320 --> 00:00:36.018
+[BLANK_AUDIO]
+

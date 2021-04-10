@@ -1,0 +1,144 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.530 --> 00:00:03.326
+I want to use a few
+words of terminology.
+
+00:00:03.326 --> 00:00:08.347
+This again is a Bayes network
+of which the hidden variable
+
+00:00:08.348 --> 00:00:13.382
+C causes the still stochastic
+test outcomes T1 and T2.
+
+00:00:13.381 --> 00:00:18.253
+And what's really important is that
+we assume not just that T1 and
+
+00:00:18.254 --> 00:00:20.870
+T2 are identically distributed.
+
+00:00:20.870 --> 00:00:25.520
+It is the same 0.9 for
+test one that I used for test two.
+
+00:00:25.519 --> 00:00:30.059
+But we also assume that they
+are conditionally independent.
+
+00:00:30.059 --> 00:00:36.109
+We assumed that if God told us
+whether we actually had cancer or not.
+
+00:00:36.109 --> 00:00:41.432
+If you would ask with certainty
+the breakup of variable C that knowing
+
+00:00:41.432 --> 00:00:46.408
+anything about T1 would not help
+us make a statement about T2.
+
+00:00:46.408 --> 00:00:52.135
+But differently we assumed that
+the probability of T2 given C and
+
+00:00:52.134 --> 00:00:56.415
+T1 is the same as
+the probability of T2 given C.
+
+00:00:56.415 --> 00:01:01.780
+This is called conditional
+independence which is given
+
+00:01:01.780 --> 00:01:06.799
+the value of the cancer variable C,
+if you do this for
+
+00:01:06.799 --> 00:01:11.759
+fact that T2 would be independent of T1.
+
+00:01:11.760 --> 00:01:15.810
+It's conditionally independent because
+independence only holds true
+
+00:01:15.810 --> 00:01:18.159
+if we actually know C.
+
+00:01:18.159 --> 00:01:20.159
+And it comes out of
+this diagram over here.
+
+00:01:20.159 --> 00:01:26.159
+If we look at this diagram,
+if we knew the variable C over
+
+00:01:26.159 --> 00:01:31.149
+here, then C separately causes T1 and
+T2.
+
+00:01:31.150 --> 00:01:35.757
+So as a result,
+if we know C whatever over here,
+
+00:01:35.757 --> 00:01:41.356
+it's kind of cut off, categorically
+from what happens over here.
+
+00:01:41.355 --> 00:01:47.109
+That causes these two variables
+to be conditionally independent.
+
+00:01:47.109 --> 00:01:50.626
+So conditional independence is
+a really big thing for Bayes network.
+
+00:01:50.626 --> 00:01:54.837
+Here's a Bayes network
+where A causes B and C.
+
+00:01:54.837 --> 00:01:58.750
+And for Bayes network of this structure,
+
+00:01:58.750 --> 00:02:03.540
+we know that given A,
+B and C are independent.
+
+00:02:03.540 --> 00:02:08.389
+It's written as B condition
+independent of C given A.
+
+00:02:08.389 --> 00:02:12.811
+So here's a question, suppose we have
+conditional independence between B and
+
+00:02:12.811 --> 00:02:13.950
+C given A.
+
+00:02:13.949 --> 00:02:20.359
+Would then imply, and that's my
+question, that B and C are independent?
+
+00:02:20.360 --> 00:02:21.620
+So, suppose we don't know A.
+
+00:02:21.620 --> 00:02:25.072
+We don't know whether we have cancer,
+for example.
+
+00:02:25.072 --> 00:02:30.188
+Would that mean that the test results,
+individually, yet still independent
+
+00:02:30.188 --> 00:02:34.542
+of each other, even if we don't
+know about the cancer situation?
+
+00:02:34.542 --> 00:02:35.564
+Please answer yes or no.
+
+00:02:35.564 --> 00:02:45.008
+[BLANK_AUDIO]
+

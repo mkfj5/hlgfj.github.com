@@ -1,0 +1,56 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.270 --> 00:00:02.940
+Sebastian, why are Bayes Nets important?
+
+00:00:02.940 --> 00:00:05.781
+&gt;&gt; They're one of the most amazing
+accomplishments of recent artificial
+
+00:00:05.780 --> 00:00:06.910
+intelligence.
+
+00:00:06.910 --> 00:00:10.509
+They take the idea of uncertainty and
+probability and
+
+00:00:10.509 --> 00:00:12.900
+marry it with efficient structures.
+
+00:00:12.900 --> 00:00:16.155
+So you don't have a big mumble jumble
+but you can really understand,
+
+00:00:16.155 --> 00:00:20.014
+like what uncertain variable
+influences other uncertain variable.
+
+00:00:20.013 --> 00:00:25.579
+A theory of the world using just
+Bayes Networks is really an amazing.
+
+00:00:25.579 --> 00:00:28.869
+&gt;&gt; Well, I've been teaching AI for
+many years, I've found that listening to
+
+00:00:28.870 --> 00:00:32.590
+Sebastian's lessons has really given
+me a better intuition for Bayes Nets.
+
+00:00:33.689 --> 00:00:37.129
+As you go through these lessons,
+make sure to understand how to construct
+
+00:00:37.130 --> 00:00:39.080
+a Bayes Nets and
+how to do inference with them.
+
+00:00:39.079 --> 00:00:43.810
+One of my favorite algorithms
+is Monte Carlo Markov Chain.
+
+00:00:43.810 --> 00:00:44.480
+Have fun with the lesson.
+

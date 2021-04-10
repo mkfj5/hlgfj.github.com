@@ -1,0 +1,26 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.090 --> 00:00:02.239
+The answer is 3.
+
+00:00:02.240 --> 00:00:08.666
+It takes one parameter to specify
+P(A) from which we derive P(-A).
+
+00:00:08.666 --> 00:00:14.946
+It takes two parameters to
+specify P(B | A) and P(-A).
+
+00:00:14.945 --> 00:00:21.396
+&gt;From which we can derive P(-B | A) and
+P(-B | -A).
+
+00:00:21.396 --> 00:00:24.214
+So it's a total of 3 parameters for
+this Bayes' Network.
+
+00:00:24.213 --> 00:00:29.848
+[BLANK_AUDIO]
+

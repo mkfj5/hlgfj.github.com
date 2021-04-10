@@ -1,0 +1,191 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.560 --> 00:00:03.790
+We've seen how to do enumeration
+to solve the inference problem
+
+00:00:03.790 --> 00:00:04.929
+on belief networks.
+
+00:00:04.929 --> 00:00:07.910
+For a simple network like the alarm
+network, that's all we need to know.
+
+00:00:07.910 --> 00:00:09.440
+There's only five variables.
+
+00:00:09.441 --> 00:00:12.114
+So even if all five of them were hidden,
+
+00:00:12.114 --> 00:00:15.690
+there'd only be 32 rows
+in the table to sum up.
+
+00:00:15.689 --> 00:00:17.780
+&gt;From a theoretical point
+of view we're done, but
+
+00:00:17.780 --> 00:00:21.289
+from a practical point of view,
+other networks could give us trouble.
+
+00:00:21.289 --> 00:00:27.006
+Consider this network, which is one for
+determining insurance for car owners.
+
+00:00:27.006 --> 00:00:29.140
+And there are 27 different variables.
+
+00:00:29.140 --> 00:00:31.437
+If each of the variables were Boolean,
+
+00:00:31.437 --> 00:00:34.648
+that would give us over 100
+million rows to sum out.
+
+00:00:34.648 --> 00:00:39.190
+But in fact, some of the variables are
+non-Boolean, they have multiple values.
+
+00:00:39.189 --> 00:00:42.519
+And it turns out that representing
+this entire network and
+
+00:00:42.520 --> 00:00:47.480
+doing enumeration, we'd have to
+sum over a quadrillion rows.
+
+00:00:47.479 --> 00:00:49.029
+That's just not practical.
+
+00:00:49.030 --> 00:00:52.750
+So, we're going to have to come up with
+methods that are faster than enumerating
+
+00:00:52.750 --> 00:00:53.509
+everything.
+
+00:00:53.509 --> 00:00:57.982
+The first technique we can use to get
+a speed up in doing inference on Bayes
+
+00:00:57.982 --> 00:01:00.930
+nets is to pull out terms
+from the enumeration.
+
+00:01:00.930 --> 00:01:05.746
+For example, here, the probability
+of b is going to be the same for
+
+00:01:05.746 --> 00:01:07.310
+all values of e and a.
+
+00:01:07.310 --> 00:01:10.799
+So we can take that term and
+move it out of the summation, and
+
+00:01:10.799 --> 00:01:12.450
+now we have a little
+bit less work to do.
+
+00:01:12.450 --> 00:01:16.870
+We can multiply by that term once rather
+than having it in each row of the table.
+
+00:01:16.870 --> 00:01:21.272
+We can also move this term, the P of e,
+to the left of the summation over a,
+
+00:01:21.272 --> 00:01:23.265
+because it doesn't depend on a.
+
+00:01:23.265 --> 00:01:24.858
+By doing this, we're doing less work.
+
+00:01:24.858 --> 00:01:29.909
+The inner loop of the summation now has
+only three terms rather than five terms.
+
+00:01:29.909 --> 00:01:34.019
+So we reduce the cost of doing
+each row of the table, but
+
+00:01:34.019 --> 00:01:36.689
+we still have the same
+number of rows in the table.
+
+00:01:36.689 --> 00:01:38.569
+So we're going to have
+to do better than that.
+
+00:01:38.569 --> 00:01:39.609
+The next technique for
+
+00:01:39.609 --> 00:01:44.239
+efficient inference is to maximize
+Independence of variables.
+
+00:01:44.239 --> 00:01:47.159
+The structure of a Bayes net
+determines how efficient it is to
+
+00:01:47.159 --> 00:01:48.269
+do inference on it.
+
+00:01:48.269 --> 00:01:53.188
+For example, a network that's a linear
+string of variables x1 through xn
+
+00:01:53.188 --> 00:01:58.739
+can have inference done in time
+proportional to the number n.
+
+00:01:58.739 --> 00:02:02.184
+Whereas a network that's
+a complete network,
+
+00:02:02.185 --> 00:02:06.055
+where every node points to
+every other node and so on,
+
+00:02:06.055 --> 00:02:10.977
+could take time 2 to the n if all
+n variables are Boolean variables.
+
+00:02:10.977 --> 00:02:14.082
+Now, in the alarm network
+we saw previously,
+
+00:02:14.082 --> 00:02:18.546
+we took care to make sure that we
+had all the independence relations
+
+00:02:18.546 --> 00:02:21.668
+represented in the structure
+of the network.
+
+00:02:21.668 --> 00:02:24.391
+But if we put the nodes
+together in a different order,
+
+00:02:24.390 --> 00:02:26.810
+we would end up with
+a different structure.
+
+00:02:26.810 --> 00:02:31.270
+Let's start by ordering
+the node John calls first, and
+
+00:02:31.270 --> 00:02:34.230
+then adding in the node Mary calls.
+
+00:02:34.229 --> 00:02:38.709
+The question is, given just these two
+nodes, and looking at the node for
+
+00:02:38.710 --> 00:02:44.719
+Mary calls, is that node dependent or
+independent of the node for John calls?
+

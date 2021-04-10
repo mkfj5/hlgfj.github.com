@@ -1,0 +1,32 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.510 --> 00:00:02.559
+So we took our network with RT and L.
+
+00:00:02.560 --> 00:00:03.969
+We summed out over R.
+
+00:00:03.968 --> 00:00:06.089
+That gives us a new network with T and
+
+00:00:06.089 --> 00:00:08.679
+L, with these conditional
+probability tables.
+
+00:00:08.679 --> 00:00:12.160
+And now we want to do a join over T and
+L, and
+
+00:00:12.160 --> 00:00:17.219
+give us a new table with a joint
+probability of P, of T, and L.
+
+00:00:17.219 --> 00:00:18.902
+And that table is
+going to look like this.
+
+00:00:18.902 --> 00:00:28.018
+[BLANK_AUDIO]
+

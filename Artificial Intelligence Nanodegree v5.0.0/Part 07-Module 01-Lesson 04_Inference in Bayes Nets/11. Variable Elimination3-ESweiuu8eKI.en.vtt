@@ -1,0 +1,23 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.520 --> 00:00:03.040
+Now we're down to a network
+with a single node, T,L,
+
+00:00:03.040 --> 00:00:07.599
+with this joint probability table, and
+the only operation we have left to do
+
+00:00:07.599 --> 00:00:10.699
+is to sum out to give us
+a node with just L in it.
+
+00:00:10.699 --> 00:00:17.490
+So the question is, to compute P of
+L for both values of L, +l and -l.
+
+00:00:17.490 --> 00:00:27.490
+[BLANK_AUDIO]
+

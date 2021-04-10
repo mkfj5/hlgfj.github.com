@@ -1,0 +1,79 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.780
+Now the probability of sampling a particular variable choosing
+
+00:00:03.780 --> 00:00:08.250
+a +W or a -W depends on the values of the parents.
+
+00:00:08.250 --> 00:00:12.240
+But those are chosen according to the conditional probability tables.
+
+00:00:12.240 --> 00:00:17.160
+So, in a limit, the count of each sampled variable will approach the true probability.
+
+00:00:17.160 --> 00:00:19.764
+That is, with an infinite number of samples,
+
+00:00:19.764 --> 00:00:23.490
+this procedure computes the true joint probability distribution.
+
+00:00:23.490 --> 00:00:27.440
+We say that the sampling method is consistent.
+
+00:00:27.440 --> 00:00:30.210
+We can use this kind of sampling to compute
+
+00:00:30.210 --> 00:00:33.270
+the complete joint probability distribution or we can
+
+00:00:33.270 --> 00:00:36.585
+use it to compute a value for an individual variable.
+
+00:00:36.585 --> 00:00:39.675
+But what if we wanted to compute a conditional probability?
+
+00:00:39.675 --> 00:00:47.940
+Say, we wanted to compute the probability of wet grass given that it's not cloudy.
+
+00:00:47.940 --> 00:00:51.360
+To do that, the sample that we generated here wouldn't be
+
+00:00:51.360 --> 00:00:55.215
+helpful at all because it has to do with being cloudy,
+
+00:00:55.215 --> 00:00:56.620
+not with being not cloudy.
+
+00:00:56.620 --> 00:00:59.675
+So we would cross the sample off the list.
+
+00:00:59.675 --> 00:01:04.440
+We would say that we reject the sample and this technique is called rejection sampling.
+
+00:01:04.440 --> 00:01:08.640
+We go through ignoring any samples that don't match
+
+00:01:08.640 --> 00:01:13.695
+the conditional probabilities that we're interested in and keeping samples that do,
+
+00:01:13.695 --> 00:01:20.150
+say, the sample, -C, +S, +R, -W.
+
+00:01:20.150 --> 00:01:23.505
+Or we'd just continue going through generating samples,
+
+00:01:23.505 --> 00:01:25.620
+crossing off the ones that don't match,
+
+00:01:25.620 --> 00:01:27.165
+keeping the ones that do.
+
+00:01:27.165 --> 00:01:29.685
+And this procedure would also be consistent.
+
+00:01:29.685 --> 00:01:33.580
+We call this procedure rejection sampling.
+

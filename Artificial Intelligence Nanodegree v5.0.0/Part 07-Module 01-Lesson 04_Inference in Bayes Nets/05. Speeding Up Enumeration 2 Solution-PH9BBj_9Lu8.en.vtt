@@ -1,0 +1,37 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.630 --> 00:00:04.290
+The answer is, that alarm is dependent
+on both John and Mary, and so
+
+00:00:04.290 --> 00:00:06.470
+we can draw both nodes in.
+
+00:00:06.469 --> 00:00:10.589
+Intuitively that makes sense,
+because if John calls,
+
+00:00:10.589 --> 00:00:14.099
+then it's more likely that the alarm has
+occurred, likely as if Mary calls, and
+
+00:00:14.099 --> 00:00:16.519
+if both called it's really likely.
+
+00:00:16.519 --> 00:00:19.850
+So you can figure out the answer
+by intuitive reasoning, or
+
+00:00:19.850 --> 00:00:23.750
+you can figure it out by going to
+the conditional probability tables and
+
+00:00:23.750 --> 00:00:27.410
+seeing, according to the definition
+of conditional probability,
+
+00:00:27.410 --> 00:00:28.510
+whether the numbers work out.
+

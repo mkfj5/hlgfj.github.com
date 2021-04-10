@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.410 --> 00:00:02.560
+And the answer to this one
+is really interesting.
+
+00:00:02.560 --> 00:00:06.571
+A is clearly not independent of
+E because through C we can see
+
+00:00:06.572 --> 00:00:08.105
+an influence of A to E.
+
+00:00:08.105 --> 00:00:10.690
+Given B that doesn't change.
+
+00:00:10.689 --> 00:00:14.709
+A still influences C
+despite the fact we know B.
+
+00:00:14.710 --> 00:00:17.260
+However if we know C,
+the influence is cut off.
+
+00:00:17.260 --> 00:00:21.500
+There is no way A can
+influence E if we know C.
+
+00:00:21.500 --> 00:00:23.544
+A is clearly independent of B.
+
+00:00:23.544 --> 00:00:27.829
+They're different entry variables,
+they have no incoming arcs.
+
+00:00:27.829 --> 00:00:32.750
+&gt;&gt; But here is the caveat,
+given C, A and B become dependent.
+
+00:00:32.750 --> 00:00:36.030
+&gt;&gt; So whereas initially A and
+B were independent,
+
+00:00:36.030 --> 00:00:38.579
+if you give C they become dependent.
+
+00:00:38.579 --> 00:00:43.039
+And the reason why they become
+dependent we've studied before is
+
+00:00:43.039 --> 00:00:45.339
+the Explain away effect.
+
+00:00:45.340 --> 00:00:48.170
+If we know for example C to be true,
+
+00:00:48.170 --> 00:00:53.550
+then knowledge of A will substantially
+affect what we believe about B.
+
+00:00:53.549 --> 00:00:56.869
+If there is two joint causes for C and
+
+00:00:56.869 --> 00:01:00.549
+we happen to know A is true,
+we will discredit cause B.
+
+00:01:00.549 --> 00:01:05.323
+If we happen to know A is false we'll
+increase our belief for the cause B.
+
+00:01:05.323 --> 00:01:09.365
+There was an effect we studied
+extensively in the happiness example I
+
+00:01:09.365 --> 00:01:10.780
+gave you before.
+
+00:01:10.780 --> 00:01:15.710
+The interesting thing here is you're
+facing a situation where knowledge of
+
+00:01:15.709 --> 00:01:21.780
+a variable C renders previously
+independent variables dependent.
+
