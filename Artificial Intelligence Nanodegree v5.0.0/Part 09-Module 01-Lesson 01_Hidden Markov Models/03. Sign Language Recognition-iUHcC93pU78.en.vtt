@@ -1,0 +1,75 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.430 --> 00:00:04.459
+We will use sign language recognition
+as our first application of HMMs.
+
+00:00:04.459 --> 00:00:08.998
+For example, let's consider the signs I
+and we and create HMMs for each of them.
+
+00:00:08.997 --> 00:00:10.526
+Here's I.
+
+00:00:10.526 --> 00:00:12.495
+[BLANK_AUDIO]
+
+00:00:12.496 --> 00:00:13.461
+We is a little different.
+
+00:00:13.461 --> 00:00:15.746
+[BLANK_AUDIO]
+
+00:00:15.746 --> 00:00:17.890
+Let's focus on the I gesture.
+
+00:00:17.890 --> 00:00:20.469
+We'll use delta y as
+our first feature here.
+
+00:00:20.469 --> 00:00:21.349
+&gt;&gt; Wait a second.
+
+00:00:21.350 --> 00:00:22.960
+Why don't we use delta x?
+
+00:00:22.960 --> 00:00:26.420
+It looks like it would be easier to
+differentiate the two words that way.
+
+00:00:26.420 --> 00:00:28.640
+While delta y is pretty similar for
+the both of them.
+
+00:00:28.640 --> 00:00:29.690
+&gt;&gt; That's right.
+
+00:00:29.690 --> 00:00:32.859
+But I want to show exactly
+how powerful HMMs can be.
+
+00:00:32.859 --> 00:00:35.500
+So I have purposefully
+chosen a bad feature.
+
+00:00:35.500 --> 00:00:38.770
+We'll actually still be able to tell
+the difference between the two words
+
+00:00:38.770 --> 00:00:40.620
+by the difference in timing.
+
+00:00:40.619 --> 00:00:43.179
+Let's go through the process and
+see how that works.
+
+00:00:43.179 --> 00:00:46.670
+&gt;&gt; Okay, but sometimes it's hard to
+visualize the derivative of a signal.
+
+00:00:46.670 --> 00:00:49.190
+Let's have a quiz first to make sure we
+understand what you're talking about.
+

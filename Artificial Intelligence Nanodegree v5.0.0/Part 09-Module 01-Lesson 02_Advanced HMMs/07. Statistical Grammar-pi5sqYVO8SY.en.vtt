@@ -1,0 +1,77 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.500 --> 00:00:02.779
+Statistical grammars
+can help us even more.
+
+00:00:02.779 --> 00:00:06.759
+In our example up to this point, we used
+a simple grammar, a pronoun, verb and
+
+00:00:06.759 --> 00:00:07.500
+noun.
+
+00:00:07.500 --> 00:00:09.970
+And that placed a strong
+limit of were we started and
+
+00:00:09.970 --> 00:00:11.970
+ended in our Viterbi trellis.
+
+00:00:11.970 --> 00:00:15.030
+&gt;&gt; But in real life,
+language is not so well segmented.
+
+00:00:15.029 --> 00:00:18.280
+Instead, we can record large amounts
+of language and affirm in the fraction
+
+00:00:18.280 --> 00:00:23.660
+of times need follows I, versus want
+following I, or want following we.
+
+00:00:23.660 --> 00:00:26.719
+&gt;&gt; We can then use these probabilities
+to help bias our recognition
+
+00:00:26.719 --> 00:00:30.369
+based on the expected distribution
+of the co-occurrence of these signs.
+
+00:00:30.370 --> 00:00:31.359
+In practice,
+
+00:00:31.359 --> 00:00:35.259
+using a statistical grammar divides
+the error rate by another factor of 4.
+
+00:00:35.259 --> 00:00:38.269
+We started with a fundamental
+error rate of E.
+
+00:00:38.270 --> 00:00:41.222
+When we used context training,
+we divide in half.
+
+00:00:41.222 --> 00:00:45.689
+And now with statistical grammars, we're
+dividing it by a factor of 4 again.
+
+00:00:45.689 --> 00:00:49.759
+So, basically, we end up with
+our error rate divided by 8.
+
+00:00:49.759 --> 00:00:52.599
+This trick is one of the secret
+weapons in my research.
+
+00:00:52.600 --> 00:00:55.347
+I look for problems that might
+have a language-like structure and
+
+00:00:55.347 --> 00:00:58.649
+then apply these techniques to get my
+error rate down to something reasonable.
+

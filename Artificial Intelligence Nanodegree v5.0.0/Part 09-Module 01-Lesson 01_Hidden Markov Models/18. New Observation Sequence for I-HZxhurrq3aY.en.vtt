@@ -1,0 +1,20 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.470 --> 00:00:02.740
+Let's look at a new
+observation sequence.
+
+00:00:02.740 --> 00:00:08.916
+We've replaced the middle 0 observation
+with a new sequence -1 0 and 1.
+
+00:00:08.916 --> 00:00:12.222
+Given these probabilities,
+can you tell us the probability of this
+
+00:00:12.223 --> 00:00:14.550
+observation sequence,
+given the model for I?
+

@@ -1,0 +1,513 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.370 --> 00:00:04.580
+When we started this lesson, we create
+our models by inspection, however,
+
+00:00:04.580 --> 00:00:07.740
+most of the time we want to
+train using the data itself.
+
+00:00:07.740 --> 00:00:12.609
+When using HMMs for gesture recognition,
+I like to have at least 12 examples for
+
+00:00:12.609 --> 00:00:16.629
+each gesture I'm trying to recognize,
+five examples at a minimum.
+
+00:00:16.629 --> 00:00:19.882
+&gt;&gt; For illustration purposes let's
+just use three examples of data for
+
+00:00:19.882 --> 00:00:20.561
+gesture I.
+
+00:00:20.562 --> 00:00:24.769
+Even though it's not the best feature we
+are going to continue using delta Y for
+
+00:00:24.768 --> 00:00:28.727
+training, the first example is
+the longest,it has 16 data points.
+
+00:00:28.728 --> 00:00:32.548
+&gt;&gt; And I see the next one is really
+short was only five data points.
+
+00:00:32.548 --> 00:00:35.439
+The last one has 14 timeframes.
+
+00:00:35.439 --> 00:00:39.839
+Let's use a three state left to right
+topology again for HMM.
+
+00:00:39.840 --> 00:00:41.440
+For each of this examples,
+
+00:00:41.439 --> 00:00:44.289
+how are we going to figure out
+which data goes with which state?
+
+00:00:44.289 --> 00:00:48.299
+&gt;&gt; Let's assume all three states have
+about an equal number of frames.
+
+00:00:48.299 --> 00:00:50.750
+I've divided the examples
+roughly in the thirds and
+
+00:00:50.750 --> 00:00:53.100
+drawn a boundary between each third.
+
+00:00:53.100 --> 00:00:56.630
+&gt;&gt; On average our example
+12x frames long.
+
+00:00:56.630 --> 00:01:01.040
+So that means about 4 data
+points per status, for example.
+
+00:01:01.039 --> 00:01:01.351
+&gt;&gt; Yup,
+
+00:01:01.351 --> 00:01:05.420
+which means a transition probability
+out of this stage is going to be 1/4.
+
+00:01:05.421 --> 00:01:09.108
+&gt;&gt; And since the transitions probability
+have to sum to one for each state.
+
+00:01:09.108 --> 00:01:12.500
+The self transitions are 3/4.
+
+00:01:12.500 --> 00:01:14.549
+&gt;&gt; Now that we've fixed
+the transition probabilities,
+
+00:01:14.549 --> 00:01:16.959
+let's calculate
+the output probabilities.
+
+00:01:16.959 --> 00:01:20.250
+&gt;&gt; For simplicity,
+let's use a single Gaussian again.
+
+00:01:20.250 --> 00:01:26.680
+For the first state, we assign the 1
+3 7 9 7 from the first example and
+
+00:01:26.680 --> 00:01:33.649
+the 2 and 10 from the second example and
+the 1 3 7 8 7 to this first state.
+
+00:01:33.649 --> 00:01:36.454
+The average of that
+is approximately 5.4.
+
+00:01:36.453 --> 00:01:40.716
+The standard deviation is,
+hold on there,
+
+00:01:40.716 --> 00:01:45.334
+let me get out my copy of Octave,
+about 3.1.
+
+00:01:45.334 --> 00:01:49.869
+Let me draw this under the first
+state as its output probability.
+
+00:01:49.870 --> 00:01:52.480
+&gt;&gt; Since you're being handy,
+can you do the other states too?
+
+00:01:52.480 --> 00:01:55.004
+We can calculate the mean
+value of the second state.
+
+00:01:55.004 --> 00:01:58.590
+It's around negative 0.6 with
+a standard deviation of 3.1.
+
+00:01:58.590 --> 00:02:04.249
+The last state has a mean of minus 5,
+standard deviation of about 2.6.
+
+00:02:04.248 --> 00:02:06.171
+&gt;&gt; Let's try those out
+probabilities as well.
+
+00:02:06.171 --> 00:02:10.682
+&gt;&gt; Now we're going to iterate in
+the process very similar to expectation
+
+00:02:10.682 --> 00:02:12.280
+maximization.
+
+00:02:12.280 --> 00:02:14.669
+&gt;&gt; So basically we reset
+the transition probabilities and
+
+00:02:14.669 --> 00:02:17.469
+calculated the output probabilities
+based on the assumption that
+
+00:02:17.469 --> 00:02:19.870
+the transition
+probabilities are correct.
+
+00:02:19.870 --> 00:02:22.560
+Then we're going to assume that
+the output probabilities are correct and
+
+00:02:22.560 --> 00:02:24.890
+go back and adjust the transition
+probabilities and so
+
+00:02:24.889 --> 00:02:26.699
+on until we converge.
+
+00:02:26.699 --> 00:02:30.019
+&gt;&gt; So basically our next step is to see
+if moving these boundaries on these
+
+00:02:30.020 --> 00:02:34.100
+examples between the states will lead
+to a better explanation of the data.
+
+00:02:34.099 --> 00:02:37.799
+Basically, we are looking to see if
+we get Gaussian of less variance.
+
+00:02:37.800 --> 00:02:38.100
+&gt;&gt; Well,
+
+00:02:38.099 --> 00:02:42.409
+that could be interesting, let's look at
+the first boundary in the first example.
+
+00:02:42.409 --> 00:02:45.370
+Cleary the 5 is closer
+to the mean of 5.4 so
+
+00:02:45.370 --> 00:02:47.469
+the boundary should move to the right.
+
+00:02:47.469 --> 00:02:50.199
+&gt;&gt; But the two might be
+better than a second state.
+
+00:02:50.199 --> 00:02:51.819
+&gt;&gt; How do you display that?
+
+00:02:51.819 --> 00:02:55.000
+&gt;&gt; Well two is 3.4 the mean
+of the first state.
+
+00:02:55.000 --> 00:02:59.129
+Which is 3.4 over 3.1
+standard deviations away.
+
+00:02:59.129 --> 00:03:02.514
+In other words two is a little
+more than one standard deviation
+
+00:03:02.514 --> 00:03:04.194
+away from the first state.
+
+00:03:04.194 --> 00:03:04.734
+&gt;&gt; Okay.
+
+00:03:04.735 --> 00:03:09.370
+&gt;&gt; But the mean for the second
+state is -0.6 which make the two
+
+00:03:09.370 --> 00:03:13.664
+only 2.6 units away from
+the mean of the second state.
+
+00:03:13.664 --> 00:03:19.151
+Or 2.6 over 3.1 standard
+deviations away.
+
+00:03:19.151 --> 00:03:22.609
+&gt;&gt; Which is less than one
+standard deviation away.
+
+00:03:22.610 --> 00:03:24.600
+So two should stay in the second state.
+
+00:03:24.599 --> 00:03:25.419
+&gt;&gt; For now.
+
+00:03:25.419 --> 00:03:26.669
+&gt;&gt; What do you mean, for now?
+
+00:03:26.669 --> 00:03:30.159
+&gt;&gt; By the time we finish this iteration,
+the mean and standard deviations for
+
+00:03:30.159 --> 00:03:31.924
+the states will change and
+
+00:03:31.925 --> 00:03:34.960
+two might move in the first
+state in the next round.
+
+00:03:34.960 --> 00:03:38.409
+&gt;&gt; Okay, but how many of the boundaries
+change in this iteration?
+
+00:03:38.409 --> 00:03:39.789
+&gt;&gt; Let's look.
+
+00:03:39.789 --> 00:03:42.829
+I don't think the -1 is going
+to move from the second stage.
+
+00:03:42.830 --> 00:03:48.440
+&gt;&gt; But in the second example this -7
+is much closer to the mean of third stage -5.
+
+00:03:48.439 --> 00:03:51.229
+&gt;&gt; Yup, let's move the boundary.
+
+00:03:51.229 --> 00:03:52.730
+&gt;&gt; Shouldn't we update
+the mean in variance.
+
+00:03:52.730 --> 00:03:56.180
+&gt;&gt; Its better to face looking
+at rest of the boundaries first.
+
+00:03:56.180 --> 00:03:59.450
+Last example looks like we have
+a lot of things we can move.
+
+00:03:59.449 --> 00:04:03.129
+&gt;&gt; Right, the three should probably
+move from the second state to the first.
+
+00:04:03.129 --> 00:04:07.479
+&gt;&gt; And certainly the minus five should
+go from the second to the third.
+
+00:04:07.479 --> 00:04:09.949
+&gt;&gt; How about the negative
+three in the second state.
+
+00:04:09.949 --> 00:04:12.699
+I have to calculate that one out quick.
+
+00:04:14.629 --> 00:04:19.209
+It's 2.4/3.1 standard deviations
+from the second state.
+
+00:04:19.209 --> 00:04:22.283
+And two over 2.6 standard deviations
+from the mean of the third state.
+
+00:04:22.283 --> 00:04:27.610
+It is slightly closer to the mean of
+the third state, though not by much.
+
+00:04:27.610 --> 00:04:30.389
+&gt;&gt; Great,
+let's update the boundaries again.
+
+00:04:30.389 --> 00:04:33.439
+&gt;&gt; Wow, that's going to cause
+a big change in our numbers.
+
+00:04:33.439 --> 00:04:36.086
+&gt;&gt; Yep, let's recalculate everything.
+
+00:04:36.086 --> 00:04:39.425
+&gt;&gt; On average, we now have one, two,
+three, four, five, six, seven, eight,
+
+00:04:39.425 --> 00:04:41.170
+nine, ten, 11, 12, 13, 14.
+
+00:04:41.170 --> 00:04:44.994
+14 over three time frames we
+expect in the first date.
+
+00:04:44.994 --> 00:04:49.221
+So our transition probability
+here is going to be one over 4.7.
+
+00:04:49.221 --> 00:04:56.340
+Or approximately 0.21
+making the self-loop 0.79.
+
+00:04:56.339 --> 00:04:59.879
+&gt;&gt; The second state has 7 over
+3 time frames on average.
+
+00:04:59.879 --> 00:05:04.105
+Transition probably there
+will be .43 and .57.
+
+00:05:04.105 --> 00:05:09.641
+&gt;&gt; And the last state has 14
+over 3 time frames on average or
+
+00:05:09.641 --> 00:05:17.769
+approximate 0.21 transition
+probability here and 0.79 probability here.
+
+00:05:17.769 --> 00:05:20.810
+&gt;&gt; Okay, so now we need to update
+the output probability numbers.
+
+00:05:20.810 --> 00:05:23.290
+&gt;&gt; I was afraid you
+are going to say that.
+
+00:05:23.290 --> 00:05:26.975
+Okay, clinging at octave again,
+I get a mean of 5.2 and
+
+00:05:26.975 --> 00:05:31.700
+a standard deviation of 3.0 for the
+output probability for the first state.
+
+00:05:31.699 --> 00:05:33.408
+&gt;&gt; Come on,
+you're the one with the computer.
+
+00:05:33.408 --> 00:05:35.937
+What's the rest?
+
+00:05:35.937 --> 00:05:37.153
+&gt;&gt; Fine, state two is easy.
+
+00:05:37.153 --> 00:05:39.374
+It has a mean of 0 and
+a standard deviation of 1.
+
+00:05:39.374 --> 00:05:42.050
+&gt;&gt; Do you do that on purpose?
+
+00:05:42.050 --> 00:05:42.660
+&gt;&gt; What?
+
+00:05:42.660 --> 00:05:45.150
+&gt;&gt; Make the example so
+the numbers would come out nice?
+
+00:05:45.149 --> 00:05:46.500
+&gt;&gt; I wish I was that smart.
+
+00:05:46.500 --> 00:05:47.920
+&gt;&gt; I'm so disillusioned.
+
+00:05:47.920 --> 00:05:49.990
+Okay, what are the values for
+state three?
+
+00:05:49.990 --> 00:05:54.360
+&gt;&gt; State three's mean is -5 and
+standard deviation about 2.5.
+
+00:05:54.360 --> 00:05:57.050
+&gt;&gt; Great,
+now we can do our next iteration.
+
+00:05:57.050 --> 00:05:58.720
+&gt;&gt; You mean, we gotta do it again?
+
+00:05:58.720 --> 00:06:00.320
+&gt;&gt; Don't be a cry baby,
+it's almost done.
+
+00:06:01.879 --> 00:06:07.759
+&gt;&gt; Okay, well, as I predicted,
+this 2 is now closer to the first state
+
+00:06:07.759 --> 00:06:11.849
+on this iteration in the second state
+&gt;&gt; Well, I guess you win that one.
+
+00:06:11.850 --> 00:06:14.580
+It's just a little over one standard
+deviation from the mean of the first
+
+00:06:14.579 --> 00:06:15.089
+state.
+
+00:06:15.089 --> 00:06:17.909
+And two standard deviations from
+the mean of the second state.
+
+00:06:17.910 --> 00:06:21.160
+&gt;&gt; But
+the -1 still stays in the second state.
+
+00:06:21.160 --> 00:06:23.180
+&gt;&gt; Yup, in both places.
+
+00:06:23.180 --> 00:06:24.930
+&gt;&gt; So let's calculate again.
+
+00:06:24.930 --> 00:06:26.980
+&gt;&gt; Now state one's mean goes to five.
+
+00:06:26.980 --> 00:06:29.090
+State two's mean goes
+to slightly negative.
+
+00:06:29.089 --> 00:06:31.639
+And state three's mean stays the same.
+
+00:06:31.639 --> 00:06:32.959
+&gt;&gt; I think we've converged.
+
+00:06:32.959 --> 00:06:33.659
+Let me take a look.
+
+00:06:35.269 --> 00:06:39.690
+Yeah, in the next iteration none of
+the boundaries are going to move nor
+
+00:06:39.690 --> 00:06:42.132
+are the ALPA probability is going to change.
+
+00:06:42.132 --> 00:06:44.829
+&gt;&gt; Does that mean we've
+successfully trained HMM for I?
+
+00:06:44.829 --> 00:06:46.334
+&gt;&gt; Not yet.
+
+00:06:46.334 --> 00:06:49.375
+Technically speaking,
+what we've done is use Viterbi
+
+00:06:49.375 --> 00:06:52.749
+alignment to initialize the values for
+each state of our HMM.
+
+00:06:52.749 --> 00:06:55.641
+In other words, for
+each time frame in each of our
+
+00:06:55.641 --> 00:06:58.959
+examples we've assigned a state for
+that time frame and
+
+00:06:58.959 --> 00:07:03.734
+calculated the resulting averages of
+all values assigned to each state.
+
+00:07:03.735 --> 00:07:06.935
+&gt;&gt; Along with the average amount of
+time we expect to stay in each state.
+
+00:07:06.935 --> 00:07:07.245
+&gt;&gt; Correct.
+

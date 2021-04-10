@@ -1,0 +1,26 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.390 --> 00:00:01.899
+Now let's do the same thing for We.
+
+00:00:01.899 --> 00:00:05.890
+We have the same observation
+sequence as the previous quiz, where
+
+00:00:05.889 --> 00:00:09.939
+the middle zero was replaced with the
+sequence negative one, zero, and one.
+
+00:00:09.939 --> 00:00:13.009
+We've given you new probabilities for
+We.
+
+00:00:13.009 --> 00:00:15.980
+So go ahead and tell us the probability
+of this observation sequence
+
+00:00:15.980 --> 00:00:17.010
+given our model for We.
+

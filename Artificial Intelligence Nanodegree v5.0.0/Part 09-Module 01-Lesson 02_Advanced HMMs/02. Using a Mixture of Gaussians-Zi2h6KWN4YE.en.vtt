@@ -1,0 +1,65 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.210 --> 00:00:02.229
+What if our output
+probabilities aren't Gaussian?
+
+00:00:02.229 --> 00:00:04.660
+&gt;&gt; Well according to
+the central limit theorem,
+
+00:00:04.660 --> 00:00:07.650
+we should get Gaussians if enough
+factors are affecting the data.
+
+00:00:07.650 --> 00:00:11.080
+&gt;&gt; But in practice sometimes the output
+probabilities really are not Gaussian.
+
+00:00:11.080 --> 00:00:13.120
+It is not hard for them to be bimodal.
+
+00:00:13.119 --> 00:00:14.189
+&gt;&gt; You mean like this.
+
+00:00:14.189 --> 00:00:14.689
+&gt;&gt; Yep.
+
+00:00:14.689 --> 00:00:16.960
+&gt;&gt; Well then we can use
+two Gaussians to model it.
+
+00:00:16.960 --> 00:00:19.589
+&gt;&gt; Basically using the mixture
+of Gaussians technique.
+
+00:00:19.589 --> 00:00:22.820
+&gt;&gt; Yep, in theory we can model
+anything with enough Gaussians.
+
+00:00:22.820 --> 00:00:24.730
+Look at this box car distribution.
+
+00:00:24.730 --> 00:00:27.469
+&gt;&gt; The more Gaussians we use
+the closer we will model it, but
+
+00:00:27.469 --> 00:00:28.789
+how many should we use?
+
+00:00:28.789 --> 00:00:30.679
+&gt;&gt; That really depends on your data.
+
+00:00:30.679 --> 00:00:32.840
+Visualization really helps here.
+
+00:00:32.840 --> 00:00:35.040
+In practice I tend to limit
+my mixtures to two or
+
+00:00:35.039 --> 00:00:37.439
+three Gaussians,
+otherwise it tends to over fit.
+

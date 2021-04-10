@@ -1,0 +1,62 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.290 --> 00:00:03.726
+Great, now here's the HMM I created for
+the gesture, we.
+
+00:00:03.726 --> 00:00:06.514
+[BLANK_AUDIO]
+
+00:00:06.514 --> 00:00:07.319
+&gt;&gt; Hold on.
+
+00:00:07.320 --> 00:00:08.990
+I would have used four states here.
+
+00:00:08.990 --> 00:00:10.380
+Why did you only use three?
+
+00:00:10.380 --> 00:00:13.390
+&gt;&gt; Well it was mostly to simplify
+the problem for our purposes.
+
+00:00:13.390 --> 00:00:16.740
+Note that the middle section varies
+a little bit more in delta y than with
+
+00:00:16.739 --> 00:00:18.639
+the middle state of I.
+
+00:00:18.640 --> 00:00:21.219
+And we spend more time in
+the middle state as well.
+
+00:00:21.219 --> 00:00:24.619
+&gt;&gt; I see, it looks like the transition
+probabilities have changed to reflect
+
+00:00:24.620 --> 00:00:25.640
+this, right?
+
+00:00:25.640 --> 00:00:28.070
+&gt;&gt; Correct,
+we spend longer in that state, so
+
+00:00:28.070 --> 00:00:30.370
+we have a higher probability
+in the self loop.
+
+00:00:30.370 --> 00:00:33.480
+Also, we have more variation in
+the delta y in this gesture,
+
+00:00:33.479 --> 00:00:37.019
+which leads to a wider, and
+shorter, output distribution.
+
+00:00:37.020 --> 00:00:39.050
+&gt;&gt; This seems like a good time for
+a short quiz.
+

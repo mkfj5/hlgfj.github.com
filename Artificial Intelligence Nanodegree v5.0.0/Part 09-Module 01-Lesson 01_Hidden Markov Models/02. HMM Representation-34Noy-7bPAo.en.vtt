@@ -1,0 +1,358 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.320 --> 00:00:03.119
+We should probably go over
+how to represent an HMM.
+
+00:00:03.120 --> 00:00:07.150
+&gt;&gt; Right, the Russell and Norvig book
+draws them like a Markov chain and
+
+00:00:07.150 --> 00:00:09.679
+adds an output node for each state.
+
+00:00:09.679 --> 00:00:12.795
+In this representation, which is common
+in the machine learning community,
+
+00:00:12.795 --> 00:00:15.919
+each Xi represents a frame of data.
+
+00:00:15.919 --> 00:00:20.015
+Xo is the beginning state which
+is useful for keeping data.
+
+00:00:20.015 --> 00:00:24.105
+X1 represents the first
+time frame t equals 1.
+
+00:00:24.105 --> 00:00:27.010
+E1 represents the output at that time.
+
+00:00:28.074 --> 00:00:33.039
+X2 is the next time frame and
+E2 is the output at that time.
+
+00:00:33.039 --> 00:00:36.119
+And so on,
+until we get to the end of the sequence.
+
+00:00:36.119 --> 00:00:39.729
+The HMM states are implicit
+in this representation.
+
+00:00:39.729 --> 00:00:43.879
+However, I find it easier to think
+of HMMs in terms of their states.
+
+00:00:43.880 --> 00:00:46.140
+So I'm going to deviate
+from the book and
+
+00:00:46.140 --> 00:00:50.250
+use a representation that is more
+specific to HMMs for this discussion.
+
+00:00:50.250 --> 00:00:53.780
+To get things started let's imagine we
+have a signal through time that looks
+
+00:00:53.780 --> 00:00:55.140
+like this graph.
+
+00:00:55.140 --> 00:00:58.399
+At t equals 0, its value is -2.
+
+00:00:58.399 --> 00:01:04.560
+By t equals 10 it is at -1,
+by t equals 15, it's at 0.
+
+00:01:04.561 --> 00:01:09.374
+And at t equals 35 it's at 1,
+at t equals 38 it's at 2.
+
+00:01:09.373 --> 00:01:12.569
+&gt;&gt; So it looks like the graph
+is made up of 4 different parts.
+
+00:01:12.569 --> 00:01:16.909
+&gt;&gt; That's right, we're going to
+use a 4 state HMM to represent it.
+
+00:01:16.909 --> 00:01:20.019
+We are trying to design a model that
+could have generated this data.
+
+00:01:20.019 --> 00:01:22.719
+In this case we are going
+to use a left-to-right HMM,
+
+00:01:22.719 --> 00:01:27.340
+meaning that we never transition back
+to a previous state once we've left it.
+
+00:01:27.340 --> 00:01:31.409
+These loops are called self transitions,
+which indicates that the model can stay
+
+00:01:31.409 --> 00:01:33.979
+in the same state for
+several timeframes.
+
+00:01:33.980 --> 00:01:36.810
+&gt;&gt; Next we need to figure out
+the emission probabilities.
+
+00:01:36.810 --> 00:01:38.990
+&gt;&gt; I like to call them
+alpha probabilities, but
+
+00:01:38.989 --> 00:01:40.799
+it's just a different name for them.
+
+00:01:40.799 --> 00:01:45.030
+All it means is which values that are
+allowable while we are in a given state.
+
+00:01:45.030 --> 00:01:47.030
+&gt;&gt; It's a little bit more
+subtle than that, right?
+
+00:01:47.030 --> 00:01:49.340
+Since the output
+distributions are densities,
+
+00:01:49.340 --> 00:01:51.170
+these are not really probabilities.
+
+00:01:51.170 --> 00:01:53.350
+&gt;&gt; But it's a convenient fiction for
+our discussion, so
+
+00:01:53.349 --> 00:01:54.890
+I'm going to stay with it.
+
+00:01:54.890 --> 00:01:57.829
+In this case, creating the output
+probabilities is easy.
+
+00:01:57.829 --> 00:02:01.579
+The first part of
+the graph is from -2 to -1.
+
+00:02:01.579 --> 00:02:03.466
+&gt;&gt; And
+all values are equally represented, so
+
+00:02:03.466 --> 00:02:05.739
+we can just use a box car distribution.
+
+00:02:05.739 --> 00:02:06.201
+&gt;&gt; Great,
+
+00:02:06.201 --> 00:02:10.879
+for state two the upper distribution
+is going to be a box car from -1 to 0.
+
+00:02:10.879 --> 00:02:16.349
+&gt;&gt; In state 3, we have a box starting
+from 0 to 1, and state 4 is from 1 to 2.
+
+00:02:16.349 --> 00:02:20.219
+&gt;&gt; Now we need to figure out the values
+for the transition probabilities.
+
+00:02:20.219 --> 00:02:22.550
+Let's look at the first
+part of the graph again.
+
+00:02:22.550 --> 00:02:25.439
+We spend about 10 time frames
+in the first part of the graph
+
+00:02:25.439 --> 00:02:28.060
+before we transition to
+the second part of the graph.
+
+00:02:28.060 --> 00:02:30.909
+So we want to assign
+an appropriate probability here
+
+00:02:30.909 --> 00:02:32.689
+where we escape state 1.
+
+00:02:32.689 --> 00:02:36.329
+&gt;&gt; Well, that seems of one off,
+let's assign a probability of 0.1.
+
+00:02:36.330 --> 00:02:40.400
+That way on average we expect to
+stay in that state for 10 frames.
+
+00:02:40.400 --> 00:02:44.652
+&gt;&gt; Since all the probabilities out of a
+state have to sum to 1, and we only have
+
+00:02:44.651 --> 00:02:48.989
+the self-transistion probability left,
+we know that it has to be 0.9.
+
+00:02:48.990 --> 00:02:52.198
+&gt;&gt; And here's a little trick, if we want
+to know the number of time frames we
+
+00:02:52.198 --> 00:02:54.020
+expect to stay in a given state.
+
+00:02:54.020 --> 00:02:55.159
+We can just use the formula,
+
+00:02:55.159 --> 00:02:59.789
+1 over 1- the self-transition
+probability, to figure it out.
+
+00:02:59.789 --> 00:03:00.530
+&gt;&gt; Thanks, for
+
+00:03:00.530 --> 00:03:04.140
+some reason, I keep forgetting to use
+that trick when I'm working on more
+
+00:03:04.139 --> 00:03:08.039
+complex HMMs where there are a lot
+of transitions out of the state.
+
+00:03:08.039 --> 00:03:12.859
+&gt;&gt; We can continue this process for each
+of the states, state 2 has 5 frames.
+
+00:03:12.860 --> 00:03:16.900
+So we'll make this output
+probability one-fifth or 0.2 and
+
+00:03:16.900 --> 00:03:19.007
+this one four-fifth or 0.8.
+
+00:03:19.007 --> 00:03:23.868
+State 3 has 20 frames, so
+this arrow gets a one-twentieth,
+
+00:03:23.868 --> 00:03:26.580
+or a 0.05 and this is 0.95.
+
+00:03:26.580 --> 00:03:30.299
+And the last transition out of
+the model is one-third, or 0.33,
+
+00:03:30.299 --> 00:03:32.790
+with the cell's transition being 0.67.
+
+00:03:32.789 --> 00:03:37.138
+&gt;&gt; Hold it, I just realized something,
+you said I could figure out how many
+
+00:03:37.138 --> 00:03:40.415
+frames I expect to be in
+the state by using the formula,
+
+00:03:40.415 --> 00:03:44.169
+1 over 1- the self-transition
+probability.
+
+00:03:44.169 --> 00:03:50.449
+But if I set the probability to 0,
+I get 1 over 1-0, which equals 1.
+
+00:03:50.449 --> 00:03:54.019
+That means I'll get at least
+1 output from that state.
+
+00:03:54.020 --> 00:03:57.995
+&gt;&gt; But that's fine, we output as soon as
+enter the state from the previous state,
+
+00:03:57.995 --> 00:04:00.094
+and then we transition
+to the next state.
+
+00:04:00.094 --> 00:04:03.574
+&gt;&gt; Hm, okay,
+that explains something else to me.
+
+00:04:03.574 --> 00:04:08.554
+A lot of manuals and toolkits post dummy
+state at the beginning of each model.
+
+00:04:08.555 --> 00:04:11.780
+I guess to explicitly represent
+entering the first state.
+
+00:04:11.780 --> 00:04:14.039
+Actually that leads me to another point.
+
+00:04:14.039 --> 00:04:18.039
+When I'm being more formal,
+I just put the arrow at the first state.
+
+00:04:18.040 --> 00:04:20.660
+If we can enter the model at several
+different positions with equal
+
+00:04:20.660 --> 00:04:24.490
+probability, I put these arrows
+at each potential point of entry.
+
+00:04:24.490 --> 00:04:26.990
+If the entry points have
+different probabilities,
+
+00:04:26.990 --> 00:04:28.730
+I'd write them at these arrows.
+
+00:04:28.730 --> 00:04:30.550
+&gt;&gt; There are more details
+we will cover later, but
+
+00:04:30.550 --> 00:04:33.350
+we have shown what we need to
+create an HMM by inspection
+
+00:04:33.350 --> 00:04:35.960
+to represent a given signal
+&gt;&gt; In practice,
+
+00:04:35.959 --> 00:04:39.439
+we expect to have lots of examples
+of a signal we want to model.
+
+00:04:39.439 --> 00:04:42.139
+And we'll have to create a model that
+can accommodate all of the different
+
+00:04:42.139 --> 00:04:46.539
+examples, balancing both
+generalization and overfitting.
+
+00:04:46.540 --> 00:04:48.050
+But that will come later, for
+
+00:04:48.050 --> 00:04:52.319
+now, we will assume that we can
+create an HMM by inspection.
+
+00:04:52.319 --> 00:04:55.829
+In fact, the technique is robust
+enough that inspection will work for
+
+00:04:55.829 --> 00:04:57.519
+a first pass at a problem.
+
+00:04:57.519 --> 00:04:59.719
+&gt;&gt; How about we move
+on to a real problem?
+
+00:04:59.720 --> 00:05:00.620
+&gt;&gt; Sounds like a good idea.
+

@@ -1,0 +1,123 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.400 --> 00:00:02.290
+In your past work on
+gesture recognition,
+
+00:00:02.290 --> 00:00:05.169
+how many dimensions have you used for
+your output probabilities?
+
+00:00:05.169 --> 00:00:06.299
+&gt;&gt; Up to hundreds.
+
+00:00:06.299 --> 00:00:08.900
+At one point, we are creating
+appearance models of the hand,
+
+00:00:08.900 --> 00:00:12.380
+using a similarity metric of how closely
+the current hand looked like different
+
+00:00:12.380 --> 00:00:15.400
+visual models of the hand
+as features for the HMM.
+
+00:00:15.400 --> 00:00:18.820
+However, the problem was there was a lot
+of noise in that the models that didn't
+
+00:00:18.820 --> 00:00:22.179
+match well were giving
+relatively random results.
+
+00:00:22.179 --> 00:00:25.259
+Causing many of the dimensions to be
+meaningless unless the hand at that
+
+00:00:25.260 --> 00:00:26.910
+particular time matched well.
+
+00:00:26.910 --> 00:00:29.839
+&gt;&gt; So all those dimensions were actually
+hurting you because they were all very
+
+00:00:29.839 --> 00:00:31.160
+noisy most of the time?
+
+00:00:31.160 --> 00:00:34.740
+&gt;&gt; Correct, however we can use boosting
+to help us weight the feature vector to
+
+00:00:34.740 --> 00:00:36.080
+combat this problem.
+
+00:00:36.079 --> 00:00:39.000
+This technique is called
+segmentally boosted HMMs.
+
+00:00:39.000 --> 00:00:43.140
+One of my students,
+did hi PhD dissertation on the idea.
+
+00:00:43.140 --> 00:00:46.420
+And his results were often
+20% better than normal HMMs.
+
+00:00:46.420 --> 00:00:49.359
+For some datasets,
+we got up to 70% improvement.
+
+00:00:49.359 --> 00:00:50.820
+&gt;&gt; How does it work?
+
+00:00:50.820 --> 00:00:54.490
+&gt;&gt; First, we align and
+train the HMMs as normal.
+
+00:00:54.490 --> 00:00:57.780
+Next, we use that training to
+align the data that belongs to
+
+00:00:57.780 --> 00:00:59.870
+each date as best we can.
+
+00:00:59.869 --> 00:01:03.169
+We examine each state in
+each model iteratively.
+
+00:01:03.170 --> 00:01:07.320
+We boost by asking which features help
+us most to differentiate the data for
+
+00:01:07.319 --> 00:01:10.879
+our chosen state versus
+the rest of the states.
+
+00:01:10.879 --> 00:01:14.359
+We then weight the dimensions
+appropriately in that HMM.
+
+00:01:14.359 --> 00:01:17.269
+This trick combines some of the
+advantages of the discriminative models
+
+00:01:17.269 --> 00:01:18.810
+with generative methods.
+
+00:01:18.810 --> 00:01:20.710
+&gt;&gt; Is it in a toolkit somewhere?
+
+00:01:20.709 --> 00:01:21.449
+&gt;&gt; Not yet.
+
+00:01:21.450 --> 00:01:26.129
+But I'm thinking about adding it to HTK
+and our Georgia Tech Gesture Toolkit.
+
+00:01:26.129 --> 00:01:29.769
+Personally, I think it can be pretty
+powerful but it's not widely known yet.
+

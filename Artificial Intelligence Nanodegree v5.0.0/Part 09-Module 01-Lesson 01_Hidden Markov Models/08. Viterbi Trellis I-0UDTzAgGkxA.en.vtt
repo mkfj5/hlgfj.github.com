@@ -1,0 +1,107 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.300 --> 00:00:03.299
+So how do we actually go about
+performing recognition with the models
+
+00:00:03.299 --> 00:00:04.650
+we just created?
+
+00:00:04.650 --> 00:00:06.300
+&gt;&gt; Suppose we have
+a set of observations,
+
+00:00:06.299 --> 00:00:10.649
+O, that represent the samples in
+an example we want to recognize.
+
+00:00:10.650 --> 00:00:14.047
+We'll create something called the
+Viterbi Trellis to see how likely each
+
+00:00:14.047 --> 00:00:15.644
+model generated the samples in O.
+
+00:00:15.644 --> 00:00:18.451
+The one that gives us the highest
+probability will be considered
+
+00:00:18.452 --> 00:00:19.945
+the proper match.
+
+00:00:19.945 --> 00:00:23.214
+However, we don't know the exact
+sequence of states that created
+
+00:00:23.214 --> 00:00:24.285
+the output.
+
+00:00:24.285 --> 00:00:27.975
+Those are hidden, so we'll need to
+go through all the possibilities.
+
+00:00:27.975 --> 00:00:31.920
+&gt;&gt; That sounds like it would be long,
+but maybe we can simplify it as we go.
+
+00:00:31.920 --> 00:00:35.890
+&gt;&gt; Okay, here's the sequence of delta ys
+we collected in the example we want to
+
+00:00:35.890 --> 00:00:38.039
+recognize as I or we.
+
+00:00:38.039 --> 00:00:42.240
+&gt;&gt; So our overall goal is to
+find P of O given lambda I or
+
+00:00:42.240 --> 00:00:46.150
+the probability of our observation
+sequence given our model of I.
+
+00:00:46.149 --> 00:00:47.399
+&gt;&gt; Correct.
+
+00:00:47.399 --> 00:00:49.059
+Here's how we start the trellis.
+
+00:00:49.060 --> 00:00:52.850
+We have one row for
+each state in the model and
+
+00:00:52.850 --> 00:00:56.179
+we want to look at which state
+we're in at each time step.
+
+00:00:56.179 --> 00:00:59.299
+&gt;&gt; Well at the beginning we have
+to start in state 1, correct?
+
+00:00:59.299 --> 00:01:00.250
+&gt;&gt; That's right.
+
+00:01:00.250 --> 00:01:03.740
+&gt;&gt; Okay, then at t equal to 2,
+we can stay in state 1 or
+
+00:01:03.740 --> 00:01:07.480
+transition to state 2, but
+we can't reach state 3 yet.
+
+00:01:07.480 --> 00:01:10.450
+Looks like we've already
+eliminated some of this trellis.
+
+00:01:10.450 --> 00:01:13.100
+&gt;&gt; Yes, the transition
+probabilities in these models
+
+00:01:13.099 --> 00:01:15.519
+really limit where you
+can be at any given time.
+
+00:01:15.519 --> 00:01:16.979
+Perhaps we can have a quiz on that idea.
+

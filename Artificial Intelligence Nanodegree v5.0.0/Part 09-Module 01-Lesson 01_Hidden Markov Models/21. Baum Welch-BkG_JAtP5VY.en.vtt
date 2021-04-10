@@ -1,0 +1,123 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.270 --> 00:00:01.070
+So what's next?
+
+00:00:01.070 --> 00:00:04.160
+&gt;&gt; A process called
+Baum Welch re-estimation.
+
+00:00:04.160 --> 00:00:07.040
+&gt;&gt; That's like
+Expectation-maximization again, right?
+
+00:00:07.040 --> 00:00:07.879
+&gt;&gt; Correct.
+
+00:00:07.879 --> 00:00:10.240
+&gt;&gt; But how does it differ
+from what we just did?
+
+00:00:10.240 --> 00:00:11.280
+&gt;&gt; It's very similar, but
+
+00:00:11.279 --> 00:00:15.649
+with Baum Welch, every sample of
+the data contributes to every state
+
+00:00:15.650 --> 00:00:20.550
+proportionally to the probability of
+that frame of data being in that state.
+
+00:00:20.550 --> 00:00:24.394
+So you're saying that even though this
+9 here is most likely in state one,
+
+00:00:24.394 --> 00:00:27.929
+its values still effects state two and
+three.
+
+00:00:27.929 --> 00:00:31.480
+&gt;&gt; But only a little bit because its
+likelihood of belonging to states two
+
+00:00:31.480 --> 00:00:33.200
+and three is pretty low.
+
+00:00:33.200 --> 00:00:34.890
+&gt;&gt; But for data like this 2 here,
+
+00:00:34.890 --> 00:00:37.950
+it has a high likelihood of
+being in state one or state two.
+
+00:00:37.950 --> 00:00:41.310
+&gt;&gt; And thus, has a bigger influence
+on the final output probabilities for
+
+00:00:41.310 --> 00:00:43.310
+those states than for state three.
+
+00:00:43.310 --> 00:00:45.289
+&gt;&gt; Okay, that doesn't sound so
+bad in theory.
+
+00:00:45.289 --> 00:00:48.183
+But it sounds hard to calculate
+because you have to weigh everything
+
+00:00:48.183 --> 00:00:48.989
+appropriately.
+
+00:00:48.990 --> 00:00:50.500
+&gt;&gt; It's actually not that bad.
+
+00:00:50.500 --> 00:00:53.159
+We can use the forward-backward
+algorithm to help keep track of
+
+00:00:53.159 --> 00:00:54.529
+the calculations.
+
+00:00:54.530 --> 00:00:57.179
+And it's worth the effort,
+because the final model often gives
+
+00:00:57.179 --> 00:00:59.439
+better results than
+our initial estimate.
+
+00:00:59.439 --> 00:01:01.549
+&gt;&gt; Now that we've given
+the intuition for what is going on,
+
+00:01:01.549 --> 00:01:05.069
+there are several good writeup's
+on the details of Baum Welch.
+
+00:01:05.069 --> 00:01:08.990
+Tutorial is a classic reference, and
+Thad's master thesis has an explanation
+
+00:01:08.989 --> 00:01:11.199
+that continues with
+the sign language example.
+
+00:01:11.200 --> 00:01:16.495
+Or just looking at the code to a popular
+HMM toolkit like HTK can be useful, too.
+
+00:01:16.495 --> 00:01:19.465
+In any case, using one of these
+toolkits and watching the means and
+
+00:01:19.465 --> 00:01:22.695
+variants change as the re-estimation
+process iterates will help
+
+00:01:22.694 --> 00:01:25.054
+build further intuition,
+and we highly suggest it.
+

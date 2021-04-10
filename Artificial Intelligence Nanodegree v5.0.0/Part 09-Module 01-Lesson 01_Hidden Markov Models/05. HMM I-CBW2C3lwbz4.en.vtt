@@ -1,0 +1,68 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.400 --> 00:00:03.669
+Okay, I've made an HMM for
+sign language word, I.
+
+00:00:03.669 --> 00:00:05.990
+&gt;&gt; Great, how did you pick those states?
+
+00:00:05.990 --> 00:00:08.730
+&gt;&gt; Well, the gesture seemed like
+it had three separate motions.
+
+00:00:08.730 --> 00:00:10.870
+So, I made each of those
+their own state and
+
+00:00:10.869 --> 00:00:13.869
+chose the transition probabilities
+based on the timing.
+
+00:00:13.869 --> 00:00:16.629
+&gt;&gt; We can take a look at
+the observed delta y here
+
+00:00:16.629 --> 00:00:18.939
+to check to see if
+the model is reasonable.
+
+00:00:18.940 --> 00:00:22.760
+First, the arm comes up towards
+the chest, and then pauses for
+
+00:00:22.760 --> 00:00:26.230
+a moment and then goes back down again.
+
+00:00:26.230 --> 00:00:30.630
+We can see that we spend a lot of
+time in states one and three, so
+
+00:00:30.629 --> 00:00:33.769
+there's a high probability
+on their self loops.
+
+00:00:33.770 --> 00:00:37.420
+State two is short so
+we've given it a smaller probability.
+
+00:00:37.420 --> 00:00:41.270
+&gt;&gt; Right, then we can fill in the output
+probability distribution similarly.
+
+00:00:41.270 --> 00:00:42.621
+For example in state two,
+
+00:00:42.621 --> 00:00:45.810
+we have a higher probability
+of getting a delta y of zero.
+
+00:00:45.810 --> 00:00:48.981
+We use Gaussian to model the upper
+probabilities here since they have nice
+
+00:00:48.981 --> 00:00:49.609
+properties.
+

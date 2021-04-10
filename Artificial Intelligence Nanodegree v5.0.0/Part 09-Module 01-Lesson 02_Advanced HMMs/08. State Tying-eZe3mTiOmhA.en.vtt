@@ -1,0 +1,96 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.250 --> 00:00:02.008
+Another trick is State Tying.
+
+00:00:02.008 --> 00:00:03.269
+&gt;&gt; You mean combining training for
+
+00:00:03.270 --> 00:00:05.910
+states with the states
+within the model are closed?
+
+00:00:05.910 --> 00:00:06.309
+&gt;&gt; Yup.
+
+00:00:06.309 --> 00:00:08.432
+Let's look at our models for
+I and we again.
+
+00:00:08.432 --> 00:00:13.409
+In the case where we are recognizing
+isolated signs, the initial movement
+
+00:00:13.409 --> 00:00:18.789
+of the right hand going to the chest
+is very similar in both models.
+
+00:00:18.789 --> 00:00:23.530
+Instead of having an I state one and
+a we state one, we're just going to have
+
+00:00:23.530 --> 00:00:28.950
+an initial state and define the I and we
+models such that they both include it.
+
+00:00:28.949 --> 00:00:33.159
+That way when we training the HMM
+we have twice as much data
+
+00:00:33.159 --> 00:00:35.289
+to train the initial state.
+
+00:00:35.289 --> 00:00:38.579
+&gt;&gt; And we can do the same thing with
+a final state, since the hand going back
+
+00:00:38.579 --> 00:00:42.979
+down to rest looks much the same in
+the isolated models for I and we.
+
+00:00:42.979 --> 00:00:45.689
+&gt;&gt; We have to be careful with this
+trick, because State Tying gets more
+
+00:00:45.689 --> 00:00:48.817
+complicated when we start to
+worry about context training.
+
+00:00:48.817 --> 00:00:52.979
+For our new table and we want CAT2,
+the only states that should be tied
+
+00:00:52.979 --> 00:00:57.269
+are the first state for I and we and
+the last state for table and cat.
+
+00:00:57.270 --> 00:01:01.200
+&gt;&gt; And maybe not even the last states
+for table and CAT2, if we're using more
+
+00:01:01.200 --> 00:01:05.560
+features than just delta Y, the end of
+table and CAT2 could be very different.
+
+00:01:05.560 --> 00:01:08.240
+&gt;&gt; Good point,
+in practice I often just look for
+
+00:01:08.239 --> 00:01:11.649
+states that seem to have close means and
+variances during training and
+
+00:01:11.650 --> 00:01:15.530
+then determine if tying them looks
+logical given the motion I expect.
+
+00:01:15.530 --> 00:01:18.450
+Again it's a situation where some
+visualization of the data and
+
+00:01:18.450 --> 00:01:20.719
+iteration can help us
+improve our results.
+

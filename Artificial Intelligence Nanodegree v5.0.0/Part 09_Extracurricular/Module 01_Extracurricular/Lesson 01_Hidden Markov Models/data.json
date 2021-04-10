@@ -1,0 +1,2436 @@
+{
+  "data": {
+    "lesson": {
+      "id": 559370,
+      "key": "2f8ae261-e98c-4198-b02d-047230238da5",
+      "title": "Hidden Markov Models",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Thad returns to discuss using Hidden Markov Models for pattern recognition with sequential data.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/2f8ae261-e98c-4198-b02d-047230238da5/559370/1538955207444/Hidden+Markov+Models+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/2f8ae261-e98c-4198-b02d-047230238da5/559370/1538955201440/Hidden+Markov+Models+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 193921,
+          "key": "68339055390923",
+          "title": "Hidden Markov Models",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "68339055390923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193541,
+              "key": "6833905539",
+              "title": "Hidden Markov Models",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "ClNq1Aqdzr4",
+                "china_cdn_id": "ClNq1Aqdzr4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194142,
+          "key": "62251911970923",
+          "title": "HMM Representation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "62251911970923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193794,
+              "key": "6225191197",
+              "title": "HMM Representation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "34Noy-7bPAo",
+                "china_cdn_id": "34Noy-7bPAo.mp4"
+              }
+            },
+            {
+              "id": 272945,
+              "key": "af8206ec-f3f3-49b4-809c-a02d582edc72",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Boxcar distributions are the same as uniform distributions (also known as rectangular distributions)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 193895,
+          "key": "68339055400923",
+          "title": "Sign Language Recognition",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "68339055400923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193515,
+              "key": "6833905540",
+              "title": "Sign Language Recognition",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "iUHcC93pU78",
+                "china_cdn_id": "iUHcC93pU78.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194139,
+          "key": "62251911980923",
+          "title": "Delta-y Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "62251911980923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193791,
+              "key": "6225191198",
+              "title": "Delta-y Quiz",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Enter **a**, **b**, **c** or **d** in the input box next to each \"y vs t\" plot, to indicate the corresponding \"delta-y vs t\" plot on the right.",
+              "user_state": {
+                "node_key": "6225191198",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "LiDdrJjjjfc",
+                  "china_cdn_id": "LiDdrJjjjfc.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Delta-y Quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/cXE6_5AjXW3PAFKKbsxV_KGRpexhfplUtDn0E2iEolkeSE6SJJcb2osLENbq6XdZMLzlG8HTnYEMenWadQ=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6225191198",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "6225191200",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text1",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.059850374064837904,
+                      "x": 0.3926901496259352,
+                      "y": 0.25083148558758317
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text2",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.05860349127182045,
+                      "x": 0.4048082917705736,
+                      "y": 0.43957871396895787
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text3",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.059850374064837904,
+                      "x": 0.41534834788029923,
+                      "y": 0.6068805432372506
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text4",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.06109725685785536,
+                      "x": 0.4210567331670823,
+                      "y": 0.8008938470066519
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "JOaffXS0Cks",
+                  "china_cdn_id": "JOaffXS0Cks.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 194044,
+          "key": "58304842260923",
+          "title": "HMM: \"I\"",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "58304842260923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193684,
+              "key": "5830484226",
+              "title": "HMM: \"I\"",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "CBW2C3lwbz4",
+                "china_cdn_id": "CBW2C3lwbz4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194045,
+          "key": "58304842270923",
+          "title": "HMM: \"We\"",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "58304842270923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193685,
+              "key": "5830484227",
+              "title": "HMM: \"We\"",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "1mtzJGhRYHg",
+                "china_cdn_id": "1mtzJGhRYHg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194050,
+          "key": "58304842280923",
+          "title": "I vs We Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "58304842280923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193690,
+              "key": "5830484228",
+              "title": "I vs We Quiz",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "[**Gesture HMMs**![Gesture HMMs](https://s3.amazonaws.com/content.udacity-data.com/courses/ud954/images/Hidden-Markov-Models/Gesture-HMMs.png)](https://s3.amazonaws.com/content.udacity-data.com/courses/ud954/images/Hidden-Markov-Models/Gesture-HMMs.png)",
+              "user_state": {
+                "node_key": "5830484228",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "0dqyRY7GmoY",
+                  "china_cdn_id": "0dqyRY7GmoY.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "I vs We Quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/NmhBA0ediuLBwOsv6tbk5luwmAAKz5asxdSRKd8Qjj_93VSHg98jzcK9ONC77HT68tggUMvZma7FsOCpy5o=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5830484228",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "5830484230",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check1",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.24271352867830423,
+                      "y": 0.4590839800443459
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check2",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.24466178304239403,
+                      "y": 0.5374861419068736
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check3",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.24460333541147133,
+                      "y": 0.6117308758314856
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check4",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.24448644014962592,
+                      "y": 0.695295177383592
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "jpH8xqz2Baw",
+                  "china_cdn_id": "jpH8xqz2Baw.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 194123,
+          "key": "58268998230923",
+          "title": "Viterbi Trellis: \"I\"",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "58268998230923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193774,
+              "key": "5826899823",
+              "title": "Viterbi Trellis: \"I\"",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "0UDTzAgGkxA",
+                "china_cdn_id": "0UDTzAgGkxA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 193976,
+          "key": "58268998240923",
+          "title": "\"I\" Transitions Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "58268998240923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193604,
+              "key": "5826899824",
+              "title": "\"I\" Transitions Quiz",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "5826899824",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "4biuZiWfNAo",
+                  "china_cdn_id": "4biuZiWfNAo.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "\"I”: Transitions Quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/8uaYD7TiTPst_SLm-TqtjyPwkS1pqHksaA-uGAFfi3jZyBli2wOuWpq6RmNzsl68elGv7cTz8kErMewqPZ4=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5826899824",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "5826899826",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check1",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6353257481296758,
+                      "y": 0.6166158536585366
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check2",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6351309226932669,
+                      "y": 0.7575873059866962
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check3",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6356569513715711,
+                      "y": 0.8947824279379157
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check4",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.7411938902743143,
+                      "y": 0.6171008869179601
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check5",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.7417783665835411,
+                      "y": 0.7592849223946785
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check6",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.740473036159601,
+                      "y": 0.8956832039911308
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "aOPeQAxDS4E",
+                  "china_cdn_id": "aOPeQAxDS4E.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 194126,
+          "key": "58268998280923",
+          "title": "Viterbi Trellis: \"I\" (continued)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "58268998280923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193776,
+              "key": "5826899828",
+              "title": "Viterbi Trellis: \"I\" (continued)",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "tqYJnaQfsn0",
+                "china_cdn_id": "tqYJnaQfsn0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194125,
+          "key": "58268998290923",
+          "title": "Nodes for \"I\"",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "58268998290923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193775,
+              "key": "5826899829",
+              "title": "Nodes for \"I\"",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Enter **a**, **b**, **c**, **d** or **e** in each of the 3 states (not the numeric values).\n\nNote: The values you choose for each state need not be exact, as long as they are relatively consistent, and agree with the output probability plots.",
+              "user_state": {
+                "node_key": "5826899829",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "qkZtbrQz0Uo",
+                  "china_cdn_id": "qkZtbrQz0Uo.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Nodes for \"I\"",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/uPim9X1HmuX99VLqso3-O9apXIkMmNCkqAUyr-BvISeTLPjym8QJt8q8Ddq8r9Bf7iQZIZ6aruwWNLcspA0=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5826899829",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "5826899831",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text1",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.5000194825436409,
+                      "y": 0.5983231707317073
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text2",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.500370168329177,
+                      "y": 0.7345828713968958
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text3",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.4992986284289277,
+                      "y": 0.864190687361419
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "_jsb50xnRd8",
+                  "china_cdn_id": "_jsb50xnRd8.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 194018,
+          "key": "58268998330923",
+          "title": "Viterbi Path",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "58268998330923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193656,
+              "key": "5826899833",
+              "title": "Viterbi Path",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "Hq2P6zWA9F8",
+                "china_cdn_id": "Hq2P6zWA9F8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194015,
+          "key": "58268998340923",
+          "title": "\"We\": Transitions Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "58268998340923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193652,
+              "key": "5826899834",
+              "title": "\"We\": Transitions Quiz",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "**Note**: You just need to mark all the possible transitions here. We'll get to finding the most probable path later.\n\n**Correction** (00:00-00:01): The last transition in the second column, i.e. at _t_ = _2_ to _3_, from state 3 to state 3, should not be checked.",
+              "user_state": {
+                "node_key": "5826899834",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "5TZkQuXiK14",
+                  "china_cdn_id": "5TZkQuXiK14.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "\"We\": Transitions Quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/aY2TKKnnV0KBdlR10Wy0CTIIitkBMTRSfbS-FS7avmUgP82m5D4WSFlwi0n8uX7xb88aFblaZiJf5II02fuq=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5826899834",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "5826899836",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check1",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.22572475062344138,
+                      "y": 0.6116269401330376
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check2",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.2265040523690773,
+                      "y": 0.6832386363636364
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check3",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.2257052680798005,
+                      "y": 0.7523905210643016
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check4",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.2265430174563591,
+                      "y": 0.8176967849223947
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check5",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.22574423316708228,
+                      "y": 0.889620288248337
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check6",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3326254675810474,
+                      "y": 0.6108993902439024
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check7",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.33274236284289277,
+                      "y": 0.6831000554323725
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check8",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.33252805486284287,
+                      "y": 0.7524944567627494
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check9",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.33227478179551123,
+                      "y": 0.8214038248337029
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check10",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3321384039900249,
+                      "y": 0.8892391906873615
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check11",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4374610349127182,
+                      "y": 0.6128048780487805
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check12",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4365063902743142,
+                      "y": 0.683515798226164
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check13",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4372856920199501,
+                      "y": 0.7506929046563193
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check14",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4373636221945137,
+                      "y": 0.820295177383592
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check15",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.43652587281795513,
+                      "y": 0.8892391906873615
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check16",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5414783354114713,
+                      "y": 0.6116269401330376
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check17",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5412250623441397,
+                      "y": 0.6804323725055432
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check18",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5414393703241895,
+                      "y": 0.7518015521064302
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check19",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5411860972568578,
+                      "y": 0.8208495011086474
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check20",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.542296602244389,
+                      "y": 0.8880266075388027
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check21",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6461775249376559,
+                      "y": 0.6127355875831486
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check22",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.64691786159601,
+                      "y": 0.683619733924612
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check23",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6465476932668329,
+                      "y": 0.750900776053215
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check24",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6468009663341646,
+                      "y": 0.819325110864745
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check25",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.645963216957606,
+                      "y": 0.8900706762749445
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check26",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.7514806733167082,
+                      "y": 0.6127702328159645
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check27",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.7516365336658354,
+                      "y": 0.6838968957871396
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check28",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.7511494700748129,
+                      "y": 0.7511779379157428
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check29",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.7506624064837906,
+                      "y": 0.8197408536585366
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check30",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.7512274002493765,
+                      "y": 0.8884423503325942
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "3S7m6PH5vxU",
+                  "china_cdn_id": "3S7m6PH5vxU.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 194109,
+          "key": "58268998380923",
+          "title": "\"We\": Transition Probabilities Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "58268998380923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193756,
+              "key": "5826899838",
+              "title": "\"We\": Transition Probabilities Quiz",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "**Note**: The transition into the first state at t=1, and out of the last state at t=7 are special cases, and are useful for expressing the total probability of the Viterbi path using a consistent formula.\n\nThe exact values don't matter when trying to compare alternate paths (because they are common), but intuitively, the probability of transitioning in is 1.0 (we know _some_ gesture happened), while that of transitioning out comes directly from the HMM.",
+              "user_state": {
+                "node_key": "5826899838",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "oleAGKzgmDw",
+                  "china_cdn_id": "oleAGKzgmDw.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "\"We\": Transition Probabilities Quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/jrCmSAw9r1EpNDKwKGTG6tV1_GIZfSiel_Qhtpy0rZcRuKXr_uBdGfDCrBMfTqgjU0S7jYky3St3m__jHEAf=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5826899838",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "5826899840",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric1",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.209223036159601,
+                      "y": 0.5552937915742794
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric2",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.20871649002493767,
+                      "y": 0.6487319844789357
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric3",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.31532496882793015,
+                      "y": 0.5558134700665188
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric4",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.314604114713217,
+                      "y": 0.6500831485587583
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric5",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.3153444513715711,
+                      "y": 0.7335088691796009
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric6",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.31548082917705733,
+                      "y": 0.8136779379157428
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric7",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.42127104114713215,
+                      "y": 0.5539772727272727
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric8",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.42035536159601,
+                      "y": 0.6442281042128604
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric9",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.422069825436409,
+                      "y": 0.7339246119733924
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric10",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.42148534912718205,
+                      "y": 0.8117031596452328
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric11",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.42152431421446385,
+                      "y": 0.9147727272727273
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric12",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.5267300498753117,
+                      "y": 0.553700110864745
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric13",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.5278015897755611,
+                      "y": 0.6477965631929047
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric14",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.5277626246882793,
+                      "y": 0.7313955099778271
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric15",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.5284639962593516,
+                      "y": 0.8083425720620843
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric16",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.5284834788029925,
+                      "y": 0.9167821507760532
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric17",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.6350724750623441,
+                      "y": 0.6510185698447893
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric18",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.6360076371571073,
+                      "y": 0.7312569290465631
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric19",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.63758572319202,
+                      "y": 0.814370842572062
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric20",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.636806421446384,
+                      "y": 0.9165049889135255
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric21",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.7408821695760599,
+                      "y": 0.8113913525498891
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric22",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.7410380299251871,
+                      "y": 0.9167821507760532
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "1axflf3dX-c",
+                  "china_cdn_id": "1axflf3dX-c.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 194159,
+          "key": "68640114780923",
+          "title": "\"We\": Output Probabilities Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "68640114780923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193815,
+              "key": "6864011478",
+              "title": "\"We\": Output Probabilities Quiz",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Enter **a**, **b**, **c**, **d** or **e** in each of the 3 states (not the numeric values).\n\nNote: The values you choose for each state need not be exact, as long as they are relatively consistent, and agree with the output probability plots.",
+              "user_state": {
+                "node_key": "6864011478",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "M7VfDawJyfc",
+                  "china_cdn_id": "M7VfDawJyfc.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "\"We\": Output Probabilities Quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/gfKpxqGklICh7WbkaESRHIUmQj-fX6_vSVqrR2kf93Mo70FRIaj7mMZNnPh_HFtJNCIgmw_tzIzxfkkkz6me=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6864011478",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "6864011480",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text1",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.5045004675810474,
+                      "y": 0.632829822616408
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text2",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.5044809850374065,
+                      "y": 0.7699902993348116
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text3",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.5047927057356608,
+                      "y": 0.90625
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text4",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.6086736284289277,
+                      "y": 0.7702328159645233
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text5",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.6084398379052369,
+                      "y": 0.907289356984479
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text6",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.03740648379052369,
+                      "x": 0.7119311097256857,
+                      "y": 0.9061460643015521
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "3qdpRcItHKc",
+                  "china_cdn_id": "3qdpRcItHKc.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 193922,
+          "key": "58268998420923",
+          "title": "\"We\": Viterbi Path",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "58268998420923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193542,
+              "key": "5826899842",
+              "title": "\"We\": Viterbi Path",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Indicate the highest probability path by marking the transitions along it.\n\nAlso enter the total probability of that path, with at least 3 significant figures. You can use scientific notation, e.g. **1.82e-4** to represent **1.82&times;10<sup>-4</sup>** = **0.000182**.",
+              "user_state": {
+                "node_key": "5826899842",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "dnPBp_rCgXA",
+                  "china_cdn_id": "dnPBp_rCgXA.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "\"We\": Viterbi Path",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/-Z7ZCSv7S18GKKIHfzAC2sRRnUcqGEtytN0Ekm9Aax_2OuuxxpZ1EuB1DkXpBTUF8ka62vVDGsWkmOUTtg=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5826899842",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "5826899844",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check1",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.15155470698254364,
+                      "y": 0.6142253325942351
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check2",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.15237297381546136,
+                      "y": 0.6832386363636364
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check3",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.25660458229426436,
+                      "y": 0.613289911308204
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check4",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.2564487219451372,
+                      "y": 0.6800166297117517
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check5",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.2570721633416459,
+                      "y": 0.7504850332594235
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check6",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.2572280236907731,
+                      "y": 0.8158259423503326
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check7",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3593360349127182,
+                      "y": 0.6128395232815964
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check8",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3593360349127182,
+                      "y": 0.6812292128603105
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check9",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3591996571072319,
+                      "y": 0.7496881929046563
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check10",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3595308603491272,
+                      "y": 0.8149251662971175
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check11",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3594139650872818,
+                      "y": 0.8844927937915743
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check12",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4608011221945137,
+                      "y": 0.6123544900221729
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check13",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4613076683291771,
+                      "y": 0.6800166297117517
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check14",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4608011221945137,
+                      "y": 0.7486834811529933
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check15",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4608400872817955,
+                      "y": 0.8164495565410199
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check16",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4617168017456359,
+                      "y": 0.8843888580931264
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check17",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5639611907730673,
+                      "y": 0.68157566518847
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check18",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5641560162094763,
+                      "y": 0.7493417405764967
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check19",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5638053304239401,
+                      "y": 0.8148558758314856
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check20",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5638637780548629,
+                      "y": 0.8852203436807096
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check21",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6655236907730673,
+                      "y": 0.817384977827051
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check22",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6664393703241895,
+                      "y": 0.8857746674057649
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric1",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": 1,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.11596009975062344,
+                      "x": 0.8456982543640897,
+                      "y": 0.31007483370288247
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "4gCvjIq-sqc",
+                  "china_cdn_id": "4gCvjIq-sqc.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 194154,
+          "key": "62251912020923",
+          "title": "Which Gesture is Recognized?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "62251912020923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193802,
+              "key": "6225191202",
+              "title": "Which Gesture is Recognized?",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "fcYZoVZpAZ0",
+                "china_cdn_id": "fcYZoVZpAZ0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 193945,
+          "key": "71607217540923",
+          "title": "New Observation Sequence for \"I\"",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71607217540923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193567,
+              "key": "7160721754",
+              "title": "New Observation Sequence for \"I\"",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Please enter your answer with at least 3 significant figures, e.g. if your computed value is **0.00016515072**, you may enter **0.000165** or  **1.65e-4** (which represents **1.65&times;10<sup>-4</sup>**).",
+              "user_state": {
+                "node_key": "7160721754",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "HZxhurrq3aY",
+                  "china_cdn_id": "HZxhurrq3aY.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "New Observation Sequence for \"I\"",
+                "alt_text": "What is the probability of observing the following sequence of delta-y's for the gesture \"I\"? Sequence: 3, 7, 4, -1, 0, 1, -5, -5, -3",
+                "background_image": "//lh3.googleusercontent.com/aPouvcwj0YkCpeoOj4WEhQANAUHAonaS5WZwkQ4SULT1FTxmv_Nr-vZOHlX5ha1NE3REoy_pot5WJ2LURw=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7160721754",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "7160721756",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric1",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07538802660753881,
+                      "width": 0.25311720698254364,
+                      "x": 0.482660536159601,
+                      "y": 0.7875554323725056
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "9ZubcONbb6U",
+                  "china_cdn_id": "9ZubcONbb6U.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 194163,
+          "key": "71607217580923",
+          "title": "New Observation Sequence for \"We\"",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71607217580923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193822,
+              "key": "7160721758",
+              "title": "New Observation Sequence for \"We\"",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Please enter your answer with at least 3 significant figures, e.g. if your computed value is **0.00016515072**, you may enter **0.000165** or  **1.65e-4** (which represents **1.65&times;10<sup>-4</sup>**).",
+              "user_state": {
+                "node_key": "7160721758",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "SV8xgQFmLdQ",
+                  "china_cdn_id": "SV8xgQFmLdQ.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "New Observation Sequence for \"We\"",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/BY-HFb5ITyxAjk-_Jjh5mSb1EDONh6BeLE6C8g6Ocj4ssNJzPBXVMKQMTUxFPh4Bt_i5ozVlhlF9PDmsk_U=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7160721758",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "7160721760",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric1",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.25561097256857856,
+                      "x": 0.49678538029925184,
+                      "y": 0.7889412416851441
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "jwAHyb8l9c4",
+                  "china_cdn_id": "jwAHyb8l9c4.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 193908,
+          "key": "62251912110923",
+          "title": "HMM Training",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "62251912110923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193527,
+              "key": "6225191211",
+              "title": "HMM Training",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "Jg5OKvxsYl4",
+                "china_cdn_id": "Jg5OKvxsYl4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194041,
+          "key": "62251912120923",
+          "title": "Baum Welch",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "62251912120923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193682,
+              "key": "6225191212",
+              "title": "Baum Welch",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "BkG_JAtP5VY",
+                "china_cdn_id": "BkG_JAtP5VY.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    }
+  ]
+}

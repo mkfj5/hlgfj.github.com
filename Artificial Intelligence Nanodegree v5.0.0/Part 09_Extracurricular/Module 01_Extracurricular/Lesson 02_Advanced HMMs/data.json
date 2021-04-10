@@ -1,0 +1,392 @@
+{
+  "data": {
+    "lesson": {
+      "id": 559394,
+      "key": "59e95600-d34a-4f82-b8f2-36c8f606ac41",
+      "title": "Advanced HMMs",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Thad shares advanced techniques that can improve performance of HMMs recognizing American Sign Language, and more complex HMM models for applications like speech synthesis.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/59e95600-d34a-4f82-b8f2-36c8f606ac41/559394/1538955170344/Advanced+HMMs+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/59e95600-d34a-4f82-b8f2-36c8f606ac41/559394/1538955165970/Advanced+HMMs+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 193915,
+          "key": "62251912130923",
+          "title": "Multidimensional Output Probabilities",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "62251912130923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193535,
+              "key": "6225191213",
+              "title": "Multidemensional Output Probabilities",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "xDN1V4Y1Ung",
+                "china_cdn_id": "xDN1V4Y1Ung.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 193905,
+          "key": "62251912140923",
+          "title": "Using a Mixture of Gaussians",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "62251912140923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193524,
+              "key": "6225191214",
+              "title": "Using a Mixture of Gaussians",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "Zi2h6KWN4YE",
+                "china_cdn_id": "Zi2h6KWN4YE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 193993,
+          "key": "69882386530923",
+          "title": "HMM Topologies",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "69882386530923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193626,
+              "key": "6988238653",
+              "title": "HMM Topologies",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "m13mWH6vFR8",
+                "china_cdn_id": "m13mWH6vFR8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194011,
+          "key": "71203372970923",
+          "title": "Phrase Level Recognition",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71203372970923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193647,
+              "key": "7120337297",
+              "title": "Phrase Level Recognition",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "0M-WJCgqtEc",
+                "china_cdn_id": "0M-WJCgqtEc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 193907,
+          "key": "62251912160923",
+          "title": "Stochastic Beam Search",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "62251912160923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193526,
+              "key": "6225191216",
+              "title": "Stochastic Beam Search",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "5sB93q26tng",
+                "china_cdn_id": "5sB93q26tng.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 193906,
+          "key": "62251912170923",
+          "title": "Context Training",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "62251912170923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193525,
+              "key": "6225191217",
+              "title": "Context Training",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "A4Kn5BUESDw",
+                "china_cdn_id": "A4Kn5BUESDw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194037,
+          "key": "62251912180923",
+          "title": "Statistical Grammar",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "62251912180923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193674,
+              "key": "6225191218",
+              "title": "Statistical Grammar",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "pi5sqYVO8SY",
+                "china_cdn_id": "pi5sqYVO8SY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 193902,
+          "key": "62251912190923",
+          "title": "State Tying",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "62251912190923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193522,
+              "key": "6225191219",
+              "title": "State Tying",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "eZe3mTiOmhA",
+                "china_cdn_id": "eZe3mTiOmhA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194062,
+          "key": "69864985350923",
+          "title": "HMM Resources",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "69864985350923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193704,
+              "key": "6986498535",
+              "title": "HMM Resources",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## HMM Resources\n\nAIMA: Chapter 15.4-15.6 (provides another viewpoint on HMMs with a natural extension to Kalman filters, particle filtering, and Dynamic Bayes Nets), Chapter 20.3 (hidden variables, EM algorithm)\n\n### Further study\n\nHuang, Ariki, and Jack’s book [_Hidden Markov Models for Speech Recognition_](http://www.amazon.com/Hidden-Recognition-Edinburgh-Information-Technology/dp/0748601627).\n\nYechiam Yemini's slides on [HMMs used in genetics](http://www.cs.columbia.edu/4761/notes07/chapter4.1-HMM.pdf) (gene sequencing, decoding).\n\nSebastian Thrun and Peter Norvig’s AI course:\n\n- [HMMs and Kalman filters](https://classroom.udacity.com/courses/cs271/lessons/48734405/concepts/last-viewed)\n- [Natural Language Processing](https://classroom.udacity.com/courses/cs271/lessons/48641663/concepts/last-viewed)\n- [Natural Language Processing II](https://classroom.udacity.com/courses/cs271/lessons/48734403/concepts/last-viewed)\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 193916,
+          "key": "62251912200923",
+          "title": "Segmentally Boosted HMMs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "62251912200923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193536,
+              "key": "6225191220",
+              "title": "Segmentally Boosted HMMs",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "4WVv1qPm7js",
+                "china_cdn_id": "4WVv1qPm7js.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194127,
+          "key": "69818185530923",
+          "title": "SBHMM Resources",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "69818185530923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193777,
+              "key": "6981818553",
+              "title": "SBHMM Resources",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Resources for Segmentally Boosted HMMs\n\n- [SBHMM project at Georgia Tech](http://www.cc.gatech.edu/cpl/projects/sbhmm/)\n- [HMM Tool Kit](http://htk.eng.cam.ac.uk/) (HTK)\n- [Gesture and Activity Recognition Toolkit](https://wiki.cc.gatech.edu/ccg/projects/gt2k/gt2k) (GART; formerly Georgia Tech Gesture Toolkit)\n\n### Further study  \n\nPei Yin’s dissertation: [_Segmental discriminative analysis for American Sign Language recognition and verification_](https://smartech.gatech.edu/handle/1853/33939)\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 194005,
+          "key": "62251912210923",
+          "title": "Using HMMs to Generate Data",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "62251912210923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193640,
+              "key": "6225191221",
+              "title": "Using HMMs to Generate Data",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "WJxdT_YPNUA",
+                "china_cdn_id": "WJxdT_YPNUA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194185,
+          "key": "69750885560923",
+          "title": "HMMs for Speech Synthesis",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "69750885560923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193849,
+              "key": "6975088556",
+              "title": "HMMs for Speech Synthesis",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## HMMs for Speech Synthesis\n\nJunichi Yamagishi’s [_An Introduction to HMM-Based Speech Synthesis_](https://wiki.inf.ed.ac.uk/twiki/pub/CSTR/TrajectoryModelling/HTS-Introduction.pdf)\n\nHeiga Zen’s [_Deep Learning in Speech Synthesis_](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/41539.pdf)\n\nDeepMind's [WaveNet](https://deepmind.com/blog/wavenet-generative-model-raw-audio/)\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

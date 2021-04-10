@@ -1,0 +1,113 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.350 --> 00:00:03.390
+In the middle of the trellis it looks
+like we have many more options.
+
+00:00:03.390 --> 00:00:05.810
+We could really be in
+any of the three states.
+
+00:00:05.809 --> 00:00:06.699
+&gt;&gt; That's true.
+
+00:00:06.700 --> 00:00:10.961
+The next thing we need to do is
+to add transition probabilities.
+
+00:00:10.961 --> 00:00:14.926
+We can pull those directly
+from our model, lambda I.
+
+00:00:14.926 --> 00:00:18.655
+&gt;&gt; Okay, I have added the transition
+probabilities, that seems simple enough.
+
+00:00:18.655 --> 00:00:22.259
+But how do we go from this
+to an overall probability?
+
+00:00:22.260 --> 00:00:24.970
+&gt;&gt; Here's where our
+observation sequence comes in.
+
+00:00:24.969 --> 00:00:26.929
+Let's look at time step 1.
+
+00:00:26.929 --> 00:00:32.009
+We saw a delta y of 3, but we know we
+can only be in state 1 at that time.
+
+00:00:32.009 --> 00:00:35.329
+By looking at the output
+distribution at state 1,
+
+00:00:35.329 --> 00:00:38.619
+we can see how probable
+it is to get a 3 from it.
+
+00:00:38.619 --> 00:00:41.259
+Normally, we would have a real
+distribution for these outputs.
+
+00:00:41.259 --> 00:00:44.500
+And we could find the actual
+probability for the output.
+
+00:00:44.500 --> 00:00:47.939
+But for illustration purposes,
+I'll pick some reasonable numbers.
+
+00:00:47.939 --> 00:00:51.037
+As long as we're consistent
+the example should work.
+
+00:00:51.037 --> 00:00:55.743
+I'll call the probability that
+the Gaussian in the first state
+
+00:00:55.743 --> 00:00:58.598
+generated a delta y of 3 to be 0.5.
+
+00:00:58.598 --> 00:01:00.269
+So let's write that into this node.
+
+00:01:01.289 --> 00:01:01.990
+&gt;&gt; I see.
+
+00:01:01.990 --> 00:01:05.254
+So then for
+time 2 we have an output of 7.
+
+00:01:05.254 --> 00:01:08.704
+3 was two away from state 1's mean of 5.
+
+00:01:08.704 --> 00:01:10.575
+And 7 is also two away from 5.
+
+00:01:10.575 --> 00:01:14.005
+So it will be a probability
+of 0.5 here as well.
+
+00:01:14.004 --> 00:01:14.894
+&gt;&gt; That works.
+
+00:01:14.894 --> 00:01:17.640
+Now we also need to consider state 2.
+
+00:01:17.640 --> 00:01:21.819
+But the probability of getting a seven
+there is very small, nearly zero, but
+
+00:01:21.819 --> 00:01:22.869
+not quite.
+
+00:01:22.870 --> 00:01:26.939
+So let's say, 10 to the -7.
+
+00:01:26.939 --> 00:01:29.799
+&gt;&gt; Why don't we pause for a quiz to
+make sure this process makes sense?
+

@@ -1,0 +1,125 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.210 --> 00:00:02.859
+Stochastic beam search,
+did we see that before?
+
+00:00:02.859 --> 00:00:03.950
+&gt;&gt; Not in detail.
+
+00:00:03.950 --> 00:00:07.050
+So far we've been doing something
+like a breadth first search,
+
+00:00:07.049 --> 00:00:10.349
+expanding each possible
+path in each time step.
+
+00:00:10.349 --> 00:00:12.719
+But now we want to prune
+some of those paths.
+
+00:00:12.720 --> 00:00:16.219
+&gt;&gt; Well some of those paths are going to
+get a low probability pretty quickly.
+
+00:00:16.219 --> 00:00:18.550
+For example, staying in
+the first state of the model for
+
+00:00:18.550 --> 00:00:21.570
+I until t equals 10 seems improbable.
+
+00:00:21.570 --> 00:00:24.620
+We could just drop some of
+those low probability paths.
+
+00:00:24.620 --> 00:00:27.570
+&gt;&gt; Yup,
+that's the idea of the beam search.
+
+00:00:27.570 --> 00:00:30.690
+But we don't want to get rid of
+all the low-probability paths.
+
+00:00:30.690 --> 00:00:34.370
+It is possible that there is a bad match
+in the beginning of the phrase that
+
+00:00:34.369 --> 00:00:36.489
+becomes a good match later on.
+
+00:00:36.490 --> 00:00:38.350
+For example,
+the signer might hesitate or
+
+00:00:38.350 --> 00:00:41.350
+accidentally start with the wrong
+sign before changing it.
+
+00:00:41.350 --> 00:00:44.640
+&gt;&gt; Like someone stuttering or having
+a false start in a spoken language.
+
+00:00:44.640 --> 00:00:45.679
+&gt;&gt; Precisely.
+
+00:00:45.679 --> 00:00:46.289
+&gt;&gt; In that case,
+
+00:00:46.289 --> 00:00:49.079
+let's keep the paths randomly in
+proportion of their probability.
+
+00:00:49.079 --> 00:00:53.679
+&gt;&gt; Here are some examples of high
+probability paths through the trellis
+
+00:00:53.679 --> 00:00:54.270
+marked in red.
+
+00:00:54.270 --> 00:00:58.880
+And some low probability paths
+through the trellis marked in blue.
+
+00:00:58.880 --> 00:00:59.440
+&gt;&gt; In that case,
+
+00:00:59.439 --> 00:01:02.869
+let's keep the paths randomly in
+proportion with their probability.
+
+00:01:02.869 --> 00:01:05.769
+&gt;&gt; Yep, the idea has some similarity
+to the fitness function we
+
+00:01:05.769 --> 00:01:07.709
+talk about with genetic algorithms.
+
+00:01:07.709 --> 00:01:09.899
+Or to the randomness in
+simulated knee length.
+
+00:01:09.900 --> 00:01:11.810
+In practice, it works very well.
+
+00:01:11.810 --> 00:01:13.719
+&gt;&gt; Randomness seems to be
+useful in a lot of AI.
+
+00:01:13.719 --> 00:01:16.340
+&gt;&gt; It's a principle I
+practice in my daily life.
+
+00:01:16.340 --> 00:01:16.980
+&gt;&gt; What?
+
+00:01:16.980 --> 00:01:18.210
+&gt;&gt; Precisely.
+
+00:01:18.209 --> 00:01:20.239
+&gt;&gt; Okay,
+let's get back to the real topic.
+

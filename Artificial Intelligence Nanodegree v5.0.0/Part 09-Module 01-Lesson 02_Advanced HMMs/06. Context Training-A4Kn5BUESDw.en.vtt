@@ -1,0 +1,221 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.420 --> 00:00:00.950
+OK.
+
+00:00:00.950 --> 00:00:02.790
+Now let's talk about another trick.
+
+00:00:02.790 --> 00:00:07.540
+When we moved from recognizing isolated
+signs to recognizing phrases of signs,
+
+00:00:07.540 --> 00:00:10.429
+the combination of movements
+looks very different.
+
+00:00:10.429 --> 00:00:12.949
+&gt;&gt; For example,
+when Thad signed NEED in isolation,
+
+00:00:12.949 --> 00:00:16.550
+his hands started from a rest position
+and finished in the rest position.
+
+00:00:16.550 --> 00:00:19.469
+When he signs NEED in
+the context of I NEED CAT,
+
+00:00:19.469 --> 00:00:22.169
+the first part of NEED runs
+into the last part of I, and
+
+00:00:22.170 --> 00:00:24.870
+the last part of NEED runs
+into the first part of CAT.
+
+00:00:24.870 --> 00:00:27.220
+His hands are no longer moving so much.
+
+00:00:27.219 --> 00:00:29.250
+&gt;&gt; That's right, the signs before and
+
+00:00:29.250 --> 00:00:32.618
+after a given sign can
+significantly affect how it looks.
+
+00:00:32.618 --> 00:00:35.119
+&gt;&gt; So instead of recognizing
+the three state model for need,
+
+00:00:35.119 --> 00:00:40.059
+we're going to concatenate a combined
+six state model of I NEED, and NEED CAT.
+
+00:00:40.060 --> 00:00:43.387
+&gt;&gt; In practice, we often have lots
+of examples of phrases of sign and
+
+00:00:43.387 --> 00:00:45.149
+not individual signs to train on.
+
+00:00:45.149 --> 00:00:49.314
+In my original paper on recognizing
+phrases of ASL, I had 40 signs in
+
+00:00:49.314 --> 00:00:53.763
+the vocabulary, but the only training
+data that I had was 500 phrases,
+
+00:00:53.764 --> 00:00:56.160
+that each contained five signs.
+
+00:00:56.159 --> 00:00:56.785
+&gt;&gt; In this case,
+
+00:00:56.786 --> 00:00:59.667
+let's suppose we have lots of
+examples of our three sign phrase.
+
+00:00:59.667 --> 00:01:04.376
+In our original example on training in
+HMM in data, we assume that the data for
+
+00:01:04.376 --> 00:01:06.478
+an isolated version of the sign for
+
+00:01:06.477 --> 00:01:09.250
+I was evenly divided
+among its three states.
+
+00:01:09.250 --> 00:01:12.599
+We then calculated the output
+probabilities given that assumption,
+
+00:01:12.599 --> 00:01:15.039
+adjusted the boundaries and
+transition probabilities, and
+
+00:01:15.040 --> 00:01:16.880
+iterated until convergence.
+
+00:01:16.879 --> 00:01:20.109
+&gt;&gt; We're going to do the same thing for
+our first step here, but
+
+00:01:20.109 --> 00:01:24.510
+this time we will assume that the data
+is evenly divided between each sign, and
+
+00:01:24.510 --> 00:01:27.940
+then we'll divide the data for
+each state in each sign.
+
+00:01:27.939 --> 00:01:29.799
+&gt;&gt; And
+we iterate the same way we did before,
+
+00:01:29.799 --> 00:01:33.579
+adjusting the boundaries on each state
+and each sign until we converge.
+
+00:01:33.579 --> 00:01:35.469
+&gt;&gt; Now's when things get interesting.
+
+00:01:35.469 --> 00:01:39.170
+After we've converged everything for
+each sign, we're going to go back and
+
+00:01:39.170 --> 00:01:41.680
+find every place where I NEED occurs.
+
+00:01:41.680 --> 00:01:46.190
+Notice that there will be a lot fewer of
+those than there are examples of NEED.
+
+00:01:46.189 --> 00:01:48.554
+&gt;&gt; But let's assume that
+there are enough examples.
+
+00:01:48.555 --> 00:01:49.395
+&gt;&gt; Okay.
+
+00:01:49.394 --> 00:01:52.804
+Well we are going to cut out the data
+we think belongs to I NEED, and
+
+00:01:52.805 --> 00:01:54.985
+train the combined six
+state model on it.
+
+00:01:54.984 --> 00:01:56.572
+&gt;&gt; How does that help?
+
+00:01:56.572 --> 00:01:59.414
+&gt;&gt; Well the output probabilities
+at the boundary between I and
+
+00:01:59.415 --> 00:02:01.845
+NEED, here and here,
+
+00:02:01.844 --> 00:02:06.385
+as well as the transition probabilities
+in that region, will be tuned to
+
+00:02:06.385 --> 00:02:11.259
+better represent I NEED than the general
+case which would include we need.
+
+00:02:11.259 --> 00:02:16.004
+In speech the effect of one phoneme
+affecting the adjacent phoneme is called
+
+00:02:16.004 --> 00:02:21.129
+coarticulation, and this method of
+modeling is called context training.
+
+00:02:21.129 --> 00:02:24.439
+&gt;&gt; So I see we're going to do
+the same thing for NEED CAT1.
+
+00:02:24.439 --> 00:02:26.983
+&gt;&gt; Yep, and for
+every other two sign combination.
+
+00:02:26.983 --> 00:02:31.605
+NEED-CAT2, WANT-CAT1, WANT-CAT2,
+I-WANT, WE-NEED, and WE-WANT.
+
+00:02:31.604 --> 00:02:35.326
+We are going to iterate using
+Baum-Welch, using these larger contexts
+
+00:02:35.326 --> 00:02:38.439
+from embedded training,
+until we converge again.
+
+00:02:38.439 --> 00:02:40.530
+&gt;&gt; Why not use three sign contexts, or
+
+00:02:40.530 --> 00:02:42.960
+even more when the phrases
+are complex enough?
+
+00:02:42.960 --> 00:02:45.060
+&gt;&gt; If we have enough data
+that's not a bad idea,
+
+00:02:45.060 --> 00:02:47.770
+because the benefits
+are actually pretty large.
+
+00:02:47.770 --> 00:02:50.560
+For recognition tasks,
+where there's a language structure,
+
+00:02:50.560 --> 00:02:53.289
+we expect context training to
+divide our error rate in half.
+

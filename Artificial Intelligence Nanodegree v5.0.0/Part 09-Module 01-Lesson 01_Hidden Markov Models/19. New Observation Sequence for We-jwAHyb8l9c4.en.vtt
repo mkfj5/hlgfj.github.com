@@ -1,0 +1,30 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.510 --> 00:00:05.378
+Here's the resulting probability for
+We, 2.91 x 10 to the -5.
+
+00:00:05.378 --> 00:00:08.628
+Note that this answer is higher than
+what we got for the model of i.
+
+00:00:08.628 --> 00:00:12.115
+Indicating that this observation
+sequence probably came from a We
+
+00:00:12.115 --> 00:00:12.679
+gesture.
+
+00:00:12.679 --> 00:00:15.663
+This is a different result
+from what we saw previously.
+
+00:00:15.663 --> 00:00:19.190
+Showing how the additional time spent
+in the middle state maps better to our
+
+00:00:19.190 --> 00:00:19.869
+model for We.
+

@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.395 --> 00:00:04.140
+Hidden Markov models, or
+HMMs as they're known to their friends,
+
+00:00:04.139 --> 00:00:07.109
+are a useful tool for looking at
+pattern recognition through time.
+
+00:00:07.110 --> 00:00:09.750
+They're similar to other Markov models,
+
+00:00:09.750 --> 00:00:13.210
+in that they have states that represent
+a set of observed phenomena, and
+
+00:00:13.210 --> 00:00:17.380
+a set of transitions that describe how
+we can move from one state to another.
+
+00:00:17.379 --> 00:00:21.109
+We'll be considering first order Markov
+models which only depend on the state
+
+00:00:21.109 --> 00:00:24.994
+immediately preceding them and
+not a history of states.
+
+00:00:24.995 --> 00:00:27.410
+Hidden Markov models
+are a variant that are used for
+
+00:00:27.410 --> 00:00:31.609
+recognition of many types of signals
+that have a language-like structure.
+
+00:00:31.609 --> 00:00:33.579
+&gt;&gt; What's hidden about them?
+
+00:00:33.579 --> 00:00:34.280
+&gt;&gt; With HMM,
+
+00:00:34.280 --> 00:00:38.399
+we don't necessarily know which
+state matches which physical event.
+
+00:00:38.399 --> 00:00:41.509
+Instead, each state can
+yield certain outputs.
+
+00:00:41.509 --> 00:00:44.729
+We observe the output over time and
+determine a sequence of states,
+
+00:00:44.729 --> 00:00:47.791
+based on how likely they
+were to produce that output.
+
+00:00:47.792 --> 00:00:52.469
+&gt;&gt; I see, since HMMs and codes sequences
+over time, we could use them for
+
+00:00:52.469 --> 00:00:55.710
+recognizing things like speech,
+handwriting or gesture.
+
+00:00:55.710 --> 00:00:57.070
+&gt;&gt; Exactly, and
+
+00:00:57.070 --> 00:01:01.100
+HMM researchers have spent decades
+figuring out tricks like state tiling,
+
+00:01:01.100 --> 00:01:05.920
+context, stochastic grammars and
+boosting to improve performance.
+
+00:01:05.920 --> 00:01:09.040
+In this lecture,
+we will start with how to decode an HMM,
+
+00:01:09.040 --> 00:01:11.840
+where we calculate which model
+best fits the sequence of data.
+
