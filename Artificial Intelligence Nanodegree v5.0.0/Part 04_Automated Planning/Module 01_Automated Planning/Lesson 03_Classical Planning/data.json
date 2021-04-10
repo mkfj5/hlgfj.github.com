@@ -1,0 +1,272 @@
+{
+  "data": {
+    "lesson": {
+      "id": 559048,
+      "key": "e6a4973b-e900-492c-bab3-056f11bb4a8c",
+      "title": "Classical Planning",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Peter presents a survey of Classical Planning techniques: forward planning (progression search) & backward planning (regression search).",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/e6a4973b-e900-492c-bab3-056f11bb4a8c/559048/1538955107803/Classical+Planning+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/e6a4973b-e900-492c-bab3-056f11bb4a8c/559048/1538955104481/Classical+Planning+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 591151,
+          "key": "f7ced64e-9b0b-46ba-bbc9-822899f0e617",
+          "title": "Lesson Plan: Week 5",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f7ced64e-9b0b-46ba-bbc9-822899f0e617",
+            "completed_at": "2020-06-11T23:04:52.430Z",
+            "last_viewed_at": "2020-06-11T23:04:32.962Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 591162,
+              "key": "6db981e6-0adf-4c47-bf7d-328814823832",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Lesson Plan: Week 5\n---\n\n## Classroom\n- Watch lessons on classical planning\n- Complete the second project **Build a Forward Planning Agent**. This project combines the search algorithms from classical search with symbolic logic to solve planning problems.\n- (_Optional_) Review the **Additional Topics** module with additional lectures on alternate planning techniques and select readings.\n\n## Reading\n- Read AIMA **Chapter 10.2-10.4**",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 246270,
+          "key": "092d30ed-a950-4de8-aec3-2a58957436d7",
+          "title": "Classical Planning 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "092d30ed-a950-4de8-aec3-2a58957436d7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 286221,
+              "key": "b3a70d3c-9abd-4497-aec4-67c8fc1fe51c",
+              "title": "Classical Planning-01",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "L-QZvv7U0nI",
+                "china_cdn_id": "L-QZvv7U0nI.mp4"
+              }
+            },
+            {
+              "id": 1078661,
+              "key": "2cafe1b0-90b9-4333-a0ee-bd5ea9aaae7e",
+              "title": "Classical Planning 1",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Classical Planning State Space Representation\n\nA **complete assignment** is state space where every variable is assigned and a solution is consistent. A **partial assignment** is state space that assigns values to only some of the variables.\n\nA complete assignment is possible in a deterministic and fully observable environment, such as those in the search problems. However, most environments are stochastic and partially deterministic. Therefore, we use belief state space, which can be complete or partial assignments.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1078659,
+              "key": "25538b8b-bea3-4567-8ca9-d8227c58888c",
+              "title": "Planning Actions Representation",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Classical Planning Actions Representation\n\nA planning agent relies on the **action schemas** to know what actions are possible in the current state. An **action schema** consists of\n- the action name, \n- a list of state variables in current space, \n- the **preconditions** to create this action schema possible, and \n- the **effects** after this action is completed.\n\nAn example of an action schema is as follows:\n```\nAction (Fly (p, from , to ),  \n\tPRECOND:At(p, from) ∧ Plane(p) ∧ Airport(from) ∧ Airport(to) \n\tEFFECT:¬At(p, from) ∧ At(p, to))\n```\n- Schema: **Action()**\n- Action *name*: **Fly**\n- A list of state *variables*: plane (**p**), the airport it flies from (**from**), and the airport it's flying to (**to**)\n- *Preconditions*: there is a plane (\"**Plane(p )**\") and two airports (\"**Airport(from)**\") and \"**Airport(to)**\"), the current location of the plane(\"**At(p, from)**\")\n- *Effects*: the plane is no longer at previous location (\"**¬At(p, from)**\") and plane's new location(\"**At(p, to)**\")",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 246271,
+          "key": "ea3304c2-5302-4734-9c4e-69c10238c71a",
+          "title": "Classical Planning 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ea3304c2-5302-4734-9c4e-69c10238c71a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 249204,
+              "key": "32ff721c-8f0c-4631-bd46-9596a9ffec71",
+              "title": "Classical Planning 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ZKfZV6wcSys",
+                "china_cdn_id": "ZKfZV6wcSys.mp4"
+              }
+            },
+            {
+              "id": 1078662,
+              "key": "4b4019fa-305a-43f8-a6ad-46053fc3347e",
+              "title": "PDDL",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Planning Domain Definition Language (PDDL)\n\nThe writings of planning domains and problems are commonly standardized in a *Planning Domain Definition Language (PDDL)*. A complete PDDL consists of an *initialization* of the planning domains, the *goal* of the planning problem, and a set of *action schemas*.\n\nAn example of a PDDL is as follows:\n```\nInit(At(C1, SFO) ∧ At(C2, JFK) ∧ At(P1, SFO) ∧ At(P2, JFK) \n∧ Cargo(C1) ∧ Cargo(C2) ∧ Plane(P1) ∧ Plane(P2)  \n∧ Airport(JFK) ∧ Airport(SFO))\n\nGoal(At(C1, JFK) ∧ At(C2, SFO)) \n\nAction(Load(c, p, a),\n\tPRECOND: At(c, a) ∧ At(p, a) ∧ Cargo(c) ∧ Plane(p) ∧ Airport(a)\n\tEFFECT: ¬ At(c, a) ∧ In(c, p)) \n\nAction(Unload(c, p, a),\n\tPRECOND: In(c, p) ∧ At(p, a) ∧ Cargo(c) ∧ Plane(p) ∧ Airport(a)\n\tEFFECT: At(c, a) ∧ ¬ In(c, p)) \n\nAction(Fly(p, from, to),\n\tPRECOND: At(p, from) ∧ Plane(p) ∧ Airport(from) ∧ Airport(to) \t\n\tEFFECT: ¬ At(p, from) ∧ At(p, to))\n```\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 246272,
+          "key": "2493d6c5-9411-4805-9f72-745053bd163a",
+          "title": "Progression Search",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2493d6c5-9411-4805-9f72-745053bd163a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 249205,
+              "key": "a4818e74-fc9f-43ea-8fa8-e0f2b15c54c2",
+              "title": "Progression Search",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "k87rq_dJlM8",
+                "china_cdn_id": "k87rq_dJlM8.mp4"
+              }
+            },
+            {
+              "id": 1078664,
+              "key": "143929d2-c37b-4b1c-a6a9-bafbdbaab341",
+              "title": "Progression Search",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "There are two approaches to find possible solutions in the planning problem state space. They are\n- **Progression Search**: a forward search from the initial state to the goal state.\n- **Regression Search**: a reverse search from the goal state back to the initial state.\n\nIn a tree search, we stack the nodes from top to bottom (the initial state is set as the root node). In the planning graph, it is common to line up the initial state to the goal state from left to right. In the progression search, we start from the initial node on the left and expand the nodes to the right until we find the possible solutions by reaching the goal states.\n\nWhile the progression search is commonly used, there are two limitations with this approach:\n1. The graph may explore unnecessary actions. For example, the graph may explore a state where a plane with an empty cargo flies from one airport to another.\n2. The graph may require large storage as the number of nodes expands exponentially with the number of variables.\n\nIn the next video, we will learn how the regression search only considers the relevant action schemas from the goal state.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 246273,
+          "key": "241eeef7-1e4a-4c17-9a94-d0cba04244e5",
+          "title": "Regression Search",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "241eeef7-1e4a-4c17-9a94-d0cba04244e5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 249206,
+              "key": "93370d9e-5f32-4b17-86cc-009591055989",
+              "title": "Regression Search",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "iRHAGz4-ybY",
+                "china_cdn_id": "iRHAGz4-ybY.mp4"
+              }
+            },
+            {
+              "id": 1078660,
+              "key": "bf58f870-1742-42b9-bcdd-5380446164a6",
+              "title": "Regression Search",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The regression search is also known as the **relevant-state search**. As we have seen in the previous lesson, a complete PDDL includes the action schemas along with the preconditions and effects associated with certain actions. By working backward from the goal state, the regression search will expand only the relevant nodes according to the action schemas. Therefore, the branching factor for the regression search is smaller than the progression search. However, the regression search has a limitation because we cannot apply heuristics to speed up the search back to the initial state.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 246274,
+          "key": "a9a4cac5-3b05-45aa-9f8b-c80313bd7295",
+          "title": "Regression vs Progression",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a9a4cac5-3b05-45aa-9f8b-c80313bd7295",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 249207,
+              "key": "9fd93468-674b-40c5-aadf-38c7cdc59761",
+              "title": "Regression Vs Progression\t",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "mopxyx2Lu6k",
+                "china_cdn_id": "mopxyx2Lu6k.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1078665,
+          "key": "484f8b3a-2aac-4a03-a6ef-47e81cd218fc",
+          "title": "Planning Graph",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "484f8b3a-2aac-4a03-a6ef-47e81cd218fc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1078663,
+              "key": "e5806a6a-a3cf-4840-9aae-e24e85a087f2",
+              "title": "Planning Graph",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the following project, you will implement a **planning graph**, which is a special data structure that is optimized to search for the solutions for a PDDL. \n\nA planning graph is a directed graph organized into levels: the first level S<sub>0</sub> is the initial state, consisting of nodes representing each fluent; then the first level A<sub>0</sub> consisting of nodes for each possible action from the states in S<sub>0</sub>; followed by the alternating levels of S<sub>i</sub> and A<sub>i</sub> until we reach a termination condition. A planning graph terminates when two consecutive levels are identical. At this point, we say that the graph has **leveled off**.\n\nA planning graph is more efficient than progression and regression searches because the **graphplan** algorithm can eliminate conflicting actions within an action layer. The conflicting actions can be prevented by the **mutual exclusion (mutex)** relationships. When the algorithm decides to *not* taking any action, it is called taking a **persistence action**, also known as **no-op**.\n\nThere are three possible mutex conditions holds between two actions:\n- **Inconsistent effects**: one action negates an effect of the other. For example, Load(Cargo) and the persistence of Unload(Cargo) have inconsistent effects because they disagree on the effect Unload(Cargo).\n- **Interference**: one of the effects of one action is the negation of a precondition of the other. For example Fly(p, a, b) interferes with the persistence of At(p, a) by negating its precondition.\n- **Competing needs**: one of the preconditions of one action is mutually exclusive with a precondition of the other. For example, Fly(p, a, b) and Fly(p, a, c) are mutex because they compete on the value of the At(p, a) precondition.\n\nThe planning graph is a robust data structure to solve a planning problem. If a solution is not found by the end of the planning graph layer, the problem is considered unsolvable.\n\nThe planning graph can also provide a **heuristic estimation**, which calculates the cost to reach the goal states. The cost is known as the **level cost** based on the number of layers that the algorithm needs to go through to find the solutions. For example, let’s say we have a planning graph with the following alternating layers: S<sub>0</sub>, A<sub>0</sub>, S<sub>1</sub>, A<sub>1</sub>, S<sub>2</sub>, A<sub>2</sub>, S<sub>3</sub>, A<sub>3</sub>. If the algorithm finds the conjunction goals at S<sub>2</sub> and S<sub>3</sub>, we can say the cost or level-sum heuristic estimation is 5 (=2 + 3).",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

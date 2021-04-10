@@ -1,0 +1,612 @@
+{
+  "data": {
+    "lesson": {
+      "id": 559077,
+      "key": "fe12ed9c-72ab-4eb2-b969-8cc0f7439793",
+      "title": "Introduction to Planning",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Peter Norvig defines automated planning problems in comparison to more general problem solving techniques to set the stage for classical planning algorithms in the next lesson.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/fe12ed9c-72ab-4eb2-b969-8cc0f7439793/559077/1538955117077/Introduction+to+Planning+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/fe12ed9c-72ab-4eb2-b969-8cc0f7439793/559077/1538955113576/Introduction+to+Planning+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 246258,
+          "key": "223f4697-e3a4-4c39-91bf-0e02fa40dcc3",
+          "title": "Problem Solving vs Planning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "223f4697-e3a4-4c39-91bf-0e02fa40dcc3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 246348,
+              "key": "3a169653-9121-4312-9ac3-c3e5915787e7",
+              "title": "Problem Solving Vs Planning",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "7zfLKrkugBc",
+                "china_cdn_id": "7zfLKrkugBc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246259,
+          "key": "2b4e47c9-88a2-4ad6-988a-14d968033bcb",
+          "title": "Planning vs Execution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2b4e47c9-88a2-4ad6-988a-14d968033bcb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 246347,
+              "key": "bb5956b5-109f-48a7-98cc-eb23b2215925",
+              "title": "Planning Vs Execution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "mPKdO_3obQk",
+                "china_cdn_id": "mPKdO_3obQk.mp4"
+              }
+            },
+            {
+              "id": 1078639,
+              "key": "acc6f167-dbe8-43f5-8ff4-80dfa03f24c1",
+              "title": "Planning vs Execution",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Challenges in real world planning:\n* Uncertain environments\n\t* *Stochastic*: the outcomes resulted from a sequence of actions cannot be determined with certainty.\n\t* *Multiagent*: the outcomes and actions taken by an agent will be impacted by other agents in the environment.\n\t* *Partially Observable*: the agent will rely on its own belief state, rather than the actual states of the world.\n* Agent's own internal knowledge\n\t* *Unknown*: the agent does not have prior knowledge about certain states.\n\t* *Hierarchical*: the actions and outcomes do not necessarily follow a linear process.\n\nNote: you may hear the terms “non-deterministic” and “stochastic” to be used interchangeably. Both terms describe the uncertainty in the environment, as opposed to the deterministic nature. There is a subtle difference between these two terms. Stochastic refers to the randomness and can be quantified in probabilities. On the other hand, non-deterministic exhibits different outcomes on different runs with the same set of input.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 246260,
+          "key": "3d59cdca-3cab-4cfb-8814-b3107149dcfd",
+          "title": "Vacuum Cleaner Example",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3d59cdca-3cab-4cfb-8814-b3107149dcfd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 246349,
+              "key": "5b4698be-e7ad-4f5b-9a07-6baabe2b5f5d",
+              "title": "Vacuum C Example",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2feZSgUSDlU",
+                "china_cdn_id": "2feZSgUSDlU.mp4"
+              }
+            },
+            {
+              "id": 1078638,
+              "key": "acfd47e4-eb04-4c06-905b-052842adb9c9",
+              "title": "Vacuum Cleaner Example",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the “informed search” lesson, the vacuum cleaner operates in a _*fully observable*_ and _*deterministic*_ environment. Under these conditions, the vacuum cleaner knows where it is and whether there is dirt in all locations (fully observable). Also, the actions taken by the vacuum cleaner will result in certain states (deterministic). In order to achieve its goal under this environment, the vacuum cleaner can _*search*_ the state space.\n\nIn this lesson, our planning agent will take on a more challenging environment, where it is only _*partially observable*_ and _*nondeterministic*_. Under this challenging environment, we will introduce the concepts of **belief state** (a set of possible worlds). The belief state represents the agent’s current belief (not actual state) about the possible states it might be in after taking an action (or a sequence of actions) up to that point.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 246261,
+          "key": "14da010d-13dd-4c71-9389-12bec3f60e80",
+          "title": "Quiz: Sensorless Vacuum Cleaner Problem",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "14da010d-13dd-4c71-9389-12bec3f60e80",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 292335,
+              "key": "fe4fc544-b740-4fc5-a0fa-f425b66a2c6d",
+              "title": "Sensorless Vacuum CleanerProblem",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "sCMsi5r_Gpk",
+                "china_cdn_id": "sCMsi5r_Gpk.mp4"
+              }
+            },
+            {
+              "id": 252539,
+              "key": "763a42ae-692f-4049-a6e5-b7114b9db4a8",
+              "title": "Sensorless Vacuum Cleaner Problem",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "763a42ae-692f-4049-a6e5-b7114b9db4a8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the smallest sequence of actions that will take you from a state where all you know is that your current square is clean, to a state where you know you’re in the right-hand location and the right-hand location is clean? \n\n Use ‘L’ for left, ‘R’ for right, and ‘S’ for suck.\n\n",
+                "matchers": [
+                  {
+                    "expression": "RS"
+                  },
+                  {
+                    "expression": "rs"
+                  },
+                  {
+                    "expression": "rS"
+                  },
+                  {
+                    "expression": "Rs"
+                  },
+                  {
+                    "expression": "R,S"
+                  },
+                  {
+                    "expression": "R, S"
+                  },
+                  {
+                    "expression": "R S "
+                  }
+                ]
+              }
+            },
+            {
+              "id": 292336,
+              "key": "6b7d02fc-766a-4d57-b905-431bc7403ce7",
+              "title": "Sensorless Vacuum CleanerProblemSolution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "d74soy4rzY8",
+                "china_cdn_id": "d74soy4rzY8.mp4"
+              }
+            },
+            {
+              "id": 1078640,
+              "key": "aa1d6cb1-8af0-4d65-8334-10f0c8e0ce70",
+              "title": "Sensorless Vacuum Cleaner Problem",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Sensorless vacuum cleaner's belief state space consists of:\n - **Nodes**: the initial state and all possible new states after the agent takes an action.\n - **Edges**: all possible actions for the agent to learn about its environment. In the sensorless vacuum cleaner example, the possible actions are move-left (L), move-right (R), or suck (S).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 246262,
+          "key": "53cc537a-e6ab-4c6c-8ab8-eba0d0ba7e63",
+          "title": "Partially Observable Vacuum Cleaner Example",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "53cc537a-e6ab-4c6c-8ab8-eba0d0ba7e63",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 246352,
+              "key": "e2c4be54-e83a-423b-aa6e-e61374b25308",
+              "title": "Partially Observable Vacuum Cleaner Example",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "cuBdsTLroyY",
+                "china_cdn_id": "cuBdsTLroyY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246263,
+          "key": "9920cb9f-e6ca-407f-bf17-cb15743cf06f",
+          "title": "Quiz: Stochastic Environment Problem",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9920cb9f-e6ca-407f-bf17-cb15743cf06f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 246353,
+              "key": "ca86812e-d980-4e64-86fc-dc6a88d62c3f",
+              "title": "Stochastic Environment Problem",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "PeRJtLGm1b0",
+                "china_cdn_id": "PeRJtLGm1b0.mp4"
+              }
+            },
+            {
+              "id": 252540,
+              "key": "73ad08cd-ff8a-4d0b-b2d3-bcda1017f741",
+              "title": "Stochastic Environment Problem",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "73ad08cd-ff8a-4d0b-b2d3-bcda1017f741",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following plans will lead to a state where we know all squares are clean? \n\nUse ‘L’ for left, ‘R’ for right, and ‘S’ for suck.\n",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "SRS",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "RSLS",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "SRRS",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "SRSRS",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk5",
+                    "text": "None of these, but there exists a plan that will guarantee achieving the goal.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk6",
+                    "text": "None of these, and there does not exist a plan that will guarantee achieving the goal.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 246354,
+              "key": "aacb34e4-903d-43ee-968a-377b0fa605de",
+              "title": "Stocastic Environment Problem Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "PzrmFfrgwkc",
+                "china_cdn_id": "PzrmFfrgwkc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246264,
+          "key": "c2eb3ee8-eec1-453d-a012-599c4e39c6a6",
+          "title": "Infinite Sequences",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c2eb3ee8-eec1-453d-a012-599c4e39c6a6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 258883,
+              "key": "15a893f5-0c1a-4a52-acd5-6da8986c5bf2",
+              "title": "Infinite Sequences",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "cGJkBruPiSw",
+                "china_cdn_id": "cGJkBruPiSw.mp4"
+              }
+            },
+            {
+              "id": 1078641,
+              "key": "f35f52e9-4b76-46bb-9250-2dea95025feb",
+              "title": "Infinite Sequences",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/September/5f6a55ae_infinite-sequences/infinite-sequences.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f35f52e9-4b76-46bb-9250-2dea95025feb",
+              "caption": "`infinite` sequence of plans in a tree structure representation",
+              "alt": "",
+              "width": 504,
+              "height": 167,
+              "instructor_notes": null
+            },
+            {
+              "id": 1078643,
+              "key": "ab15e7d5-b841-43d4-a7a3-e9a8d817d8ca",
+              "title": "Infinite Sequences",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In a stochastic environment, the vacuum cleaner may get stuck in infinite loops as shown in the figure above. As the vacuum cleaner moves to the right (`R` action), it may still end up in the same location (`A` state) or in a new location (`B` state).\n\nAt the `checkpoint` after taking the action to move to the right, the vacuum cleaner has a plan as follows: (i) `suck` if the vacuum cleaner observes it is in location of B, or (ii) move `right` and `suck` if it is still in location of A. This plan can be written as `[S, while A: R,S]`.\n\nThis plan can reach the final state as long as it is still possible for the vacuum cleaner to move to the right despite low probability. However, we will not know how long it will take for the plan to reach the final state.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 246265,
+          "key": "f03579b5-be4c-4787-9311-69236b4395ac",
+          "title": "Finding a Successful Plan",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f03579b5-be4c-4787-9311-69236b4395ac",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 249200,
+              "key": "acbed4d2-f9ce-43d2-8def-4eb76e3a7130",
+              "title": "Finding A Successful Plan",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "nMM4ajrSFR4",
+                "china_cdn_id": "nMM4ajrSFR4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246267,
+          "key": "401c7f6e-d7ee-4cbe-b8de-58e08d937d6d",
+          "title": "Quiz: Finding a Successful Plan Question",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "401c7f6e-d7ee-4cbe-b8de-58e08d937d6d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 250059,
+              "key": "2c8218ad-1483-4b45-8677-39a342a4674e",
+              "title": "Finding A Successful Plan Question",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "GxZtyI3F8IU",
+                "china_cdn_id": "GxZtyI3F8IU.mp4"
+              }
+            },
+            {
+              "id": 252541,
+              "key": "a82ea801-ae52-41fd-a384-27ba41f7cf86",
+              "title": "Finding A Successful Plan Question",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "a82ea801-ae52-41fd-a384-27ba41f7cf86",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What do we need to guarantee we have an unbounded solution?\n",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Some leaf node is a goal",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Every leaf node is a goal",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "There is no possible guarantee that we’ll get an unbounded solution",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 252542,
+              "key": "a36d570e-b6a2-4c27-9227-d82788eab6a5",
+              "title": "Finding a Successful Plan Question Part 2",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "a36d570e-b6a2-4c27-9227-d82788eab6a5",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What do we need to guarantee we have a bounded solution?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "No branches",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "No loops",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "There is no possible guarantee that we’ll get a bounded solution",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 250060,
+              "key": "8638dd8a-7835-487c-8249-20ae4bba3b45",
+              "title": "Finding A Successful Plan Question Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1RxpNy3X82Q",
+                "china_cdn_id": "1RxpNy3X82Q.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 246268,
+          "key": "601c3ad9-1dd0-4cbb-a3ee-24eac9c25098",
+          "title": "Problem Solving via Mathematical Notation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "601c3ad9-1dd0-4cbb-a3ee-24eac9c25098",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 249201,
+              "key": "54e9d71a-63be-4807-9b75-fdbcf6dff5bd",
+              "title": "Problem Solving Via Mathematical Notation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "RfegaXkc8Fo",
+                "china_cdn_id": "RfegaXkc8Fo.mp4"
+              }
+            },
+            {
+              "id": 1078642,
+              "key": "7c216966-5aae-494b-8fe3-c05323105066",
+              "title": "Problem Solving via Mathematical Notation",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In a deterministic environment, we can observe the new state directly from the result of taking an action in the current state. We can write this condition as a mathematical notation: `s’ = Results(s, a)`, where s in the current state, a is an action, and s’ is the new state.\n\nHowever, in a stochastic and partially-observable environment, we can only rely on the belief state, rather than the state space of the world. We apply two-step process iteratively to find the goal or solution in the planning tree as follows:\n1. `Predict(b, a)`, where b is the current belief state and a is the action, and\n2. `Update(Predict(b, a), o)`, where o is the observation from taking an action above.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 246269,
+          "key": "6d4a1c94-9d89-460d-a55f-e7606b8b60c1",
+          "title": "Tracking the-Predict Update Cycle",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6d4a1c94-9d89-460d-a55f-e7606b8b60c1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 249202,
+              "key": "029b9354-1d1f-4327-98c3-4979b1540487",
+              "title": "Tracking The Predict Update Cycle",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "yH8ZfyGqUvQ",
+                "china_cdn_id": "yH8ZfyGqUvQ.mp4"
+              }
+            },
+            {
+              "id": 1078644,
+              "key": "5eee2fb3-4d8b-42fe-bdca-2137abece86f",
+              "title": "Tracking the Predict Update Cycle",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the next lesson, we will deep dive into a `planning graph` that utilizes this predict and update cycle. A planning graph is a special data structure that gives better heuristic estimates from the initial planning state to the goal states. It is a directed graph organized by alternate layers, between `states` and `actions` layers, with `preconditions` and `effects` of each action.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}
