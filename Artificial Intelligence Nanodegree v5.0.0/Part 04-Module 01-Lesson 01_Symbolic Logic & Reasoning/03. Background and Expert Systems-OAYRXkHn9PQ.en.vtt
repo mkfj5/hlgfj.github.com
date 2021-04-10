@@ -1,0 +1,230 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.790 --> 00:00:04.429
+Now in the early days of AI, there was
+a lot of excitement and work on logic.
+
+00:00:04.429 --> 00:00:08.279
+Can you give us a bit of historical
+perspective on the topic.
+
+00:00:08.279 --> 00:00:13.000
+&gt;&gt; AI started in the 50s through the 70s
+with the idea that what we needed was
+
+00:00:13.000 --> 00:00:16.170
+better languages and systems for
+writing down logical statements, and
+
+00:00:16.170 --> 00:00:20.170
+once we have written enough of them,
+we should be able to do anything.
+
+00:00:20.170 --> 00:00:21.500
+And some things worked great.
+
+00:00:21.500 --> 00:00:24.789
+We were able to make a program be
+the best chess player in the world.
+
+00:00:24.789 --> 00:00:26.039
+But other projects failed.
+
+00:00:26.039 --> 00:00:28.629
+And I think there were two main issues.
+
+00:00:28.629 --> 00:00:32.509
+One, it was a mistake to try to make
+statements only in Boolean logic,
+
+00:00:32.509 --> 00:00:33.710
+where everything is true or false.
+
+00:00:33.710 --> 00:00:36.390
+And that's because
+the world is uncertain.
+
+00:00:36.390 --> 00:00:39.049
+So the logic of probability
+is a better fit to the world.
+
+00:00:39.049 --> 00:00:40.788
+And we didn't get good algorithms for
+
+00:00:40.789 --> 00:00:43.191
+dealing with probability
+until the mid 1980s.
+
+00:00:43.191 --> 00:00:43.778
+And two,
+
+00:00:43.777 --> 00:00:48.272
+we realized it was too laborious to
+try to write down everything by hand.
+
+00:00:48.273 --> 00:00:50.911
+In the 1990s to the current day,
+more and
+
+00:00:50.911 --> 00:00:55.356
+more data was becoming available online,
+and now we think first of learning
+
+00:00:55.356 --> 00:00:58.913
+about the world from data rather
+than writing rules by hand.
+
+00:00:58.912 --> 00:01:01.187
+And still logic has its place.
+
+00:01:01.188 --> 00:01:03.626
+Well how is logic used today?
+
+00:01:03.625 --> 00:01:06.203
+&gt;&gt; Well there's many domains
+where we can eliminate much
+
+00:01:06.203 --> 00:01:10.939
+of the uncertainty of the real world and
+solve significant problems using logic.
+
+00:01:10.939 --> 00:01:14.129
+One example would be a company
+like FedEx, planning
+
+00:01:14.129 --> 00:01:18.239
+all the deliveries of its packages
+using its huge fleet of vehicles.
+
+00:01:18.239 --> 00:01:20.549
+We can describe this
+as a logic problem and
+
+00:01:20.549 --> 00:01:22.989
+find a solution that minimizes time and
+expense.
+
+00:01:24.260 --> 00:01:27.160
+&gt;&gt; Peter will also be talking about
+algorithms that are useful for
+
+00:01:27.159 --> 00:01:29.719
+understanding how expert systems work.
+
+00:01:29.719 --> 00:01:32.980
+Expert systems are used
+throughout the world, and are so
+
+00:01:32.980 --> 00:01:37.510
+common that most people don't even
+think about them as AI anymore.
+
+00:01:37.510 --> 00:01:40.980
+One famous example is that during
+the first Persian Gulf War,
+
+00:01:40.980 --> 00:01:44.560
+one superhuman decision made
+by one military expert system
+
+00:01:44.560 --> 00:01:49.790
+about where to place a supply base saved
+the United States $2 billion, which
+
+00:01:49.790 --> 00:01:53.790
+was more money than DARPA ever invested
+in artificial intelligence research.
+
+00:01:53.790 --> 00:01:57.088
+One of the things I like about
+this section is how you and
+
+00:01:57.087 --> 00:02:01.464
+Sebastian move from logical
+representations to planning algorithms,
+
+00:02:01.465 --> 00:02:05.859
+to planning algorithms for when actions
+or even the world is uncertain.
+
+00:02:05.858 --> 00:02:08.061
+What directions do you
+think we will be seeing for
+
+00:02:08.062 --> 00:02:09.745
+planning algorithms in the future?
+
+00:02:09.745 --> 00:02:14.045
+&gt;&gt; Well, learning from examples
+would be an important area.
+
+00:02:14.044 --> 00:02:17.949
+Transfer of learning across domains,
+where we learn to play in one area and
+
+00:02:17.949 --> 00:02:20.060
+then execute that in another area.
+
+00:02:21.180 --> 00:02:25.950
+Interactive planning, where human
+machine team solves problems together,
+
+00:02:25.949 --> 00:02:28.869
+and a lot of the issues
+are what's the best
+
+00:02:28.870 --> 00:02:31.569
+interface rather than just
+getting the right answer.
+
+00:02:31.569 --> 00:02:33.509
+Being able to work together as a team.
+
+00:02:33.509 --> 00:02:37.239
+And being able to explain things in
+terms that humans can understand, so
+
+00:02:37.240 --> 00:02:39.930
+that the humans can add things that
+might have been missed in the original
+
+00:02:39.930 --> 00:02:41.530
+statement of the problem.
+
+00:02:41.530 --> 00:02:45.020
+&gt;&gt; In these videos, we are gonna look
+out for the resolution algorithm.
+
+00:02:45.020 --> 00:02:48.516
+It is an elegant way of inferring new
+knowledge from a knowledge base and
+
+00:02:48.515 --> 00:02:50.414
+is one of my favorite in this section.
+
+00:02:50.414 --> 00:02:53.864
+Graphplan, which is described
+in the book reading,
+
+00:02:53.864 --> 00:02:58.465
+was created by Georgia Tech's own
+Merrick Furst back in 1995, and
+
+00:02:58.465 --> 00:03:02.313
+made planning practical for
+a whole new range of problems.
+
+00:03:02.313 --> 00:03:07.608
+Finally, value iteration is a key
+concept for Markov decision processing.
+
+00:03:07.609 --> 00:03:11.335
+Understanding these algorithms is a good
+school for this section because they
+
+00:03:11.335 --> 00:03:14.335
+require a firm foundation in
+the basics that are being taught.
+

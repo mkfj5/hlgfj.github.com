@@ -1,0 +1,240 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project Intro</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Build a Forward-Planning Agent</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Project Intro.html">01. Project Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Intro to AIMA Planning Library and Project Starter Codes.html">02. Intro to AIMA Planning Library and Project Starter Codes</a>
+    </li>
+    <li class="">
+      <a href="03. Workspace.html">03. Workspace</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Build a Forward-Planning Agent.html">Project Description - Build a Forward-Planning Agent</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Build a Forward-Planning Agent.html">Project Rubric - Build a Forward-Planning Agent</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">01. Project Intro</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="introduction">Introduction</h2>
+<p>This project is split between implementation and analysis. First you will combine symbolic logic and classical search to implement an agent that performs progression search to solve planning problems. Then you will experiment with different search algorithms and heuristics, and use the results to answer questions about designing planning systems.</p>
+<p>Read all of the instructions below and the project rubric <a href="https://review.udacity.com/#!/rubrics/1800/view" rel="noopener noreferrer" target="_blank">here</a> carefully before starting the project so that you understand the requirements for successfully completing the project. Understanding the project requirements will help you avoid repeating parts of the experiment, some of which can have long runtimes.</p>
+<p><strong>NOTE:</strong> You should read "Artificial Intelligence: A Modern Approach" 3rd edition chapter 10 <em>or</em> 2nd edition Chapter 11 on Planning, available <a href="http://aima.cs.berkeley.edu/2nd-ed/newchap11.pdf" rel="noopener noreferrer" target="_blank">on the AIMA book site</a> before starting this project.</p>
+<h2 id="getting-started-workspaces">Getting Started (Workspaces)</h2>
+<p>The easiest way to complete the project is to click "next" below to open a Workspace that has already been configured with the required files and libraries to support the project. (NOTE: Workspaces does not currently support pypy3, so your code will run slower than completing the project locally if you install pypy3.) </p>
+<p>If you use the Workspace, you do NOT need to perform any of the setup steps outlined below. Skip to the next section with instructions for completing the project.</p>
+<p><strong>NOTE:</strong> Workspace sessions will time out if there is no detected user activity for a period of time (about half an hour). You can lose progress if your session terminates due to timeout while an experiment is running. (Using the mouse to interact in the Workspace window periodically should keep the connection alive.)</p>
+<h2 id="getting-started-local-environment">Getting Started (Local Environment)</h2>
+<p>If you would prefer to complete the exercise in your own local environment, then follow the steps below:</p>
+<p><strong>NOTE:</strong> You are <em>strongly</em> encouraged to install pypy 3.5 (download <a href="http://pypy.org/download.html" rel="noopener noreferrer" target="_blank">here</a>) for this project. Pypy is an alternative to the standard cPython runtime that tries to optimize and selectively compile your code for improved speed, and it can run 2-10x faster for this project. There are binaries available for Linux, Windows, and OS X. Simply download and run the appropriate pypy binary installer (make sure you get version 3.5) or use the package manager for your OS. When properly installed, any <code>python</code> commands can be run with <code>pypy</code> instead. (You may need to specify <code>pypy3</code> on some OSes.)</p>
+<ul>
+<li>Activate the aind environment (OS X or Unix/Linux users use the command shown; Windows users only run <code>activate aind</code>)</li>
+</ul>
+<pre><code>$ source activate aind</code></pre>
+<h2 id="completing-the-project">Completing the Project</h2>
+<ol>
+<li>Run the example problem (based on the cake problem from Fig 10.7 in Chapter 10.3 of AIMA ed3). The script will print information about the problem domain and solve it with  several different search algorithms.</li>
+</ol>
+<pre><code>$ python example_have_cake.py</code></pre>
+<ol start="2">
+<li>Complete all TODO sections in <code>my_planning_graph.py</code>. You should refer to chapter 10 of AIMA 3rd edition or chapter 11 of AIMA 2nd edition (available <a href="http://aima.cs.berkeley.edu/2nd-ed/newchap11.pdf" rel="noopener noreferrer" target="_blank">on the AIMA book site</a>) and the detailed instructions inline with each TODO statement. Test your code for this module by running:</li>
+</ol>
+<pre><code>$ python -m unittest -v</code></pre>
+<ol start="3">
+<li><p>Experiment with different search algorithms using the <code>run_search.py</code> script. (See example usage below.) The goal of your experiment is to understand the tradeoffs in speed, optimality, and complexity of progression search as problem size increases. You will record your results in a report (described below in <a href="#report-requirements">Report Requirements</a>).</p>
+<ul>
+<li>Run the search experiment manually (you will be prompted to select problems &amp; search algorithms)</li></ul></li>
+</ol>
+<pre><code>$ python run_search.py -m</code></pre>
+<ul>
+<li>You can also run specific problems &amp; search algorithms - e.g., to run breadth first search and UCS on problems 1 and 2:</li>
+</ul>
+<pre><code>$ python run_search.py -p 1 2 -s 1 2</code></pre>
+<h2 id="experiment-details">Experiment Details</h2>
+<p>The <code>run_search.py</code> script allows you to choose any combination of eleven search algorithms (three uninformed and eight with heuristics) on four air cargo problems. The cargo problem instances have different numbers of airplanes, cargo items, and airports that increase the complexity of the domains.</p>
+<ul>
+<li><p>You should run <strong>all</strong> of the search algorithms on the first two problems and record the following information for each combination:</p>
+<ul>
+<li>number of actions in the domain</li>
+<li>number of new node expansions</li>
+<li>time to complete the plan search</li></ul></li>
+<li><p>Use the results from the first two problems to determine whether any of the uninformed search algorithms should be excluded for problems 3 and 4. You must run <strong>at least</strong> one uninformed search, two heuristics with greedy best first search, and two heuristics with A* on problems 3 and 4.</p></li>
+</ul>
+<h2 id="report-requirements">Report Requirements</h2>
+<p>Your submission for review <strong>must</strong> include a report named "report.pdf" that includes all of the figures (charts or tables) and written responses to the questions below. You may plot multiple results for the same topic on the same chart or use multiple charts. (Hint: you may see more detail by using log space for one or more dimensions of these charts.)</p>
+<ul>
+<li>Use a table or chart to analyze the number of nodes expanded against number of actions in the domain</li>
+<li>Use a table or chart to analyze the search time against the number of actions in the domain</li>
+<li>Use a table or chart to analyze the length of the plans returned by each algorithm on all search problems</li>
+</ul>
+<p>Use your results to answer the following questions:</p>
+<ul>
+<li><p>Which algorithm or algorithms would be most appropriate for planning in a very restricted domain (i.e., one that has only a few actions) and needs to operate in real time?</p></li>
+<li><p>Which algorithm or algorithms would be most appropriate for planning in very large domains (e.g., planning delivery routes for all UPS drivers in the U.S. on a given day)</p></li>
+<li><p>Which algorithm or algorithms would be most appropriate for planning problems where it is important to find only optimal plans?</p></li>
+</ul>
+<h2 id="evaluation">Evaluation</h2>
+<p>Your project will be reviewed by a Udacity reviewer against the project rubric <a href="https://review.udacity.com/#!/rubrics/1800/view" rel="noopener noreferrer" target="_blank">here</a>. Review this rubric thoroughly, and self-evaluate your project before submission. All criteria found in the rubric must meet specifications for you to pass.</p>
+<h2 id="submission">Submission</h2>
+<p>Before you can submit your project for review in the classroom, you must run the remote test suite &amp; generate a zip archive of the required project files. Submit the archive in your classroom for review. (See notes on submissions below for more details.) From your terminal, run the command: (make sure to activate the aind conda environment if you're running the project in your local environment; workspace users do <strong>not</strong> need to activate an environment.)</p>
+<pre><code>$ udacity submit</code></pre>
+<p>The script will automatically create a zip archive of the required files (<code>my_planning_graph.py</code> and <code>report.pdf</code>) and submit your code to a remote server for testing. You can only submit a zip archive created by the PA script (even if you're only submitting a partial solution), and you <strong>must submit the exact zip file created by the Project Assistant</strong> in your classroom for review. The classroom verifies the zip file submitted against records on the Project Assistant system; any changes in the file will cause your submission to be rejected.</p>
+<p><strong>NOTE:</strong> Students who authenticate with Facebook or Google accounts <em>must</em> follow the instructions on the FAQ page <a href="https://project-assistant.udacity.com/faq" rel="noopener noreferrer" target="_blank">here</a> to obtain an authentication token. (The Workspace already includes instructions for obtaining and configuring your token.)</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="02. Intro to AIMA Planning Library and Project Starter Codes.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('01. Project Intro')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

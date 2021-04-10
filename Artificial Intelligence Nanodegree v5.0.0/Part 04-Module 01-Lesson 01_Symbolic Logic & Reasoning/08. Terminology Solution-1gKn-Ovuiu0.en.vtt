@@ -1,0 +1,85 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.730
+P and not P is valid.
+
+00:00:02.730 --> 00:00:06.500
+That is, it's true when P is true because of this,
+
+00:00:06.500 --> 00:00:09.650
+and it's true when P is false because of this clause.
+
+00:00:09.650 --> 00:00:12.705
+P and not P is unsatisfiable.
+
+00:00:12.705 --> 00:00:16.125
+The symbol can't be both true and false at the same time.
+
+00:00:16.125 --> 00:00:22.045
+P or Q, or P is equivalent to Q is valid.
+
+00:00:22.045 --> 00:00:25.760
+So, we know that it's true when either P or Q is true.
+
+00:00:25.760 --> 00:00:27.835
+So that's three out of the four cases.
+
+00:00:27.835 --> 00:00:29.155
+In the fourth case,
+
+00:00:29.155 --> 00:00:30.625
+both P and Q are false,
+
+00:00:30.625 --> 00:00:32.850
+and that means, P is equivalent to Q.
+
+00:00:32.850 --> 00:00:35.810
+And therefore, in all four cases, it's true.
+
+00:00:35.810 --> 00:00:40.500
+P implies Q or Q implies P, that's also valid.
+
+00:00:40.500 --> 00:00:42.630
+Now, in ordinary English, that wouldn't be valid.
+
+00:00:42.630 --> 00:00:45.450
+If the two clauses or the two symbols,
+
+00:00:45.450 --> 00:00:47.935
+P and Q, were irrelevant to each other,
+
+00:00:47.935 --> 00:00:50.245
+we wouldn't say that either one of those is true.
+
+00:00:50.245 --> 00:00:52.500
+But in logic, one of the other must be
+
+00:00:52.500 --> 00:00:55.940
+true according to the definitions of the truth tables.
+
+00:00:55.940 --> 00:00:58.210
+And finally, this one is more complicated.
+
+00:00:58.210 --> 00:00:59.805
+If food then party,
+
+00:00:59.805 --> 00:01:01.890
+or if drinks then party,
+
+00:01:01.890 --> 00:01:05.495
+implies if food and drinks, then party.
+
+00:01:05.495 --> 00:01:09.130
+You can work it all out and both sides of
+
+00:01:09.130 --> 00:01:15.970
+the main implication work out to be equivalent to not food or not drinks or party.
+
+00:01:15.970 --> 00:01:22.500
+So that's the same as saying P implies P. Saying one side is equivalent the other side,
+
+00:01:22.500 --> 00:01:27.700
+and if they're equivalent, then the implication relation holds.
+

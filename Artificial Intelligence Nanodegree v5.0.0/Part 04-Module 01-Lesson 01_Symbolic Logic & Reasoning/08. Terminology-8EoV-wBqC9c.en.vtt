@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.770
+Now, for a little more terminology.
+
+00:00:01.770 --> 00:00:06.120
+We say that a valid sentence is one that is
+
+00:00:06.120 --> 00:00:08.190
+true in every possible model for
+
+00:00:08.190 --> 00:00:11.250
+every combination of values of the propositional symbols,
+
+00:00:11.250 --> 00:00:15.360
+and a satisfiable sentence is one
+
+00:00:15.360 --> 00:00:19.470
+that is true in some model and not necessarily in all the models.
+
+00:00:19.470 --> 00:00:21.965
+So what I want you to do is tell me,
+
+00:00:21.965 --> 00:00:24.855
+for each of these sentences,
+
+00:00:24.855 --> 00:00:26.483
+whether it is valid,
+
+00:00:26.483 --> 00:00:32.214
+satisfiable but not valid, or unsatisfiable.
+
+00:00:32.214 --> 00:00:34.770
+In other words, false for all models.
+
+00:00:34.770 --> 00:00:36.660
+And the sentences are,
+
+00:00:36.660 --> 00:00:38.400
+P or not P,
+
+00:00:38.400 --> 00:00:43.545
+P and not P, P or Q,
+
+00:00:43.545 --> 00:00:46.020
+or P is equivalent to Q,
+
+00:00:46.020 --> 00:00:50.365
+P implies Q, or Q implies P,
+
+00:00:50.365 --> 00:00:53.400
+and finally, food implies party,
+
+00:00:53.400 --> 00:00:56.160
+or drinks implies party,
+
+00:00:56.160 --> 00:00:59.270
+implies food and drinks implies party.
+

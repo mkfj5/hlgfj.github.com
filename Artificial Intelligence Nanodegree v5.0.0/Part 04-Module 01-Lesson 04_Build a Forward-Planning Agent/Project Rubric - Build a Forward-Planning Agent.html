@@ -1,0 +1,312 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Build a Forward-Planning Agent</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Build a Forward-Planning Agent</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Project Intro.html">01. Project Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Intro to AIMA Planning Library and Project Starter Codes.html">02. Intro to AIMA Planning Library and Project Starter Codes</a>
+    </li>
+    <li class="">
+      <a href="03. Workspace.html">03. Workspace</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Build a Forward-Planning Agent.html">Project Description - Build a Forward-Planning Agent</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Build a Forward-Planning Agent.html">Project Rubric - Build a Forward-Planning Agent</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">Build a Forward-Planning Agent</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            
+      <div>
+        <h2><p>Planning Graph Implementation</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Mutexes pass all test cases</p>
+        </td>
+        <td>
+          <p>(AUTOGRADED) Student code passes all Project Assistant test cases for:</p>
+<ul>
+<li><code>ActionLayer</code> mutual exclusion rules: <ul>
+<li><code>_inconsistent_effects()</code></li>
+<li><code>_interference()</code></li>
+<li><code>_competing_needs()</code></li></ul></li>
+<li><code>LiteralLayer</code> mutual exclusion rules: <ul>
+<li><code>_inconsistent_support()</code></li>
+<li><code>_negation()</code></li></ul></li>
+</ul>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Heuristic Implementation</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Planning graph heuristics pass all test cases</p>
+        </td>
+        <td>
+          <p>(AUTOGRADED) Student code passes all Project Assistant test cases for:<br />
+Correctly implemented</p>
+<ul>
+<li><code>PlanningGraph</code> class heuristics:<ul>
+<li><code>h_levelsum()</code></li>
+<li><code>h_maxlevel()</code></li>
+<li><code>h_setlevel()</code></li></ul></li>
+</ul>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Experimental Results &amp; Report</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Analyze the search complexity as a function of domain size, search algorithm, and heuristic.</p>
+        </td>
+        <td>
+          <p>Report includes a table or chart to analyze the number of nodes expanded against number of actions in the domain.</p>
+<ul>
+<li>The chart or table includes data for all search &amp; heuristic combinations for air cargo problems 1 and 2</li>
+<li>The chart or table includes data <strong>at least</strong> one uninformed search, two heuristics with greedy best first search, and two heuristics with A* on air cargo problems 3 and 4</li>
+<li>Report includes at least a one paragraph discussion of these results that analyzes the growth trends as the problem size increases</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Analyze search time as a function of domain size, search algorithm, and heuristic.</p>
+        </td>
+        <td>
+          <p>Report includes a table or chart to analyze the search time against the number of actions in the domain.</p>
+<ul>
+<li>The chart or table includes data for all search &amp; heuristic combinations for air cargo problems 1 and 2</li>
+<li>The chart or table includes data <strong>at least</strong> one uninformed search, two heuristics with greedy best first search, and two heuristics with A* on air cargo problems 3 and 4</li>
+<li>Report includes at least a one paragraph discussion of these results that analyzes the growth trends as the problem size increases</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Analyze the optimality of solution as a function of domain size, search algorithm, and heuristic.</p>
+        </td>
+        <td>
+          <p>Report includes a table or chart to analyze the length of the plans returned by each algorithm on all search problems.</p>
+<ul>
+<li>The chart or table includes data for all search &amp; heuristic combinations for air cargo problems 1 and 2</li>
+<li>The chart or table includes data <strong>at least</strong> one uninformed search, two heuristics with greedy best first search, and two heuristics with A* on air cargo problems 3 and 4</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Report answers all required questions</p>
+        </td>
+        <td>
+          <p>Submission includes a short answer to each of the following questions. (A short answer should be at least 1-2 sentences at most a small paragraph.)</p>
+<ul>
+<li>Which algorithm or algorithms would be most appropriate for planning in a very restricted domain (i.e., one that has only a few actions) and needs to operate in real time?</li>
+<li>Which algorithm or algorithms would be most appropriate for planning in very large domains (e.g., planning delivery routes for all UPS drivers in the U.S. on a given day)</li>
+<li>Which algorithm or algorithms would be most appropriate for planning problems where it is important to find only optimal plans?</li>
+</ul>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('Build a Forward-Planning Agent')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

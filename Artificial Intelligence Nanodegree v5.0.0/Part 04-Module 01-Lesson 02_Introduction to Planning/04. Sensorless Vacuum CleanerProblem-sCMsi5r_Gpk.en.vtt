@@ -1,0 +1,142 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.980
+This is the belief state space for the sensorless vacuum problem.
+
+00:00:03.980 --> 00:00:05.540
+So we started off here.
+
+00:00:05.540 --> 00:00:08.310
+We drew the circle around this belief state,
+
+00:00:08.310 --> 00:00:10.560
+so we don't know anything about where we are.
+
+00:00:10.560 --> 00:00:13.080
+But the amazing thing is if we execute actions,
+
+00:00:13.080 --> 00:00:16.330
+we can gain knowledge about the world even without sensing.
+
+00:00:16.330 --> 00:00:18.570
+So let's say we move right.
+
+00:00:18.570 --> 00:00:21.310
+Then we'll know we're in the right-hand location.
+
+00:00:21.310 --> 00:00:24.495
+Either we were in the left and we moved right and arrived there,
+
+00:00:24.495 --> 00:00:28.415
+or we were in the right to begin with and we bumped against the wall and stayed there.
+
+00:00:28.415 --> 00:00:31.278
+So now we end up in this state.
+
+00:00:31.278 --> 00:00:33.610
+We now know more about the world.
+
+00:00:33.610 --> 00:00:36.720
+We're down to four possibilities rather than eight,
+
+00:00:36.720 --> 00:00:38.650
+even though we haven't observed anything.
+
+00:00:38.650 --> 00:00:40.403
+And now, note something interesting,
+
+00:00:40.403 --> 00:00:41.640
+that in the real world,
+
+00:00:41.640 --> 00:00:45.975
+the operations of going left and going right are inverses of each other,
+
+00:00:45.975 --> 00:00:47.757
+but in the belief state world,
+
+00:00:47.757 --> 00:00:49.048
+going right and going left are not inverses.
+
+00:00:49.048 --> 00:00:52.809
+If we go right and then we go left,
+
+00:00:52.809 --> 00:00:56.530
+we don't end up back where we were in a state of total uncertainty.
+
+00:00:56.530 --> 00:00:59.650
+Rather, going left takes us over here,
+
+00:00:59.650 --> 00:01:04.545
+where we still know we're in one of four states rather than in one of eight states.
+
+00:01:04.545 --> 00:01:06.450
+Note that is possible to form a plan that
+
+00:01:06.450 --> 00:01:09.071
+reaches a goal without ever observing the world.
+
+00:01:09.071 --> 00:01:12.670
+Plans like that are called conformant plans.
+
+00:01:12.670 --> 00:01:16.600
+For example, if the goal is to be in a clean location,
+
+00:01:16.600 --> 00:01:19.245
+all we have to do is suck.
+
+00:01:19.245 --> 00:01:23.174
+So we go from one of these eight states to one of these four states,
+
+00:01:23.174 --> 00:01:24.986
+and in every one of those four,
+
+00:01:24.986 --> 00:01:26.860
+we're in a clean location.
+
+00:01:26.860 --> 00:01:28.725
+We don't know which of the four we're in,
+
+00:01:28.725 --> 00:01:31.020
+but we know we've achieved the goal.
+
+00:01:31.020 --> 00:01:34.350
+It's also possible to arrive at a completely known state.
+
+00:01:34.350 --> 00:01:36.369
+For example, we start here.
+
+00:01:36.369 --> 00:01:39.090
+We go left. We suck up the dirt there.
+
+00:01:39.090 --> 00:01:42.065
+We go right and suck up the dirt.
+
+00:01:42.065 --> 00:01:46.014
+Now we're down to a belief state consisting of one single state,
+
+00:01:46.014 --> 00:01:48.396
+that is we know exactly where we are.
+
+00:01:48.396 --> 00:01:50.675
+Here's a question for you.
+
+00:01:50.675 --> 00:01:52.530
+How do I get from the state where I know
+
+00:01:52.530 --> 00:01:55.964
+my current square is clean but know nothing else,
+
+00:01:55.964 --> 00:01:58.380
+to the belief state where I know that I'm in
+
+00:01:58.380 --> 00:02:02.605
+the right-hand-side location and that that location is clean?
+
+00:02:02.605 --> 00:02:05.719
+What I want you to do is click on the sequence of actions - left,
+
+00:02:05.719 --> 00:02:10.820
+right, or stuck - that will take us from that start to that goal.
+
