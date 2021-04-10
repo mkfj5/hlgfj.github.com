@@ -1,0 +1,142 @@
+{
+  "data": {
+    "lesson": {
+      "id": 591114,
+      "key": "d035efa5-fe87-4f04-9bfa-cce741c13c4f",
+      "title": "Build a Sudoku Solver",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Use constraint propagation and search to build an agent that reasons like a human would to efficiently solve any Sudoku puzzle.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": null,
+      "project": {
+        "key": "2757ea3a-31dc-43d8-a083-60e09f212685",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 10080,
+        "semantic_type": "Project",
+        "title": "Build a Sudoku Solver",
+        "description": "## Introduction\nIn this project, you will extend the Sudoku-solving agent developed in the classroom lectures to solve diagonal Sudoku puzzles. A diagonal Sudoku puzzle is identical to traditional Sudoku puzzles with the added constraint that the boxes on the two main diagonals of the board must also contain the digits 1-9 in each cell (just like the rows, columns, and 3x3 blocks).\n\n## Getting Started\nThe easiest way to complete the project is to click \"next\" below to open a Workspace that has already been configured with the required files and libraries to support the project. If you use the Workspace, you do NOT need to perform any of the setup steps outlined below.\n\nIf you would prefer to complete the exercise in your own local environment, then follow the steps below:\n\n1. Follow the instructions from before the first project to install and activate the aind conda environment in a terminal window.\n\n2. Clone the AIND coursework files from github (or open your local copy)\n```\n(aind) $ git clone https://github.com/udacity/artificial-intelligence\n```\n3. Open the artificial-intelligence/Projects/1_Sudoku folder in your preferred IDE or text editor, and follow the instructions in the project readme to complete the TODO items \n\n4. You can run a few local test cases by running the following command within the project folder in your terminal:\n```\n(aind) Projects/1_Sudoku $ python -m unittest -v\n```\n5. You must pass a more challenging set of test cases hosted on a remote server before you can complete the project by running the following command within the project folder in your terminal. You can find more information on the Project Assistant [here](https://sites.google.com/knowlabs.com/project-assistant/home), including the PA FAQ [here](https://project-assistant.udacity.com/faq), and the PA Troubleshooting Guide [here](https://sites.google.com/knowlabs.com/project-assistant/home/troubleshooting).  \n```\n(aind) Projects/1_Sudoku $ udacity submit\n```\n**NOTE:** Students who authenticate with Facebook or Google accounts _must_ follow the instructions on the FAQ page to obtain an authentication token.\n\n6. Once your code passes all of the local test cases and all of the remote test cases from running `udacity submit`, you need to submit the **exact** zip file created by the remote test script (named something like \"sudoku-######.zip\") in the classroom for this project.\n\n## Evaluation\nThis project is evaluated according to the rubric [here](https://review.udacity.com/#!/rubrics/1791/view). You will receive full credit on this project for passing all of the test cases; unlike the other projects in the AIND program there is no manual code review for submissions that pass all test cases for the Sudoku solver.\n\n## Project Submission Checklist\n\n**Before submitting your project, please review and confirm the following items.** \n<input type=\"checkbox\"> I am confident all rubric items have been met and my project will pass as submitted. \n<input type=\"checkbox\"> Project builds correctly without errors and runs.\n<input type=\"checkbox\"> All required functionality exists and my project behaves as expected per the project's specifications.\n\n**Once you have checked all these items, you are ready to submit!**\n",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "1791",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": null
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 591116,
+          "key": "2355b47e-019f-4aea-ac1a-2885e7cf2a8f",
+          "title": "Project Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2355b47e-019f-4aea-ac1a-2885e7cf2a8f",
+            "completed_at": "2020-05-28T19:14:15.352Z",
+            "last_viewed_at": "2020-06-02T21:04:15.578Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 671911,
+              "key": "e516b9bf-1dac-4031-bd45-295886f4d3a2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Introduction\nIn this project, you will extend the Sudoku-solving agent developed in the classroom lectures to solve diagonal Sudoku puzzles. A diagonal Sudoku puzzle is identical to traditional Sudoku puzzles with the added constraint that the boxes on the two main diagonals of the board must also contain the digits 1-9 in each cell (just like the rows, columns, and 3x3 blocks). You will also implement another strategy called \"Naked Twins\", described [here](http://www.sudokudragon.com/tutorialnakedtwins.htm).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 671912,
+              "key": "331979bf-5ad3-4b73-80ff-9954b4a066b7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b3fd9a3_sudokustrategy/sudokustrategy.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/331979bf-5ad3-4b73-80ff-9954b4a066b7",
+              "caption": "Pseudocode for the naked twins Sudoku strategy.",
+              "alt": "",
+              "width": 600,
+              "height": 276,
+              "instructor_notes": null
+            },
+            {
+              "id": 594375,
+              "key": "93eb3a97-c55c-4afe-b467-97cc3059f616",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Getting Started\nThe easiest way to complete the project is to click \"next\" below to open a Workspace that has already been configured with the required files and libraries to support the project. If you use the Workspace, you do NOT need to perform any of the setup steps outlined below ( 1 - 3 steps).\n\nIf you would prefer to complete the exercise in your own local environment, then follow the steps below:\n\n**Setup**\n1. Follow the instructions from before the first project to install and activate the aind conda environment in a terminal window.\n\n2. Clone the AIND coursework files from github (or open your local copy)\n```\n(aind) $ git clone https://github.com/udacity/artificial-intelligence\n```\n3. Open the artificial-intelligence/Projects/1_Sudoku folder in your preferred IDE or text editor, and follow the instructions in the project readme to complete the TODO items \n\n**Running Test Cases **\n4. You can run a few local test cases by running the following command within the project folder in your terminal:\n```\n(aind) Projects/1_Sudoku $ python -m unittest -v\n```\n5. You must pass a more challenging set of test cases hosted on a remote server before you can complete the project by running the following command within the project folder in your terminal. You can find more information on the Project Assistant [here](https://sites.google.com/knowlabs.com/project-assistant/home), including the PA FAQ [here](https://project-assistant.udacity.com/faq), and the PA Troubleshooting Guide [here](https://sites.google.com/knowlabs.com/project-assistant/home/troubleshooting).  \n```\n(aind) Projects/1_Sudoku $ udacity submit\n```\n**NOTE:** Students who authenticate with Facebook or Google accounts _must_ follow the instructions on the FAQ page to obtain an authentication token.\n\n**Submitting the work**\n\n6. Once your code passes all of the local test cases and all of the remote test cases from running `udacity submit`, you need to submit the **exact** zip file created by the remote test script (named something like \"sudoku-######.zip\") in the classroom for this project.\n\n## Evaluation\nThis project is evaluated according to the rubric [here](https://review.udacity.com/#!/rubrics/1791/view). You will receive full credit on this project for passing all of the test cases; unlike the other projects in the AIND program there is no manual code review for submissions that pass all test cases for the Sudoku solver.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 594338,
+          "key": "2ae05f7c-b624-45f0-9c00-43dabec45494",
+          "title": "Project Workspace",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2ae05f7c-b624-45f0-9c00-43dabec45494",
+            "completed_at": "2020-06-01T20:18:02.197Z",
+            "last_viewed_at": "2020-06-12T05:45:58.644Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 594371,
+              "key": "38bd5651-c261-43ac-a3b5-ec08478e04f2",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view06b547db",
+              "pool_id": "webterminal",
+              "view_id": "06b547db-89fd-46a9-8ded-d211733fb3b9",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "",
+                    "openFiles": [
+                      "/home/workspace/jwt",
+                      "/home/workspace/solution.py"
+                    ],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": false
+                  },
+                  "kind": "generic"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    }
+  ]
+}

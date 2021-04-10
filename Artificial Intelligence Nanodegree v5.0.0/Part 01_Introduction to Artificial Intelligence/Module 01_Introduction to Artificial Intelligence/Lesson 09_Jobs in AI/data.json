@@ -1,0 +1,71 @@
+{
+  "data": {
+    "lesson": {
+      "id": 729598,
+      "key": "ae91da68-f58d-4e17-abb9-2a7c54286537",
+      "title": "Jobs in AI",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn about common jobs in artificial intelligence, and get tips on how to stay active in the community.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": null,
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 729599,
+          "key": "6ceda0f2-c4f3-4e1c-9f06-72c6dd1303fd",
+          "title": "Jobs in AI",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6ceda0f2-c4f3-4e1c-9f06-72c6dd1303fd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 729600,
+              "key": "474255f6-9098-492f-955c-10cb56338d87",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# 6 Questions About Artificial Intelligence Jobs\n## 1. How do I break into the artificial intelligence industry?\nAI as a field has a major influence across a broad range of industry sectors. Its ongoing adoption in new industries means that there will be evolving opportunities for job seekers with the right skills. \n\nWith this in mind, you will play a large role in mapping your own path to a job. Take the time to conduct some [industry research](https://career-resource-center.udacity.com/tech-jobs-find-your-career-path/career-industry-research), starting with identifying your own interests and subsequently keeping up with the most updated news around the applications of AI in relevant industries. Once you’ve identified this, you’ll be able to build a roadmap for how to break into the industry, whether that involves attaining more industry-specific skills and experience, building your online presence, improving your existing portfolio to target your desired role — or all of the above. \n\nUdacity recommends this strategy to do industry research.\n1. **See how artificial intelligence fits into various fields**, ranging from machine learning engineer to data analyst to software engineer. Do job searches based on skills (such as deep learning, logic and planning, Bayes Nets) and keywords (such as natural language processing, speech recognition), rather than job title. You will find more opportunities that are a fit for your skills and interests.\n2. **Read a recent paper and write about your interpretation.** Employers often want to see that job seekers are up-to-date with the latest research. So, if you’ve read a recent paper and thought critically about how it can be explained in plain language or implemented in code, then you can demonstrate your understanding by writing about it! Communication skills are valuable in this growing field; writing understandable blog posts and showing your work as you learn about artificial intelligence will make you more visible to employers and the AI community at large.\n3. **Leverage existing business skills.** Businesses are using AI to solve customer issues. Zendesk, a customer service communication platform, offers [a bot](https://www.zendesk.com/guide/features/customer-portal-software/artificial-intelligence-app/) to answer customer questions. Amazon [uses advanced AI](https://www.amazon.jobs/en/teams/amazon-robotics) in their warehouse robotics and machines. You can make a case that you can be valuable to a company if you can identify their problems and offer ideas to use AI to solve those problems.\n\n## 2. What can I do beyond my Nanodegree Program to impress employers?\n\nAside from what you’ve learned in the Artificial Intelligence Nanodegree program, characteristics of successful AI professionals include (but are not limited to) the following: \n\n* Analytical thinking and problem solving with highly efficient solutions\n* Good communication skills to convey highly technical information to fellow team members\n* Demonstrated curiosity and passion for AI-related tech — this translates into professional and competitive foresight that can help a company stay on the cutting edge.\n\nYou can demonstrate these qualities with the following behaviors: \n* Contribute to open source AI projects (you can showcase your work via GitHub)\n* Write articles on relevant AI topics, participate in online discussions, sharing AI news via LinkedIn to demonstrate your interest and thought leadership\n* Continue learning new skills and improving existing ones, such as different programming languages relevant to your target industry\n* Study algorithms to prepare for your next coding interviews. See your https://classroom.udacity.com/career/ to simulate a real technical interview process\n\nAlthough the above is by no means an exhaustive list, taking the time to practice these behaviors  will only strengthen your chances of moving forward in an application process. Lastly, be sure to demonstrate that you possess these qualities by optimizing your online profiles such as LinkedIn and GitHub. (Tip: complete the Career Projects found in your Classroom!)\n\n## 3. Are there any education requirements for pursuing an artificial intelligence job? \nArtificial intelligence is one of the fastest growing areas within the technology sector, and qualified applicants are in high demand. A variety of educational pathways may lead to an artificial intelligence job, but most include mathematics (specifically linear algebra and calculus) and some amount of computer programming. For example, many of our students and industry partners in AI began with backgrounds in software engineering, and disciplines such as physics and mathematics, whereas others have made wider leaps from disciplines like political philosophy and linguistics. \n\nSince AI is such a large field, there are roles available for many different education levels. Different job titles come with different expectations for education background. For example, research-focused positions might demand a more advanced degree such as a Masters or Ph.D. in a STEM field. Application-focused positions, such as AI-related software development, generally accept a broader range of educational backgrounds, so long as you are able to demonstrate your ability to do the job. The project-based learning in your Nanodegree program coupled with the various channels of career support provided to you, will help prepare you for the job search.\n## 4. What are some job titles in artificial intelligence?\nDepending on your area of concentration, such as Computer Vision, Natural Language Processing or Speech Recognition, you might be interested in positions with the following titles:\n\n* AI Engineer\n* AI Researcher\n* Machine Learning Engineer\n* Deep Learning Scientist\n* AI Product Manager\n\nRemember that there are many roles available related to artificial intelligence, and your work may encompass machine learning applications, data mining and analysis, or even AI software development and management. For this reason, it’s important to know the specific problems and sub-fields you’re interested in focusing on, in order to better identify which opportunities would be a good fit. \n\nIn the beginning, however, you might find that instead of searching for job titles, finding top AI startups and companies and looking at their overall jobs page is more helpful for surfacing potential opportunities.\n## 5. What is the difference between Robotics and Machine Learning/AI jobs?\nRobotics depends on machine learning and artificial intelligence, so it's common to see a lot of overlap in those fields. The overlap occurs in the realm of artificially intelligent robots. As the bridge between robotics and AI, it has to do with robots controlled by an AI program.\n\nThink of robotics as one of the many applications of machine learning and AI. A machine learning expert may write algorithms to make movie recommendations, or they may write algorithms to support a self-supervising robot. \n\n\n\n\nAs you start thinking about your job search, be sure to spend some time researching and understanding the differences and similarities between AI and related fields. \n\n## 6. Okay, I know all of this now. What should I do next?\nRight now, you are learning the foundational skills for a career in artificial intelligence. Focus on your learning, and imagine yourself in different roles. We recommend performing a [job search](https://career-resource-center.udacity.com/job-boards) to see what's out there.\n\nWe'll help you get started. We searched for \"artificial intelligence\" jobs worldwide on LinkedIn. Click the button below to see the search results. Change your search terms and apply filters. Once you have an idea of which jobs or companies you may be interested in, read about the companies or find personal blogs by people working in those roles. You can even reach out to people for [informational interviews](https://career-resource-center.udacity.com/networking/informational-interviews).\n\n<center><a href=\"https://www.linkedin.com/jobs/search/?keywords=artificial%20intelligence&location=Worldwide&locationId=OTHERS.worldwide\" target=\"_blank\"><button style=\"box-sizing: border-box; border-radius: 4px; background: #02B3E4; border: none; height: 44px; padding: 0 25px; color: white; cursor: pointer; font-family: Open Sans,sans-serif; display: inline-block; border: none; font-size: 12px; letter-spacing: 1px; font-weight: 600; text-transform: uppercase;\">Go to LinkedIn Search</button></a></center><br>\n\nAfter you spend some time looking at various jobs available to you, come back to the Classroom to continue.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 831981,
+          "key": "99232e4b-299c-40f5-a985-3162da96288e",
+          "title": "Career Services",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "99232e4b-299c-40f5-a985-3162da96288e",
+            "completed_at": "2020-05-28T18:52:16.454Z",
+            "last_viewed_at": "2020-05-29T19:35:37.029Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 831984,
+              "key": "56b803ea-52ec-4803-99d5-41aa3fef76c4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You’re probably in this Nanodegree program to advance your career - whether looking for a new job, learning new skills for your current job, or just exploring.\n\nIf you want career support during your program, career coaches provide personalized feedback on your LinkedIn profile and GitHub as optional projects. \n\nIf you are actively looking for a new role, you can also submit your resume and cover letter in the sidebar under Help > Career Services.\n\nYou'll get honest, concise feedback from career coaches, including industry professionals.\n\nThe Udacity Careers team is here to help you figure out what you're looking for, plan for it, and work with you to move forward in your career. You can always contact us at <a href=\"mailto:career-support@udacity.com\" target=\"_blank\">career-support@udacity.com</a>.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

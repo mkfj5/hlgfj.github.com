@@ -1,0 +1,145 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.879
+Hi, welcome to the program.
+
+00:00:02.879 --> 00:00:05.129
+We're thrilled to have you here and I'm looking forward to guiding
+
+00:00:05.129 --> 00:00:08.689
+your journey through the cutting edge of artificial intelligence.
+
+00:00:08.689 --> 00:00:11.879
+You are now an essential member of the Udacity community.
+
+00:00:11.880 --> 00:00:13.810
+We're here to make sure you fulfill your goals,
+
+00:00:13.810 --> 00:00:15.585
+but we also want to learn from you.
+
+00:00:15.585 --> 00:00:18.719
+Your experience will guide future development and we would love to hear
+
+00:00:18.719 --> 00:00:22.294
+your thoughts on how we can improve and make this program better for others.
+
+00:00:22.295 --> 00:00:23.680
+Now, let's take a quick walk through
+
+00:00:23.679 --> 00:00:27.050
+the Udacity office to get a flavor of how we do things here.
+
+00:00:27.050 --> 00:00:29.115
+So we believe in learning by doing.
+
+00:00:29.114 --> 00:00:32.429
+So rather than simply watching videos or taking tests on AI,
+
+00:00:32.429 --> 00:00:35.505
+you'll build real artificial intelligence and watch those AIs,
+
+00:00:35.505 --> 00:00:37.980
+solve complex problems that humans like me and
+
+00:00:37.979 --> 00:00:40.744
+you simply can't do with the same speed or accuracy.
+
+00:00:40.744 --> 00:00:42.449
+In the first project, you build
+
+00:00:42.450 --> 00:00:45.359
+a simple AI agent that solves any Sudoku problem in the world.
+
+00:00:45.359 --> 00:00:47.515
+And learn two foundational AI techniques;
+
+00:00:47.515 --> 00:00:49.755
+constraint propagation and search.
+
+00:00:49.755 --> 00:00:53.100
+This project is just a little teaser to get your feet wet and show you how
+
+00:00:53.100 --> 00:00:56.880
+quickly you can start applying AI concepts to problems around you. Hey Kristina?
+
+00:00:56.880 --> 00:01:00.554
+Hey Dhruv.
+
+00:01:00.554 --> 00:01:02.460
+You will also been given the chance to go
+
+00:01:02.460 --> 00:01:04.920
+above and beyond by using advanced Sudoku strategies,
+
+00:01:04.920 --> 00:01:07.680
+to improve the speed of your agent.
+
+00:01:07.680 --> 00:01:11.100
+In the next project, you'll build any AI agent
+
+00:01:11.099 --> 00:01:13.804
+that can routinely defeat opponents in isolation.
+
+00:01:13.805 --> 00:01:16.250
+Here you apply minimax and alpha-beta pruning.
+
+00:01:16.250 --> 00:01:19.959
+Two strategies used by Google world beating Go agent, AlphaGo.
+
+00:01:19.959 --> 00:01:22.829
+You go on to create an AI that guides Pac-Man through his maze and
+
+00:01:22.829 --> 00:01:26.030
+allows him to eat all the food in the most efficient way possible.
+
+00:01:26.030 --> 00:01:28.469
+Definitely more efficient than Ryan over here.
+
+00:01:28.469 --> 00:01:29.250
+I'm still practicing.
+
+00:01:29.250 --> 00:01:31.049
+Using simple techniques such as;
+
+00:01:31.049 --> 00:01:34.105
+breadth-first search, depth-first search and A-Star Search.
+
+00:01:34.105 --> 00:01:38.159
+Your AI agent will traverse Pac-Man Maze faster than any human player.
+
+00:01:38.159 --> 00:01:40.560
+Next, you'll be tasked with finding the optimal route
+
+00:01:40.560 --> 00:01:43.500
+for taking cargo from one place to another.
+
+00:01:43.500 --> 00:01:44.640
+Planning problems like this,
+
+00:01:44.640 --> 00:01:47.820
+are the very core of the logistics industry.
+
+00:01:47.819 --> 00:01:52.614
+And you'll see just how powerful AI is in solving these kind of problems.
+
+00:01:52.614 --> 00:01:56.039
+And finally, you use hidden Markov models to automatically read
+
+00:01:56.040 --> 00:02:00.115
+sign language characters and convert them into their English text counterparts.
+
+00:02:00.114 --> 00:02:02.640
+This is just one of the many examples of how
+
+00:02:02.640 --> 00:02:06.665
+AI is making a meaningful impact in society at large.
+
+00:02:06.665 --> 00:02:08.575
+And, all this is just in timeline.
+
+00:02:08.574 --> 00:02:12.049
+We think you'll have a lot of fun and we can't wait to see you get started.
+
