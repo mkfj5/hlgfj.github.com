@@ -1,0 +1,85 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.260 --> 00:00:03.910
+An agent interacts with the environment
+by sensing its properties.
+
+00:00:03.910 --> 00:00:07.589
+This is known as perception and
+by producing useful output or
+
+00:00:07.589 --> 00:00:11.250
+actions that typically change
+the state of the environment.
+
+00:00:11.250 --> 00:00:14.669
+The process by which an agent
+decides what action to take
+
+00:00:14.669 --> 00:00:18.129
+based on its perceived
+inputs is called cognition.
+
+00:00:18.129 --> 00:00:22.589
+Much of our discussion of AI will focus
+on cognition, especially reasoning and
+
+00:00:22.589 --> 00:00:23.839
+decision making.
+
+00:00:23.839 --> 00:00:27.109
+Perception and action become more
+relevant in systems that react with
+
+00:00:27.109 --> 00:00:30.669
+the real world, such as robots and
+self-driving cars.
+
+00:00:30.670 --> 00:00:34.429
+&gt;&gt; Now some agents directly associate
+their actions with what is perceived or
+
+00:00:34.429 --> 00:00:36.197
+have very simple
+pre-programmed behaviors.
+
+00:00:36.197 --> 00:00:39.631
+&gt;&gt; [SOUND] Like an automated
+trashcan that opens when
+
+00:00:39.631 --> 00:00:42.148
+it senses something in front of it.
+
+00:00:42.148 --> 00:00:46.030
+&gt;&gt; These are referred to as,
+reactive or behavior based agents.
+
+00:00:46.030 --> 00:00:49.310
+Now it's possible to accomplish
+surprisingly complex behavior
+
+00:00:49.310 --> 00:00:52.859
+by layering simple reactive
+control in a hierarchy.
+
+00:00:52.859 --> 00:00:56.454
+Now, on the other end of the spectrum,
+some agents are more deliberate and
+
+00:00:56.454 --> 00:01:00.289
+perform some non trivial processing
+such as game playing agents, or
+
+00:01:00.289 --> 00:01:01.689
+path planners.
+
+00:01:01.689 --> 00:01:05.030
+We can further classify these agents
+depending on the kind of processing they
+
+00:01:05.030 --> 00:01:09.219
+do like knowledge based agents, planning
+agents, learning agents, and so on.
+

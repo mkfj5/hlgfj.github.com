@@ -1,0 +1,239 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Quiz: Tic Tac Toe</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Intro to Artificial Intelligence</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Welcome to AI!.html">01. Welcome to AI!</a>
+    </li>
+    <li class="">
+      <a href="02. Navigation.html">02. Navigation</a>
+    </li>
+    <li class="">
+      <a href="03. Game Playing.html">03. Game Playing</a>
+    </li>
+    <li class="">
+      <a href="04. Quiz Tic Tac Toe.html">04. Quiz: Tic Tac Toe</a>
+    </li>
+    <li class="">
+      <a href="05. Tic Tac Toe Heuristics.html">05. Tic Tac Toe: Heuristics</a>
+    </li>
+    <li class="">
+      <a href="06. Quiz Monty Hall Problem.html">06. Quiz: Monty Hall Problem</a>
+    </li>
+    <li class="">
+      <a href="07. Monty Hall Problem Explained.html">07. Monty Hall Problem: Explained</a>
+    </li>
+    <li class="">
+      <a href="08. Quiz What is Intelligence.html">08. Quiz: What is Intelligence?</a>
+    </li>
+    <li class="">
+      <a href="09. Defining Intelligence.html">09. Defining Intelligence</a>
+    </li>
+    <li class="">
+      <a href="10. Agent, Environment And State.html">10. Agent, Environment And State</a>
+    </li>
+    <li class="">
+      <a href="11. Perception, Action and Cognition.html">11. Perception, Action and Cognition</a>
+    </li>
+    <li class="">
+      <a href="12. Quiz Types of AI Problems.html">12. Quiz: Types of AI Problems</a>
+    </li>
+    <li class="">
+      <a href="13. Rational Behavior And Bounded Optimality.html">13. Rational Behavior And Bounded Optimality</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">04. Quiz: Tic Tac Toe</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Tic Tac Toe Question</p></h3>
+  <video controls>
+  <source src="04. Tic Tac Toe Question-TxzJK30qPC4.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. Tic Tac Toe Question-TxzJK30qPC4.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="CN" src="04. Tic Tac Toe Question-TxzJK30qPC4.zh-CN.vtt" label="CN">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Tic Tac Toe</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p><strong>Tic Tac Toe</strong></p>
+<p>Which of the representations described above can be used to play Tic Tac Toe?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1484983147290" name="259104" id="a1484983147290">
+        <label for="a1484983147290"><p>Option A: Each cell is a node in a graph, with edges connecting them.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1484983269632" name="259104" id="a1484983269632">
+        <label for="a1484983269632"><p>Option B: Each cell is a <row, column> tuple, connected if row and column differ by at most one.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1484983273468" name="259104" id="a1484983273468">
+        <label for="a1484983273468"><p>Option C: Keep track of opponent's position as well.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1484983276852" name="259104" id="a1484983276852">
+        <label for="a1484983276852"><p>Option D: The whole board is a node.</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Option D: The whole board is a node.
+  </details>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="05. Tic Tac Toe Heuristics.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Quiz: Tic Tac Toe')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
