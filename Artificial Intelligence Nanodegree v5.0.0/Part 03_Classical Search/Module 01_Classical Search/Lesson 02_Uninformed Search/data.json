@@ -1,0 +1,1516 @@
+{
+  "data": {
+    "lesson": {
+      "id": 558982,
+      "key": "b810bc1e-0055-4fa7-b1d2-8ad8466a631e",
+      "title": "Uninformed Search",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Peter introduces uninformed search strategies—which can only solve problems by generating successor states and distinguishing between goal and non-goal states.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/b810bc1e-0055-4fa7-b1d2-8ad8466a631e/558982/1558655997628/Uninformed+Search+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/b810bc1e-0055-4fa7-b1d2-8ad8466a631e/558982/1558655991625/Uninformed+Search+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 559006,
+          "key": "6b2487db-99dc-4262-9d36-0fded937d521",
+          "title": "Intro to Uninformed Search",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6b2487db-99dc-4262-9d36-0fded937d521",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 559007,
+              "key": "3ce267f2-7b71-4c72-b696-c703996ee8a8",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Uninformed Search\nWith the framework just established for describing search problems, we'll first cover strategies that come under the heading of **uninformed search**. These strategies have no additional information about states beyond that provided in the problem definition, so they can only proceed by generating successors until they find a goal state. In the next lesson, we'll introduce additional search strategies that can prioritize “more promising” states, called **informed search** or heuristic search strategies.\n\nThis lesson does not include any coding quizzes; instead, you'll find a larger coding exercise at the end of the section. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1074703,
+              "key": "5bdf2b02-dbd7-44a4-9204-400934e847a2",
+              "title": "Definitions",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We will cover the most common types of uninformed search as follows:\n- **Breadth-first Search (BFS)** is a search strategy that expands the shallowest unexpanded node first. BFS expands the root node, then explores all the children of the root node, and so on.\n- **Depth-first Search (DFS)** applies a similar search strategy as BFS but expands the deepest node in the current frontier of the search tree. DFS expands the first child of the root node and explores farther to the deepest leaf node.\n- **Uniform Cost Search (UCS)** is a search strategy that expands the successor node with the cheapest cost. In a route finding problem, the cheapest cost could be defined as the shortest distance (in miles) between two cities.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1074700,
+              "key": "79bdc554-30ce-4853-9727-d8cec7726d2f",
+              "title": "Uninformed Search Strategies",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/September/5f5c1aac_uninformed-search/uninformed-search.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/79bdc554-30ce-4853-9727-d8cec7726d2f",
+              "caption": "Uninformed search algorithms covered in this lesson",
+              "alt": "",
+              "width": 475,
+              "height": 562,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 229074,
+          "key": "8e351aad-d85a-4932-b685-14db81fa9fac",
+          "title": "Example: Route Finding",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8e351aad-d85a-4932-b685-14db81fa9fac",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 230456,
+              "key": "10ed50f7-99f6-4702-ae77-848e91158df1",
+              "title": "Example Route Finding",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "Note here that we're only looking at how many \"steps\", or nodes visited, we have to take to go from one node to another. The paths also show a cost value, but we're ignoring those for now.\n<br><br>",
+              "video": {
+                "youtube_id": "5lrkPKQwOFE",
+                "china_cdn_id": "5lrkPKQwOFE.mp4"
+              }
+            },
+            {
+              "id": 1074701,
+              "key": "b052bd71-d64b-4c98-a441-88ffca40fdfb",
+              "title": "Example Route Finding",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Note here that we're only looking at how many \"steps\", or nodes visited, we have to take to go from one node to another. The paths also show a cost value, but we're ignoring those for now.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 229075,
+          "key": "9d4c85d6-5e16-45d0-8dca-6d8ec0b108f9",
+          "title": "Quiz: Tree Search",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9d4c85d6-5e16-45d0-8dca-6d8ec0b108f9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 230700,
+              "key": "31d1fb45-1b81-48c4-bc86-272563d7d28a",
+              "title": "Tree Search",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "lCuwrHKxNlU",
+                "china_cdn_id": "lCuwrHKxNlU.mp4"
+              }
+            },
+            {
+              "id": 781912,
+              "key": "bd99156e-80b0-4ed7-8d17-22aa459b7d86",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "*Clarification: the line, `add[path + a > Results(s,a)]`, is not a mathematical operation. This line appends the current action,`a`, into the previous path, `path`. After taking the action, the search agent will be in a new state, `Results(s,a)`. Finally, the algorithm will add the list into the `frontier` dictionary through `add[]` function.*\n\nHere's the graph from the video.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 781911,
+              "key": "0f99bd5a-2350-41f4-b671-7e4d7eda5940",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/November/5be4ddde_tree-search-image/tree-search-image.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0f99bd5a-2350-41f4-b671-7e4d7eda5940",
+              "caption": "",
+              "alt": "",
+              "width": 800,
+              "height": 446,
+              "instructor_notes": null
+            },
+            {
+              "id": 781988,
+              "key": "15b6a2a1-0c2b-4a9b-b57a-d8f87e00cc13",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| **Explored** | **Frontier** |\n| :-------------: |:-------------:|\n| Arad     | Zerind | \n| Sibiu     | Timisoara | ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 247664,
+              "key": "bfd390b9-681b-41b4-b968-459e002492c9",
+              "title": "Breadth-First Search Quiz",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "bfd390b9-681b-41b4-b968-459e002492c9",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What path will be added next with a breadth-first search that has traversed Arad -> Sibiu? Remember, this algorithm does not yet track places it has already visited.",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Lugoj",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Mehadia",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Fagaras",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "Pitesti",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk5",
+                    "text": "Zerind",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk6",
+                    "text": "Arad",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk7",
+                    "text": "Rimnicu Vilcea",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk8",
+                    "text": "Oradea",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk9",
+                    "text": "Timisoara",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk10",
+                    "text": "None of the above",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 229076,
+          "key": "d0721c14-91d4-4934-ab31-a6c37835c25a",
+          "title": "Tree Search Continued",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d0721c14-91d4-4934-ab31-a6c37835c25a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 230701,
+              "key": "26bc5d61-9924-4c08-8d81-ec8b51439187",
+              "title": "Tree Search Continued",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "In the video from 1:55 onward, we are looking ahead to a modified algorithm that keeps track of explored states so that they aren't repeated. In the preliminary algorithm, A is repeated since we are not keeping track of explored states. Ideally, we would not add duplicates from backtracking, which we introduce in the following video.",
+              "video": {
+                "youtube_id": "8yID2dTeBSM",
+                "china_cdn_id": "8yID2dTeBSM.mp4"
+              }
+            },
+            {
+              "id": 1074706,
+              "key": "d67c25bb-1ddb-47b4-a3ad-69a399d4cda4",
+              "title": "Tree Search Continued",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the video from 1:55 onward, we are looking ahead to a modified algorithm, called `Graph Search`, that keeps track of explored states so that they aren't repeated. In the preliminary algorithm, `Tree Search`, node A is repeated since we are not keeping track of explored states. Ideally, we would not add duplicates from backtracking, which we introduce in the following video.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 229077,
+          "key": "79e6d165-3248-4aea-87d7-048afd718e11",
+          "title": "Quiz: Graph Search",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "79e6d165-3248-4aea-87d7-048afd718e11",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 232379,
+              "key": "026cefdf-f02c-4ca3-b57a-949235979f84",
+              "title": "Graph Search ",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "A8GjRaPJQ5E",
+                "china_cdn_id": "A8GjRaPJQ5E.mp4"
+              }
+            },
+            {
+              "id": 781914,
+              "key": "d4152484-f704-4573-a4fc-bcf0bb887df1",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Notice the pseudocodes for graph search and tree search algorithms are quite similar. The key difference is that the graph search algorithm keeps track of the explored states, as highlighted in the pseudocode below. Graph search algorithm removes the redundancy to revisit the explored states as it happens in the tree search algorithm.\n\nfunction **Graph.Search(problem)**:<br />\n&nbsp;&nbsp;frontier = {[initial]}; `explored={}`<br />\n&nbsp;&nbsp;loop:<br />\n&nbsp;&nbsp;&nbsp;&nbsp;if frontier is empty: return FAIL<br />\n&nbsp;&nbsp;&nbsp;&nbsp;path = remove.choice(frontier)<br />\n&nbsp;&nbsp;&nbsp;&nbsp;s = path.end; `add s to explored`<br />\n&nbsp;&nbsp;&nbsp;&nbsp;if s is a goal: return path<br />\n&nbsp;&nbsp;&nbsp;&nbsp;for a in actions:<br />\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add[path + a -> Result(s,a)]<br />\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to frontier<br />\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`unless Result(s,a) in frontier or explored`<br />\n___\nHere's the graph from the video.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 781915,
+              "key": "8e310e95-b6be-4111-ac33-bcff36f382d4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/November/5be4e0fe_graph-search-image/graph-search-image.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8e310e95-b6be-4111-ac33-bcff36f382d4",
+              "caption": "",
+              "alt": "",
+              "width": 800,
+              "height": 461,
+              "instructor_notes": null
+            },
+            {
+              "id": 781989,
+              "key": "e3cab178-2124-4145-b1f9-19fcf245784e",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| **Explored** | **Frontier** |\n| :-------------: |:-------------:|\n| Arad     | Oradea | \n| Sibiu     | Zerind | \n|               | Timisoara |\n|               | Rimnicu Vilcea |\n|               | Fagaras |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 247665,
+              "key": "78e85495-dad0-46cb-a43d-0f2afbfe78f6",
+              "title": "Graph Search Quiz",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "78e85495-dad0-46cb-a43d-0f2afbfe78f6",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Given these 5 paths, which are candidates to be expanded next? I.e., which have the shortest paths from our starting point, and have not yet been explored?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Zerind",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Oradea",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Fagaras",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "Rimnicu Vilcea",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk5",
+                    "text": "Timisoara",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk6",
+                    "text": "None of the above",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 229078,
+          "key": "72370b79-4462-4af8-8ffd-a256d7b3401c",
+          "title": "Quiz: Breadth First Search 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "72370b79-4462-4af8-8ffd-a256d7b3401c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 232421,
+              "key": "85c80328-8745-45af-b2ee-b0a46a0946ea",
+              "title": "Breath First Search 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "70yXCOfKMPA",
+                "china_cdn_id": "70yXCOfKMPA.mp4"
+              }
+            },
+            {
+              "id": 781990,
+              "key": "d7fce3b5-119c-45bb-b7d9-6e4098897be5",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| **Explored** | **Frontier** |\n| :-------------: |:-------------:|\n| Arad     | Oradea | \n| Sibiu     | Timisoara | \n| Zerind  | Rimnicu Vilcea |\n|               | Fagaras |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 247689,
+              "key": "21e4d5d5-614a-4b82-94a5-49ad46f839dc",
+              "title": "Breadth First Search 1 Quiz",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "21e4d5d5-614a-4b82-94a5-49ad46f839dc",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": " What paths will be added in the next step? Hint: which, if any, of these is not yet categorized?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Oradea",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Fagaras",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Rimnicu Vilcea",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "Timisoara",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk5",
+                    "text": "Arad",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk6",
+                    "text": "None of the above",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 229079,
+          "key": "492a9382-cbcb-4f81-ad29-54c4434fd72f",
+          "title": "Breadth First Search 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "492a9382-cbcb-4f81-ad29-54c4434fd72f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 232423,
+              "key": "5f3560f3-2fc1-4a79-895e-61c4e9f7b15d",
+              "title": "Breath First Search 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1VykygxreWg",
+                "china_cdn_id": "1VykygxreWg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 229080,
+          "key": "f428e1cf-f1b4-4c47-ad77-6170de0bb927",
+          "title": "Quiz: Breadth First Search 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f428e1cf-f1b4-4c47-ad77-6170de0bb927",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 232425,
+              "key": "7dfe86fd-c8b0-4286-bd25-43eafe03b4e7",
+              "title": "Breath First Search 3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-ed_C9x8rWs",
+                "china_cdn_id": "-ed_C9x8rWs.mp4"
+              }
+            },
+            {
+              "id": 781984,
+              "key": "38e3fb34-521c-44ca-8cab-7d8dbc31cb8e",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here's the graph from the video. Note the arrow pointing at Fagaras - this is the city Dr. Norvig is pointing to.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 781985,
+              "key": "71967dfb-1f92-480d-b296-74211bd2a744",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/November/5be5cd9c_breadth-first-search-3-image/breadth-first-search-3-image.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/71967dfb-1f92-480d-b296-74211bd2a744",
+              "caption": "",
+              "alt": "",
+              "width": 800,
+              "height": 462,
+              "instructor_notes": null
+            },
+            {
+              "id": 781991,
+              "key": "e79ed4e1-d588-4130-93cf-e1a3af7b2ec1",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| **Explored** | **Frontier** |\n| :-------------: |:-------------:|\n| Arad     | Oradea | \n| Sibiu     | Rimnicu Vilcea | \n| Zerind  | Fagaras |\n| Timisoara | Lugoj |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 247690,
+              "key": "b0f4d710-d5ec-461a-905b-76ac5c665cde",
+              "title": "Breadth First Search 3 Quiz 1",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b0f4d710-d5ec-461a-905b-76ac5c665cde",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": " Which states do we add to the path?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Sibiu",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Pitesti",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Craiova",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "Mehadia",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk5",
+                    "text": "Bucharest",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk6",
+                    "text": "None of the above",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 247691,
+              "key": "d087e699-68f1-4fbb-a083-ca73785239e4",
+              "title": "Breadth First Search 3 Quiz 2",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d087e699-68f1-4fbb-a083-ca73785239e4",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Are we ready to terminate?\n",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Yes",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "No",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 229081,
+          "key": "a2d20ebb-c8a8-4055-9809-27602d44660c",
+          "title": "Breadth First Search 4",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a2d20ebb-c8a8-4055-9809-27602d44660c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 232426,
+              "key": "c0424a99-b64e-4fa5-b3cc-36e1c72d2195",
+              "title": "Breath First Search 4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "WOANyG8rf0k",
+                "china_cdn_id": "WOANyG8rf0k.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 229082,
+          "key": "61a3ffcc-011e-4193-a383-6551bacf0bd6",
+          "title": "Breadth First Search 5",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "61a3ffcc-011e-4193-a383-6551bacf0bd6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 232428,
+              "key": "b9172765-87e3-4bd4-b766-cce5fb70762c",
+              "title": "Breath First Search 5",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "eyN4162UjH8",
+                "china_cdn_id": "eyN4162UjH8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 229083,
+          "key": "43e19e6c-efff-4b4f-8062-f7d2be09918c",
+          "title": "Uniform Cost Search",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "43e19e6c-efff-4b4f-8062-f7d2be09918c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 230702,
+              "key": "7021b437-d2fb-42bf-a725-cb1f3730fde5",
+              "title": "Uniform Cost Search",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "oPe45CJ_o0k",
+                "china_cdn_id": "oPe45CJ_o0k.mp4"
+              }
+            },
+            {
+              "id": 781986,
+              "key": "0659d9a0-9104-4b53-a4a1-35a43b6d3beb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/November/5be5d072_uniform-cost-search-image/uniform-cost-search-image.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0659d9a0-9104-4b53-a4a1-35a43b6d3beb",
+              "caption": "",
+              "alt": "",
+              "width": 800,
+              "height": 514,
+              "instructor_notes": null
+            },
+            {
+              "id": 781992,
+              "key": "4cf382f9-e749-4348-a964-ae4719b2ffa6",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<table>\n<tr><td><table></table>\n\n| **Explored** | **Frontier** |\n| :-------------: |:-------------:|\n| Arad     | Zerind | \n|               | Sibiu | \n|               | Timisoara |\n\n<td>\n\n| **Path** | **Cost ** |\n| :----------: | :----------: |\n| Arad >> Zerind | 75 |\n| Arad >> Sibiu | 140 |\n| Arad >> Timisoara | 118 |\n\n</td></tr> </table>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 247692,
+              "key": "25322dc3-5d97-42eb-94bf-99618c2f7098",
+              "title": "Uniform Cost Search Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "25322dc3-5d97-42eb-94bf-99618c2f7098",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": " Which path do we pick next to expand according to the rules of cheapest first?\n",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Zerind",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Sibiu",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Timisoara",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "None of the above",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 229088,
+          "key": "db65fa2d-06c8-489a-a476-73f1981341be",
+          "title": "Uniform Cost Search 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "db65fa2d-06c8-489a-a476-73f1981341be",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 848199,
+              "key": "936a4811-0b75-4c7b-9756-aada6c32f27c",
+              "title": "Uniform Cost Search 1 V4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "rTddvJ0qd6c",
+                "china_cdn_id": "rTddvJ0qd6c.mp4"
+              }
+            },
+            {
+              "id": 781987,
+              "key": "b86cb93a-1087-4bee-9f21-b7fd0b19ace1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/November/5be5d117_uniform-cost-search-1/uniform-cost-search-1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b86cb93a-1087-4bee-9f21-b7fd0b19ace1",
+              "caption": "",
+              "alt": "",
+              "width": 800,
+              "height": 485,
+              "instructor_notes": null
+            },
+            {
+              "id": 781993,
+              "key": "7da94473-de5c-45e4-b0ee-7f2602ff29e3",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<table>\n<tr><td><table></table>\n\n| **Explored** | **Frontier** |\n| :-------------: |:-------------:|\n| Arad     | Oradea | \n| Zerind  | Sibiu | \n|               | Timisoara |\n\n<td>\n\n| **Path** | **Cost ** |\n| :----------: | :----------: |\n| Arad >> Zerind  >> Oradea| 146 |\n| Arad >> Sibiu | 140 |\n| Arad >> Timisoara | 118 |\n\n</td></tr> </table>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 247693,
+              "key": "dbd75ac4-a98a-48e5-aeb4-ade1b3b875f5",
+              "title": "Uniform Cost Search 1 Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "dbd75ac4-a98a-48e5-aeb4-ade1b3b875f5",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which path gets expanded next?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Oradea",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Sibiu",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Timisoara",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "None of the above",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 229084,
+          "key": "83b566a6-4a93-41b9-bd59-a507eec7e470",
+          "title": "Uniform Cost Search 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "83b566a6-4a93-41b9-bd59-a507eec7e470",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 848201,
+              "key": "60f511bb-a119-4202-8e3d-987cdd20b6aa",
+              "title": "Uniform Cost Search 2 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "QSjh-ypUhto",
+                "china_cdn_id": "QSjh-ypUhto.mp4"
+              }
+            },
+            {
+              "id": 781994,
+              "key": "2d18e046-e906-40cf-a617-01834b496b56",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/November/5be5de47_uniform-cost-search-2/uniform-cost-search-2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2d18e046-e906-40cf-a617-01834b496b56",
+              "caption": "",
+              "alt": "",
+              "width": 800,
+              "height": 478,
+              "instructor_notes": null
+            },
+            {
+              "id": 781996,
+              "key": "9af3829d-529c-4d5e-816c-620ccf6b697f",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<table>\n<tr><td><table></table>\n\n| **Explored** | **Frontier** |\n| :-------------: |:-------------:|\n| Arad     | Oradea | \n| Zerind  | Fagaras | \n| Sibiu     | Rimnicu Vilcea |\n| Timisoara | Lugoj |\n\n<td>\n\n| **Path** | **Cost ** |\n| :----------: | :----------: |\n| Arad >> Zerind  >> Oradea| 146 |\n| Arad >> Sibiu >> Fagaras | 239 |\n| Arad >> Sibiu >> Rimnicu Vilcea | 220 |\n| Arad >> Timisoara >> Lugoj | 229|\n\n</td></tr> </table>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 247694,
+              "key": "620210a4-db77-4b95-bb6b-da4ce766c543",
+              "title": "Uniform Cost Search 2 Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "620210a4-db77-4b95-bb6b-da4ce766c543",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which path gets expanded next?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Oradea",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Lugoj",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Rimnicu Vilcea",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "Fagaras",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk5",
+                    "text": "None of the above",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 229085,
+          "key": "c7d8d79d-5391-4039-93d3-cacc42b2502c",
+          "title": "Uniform Cost Search 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c7d8d79d-5391-4039-93d3-cacc42b2502c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 848202,
+              "key": "4e277bb3-88d9-4f86-a945-91fe4aba8777",
+              "title": "Uniform Cost Search 3 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "bEfXeDfoIY8",
+                "china_cdn_id": "bEfXeDfoIY8.mp4"
+              }
+            },
+            {
+              "id": 782002,
+              "key": "27a93959-e66f-436d-bdfa-e377f9dbf6de",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/November/5be5f76c_uniform-cost-search-3/uniform-cost-search-3.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/27a93959-e66f-436d-bdfa-e377f9dbf6de",
+              "caption": "",
+              "alt": "",
+              "width": 800,
+              "height": 472,
+              "instructor_notes": null
+            },
+            {
+              "id": 782003,
+              "key": "01bc085b-82a6-4e70-b256-5f6b61c764aa",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<table>\n<tr><td><table></table>\n\n| **Explored** | **Frontier** |\n| :-------------: |:-------------:|\n| Arad     | Fagaras | \n| Zerind  | Rimnicu Vilcea | \n| Sibiu     | Lugoj |\n| Timisoara |  |\n|Oradea |  |\n\n<td>\n\n| **Path** | **Cost ** |\n| :----------: | :----------: |\n| Arad >> Zerind  >> Oradea| stuck |\n| Arad >> Sibiu >> Fagaras | 239 |\n| Arad >> Sibiu >> Rimnicu Vilcea | 220 |\n| Arad >> Timisoara >> Lugoj | 229|\n\n</td></tr> </table>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 247695,
+              "key": "1879b60a-5a15-404f-9ff2-84617c3006c2",
+              "title": "Uniform Cost Search 3 Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "1879b60a-5a15-404f-9ff2-84617c3006c2",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which path gets expanded next?\n",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Lugoj",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Fagaras",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Rimnicu Vilcea",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "None of the above",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 229086,
+          "key": "aeb2df77-cba4-472f-a9e3-8fbd3a0aa09c",
+          "title": "Uniform Cost Search 4",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "aeb2df77-cba4-472f-a9e3-8fbd3a0aa09c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 848204,
+              "key": "77588a95-081a-4854-9477-ee4d7a5961c1",
+              "title": "Uniform Cost Search 4 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zpOf15umlkE",
+                "china_cdn_id": "zpOf15umlkE.mp4"
+              }
+            },
+            {
+              "id": 782004,
+              "key": "a1b45a84-a637-49b3-bd88-2f73e350a7d2",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| **Path** | **Cost ** |\n| :----------: | :----------: |\n| Arad >> Zerind  >> Oradea| stuck |\n| Arad >> Sibiu >> Fagaras >> **Bucharest** | 450 |\n| Arad >> Sibiu >> Rimnicu Vilcea >> Pitesti| 317 |\n| Arad >> Sibiu >> Rimnicu Vilcea >> Craiova | 366 |\n| Arad >> Timisoara >> Lugoj >> Mehadia | 299 |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 247696,
+              "key": "df2fd79d-903f-4a3e-926b-c14f9d7742aa",
+              "title": "Uniform Cost Search 4 Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "df2fd79d-903f-4a3e-926b-c14f9d7742aa",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Are we done? Can we terminate the algorithm?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Yes",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "No",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 229087,
+          "key": "7c7e8256-3985-4574-8c98-b9dd49ca24fc",
+          "title": "Uniform Cost Search 5",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7c7e8256-3985-4574-8c98-b9dd49ca24fc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 297501,
+              "key": "5f48d411-3f2e-4f94-9191-ad1dd8d4e5bb",
+              "title": "17  Uniform Cost Search 5 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "Now that we've added quite a few paths to our map, it can be a bit difficult to follow which paths are being checked at each step. \n\nStarting at 1:30, we are checking the path coming into Craiova from Rimnicu Vilcea, and heading toward either Drobeta (366+120 = 486) or Pitesti (366+318 = 504), both of which are worse than our current best of 418.\n\nAfter that, we already know the path to get to Drobeta was worse than the path to get to Craiova, so there cannot be a more beneficial path heading to that already explored location.\n\n<br><br>",
+              "video": {
+                "youtube_id": "MoyBcrw-n_M",
+                "china_cdn_id": "MoyBcrw-n_M.mp4"
+              }
+            },
+            {
+              "id": 1074705,
+              "key": "74dc2075-d7fa-444d-ad2d-a032a3fca515",
+              "title": "Uniform Cost Search 5",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now that we've added quite a few paths to our map, it can be a bit difficult to follow which paths are being checked at each step.\n\nStarting at 1:30, we are checking the path coming into Craiova from Rimnicu Vilcea, and heading toward either Drobeta (366+120 = 486) or Pitesti (366+318 = 504), both of which are worse than our current best of 418.\n\nAfter that, we already know the path to get to Drobeta was worse than the path to get to Craiova, so there cannot be a more beneficial path heading to that already explored location.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 229089,
+          "key": "ff4416e9-e78d-4672-a4a5-06207aa97514",
+          "title": "Quiz: Search Comparison",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ff4416e9-e78d-4672-a4a5-06207aa97514",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 232757,
+              "key": "cc7d3d53-2a4e-46cb-bf82-cd371c5e26ac",
+              "title": "Search Comparison",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "RMt_NiyY4nU",
+                "china_cdn_id": "RMt_NiyY4nU.mp4"
+              }
+            },
+            {
+              "id": 782018,
+              "key": "a257cfc6-5812-4eea-b8d3-fd190e60e0fd",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Depth-First search will expand all the way down one route first to look for a goal. If it cannot find the goal down that path, it turns around to go back to the next-furthest node and searches along that route.  It does find the goal down that route, no matter how far, it will terminate.\n\nAs a reminder, Cheapest-First and Uniform Cost refer to the same search method.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1074704,
+              "key": "827ec753-fe6a-4cdc-9f16-1b7a54ce0109",
+              "title": "Search Order",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/September/5f5c1c4d_17.-quiz-question/17.-quiz-question.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/827ec753-fe6a-4cdc-9f16-1b7a54ce0109",
+              "caption": "Quiz: nodes expansion",
+              "alt": "",
+              "width": 365,
+              "height": 369,
+              "instructor_notes": null
+            },
+            {
+              "id": 1074709,
+              "key": "827f518b-6b09-4621-b780-2266559c0b0b",
+              "title": "Nodes Expansion",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "827f518b-6b09-4621-b780-2266559c0b0b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Match the ordering of the nodes expansion according to Breadth-first Search, Uniform Cost Search, and Depth-first Search strategies. The number inside the nodes represents the node number. And the number on the edges represents the cost from one node to another. Please line up the orderings by the node number."
+                },
+                "concepts_label": "Search Strategy",
+                "answers_label": "Ordering",
+                "concepts": [
+                  {
+                    "text": "Breadth-first Search",
+                    "correct_answer": {
+                      "id": "a1599872015526",
+                      "text": "1,2,3,4,5,6,7"
+                    }
+                  },
+                  {
+                    "text": "Uniform Cost Search",
+                    "correct_answer": {
+                      "id": "a1599872197946",
+                      "text": "1,3,7,2,6,5,4"
+                    }
+                  },
+                  {
+                    "text": "Depth-first Search",
+                    "correct_answer": {
+                      "id": "a1599872218185",
+                      "text": "1,2,4,5,3,6,7"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1599872197946",
+                    "text": "1,3,7,2,6,5,4"
+                  },
+                  {
+                    "id": "a1599872015526",
+                    "text": "1,2,3,4,5,6,7"
+                  },
+                  {
+                    "id": "a1599872218185",
+                    "text": "1,2,4,5,3,6,7"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 247697,
+              "key": "1e5ca578-f873-43ec-a058-f5b7367291c4",
+              "title": "Search Comparison Quiz",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "1e5ca578-f873-43ec-a058-f5b7367291c4",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of these searches are Optimal? Optimal here means \"guaranteed to find the shortest path\". Check all that apply.",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Breadth-First",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Cheapest-First",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Depth-First",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "None of the above",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 229090,
+          "key": "4e06a0da-40b1-48a4-a4d3-a95ceebfb468",
+          "title": "Search Comparison 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4e06a0da-40b1-48a4-a4d3-a95ceebfb468",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 232758,
+              "key": "2871d3be-95c9-44ce-a568-f64fa2268078",
+              "title": "Search Comparison 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JbJMxp3Lva4",
+                "china_cdn_id": "JbJMxp3Lva4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 229091,
+          "key": "012b8f6c-3403-472a-a318-ba1ab3a2875f",
+          "title": "Quiz: Search Comparison 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "012b8f6c-3403-472a-a318-ba1ab3a2875f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 232759,
+              "key": "47072f52-98b0-4d70-90db-02bc9cb3aba0",
+              "title": "Search Comparison 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Fh5b8xVJhR8",
+                "china_cdn_id": "Fh5b8xVJhR8.mp4"
+              }
+            },
+            {
+              "id": 782019,
+              "key": "a1737f40-3c22-4429-9509-42fc7e5b6aa3",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| **Search Method** | **Optimal?** | **Frontier size** | **Size @ n = 20**\n| :----------: | :----------: | :----------: | :----------: |\n| Breadth-First | Yes | <span class='mathquill'>\\large 2^n</span>| 1,048,576 |\n| Cheapest-First | Yes | <span class='mathquill'>\\large 2^n</span> | 1,048,576 |\n| Depth-First | No | <span class='mathquill'>\\large n</span> | 20 |\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 247701,
+              "key": "56475bd1-eea1-4d91-80d0-026dd707248e",
+              "title": "Search Comparison 2 Quiz",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "56475bd1-eea1-4d91-80d0-026dd707248e",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of these searches are complete? Hint: What if one of the paths (whether containing the goal or not) was infinite in length?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Breadth-First",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Cheapest-First",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Depth-First",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "None of the above",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 229092,
+          "key": "d6804853-b929-4e66-b05b-1132e38fa28c",
+          "title": "Search Comparison 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d6804853-b929-4e66-b05b-1132e38fa28c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 232760,
+              "key": "75e90fbb-115a-4d59-a056-577237ba0f41",
+              "title": "Search Comparison 3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "| **Search Method** | **Optimal?** | **Frontier size** | **Size @ n = 20** | **Complete?** |\n| :----------: | :----------: | :----------: | :----------: | :----------: |\n| Breadth-First | Yes | <span class='mathquill'>\\large 2^n</span>| 1,048,576 | Yes |\n| Cheapest-First | Yes | <span class='mathquill'>\\large 2^n</span> | 1,048,576 | Yes |\n| Depth-First | No | <span class='mathquill'>\\large n</span> | 20 | No |",
+              "video": {
+                "youtube_id": "4KHmQEoqmeI",
+                "china_cdn_id": "4KHmQEoqmeI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1074707,
+          "key": "ef3ca880-be0a-475a-b067-4ff23be63b03",
+          "title": "Recap",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ef3ca880-be0a-475a-b067-4ff23be63b03",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1074702,
+              "key": "c1630db9-ff78-4ee4-a2e6-86fbab8624c9",
+              "title": "Recap",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this lesson, we cover three search strategies that come under the heading of **uninformed search**. These strategies have no additional information about states beyond that provided in the problem definition, so they can only proceed by generating successors until they find a goal state. \n\nThroughout this lesson, we look into a route finding problem to find the shortest distance from the _*initial state*_ (Arad) to the _*goal state*_ (Bucharest). We describe two types of search representations: **tree search** and **graph search**. A tree search is a formal description of the available states and actions in the problem in the forms of nodes (states) and edges (actions). The graph search is different from the tree search in which graph search prevents redundancy by going back to the _*explored*_ states.\n\nWe also learn how Breadth-first Search and Uniform Cost Search algorithms work in detail. BFS explores the shallowest nodes, while UCS explores the cheapest cost nodes. We conclude the lessons by comparing the _*optimality*_ and _*completeness*_ of the BFS, UCS, and DFS. An algorithm is said to be complete if it guarantees to return a solution if it exists in the state space within a period of time. And the algorithm is optimal if it returns the first solution with the lowest path cost among all the solutions.\n\nIn the next lesson, we'll introduce additional search strategies that can prioritize “more promising” states, called **informed search** or heuristic search strategies.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

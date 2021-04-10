@@ -1,0 +1,36 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.300 --> 00:00:02.700
+Here are two possible answers.
+
+00:00:02.700 --> 00:00:06.390
+This region is holding a green
+region and an orange region, so
+
+00:00:06.390 --> 00:00:09.110
+it only has two options for colors.
+
+00:00:09.110 --> 00:00:10.760
+Compared to all other regions,
+
+00:00:10.760 --> 00:00:14.075
+this is the minimum remaining
+values of those regions.
+
+00:00:14.075 --> 00:00:14.915
+For this region,
+
+00:00:14.915 --> 00:00:18.555
+we can pick the least constraining
+value which is green in this case.
+
+00:00:18.555 --> 00:00:22.095
+Because its bordering region can
+only take light blue or dark blue.
+
+00:00:22.095 --> 00:00:25.395
+So avoiding those two choices
+gives us more options later on.
+

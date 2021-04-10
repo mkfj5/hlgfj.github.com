@@ -1,0 +1,293 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSP Examples</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Constraint Satisfaction Problems</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Lesson Plan - Week 2.html">01. Lesson Plan - Week 2</a>
+    </li>
+    <li class="">
+      <a href="02. Introduction.html">02. Introduction</a>
+    </li>
+    <li class="">
+      <a href="03. CSP Examples.html">03. CSP Examples</a>
+    </li>
+    <li class="">
+      <a href="04. Map Coloring.html">04. Map Coloring</a>
+    </li>
+    <li class="">
+      <a href="05. Constraint Graph.html">05. Constraint Graph</a>
+    </li>
+    <li class="">
+      <a href="06. Map Coloring Quiz.html">06. Map Coloring Quiz</a>
+    </li>
+    <li class="">
+      <a href="07. Constraint Types.html">07. Constraint Types</a>
+    </li>
+    <li class="">
+      <a href="08. Backtracking Search.html">08. Backtracking Search</a>
+    </li>
+    <li class="">
+      <a href="09. Why Backtracking.html">09. Why Backtracking?</a>
+    </li>
+    <li class="">
+      <a href="10. Improving Backtracking Efficiency.html">10. Improving Backtracking Efficiency</a>
+    </li>
+    <li class="">
+      <a href="11. Backtracking Optimization Quiz.html">11. Backtracking Optimization Quiz</a>
+    </li>
+    <li class="">
+      <a href="12. Forward Checking.html">12. Forward Checking</a>
+    </li>
+    <li class="">
+      <a href="13. Constraint Propagation and Arc Consistency.html">13. Constraint Propagation and Arc Consistency</a>
+    </li>
+    <li class="">
+      <a href="14. Constraint Propagation Quiz.html">14. Constraint Propagation Quiz</a>
+    </li>
+    <li class="">
+      <a href="15. Structured CSPs.html">15. Structured CSPs</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">03. CSP Examples</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Untitled</p></h3>
+  <div>
+  <h2 id="-constraint-satisfaction-problem-examples"># Constraint Satisfaction Problem Examples</h2>
+<p>The lessons and coding exercise will deal with several examples of Constraint Satisfaction Problems, some of which are defined below. For each example problem below, we'll cover <strong>one possible choice</strong> of variables, domains, and constraints, although others are often possible because <strong>CSPs are very flexible</strong>.</p>
+<p>As you read through the examples, try to think of other problems from the real world that can be represented in the CSP framework–like scheduling meetings for a conference room, or building a seating chart for a wedding reception. The video lessons in this section will provide some high-level discussion of CSPs, and you'll get to practice building and solving them in the exercise at the end of the lesson.</p>
+<h2 id="-sudoku">## Sudoku</h2>
+<p>You've already seen Sudoku in the first project. Sudoku puzzles are given in a 9x9 grid that is partitioned into non-overlapping 3x3 groups. A puzzle is solved when each of the 81 boxes has been assigned a single digit between 1-9 such that every row, column, and 3x3 group contains precisely one copy of each digit 1-9. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/sudoku-small.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Untitled</p></h3>
+  <div>
+  <h4 id="sudoku-csp-definition">Sudoku CSP Definition</h4>
+<ul>
+<li><strong>Variables:</strong> the 81 boxes that must be assigned a value</li>
+<li><strong>Domains:</strong> every variable has the same domain, the single digits 1-9</li>
+<li><strong>Constraints:</strong> each row, column, and 3x3 group must contain one of each digit 1-9</li>
+</ul>
+<h2 id="-4-queens">## 4-Queens</h2>
+<p>The 4-queens problem asks you to place 4 chess queens on a 4x4 grid such that none of the queens are in "check" (i.e., no two queens occupy the same row, column, or diagonal). The problem can be expanded to standard 8x8 chess boards as the "8-queens" problem, or generalized to any NxN grid as the "N-queens" problem.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/4-queens.png" alt="4-Queens Puzzle" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>4-Queens Puzzle</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Untitled</p></h3>
+  <div>
+  <h4 id="4-queens-csp-definition">4-Queens CSP Definition</h4>
+<ul>
+<li><strong>Variables:</strong> the row assignment of each of the four queens (the variables represent the queen assigned to each of the four columns)</li>
+<li><strong>Domains:</strong> every variable has the same domain, the single digits 1-4</li>
+<li><strong>Constraints:</strong> No pair of queens can be on the same row or diagonal</li>
+</ul>
+<h2 id="-map-coloring">## Map Coloring</h2>
+<p>Map coloring is a problem that asks for an assignment of distinct colors to each region of the map. (While it seems like a trivial problem, map coloring is an intuitive way to describe more complex equivalent problems relevant in other parts of computer science.)</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/map-coloring-small.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Untitled</p></h3>
+  <div>
+  <h4 id="map-coloring-csp-definition">Map Coloring CSP Definition</h4>
+<ul>
+<li><strong>Variables:</strong> One for each region of the map (in this case WA, NT, SA, Q, NSW, V, and T)<ul>
+<li>X = {WA,NT,Q,NSW,V,SA,T}</li></ul></li>
+<li><strong>Domains:</strong> All variables have the same domain, the list of colors that may be assigned to each region<ul>
+<li>D<sub>i</sub> = {red , green , blue }</li></ul></li>
+<li><strong>Constraints:</strong> No pair of adjacent regions can have the same color<ul>
+<li>C = {SA<span>&#8800;</span>WA, SA<span>&#8800;</span>NT, SA<span>&#8800;</span>Q, SA<span>&#8800;</span>NSW, SA<span>&#8800;</span>V, WA<span>&#8800;</span>NT,NT<span>&#8800;</span>Q, Q<span>&#8800;</span>NSW, NSW<span>&#8800;</span>V}</li></ul></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="04. Map Coloring.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. CSP Examples')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

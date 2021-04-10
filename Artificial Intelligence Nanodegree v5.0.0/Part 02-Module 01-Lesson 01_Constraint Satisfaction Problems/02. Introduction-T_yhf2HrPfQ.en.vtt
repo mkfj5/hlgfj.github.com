@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.340 --> 00:00:03.540
+Here at Atlanta we are homes
+the world's busiest airport.
+
+00:00:03.540 --> 00:00:07.980
+They have five runways and
+2,500 arrivals and departures per day.
+
+00:00:07.980 --> 00:00:10.840
+&gt;&gt; Have you ever wondered how
+they schedule all those flights?
+
+00:00:10.840 --> 00:00:13.424
+Those runways are putting out
+a plane every 30 seconds.
+
+00:00:13.424 --> 00:00:17.311
+&gt;&gt; Wow, it turns out this is an example
+of a classic AI problem called
+
+00:00:17.311 --> 00:00:19.700
+constraint satisfaction.
+
+00:00:19.700 --> 00:00:22.090
+Let's start out with a simple
+example as a challenge question.
+

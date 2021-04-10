@@ -1,0 +1,29 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.360 --> 00:00:01.367
+Here's the answer.
+
+00:00:01.367 --> 00:00:06.160
+We have several islands on this map, so
+they can have any of the three colors.
+
+00:00:06.160 --> 00:00:09.003
+However, K2 is constrained
+to only one color, green,
+
+00:00:09.003 --> 00:00:11.570
+because of the two bordering regions.
+
+00:00:11.570 --> 00:00:13.758
+Finally, the entire
+network is arc consistent,
+
+00:00:13.758 --> 00:00:16.265
+because we don't have any regions
+without a possible color.
+
+00:00:16.265 --> 00:00:17.899
+[BLANK_AUDIO]
+

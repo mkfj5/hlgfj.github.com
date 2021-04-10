@@ -1,0 +1,1761 @@
+{
+  "data": {
+    "lesson": {
+      "id": 556668,
+      "key": "f8def63a-dcb3-4af3-a9bc-27bca8a67996",
+      "title": "Constraint Satisfaction Problems",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Expand from the constraint propagation technique used in the Sudoku project to the Constraint Satisfaction Problem framework that can be used to solve a wide range of general problems.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/f8def63a-dcb3-4af3-a9bc-27bca8a67996/556668/1538955183402/Constraint+Satisfaction+Problems+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/f8def63a-dcb3-4af3-a9bc-27bca8a67996/556668/1538955179387/Constraint+Satisfaction+Problems+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 590555,
+          "key": "709e3b45-918c-42fe-85e7-acab2d25f1a6",
+          "title": "Lesson Plan - Week 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "709e3b45-918c-42fe-85e7-acab2d25f1a6",
+            "completed_at": "2020-05-28T19:08:41.797Z",
+            "last_viewed_at": "2020-06-11T03:13:25.591Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 591122,
+              "key": "4269853d-09f9-4544-9f46-8e69f65bd4d8",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Lesson Plan: Week 2\n---\nThis week you'll take a deeper look at **Constraint Satisfaction Problems**, which includes the constraint propagation and search techniques you used to complete the Sudoku solver project. At the end of the module, you can choose to complete an exercise using [Z3 from Microsoft Research](https://github.com/Z3Prover/z3/wiki#background) on a variety of CSPs.\n\n#### Classroom\n- Watch the Constraint Satisfaction lessons\n- (_Optional_) Complete the Constraint Satisfaction exercise in the classroom\n- (_Optional_) Review the **Additional Topics** module with links to additional readings on CSPs.\n\n#### Optional Reading\n- AIMA chapter 6.1-6.3 \n- (_skim through_) AIMA chapter 6.4-6.5",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1053941,
+              "key": "c5243c92-0bf7-4f5d-8b65-5e4a1adc7140",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Constraint Satisfaction Problems\n---\nAn intelligent agent can solve problems by adopting goals and aim to satisfy them.  Constraint Satisfaction Problems or CSP is a problem-solving algorithm that eliminates large portions of the search space and identifies variable and value combinations that violate the constraints.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1053921,
+              "key": "11c2d214-c22c-4b44-b4d6-03ffdbc9d108",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/August/5f36cfea_csp-course-map/csp-course-map.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/11c2d214-c22c-4b44-b4d6-03ffdbc9d108",
+              "caption": "",
+              "alt": "",
+              "width": 1978,
+              "height": 1112,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 193939,
+          "key": "66437293300923",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "66437293300923",
+            "completed_at": "2020-06-11T03:22:36.282Z",
+            "last_viewed_at": "2020-06-11T03:25:22.679Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193561,
+              "key": "6643729330",
+              "title": "Introduction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "T_yhf2HrPfQ",
+                "china_cdn_id": "T_yhf2HrPfQ.mp4"
+              }
+            },
+            {
+              "id": 1053948,
+              "key": "6be909e2-af4a-47c0-a4a2-2882abcc8fd8",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Defining Constraint Satisfaction Problems\n---\nSolving for an airline scheduling problem can be very tedious and risky. An optimal solution must consider all relevant variables, their interdependencies, and any restrictions to avoid flight delays and catastrophic events. A job scheduling task is one of the problems that can be solved with the Constraint Satisfaction Problems (CSP) algorithm.\n\nA **Constraint Satisfaction Problem** is defined mathematically as a set of variables, a set of domains for each variable, and a set of constraints that limit which values in each domain are a valid assignment for each variable. \n\nConstraint Satisfaction Problems can be framed as a Triple <X, D, C>  as follows:\n- `X` is a set of variables, {X<sub>1</sub>, …, X<sub>n</sub>}.\n- `D` is a set of domains, {D<sub>1</sub>, ..., D<sub>n</sub>} where a set of domain values is applied to each variable.\n- `C` is a set of constraints that specify allowable combinations of variables and values.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 613824,
+          "key": "81966419-3363-4baf-abe4-a78f3609612e",
+          "title": "CSP Examples",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "81966419-3363-4baf-abe4-a78f3609612e",
+            "completed_at": "2020-06-11T03:24:08.342Z",
+            "last_viewed_at": "2020-06-11T04:40:58.748Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 613826,
+              "key": "ad7c3f43-1a07-4c5b-971d-7991d39343e5",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Constraint Satisfaction Problem Examples\n---\nThe lessons and coding exercise will deal with several examples of Constraint Satisfaction Problems, some of which are defined below. For each example problem below, we'll cover **one possible choice** of variables, domains, and constraints, although others are often possible because **CSPs are very flexible**.\n\nAs you read through the examples, try to think of other problems from the real world that can be represented in the CSP framework–like scheduling meetings for a conference room, or building a seating chart for a wedding reception. The video lessons in this section will provide some high-level discussion of CSPs, and you'll get to practice building and solving them in the exercise at the end of the lesson.\n\n## Sudoku\n---\nYou've already seen Sudoku in the first project. Sudoku puzzles are given in a 9x9 grid that is partitioned into non-overlapping 3x3 groups. A puzzle is solved when each of the 81 boxes has been assigned a single digit between 1-9 such that every row, column, and 3x3 group contains precisely one copy of each digit 1-9. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 613890,
+              "key": "fcf56c26-4f45-4c6f-a79a-c473de53e9d2",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/April/5ada4e6a_sudoku-small/sudoku-small.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/fcf56c26-4f45-4c6f-a79a-c473de53e9d2",
+              "caption": "",
+              "alt": "",
+              "width": 250,
+              "height": 225,
+              "instructor_notes": null
+            },
+            {
+              "id": 613828,
+              "key": "11873d03-4981-47ab-9915-e1d8aaa1eee0",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Sudoku CSP Definition\n- **Variables:** the 81 boxes that must be assigned a value\n- **Domains:** every variable has the same domain, the single digits 1-9\n- **Constraints:** each row, column, and 3x3 group must contain one of each digit 1-9\n\n## 4-Queens\n---\nThe 4-queens problem asks you to place 4 chess queens on a 4x4 grid such that none of the queens are in \"check\" (i.e., no two queens occupy the same row, column, or diagonal). The problem can be expanded to standard 8x8 chess boards as the \"8-queens\" problem, or generalized to any NxN grid as the \"N-queens\" problem.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 613825,
+              "key": "db39a556-ed4b-435c-9408-5ebceec97cb1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/August/5f36c901_4-queens/4-queens.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/db39a556-ed4b-435c-9408-5ebceec97cb1",
+              "caption": "4-Queens Puzzle",
+              "alt": "",
+              "width": 250,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 613827,
+              "key": "9d0cf528-bd52-4e38-b5e5-953619fa263b",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### 4-Queens CSP Definition\n- **Variables:** the row assignment of each of the four queens (the variables represent the queen assigned to each of the four columns)\n- **Domains:** every variable has the same domain, the single digits 1-4\n- **Constraints:** No pair of queens can be on the same row or diagonal\n\n## Map Coloring\n---\nMap coloring is a problem that asks for an assignment of distinct colors to each region of the map. (While it seems like a trivial problem, map coloring is an intuitive way to describe more complex equivalent problems relevant in other parts of computer science.)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 613891,
+              "key": "5078b297-34ce-446b-bb84-6c9ef5a97bc3",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/April/5ada4e75_map-coloring-small/map-coloring-small.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5078b297-34ce-446b-bb84-6c9ef5a97bc3",
+              "caption": "",
+              "alt": "",
+              "width": 300,
+              "height": 260,
+              "instructor_notes": null
+            },
+            {
+              "id": 613899,
+              "key": "ba0a56c6-02f4-4fae-9bf5-3c63aae9af0d",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Map Coloring CSP Definition\n\n- **Variables:** One for each region of the map (in this case WA, NT, SA, Q, NSW, V, and T)\n  - X = {WA,NT,Q,NSW,V,SA,T}\n- **Domains:** All variables have the same domain, the list of colors that may be assigned to each region\n  - D<sub>i</sub> = {red , green , blue }\n- **Constraints:** No pair of adjacent regions can have the same color\n  - C = {SA<span>&#8800;</span>WA, SA<span>&#8800;</span>NT, SA<span>&#8800;</span>Q, SA<span>&#8800;</span>NSW, SA<span>&#8800;</span>V, WA<span>&#8800;</span>NT,NT<span>&#8800;</span>Q, Q<span>&#8800;</span>NSW, NSW<span>&#8800;</span>V}",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 194197,
+          "key": "61836380520923",
+          "title": "Map Coloring",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "61836380520923",
+            "completed_at": "2020-06-11T04:38:59.631Z",
+            "last_viewed_at": "2020-06-11T04:39:49.168Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193862,
+              "key": "6183638052",
+              "title": "Map Coloring",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "2va57vCvvYs",
+                "china_cdn_id": "2va57vCvvYs.mp4"
+              }
+            },
+            {
+              "id": 812767,
+              "key": "f67a2af4-4104-412a-8a9b-f914dfa14d43",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Map Coloring CSP\n---\n1. **Goal**: color each region with the least number of colors, in such a way that no neighboring regions have the same color.\n\n2. Map coloring CSP definitions:\n\t - **Variables**: _X = {WA, NT, Q, NSW, V, SA, T}_\n\t - **Domains**: _D<sub>i</sub> = {orange , green , blue}_\n\t - **Constraints**: C = {SA<span>&#8800;</span>WA, SA<span>&#8800;</span>NT, SA<span>&#8800;</span>Q, SA<span>&#8800;</span>NSW, SA<span>&#8800;</span>V, WA<span>&#8800;</span>NT,NT<span>&#8800;</span>Q, Q<span>&#8800;</span>NSW, NSW<span>&#8800;</span>V}\n\n3. **Possible solution**: _{WA=orange, NT=green, Q=orange, NSW=green, V=orange, SA=blue, T=green }_",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1053965,
+              "key": "dc03da9c-c7b9-49c3-85cb-547de4589045",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/August/5f36e225_map-coloring-csp/map-coloring-csp.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/dc03da9c-c7b9-49c3-85cb-547de4589045",
+              "caption": "",
+              "alt": "",
+              "width": 350,
+              "height": 350,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 194195,
+          "key": "61836380530923",
+          "title": "Constraint Graph",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "61836380530923",
+            "completed_at": "2020-06-11T04:42:22.932Z",
+            "last_viewed_at": "2020-06-11T04:42:03.705Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193864,
+              "key": "6183638053",
+              "title": "Constraint Graph",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "vwyNzW2GTtM",
+                "china_cdn_id": "vwyNzW2GTtM.mp4"
+              }
+            },
+            {
+              "id": 1055408,
+              "key": "7c3a124f-7d35-4407-b322-6b61eea7f55b",
+              "title": "Constraint Graph",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Constraint Graph\n\nA constraint graph in CSP is a special case of graph data structure. Just like any other graph data structures, a constraint graph consists of:\n- **Nodes** (also called _*vertices*_): correspond to CSP `variables`, and \n- **Edges** (also called _*links*_): correspond to the `constraints` between the connected `variables`.\n\nRepresenting CSP in a constraint graph helps to visualize the underlying structure and relationships among CSP variables and constraints.\n\nIn the next course, we will learn to use graph search algorithms. We can search a constraint graph for finding CSP solutions. However, formulating a problem as a CSP can be more efficient than a search problem-solving algorithm because CSP solvers can eliminate large states as defined in CSP constraints.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1055403,
+              "key": "2c33f894-cc89-4195-aab2-409be9b612e1",
+              "title": "Constraint graph of map coloring CSP",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/August/5f43e267_map-coloring-constraint-graph/map-coloring-constraint-graph.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2c33f894-cc89-4195-aab2-409be9b612e1",
+              "caption": "Example of a map coloring constraint graph",
+              "alt": "",
+              "width": 324,
+              "height": 285,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 193988,
+          "key": "66010453640923",
+          "title": "Map Coloring Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "66010453640923",
+            "completed_at": "2020-06-11T04:43:39.901Z",
+            "last_viewed_at": "2020-06-11T04:43:20.683Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193618,
+              "key": "6601045364",
+              "title": "Map Coloring Quiz",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "6601045364",
+                "completed_at": "2020-06-11T04:48:23.453Z",
+                "last_viewed_at": "2020-06-11T04:49:54.849Z",
+                "unstructured": "{\"text1\":\"2\",\"text2\":\"1\",\"text3\":\"1\",\"text4\":\"3\",\"text5\":\"3\",\"text6\":\"2\",\"text7\":\"2\",\"text8\":\"1\",\"text9\":\"3\",\"text10\":\"1\",\"text11\":\"3\",\"text12\":\"1\",\"text13\":\"3\",\"text14\":\"4\",\"text15\":\"2\",\"text16\":\"1\",\"text17\":\"2\",\"text18\":\"1\",\"text19\":\"1\",\"text20\":\"1\",\"text21\":\"4\"}"
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "iuHuw1iP2j0",
+                  "china_cdn_id": "iuHuw1iP2j0.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Map Coloring Quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/fvZ1KgMuE8winIIQWFCE8nNSXfsljRlI9hJHvg0fGN0_wyoXm8KRshI-j1FFz7YDpkZlKytHsAtPL2xrzg=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6601045364",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "6601045366",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text1",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.04488778054862843,
+                      "x": 0.10138715710723192,
+                      "y": 0.013823447893569844
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text2",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.043640897755610975,
+                      "x": 0.2859647755610973,
+                      "y": 0.07992655210643015
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text3",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.04488778054862843,
+                      "x": 0.11516131546134663,
+                      "y": 0.14745011086474502
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text4",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.046134663341645885,
+                      "x": 0.045783977556109724,
+                      "y": 0.1983439578713969
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text5",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.04488778054862843,
+                      "x": 0.2421290523690773,
+                      "y": 0.193355044345898
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text6",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.043640897755610975,
+                      "x": 0.16517300498753118,
+                      "y": 0.24057649667405764
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text7",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.04488778054862843,
+                      "x": 0.25224049251870323,
+                      "y": 0.26351164079822614
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text8",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.04488778054862843,
+                      "x": 0.08245012468827931,
+                      "y": 0.3361280487804878
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text9",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07317073170731707,
+                      "width": 0.046134663341645885,
+                      "x": 0.16365336658354115,
+                      "y": 0.3442350332594235
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text10",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.046134663341645885,
+                      "x": 0.28871181421446385,
+                      "y": 0.33363359201773835
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text11",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.04488778054862843,
+                      "x": 0.299154457605985,
+                      "y": 0.40032566518847007
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text12",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.043640897755610975,
+                      "x": 0.3441591334164589,
+                      "y": 0.43230321507760533
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text13",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.04488778054862843,
+                      "x": 0.38768313591022446,
+                      "y": 0.5041574279379157
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text14",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.04488778054862843,
+                      "x": 0.1770963216957606,
+                      "y": 0.5333980044345898
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text15",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.046134663341645885,
+                      "x": 0.23739479426433915,
+                      "y": 0.6333495011086474
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text16",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.046134663341645885,
+                      "x": 0.30020651496259354,
+                      "y": 0.7054115853658537
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text17",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07317073170731707,
+                      "width": 0.04488778054862843,
+                      "x": 0.40675654613466333,
+                      "y": 0.6948794345898004
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text18",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.046134663341645885,
+                      "x": 0.2786783042394015,
+                      "y": 0.8355044345898004
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text19",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.043640897755610975,
+                      "x": 0.08958073566084788,
+                      "y": 0.6169969512195121
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text20",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.04488778054862843,
+                      "x": 0.03315928927680798,
+                      "y": 0.03353658536585366
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text21",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": 1,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.08603491271820449,
+                      "x": 0.6586463528678305,
+                      "y": 0.6031388580931264
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "ThoMUUhVoqQ",
+                  "china_cdn_id": "ThoMUUhVoqQ.mp4"
+                }
+              }
+            },
+            {
+              "id": 1053919,
+              "key": "5b9a6efe-c279-4eca-b70c-2a997a6bdbc0",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "####  Use this blank map below to create your own solution:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1053917,
+              "key": "f0350ad9-97a8-40a9-8a11-460c928f7dc8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/August/5f36ca32_italy-region-map/italy-region-map.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f0350ad9-97a8-40a9-8a11-460c928f7dc8",
+              "caption": "",
+              "alt": "",
+              "width": 410,
+              "height": 512,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 194196,
+          "key": "61836380540923",
+          "title": "Constraint Types",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "61836380540923",
+            "completed_at": "2020-06-11T04:50:14.699Z",
+            "last_viewed_at": "2020-06-11T04:49:55.506Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193861,
+              "key": "6183638054",
+              "title": "CSP Examples",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "0M-qni5JPlg",
+                "china_cdn_id": "0M-qni5JPlg.mp4"
+              }
+            },
+            {
+              "id": 812992,
+              "key": "d217f350-abe1-4f87-b187-d3b5c92f4dbb",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "####  Variations on CSP formalism:\n\n - `unary constraint`: restricts the value of a single variable. For example, in the map-coloring problem, we can assign the Western Australia region with blue color using this representation: ⟨(SA), SA=blue⟩.\n - `binary constraint` relates to two variables. For example, no neighboring region can have the same color can be represented as ⟨(X1, X2), X1<span>&#8800;</span>X2⟩.\n - **AIMA** textbook chapter 3 section 6.1.2 and 6.1.3 cover different kinds of `variable` and `constraint` variations on CSP .",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 194199,
+          "key": "61836380560923",
+          "title": "Backtracking Search",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "61836380560923",
+            "completed_at": "2020-06-11T04:51:02.484Z",
+            "last_viewed_at": "2020-06-11T04:50:43.246Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193865,
+              "key": "6183638056",
+              "title": "Backtracking Search",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "BywESqWoiuI",
+                "china_cdn_id": "BywESqWoiuI.mp4"
+              }
+            },
+            {
+              "id": 1055401,
+              "key": "ab291f78-e078-4289-84b6-bc395857f710",
+              "title": "Backtracking Search Algorithm",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### `BACKTRACKING-SEARCH` Pseudocode\n```\nfunction BACKTRACKING-SEARCH(csp) returns solution/failure \n    return RECURSIVE-BACKTRACK({}, csp)\n\nfunction RECURSIVE-BACKTRACK(assignment,csp) returns solution/failure\n    if `assignment` is complete then return `assignment`\n    `var` ← SELECT-UNASSIGNED-VARIABLE(VARIABLES[csp],assignment,csp)\n    for each `value` in ORDER-DOMAIN-VALUES(var,assignment,csp) do\n        if `value` is consistent with `assignment` given CONSTRAINTS[csp] then \n        add {`var` = `value`} to assignment \n        result ← RECURSIVE-BACKTRACK(assignment, csp) \n        if result != failure then return result\n        remove {`var` = `value`} from assignment\n    return failure\n```\n\n#### `BACKTRACKING-SEARCH` Function\nThis function will return a solution or a failure when there is no solution to the problem. While this function has not found any solution or failure, it will run the `RECURSIVE-BACKTRACK` function.\n\n#### `RECURSIVE-BACKTRACKING` Function\nThis function runs a recursive depth-first search in trying to match the assignments and will backtrack to the previous depth when an assignment violates the `constraints`.\n\nWhile this function is running recursively, it will test an assignment by calling these functions:\n- `SELECT-UNASSIGNED-VARIABLE`: check which variable should be assigned next.\n- `ORDER-DOMAIN-VALUES`: check the order of domain values to be assigned to a variable.\n- `CONSTRAINTS`: check if the assignment violates any of the constraints.\n\nWhen the assignments are completed, this function will return a solution, or failure when there is no solution to the problem.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 590616,
+          "key": "9863a11b-01d8-492a-a522-d34d722b6408",
+          "title": "Why Backtracking?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9863a11b-01d8-492a-a522-d34d722b6408",
+            "completed_at": "2020-06-11T05:11:46.531Z",
+            "last_viewed_at": "2020-06-11T20:41:51.910Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 590618,
+              "key": "0fa2ba8e-4540-4b93-b425-dcfebc881d6b",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Search in CSPs\nThe basic idea of searching for a solution in a CSP is that you guess assignments _var = value_ in order to advance to the next state until every variable is assigned to a valid value. \n\nIf we used a standard depth-first search (which we'll cover in detail in a later module), then for `n` variables each with `d` possible values the branching factor of the resulting tree would be `nd` at the top level, _(n-1)d_ at the second level, _(n-2)d_ at the next level, and so on. The total branching factor would be _n! d^n_ when there are only _d^n_ possible assignments.\n\nThe animation below shows the node search order using depth-first search with two variables: (i) `A` which can be assigned a value in (0, 1, 2), and (ii) `B` which can be assigned a value in (0, 1). \n\nNote that there are 1x3+1x2=5 children of the root node, and a total of 2x3 + 3x2=12 leaf nodes–every possible solution assignment is tested twice—and we'll test _many_ partial solutions that are **inconsistent** (at least one constraint is violated by the partial assignment). These are exactly the problems that backtracking fixes.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 590617,
+              "key": "177365b1-6d1c-4ab7-bf03-87b992ac5bbb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/April/5ac4885f_dfs/dfs.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/177365b1-6d1c-4ab7-bf03-87b992ac5bbb",
+              "caption": "Depth first search node traversal order",
+              "alt": "",
+              "width": 1280,
+              "height": 480,
+              "instructor_notes": null
+            },
+            {
+              "id": 590619,
+              "key": "0c7d220d-3280-4b8b-8d74-7073e052f454",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Backtracking to avoid redundancy\nThe depth-first search tries both assigning `A` before `B` **and** assigning `B` before `A`. But the order of the assignments doesn't matter in finding a solution, so only one possible order needs to be tested. Backtracking is identical to depth-first search order, but it only evaluates a single assignment order for the variables and it reverts an assignment whenever the current state is inconsistent with any of the problem constraints. Backtracking will typically find a solution faster than a depth-first search.\n\nOne key feature of backtracking search is that the choice of which variable to assign first and the choice of which value to assign can have a big impact on the efficiency of the search. That'll be the topic of the next lesson.\n\nThe animation below shows the node search order on the same problem using one possible assignment order with backtracking search. (Note that we don't have any constraints involved, so it is identical to half of DFS in this case.) The backtracking search chooses one particular assignment order (in this case `A` is assigned, then `B`) so there are only 1x3 = 3 children of the root node, and 3x2=6 leaf nodes.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 590620,
+              "key": "48f0a8df-c6d1-4e9c-9083-7297a9098eb2",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/April/5ac48dc9_backtracking/backtracking.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48f0a8df-c6d1-4e9c-9083-7297a9098eb2",
+              "caption": "Backtracking eliminates redundant subgraphs",
+              "alt": "",
+              "width": 1280,
+              "height": 480,
+              "instructor_notes": null
+            },
+            {
+              "id": 590621,
+              "key": "9839f707-18cb-4b8e-bfcf-da5f1dc0771b",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Aside: Local Search\n\nAlthough we won't spend much time on it in this section, another alternative to depth-first or backtracking search is to use local search for solving CSPs. While depth-first search and backtracking apply variable assignments one at a time, local search always considers complete assignments -- every variable in the problem is always assigned to a concrete value (compare that to the root node of a DFS tree where _none_ of the variables are assigned). \n\nLocal search operates by starting with a complete assignment, then modifying one or more of the variable values within some \"local neighborhood\" of the current assignment. For example, (`A`=1,`B`=0) might change to (`A`=0,`B`=0) if we define the neighborhood as \"a single value can change +/-1\" (although other rules could also be chosen).\n\nThe animation below shows one possible node search order on the example problem for some notional local search. We will discuss local search in greater detail in the optimization problems lesson later in the course.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 590622,
+              "key": "627f8101-be81-4205-8ab9-dd039f8c8972",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/April/5ac492ba_local/local.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/627f8101-be81-4205-8ab9-dd039f8c8972",
+              "caption": "Local search only considers complete assignments",
+              "alt": "",
+              "width": 1280,
+              "height": 480,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 194200,
+          "key": "61836380570923",
+          "title": "Improving Backtracking Efficiency",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "61836380570923",
+            "completed_at": "2020-06-11T20:41:49.513Z",
+            "last_viewed_at": "2020-06-11T20:58:45.443Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193866,
+              "key": "6183638057",
+              "title": "Improving Backtracking Efficiency",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "enspbjemU1k",
+                "china_cdn_id": "enspbjemU1k.mp4"
+              }
+            },
+            {
+              "id": 1055409,
+              "key": "9a3749fc-b052-4107-b36d-f72eb42e1374",
+              "title": "Improving Backtracking Efficiency",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "_*Backtracking algorithm*_ checks which variable should be assigned next. In the pseudocode, the process is done at this line:\n```\n`var` ← SELECT-UNASSIGNED-VARIABLE(VARIABLES[csp],assignment,csp)\n```\n\nThe greedy strategy to pick the next unassigned variable is not efficient since the algorithm will more likely violate the constraints and has to backtrack more often.\n\nThere are three strategies in picking the next variable to improve backtracking efficiency:\n- **Least Constraining Value**: choose the variable that rules out the fewest values in the remaining variables.\n- **Minimum Remaining Value (MRV)**: choose the variable with the fewest legal values.\n- **Degree Heuristics**: choose the variable with the most constraints on remaining variables.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 193985,
+          "key": "66010453680923",
+          "title": "Backtracking Optimization Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "66010453680923",
+            "completed_at": "2020-06-11T21:01:28.966Z",
+            "last_viewed_at": "2020-06-11T21:01:09.946Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193615,
+              "key": "6601045368",
+              "title": "Backtracking Optimization Quiz",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "6601045368",
+                "completed_at": "2020-06-11T21:01:58.414Z",
+                "last_viewed_at": "2020-06-11T21:02:25.654Z",
+                "unstructured": "{\"check1\":false,\"check2\":false,\"check3\":false,\"check4\":false,\"check5\":false,\"check6\":true,\"check7\":false,\"check8\":true,\"check9\":false,\"check10\":false,\"check11\":false,\"check12\":false,\"radio1\":false,\"radio2\":true}"
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "UdodpzaMIQ8",
+                  "china_cdn_id": "UdodpzaMIQ8.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Backtracking Optimization Quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/SYWs0jKA5tISnFYCUbI5dZ_Bl2gmnzY7Wq2sb_YReSYm4GAHFqX9YlLsnztOctT0stclrufZ9jc9zNF0uW2_=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6601045368",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "6601045370",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check1",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.051882013715710724,
+                      "y": 0.15261225055432373
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check2",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.19040289900249377,
+                      "y": 0.1744041019955654
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check3",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.14255377182044887,
+                      "y": 0.23028686252771619
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check4",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.20127415835411472,
+                      "y": 0.2554046563192905
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check5",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.08270339775561097,
+                      "y": 0.2904309866962306
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check6",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.10606296758104738,
+                      "y": 0.43157566518847007
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check7",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.32925498753117205,
+                      "y": 0.5549819844789357
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check8",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3047654301745636,
+                      "y": 0.5961405210643016
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check9",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.348328397755611,
+                      "y": 0.6410407427937915
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check10",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3626480673316708,
+                      "y": 0.7339246119733924
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check11",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.2882831982543641,
+                      "y": 0.8540742793791575
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check12",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.12270105985037406,
+                      "y": 0.6560767738359202
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio1",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4913692331670823,
+                      "y": 0.4955307649667406
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4918173316708229,
+                      "y": 0.5587236696230599
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "zgjIf9jNft0",
+                  "china_cdn_id": "zgjIf9jNft0.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 194194,
+          "key": "61836380580923",
+          "title": "Forward Checking",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "61836380580923",
+            "completed_at": "2020-06-11T21:02:57.414Z",
+            "last_viewed_at": "2020-06-11T21:21:38.204Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193860,
+              "key": "6183638058",
+              "title": "Forward Checking",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "zky3gYXm0EM",
+                "china_cdn_id": "zky3gYXm0EM.mp4"
+              }
+            },
+            {
+              "id": 1055407,
+              "key": "8cddc40e-bbb9-48b6-a22e-7ccfd2e928b9",
+              "title": "Forward Checking",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We can further improve backtracking algorithm efficiency through inferences. One inference technique in CSP is **forward checking**. Every time the algorithm has successfully assigned a variable, it can make inferences about a number of unassigned variables and reduce their possible domain values.\n\nThe example on Australia regions map coloring CSP below shows forward-checking inferences after four iterations:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1055402,
+              "key": "ed947847-31ea-40a5-99db-7536ece30bba",
+              "title": "Forward Checking",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/August/5f43e3e3_forward-checking/forward-checking.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ed947847-31ea-40a5-99db-7536ece30bba",
+              "caption": "",
+              "alt": "",
+              "width": 539,
+              "height": 298,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 194113,
+          "key": "66125789860923",
+          "title": "Constraint Propagation and Arc Consistency",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "66125789860923",
+            "completed_at": "2020-06-11T21:14:28.737Z",
+            "last_viewed_at": "2020-06-11T21:22:43.877Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193761,
+              "key": "6612578986",
+              "title": "Constraint Propagation and Arc Consistency",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "xwic9sDWj94",
+                "china_cdn_id": "xwic9sDWj94.mp4"
+              }
+            },
+            {
+              "id": 1055406,
+              "key": "0aa52191-af34-4b12-ab59-d34741550f8b",
+              "title": "Australia regions map",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/August/5f43e4e0_australia-map/australia-map.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0aa52191-af34-4b12-ab59-d34741550f8b",
+              "caption": "Australia regions map",
+              "alt": "",
+              "width": 416,
+              "height": 357,
+              "instructor_notes": null
+            },
+            {
+              "id": 1055404,
+              "key": "d0211277-bac7-4b90-8b1d-dd5359aea3ea",
+              "title": "Constraint Propagation and Arc Consistency",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The key advantage of CSP over Search is the ability to make inferences in order to reduce the number of possible values for the remaining variables. **Constraint propagation** is the repeated inference process to reduce the domains for each variable. Constraint propagation will enforce the consistency in a CSP solution so it does not violate any of the constraints.\n\n**Arc Consistency** ensures the domain value in a CSP variable satisfies the variable’s `binary constraints`. In the previous video, we define a binary constraint as a relationship between two variables. In the map coloring CSP, the binary constraints prohibit neighboring regions to have the same colors.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 193892,
+          "key": "66010453720923",
+          "title": "Constraint Propagation Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "66010453720923",
+            "completed_at": "2020-06-11T21:16:34.964Z",
+            "last_viewed_at": "2020-06-11T21:16:15.832Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193511,
+              "key": "6601045372",
+              "title": "Constraint Propagation Quiz",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "6601045372",
+                "completed_at": "2020-06-11T21:18:37.439Z",
+                "last_viewed_at": "2020-06-11T21:19:24.005Z",
+                "unstructured": "{\"check1\":true,\"check2\":true,\"check3\":true,\"check4\":false,\"check5\":true,\"check6\":true,\"check7\":false,\"check8\":true,\"check9\":true,\"check10\":false,\"check11\":false,\"check12\":true,\"check13\":true,\"check14\":true,\"check15\":true,\"check16\":true,\"check17\":true,\"check18\":true,\"check19\":true,\"check20\":true,\"check21\":true,\"radio1\":true,\"radio2\":false}"
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "ThGgDbFTwh4",
+                  "china_cdn_id": "ThGgDbFTwh4.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Constraint Propagation Quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/VsOPd7bTM6xMgfPU5s0bx6ivhVqOBqcxZMqZt50lPpuO8HEOn4pdiOmqE_XBJj9ehbG4pf5IFPCKererW1kn=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6601045372",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "6601045374",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check1",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4156405860349127,
+                      "y": 0.295
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check2",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4711853179551122,
+                      "y": 0.295
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check3",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5297498441396509,
+                      "y": 0.295
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check4",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5986596009975063,
+                      "y": 0.295
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check5",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6559187967581047,
+                      "y": 0.295
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check6",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.7126324812967582,
+                      "y": 0.295
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check7",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4131273379052369,
+                      "y": 0.49708980044345896
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check8",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.471224283042394,
+                      "y": 0.4996189024390244
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check9",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5280548628428927,
+                      "y": 0.4992378048780488
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check10",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5971204800498753,
+                      "y": 0.49577328159645234
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check11",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6558993142144638,
+                      "y": 0.49754018847006654
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check12",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.7106062967581047,
+                      "y": 0.49663941241685144
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check13",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.41451059850374067,
+                      "y": 0.7150776053215078
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check14",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4712632481296758,
+                      "y": 0.717779933481153
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check15",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5288341645885287,
+                      "y": 0.7175720620842572
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check16",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5961073877805486,
+                      "y": 0.7185767738359202
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check17",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6546913965087282,
+                      "y": 0.7193389689578714
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check18",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.712651963840399,
+                      "y": 0.7189578713968958
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check19",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.7787172693266833,
+                      "y": 0.718819290465632
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check20",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.8409445137157108,
+                      "y": 0.7184381929046563
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check21",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.8989440461346634,
+                      "y": 0.7190618070953437
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio1",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 1,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5261650561097256,
+                      "y": 0.8831762749445676
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 2,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6780704488778054,
+                      "y": 0.8913871951219512
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "rrG4junDoPY",
+                  "china_cdn_id": "rrG4junDoPY.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 193917,
+          "key": "66125789870923",
+          "title": "Structured CSPs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "66125789870923",
+            "completed_at": "2020-06-11T21:27:02.571Z",
+            "last_viewed_at": "2020-06-11T21:26:43.308Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193537,
+              "key": "6612578987",
+              "title": "Structured CSPs",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "To learn more about some of the techniques discussed here, we encourage you to read about [Topological Sorting](https://courses.cs.washington.edu/courses/cse326/03wi/lectures/RaoLect20.pdf).",
+              "video": {
+                "youtube_id": "d4H0DZhuMe4",
+                "china_cdn_id": "d4H0DZhuMe4.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    }
+  ]
+}

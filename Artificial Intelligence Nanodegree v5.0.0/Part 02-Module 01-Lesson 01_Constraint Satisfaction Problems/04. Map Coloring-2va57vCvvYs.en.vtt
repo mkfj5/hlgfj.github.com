@@ -1,0 +1,81 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.190 --> 00:00:03.875
+Map coloring is another classic
+example of constraint satisfaction.
+
+00:00:03.875 --> 00:00:05.824
+&gt;&gt; We are trying to color
+this map of Australia,
+
+00:00:05.824 --> 00:00:08.160
+using the minimum number
+of colors as possible.
+
+00:00:08.160 --> 00:00:11.070
+But making sure that no neighboring
+regions have the same color.
+
+00:00:11.070 --> 00:00:12.500
+&gt;&gt; I guess if they had the same color,
+
+00:00:12.500 --> 00:00:16.160
+it would be hard to tell where one
+territory stopped and the next began.
+
+00:00:16.160 --> 00:00:19.380
+&gt;&gt; Exactly, we can set up the problem
+more formally by first listing
+
+00:00:19.380 --> 00:00:22.560
+all the variables,
+in this case the territories.
+
+00:00:22.560 --> 00:00:25.717
+&gt;&gt; And the possible colors of the
+territories are listed as the domains of
+
+00:00:25.717 --> 00:00:26.780
+the problem.
+
+00:00:26.780 --> 00:00:28.350
+&gt;&gt; Finally, the rules of the problem,
+
+00:00:28.350 --> 00:00:31.840
+that no territory can be assigned the
+same color as a neighboring territory,
+
+00:00:31.840 --> 00:00:33.740
+are listed as the constraints.
+
+00:00:33.740 --> 00:00:38.030
+&gt;&gt; We can do that explicitly by listing
+all the possible pairwise constraints.
+
+00:00:38.030 --> 00:00:39.920
+Like how Western Australia's
+color can't be be
+
+00:00:39.920 --> 00:00:41.740
+the same as the Northern Territory.
+
+00:00:41.740 --> 00:00:43.710
+Or we could list all
+the allowable assignments for
+
+00:00:43.710 --> 00:00:45.500
+each pair of territories.
+
+00:00:45.500 --> 00:00:48.450
+&gt;&gt; A solution is an assignment of
+colors to each of the territories that
+
+00:00:48.450 --> 00:00:50.520
+satisfies all the constraints.
+
+00:00:50.520 --> 00:00:52.140
+&gt;&gt; I always wanted to
+paint Australia red.
+

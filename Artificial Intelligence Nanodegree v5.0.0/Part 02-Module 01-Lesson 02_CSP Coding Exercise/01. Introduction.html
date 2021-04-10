@@ -1,0 +1,193 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Introduction</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>CSP Coding Exercise</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Intro to z3 Solver Programming.html">02. Intro to z3 Solver Programming</a>
+    </li>
+    <li class="">
+      <a href="03. Coding Exercise Using CSPs.html">03. Coding Exercise: Using CSPs</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">01. Introduction</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="introduction">Introduction</h2>
+<p>Constraint satisfaction is a general problem solving technique for solving a class of combinatorial optimization problems by imposing limits on the values in the solution. The goal of this exercise is to practice formulating some classical example problems as CSPs, and then to explore using a powerful open source constraint satisfaction tool called Z3 from Microsoft Research to solve them. Practicing with these simple problems will help you to recognize real-world problems that can be posed as CSPs; some solvers even have specialized utilities for specific types of problem (vehicle routing, planning, scheduling, etc.).</p>
+<p>There are many different kinds of CSP solvers available for CSPs. Z3 is a "Satisfiability Modulo Theories" (SMT) solver, which means that unlike the backtracking and variable assignment heuristics discussed in lecture, Z3 first converts CSPs to satisfiability problems then uses a SAT solver to determine feasibility. Z3 includes a number of efficient solver algorithms primarily developed to perform formal program verification, but it can also be used on general CSPs. Google's OR tools includes a CP solver using backtracking with specialized subroutines for some common CP domains.</p>
+<h4 id="attention-windows-users">ATTENTION WINDOWS USERS</h4>
+<p><strong>NOTE: It is <em>very</em> difficult to install Z3 on some versions of Windows. You may try following the instructions for setting up your environment in the first lesson, but if you are unable to install Z3 on your Windows machine then you should complete this exercise in the Workspace environment provided. The Workspace environment includes git version control, and offers the same Jupyter interface you would use in your local environment.</strong></p>
+<h2 id="getting-started">Getting Started</h2>
+<p>The easiest way to complete the exercise is to click "next" below to open a Workspace that already has a Jupyter notebook server running and comes pre-loaded with all required files and libraries. The notebook contains all required instructions to complete the exercise.</p>
+<p>If you would prefer to complete the exercise in your own local environment, then follow the steps below:</p>
+<ol>
+<li><p>Follow the instructions from before the first project to install and activate the aind conda environment in a terminal window.</p></li>
+<li><p>Clone the AIND coursework files from github (or open your local copy)</p></li>
+</ol>
+<pre><code>(aind) $ git clone https://github.com/udacity/artificial-intelligence
+(aind) $ cd artificial-intelligence</code></pre>
+<ol start="3">
+<li>Launch a Jupyter notebook server. Depending on your system settings and Jupyter version, the notebook server will either open a browser window or print a URL including an authorization token. If it does not open a browser window automatically, then copy the URL with the authorization token and paste it into the address bar of your browser.</li>
+</ol>
+<pre><code>(aind) $ jupyter notebook</code></pre>
+<ol start="4">
+<li>Use the Jupyter file navigator page in your browser to open <code>Exercises/1_Constraint Satisfaction/AIND-Constraint_Satisfaction.ipynb</code> and complete the steps described inside.</li>
+</ol>
+<h2 id="evaluation">Evaluation</h2>
+<p>There is no submission for this exercise; it is self-evaluated. You can find a sample <a href="https://github.com/udacity/artificial-intelligence/blob/solutions/Exercises/1_Constraint%20Satisfaction/AIND-Constraint_Satisfaction.ipynb" rel="noopener noreferrer" target="_blank">solution</a> in the <code>solutions</code> branch of the repository from GitHub. Keep in mind that there are many equally valid possible implementations for this code; <em>your</em> solution isn't "wrong" just because it's different. </p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="02. Intro to z3 Solver Programming.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('01. Introduction')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

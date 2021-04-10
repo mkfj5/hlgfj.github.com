@@ -1,0 +1,240 @@
+{
+  "data": {
+    "lesson": {
+      "id": 559000,
+      "key": "91f98086-586e-4a1d-91f1-9454e05d0136",
+      "title": "Introduction",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Peter Norvig, co-author of _Artificial Intelligence: A Modern Approach_, explains a framework for search problems, and introduces uninformed & informed search strategies to solve them.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/91f98086-586e-4a1d-91f1-9454e05d0136/559000/1538955064183/Introduction+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/91f98086-586e-4a1d-91f1-9454e05d0136/559000/1538955061706/Introduction+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 590556,
+          "key": "3a955131-bb9f-4bb7-8a60-0fbf298affe3",
+          "title": "Lesson Plan - Week 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3a955131-bb9f-4bb7-8a60-0fbf298affe3",
+            "completed_at": "2020-06-01T19:57:59.088Z",
+            "last_viewed_at": "2020-06-11T22:39:15.767Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 591149,
+              "key": "30ad040a-849c-4e68-9ca9-763db5ebf31b",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Lesson Plan: Week 3\n---\nThis week you'll focus on classical search algorithms, including depth-first search, breadth-first search, uniform cost search (which is very similar to Dijkstra's algorithm if you're already familiar with that), and A* search. When you're done, you'll have the chance to implement the various search algorithms for the game Pacman to help the titular character find food dots. You can find the exercise [here](https://classroom.udacity.com/nanodegrees/nd898/parts/842c5b09-edc1-4378-8c93-d37af6f57477/modules/bac8741b-1716-435f-9006-4f9bebfd9b7d/lessons/29b7c4db-0821-475a-b16a-7659868e01eb/concepts/a45c3ca7-bee3-45ac-b3ef-7f89bec96de5).\n\n#### Classroom\n- Watch the lectures on **Uninformed Search** & **Informed Search**\n- (_Optional_) Complete the classical search classroom exercise\n- (_Optional_) Review the **Additional Topics** module, which addresses some limitations of classical search and provides links for additional readings.\n\n#### Readings (_Optional_)\n- AIMA **Chapter 3**",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1056182,
+              "key": "3dc9d59b-9249-49d0-a0b6-ebd2a378c95b",
+              "title": "Problem Solving by Search",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Problem Solving by Search\n---\nIn this course, we will look into several `Search` algorithms to solve problems. Problem-solving agents use search algorithms to navigate through a set of state space of the problem and look for the goal states in order to return the solutions if they exist in the state space. We will deep dive into **uninformed** and **informed** search strategies in the next lessons to find solutions more efficiently.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1056183,
+              "key": "410089a1-2262-4826-968c-ebfe089b64a1",
+              "title": "Course Map",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/August/5f443d13_course-map-search/course-map-search.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/410089a1-2262-4826-968c-ebfe089b64a1",
+              "caption": "",
+              "alt": "",
+              "width": 720,
+              "height": 405,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 255824,
+          "key": "d1b1edfa-fb84-4b52-9860-b6c650580c7b",
+          "title": "Introducing Peter Norvig",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d1b1edfa-fb84-4b52-9860-b6c650580c7b",
+            "completed_at": "2020-06-01T19:58:18.500Z",
+            "last_viewed_at": "2020-06-01T19:59:40.425Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 255825,
+              "key": "3a31ea4b-be78-4149-9382-9ee8b2c46309",
+              "title": "Introducing Peter Norvig",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "d8r3uBQ6HNA",
+                "china_cdn_id": "d8r3uBQ6HNA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 229072,
+          "key": "22414608-e1df-4811-8839-7176475ea937",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "22414608-e1df-4811-8839-7176475ea937",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 230454,
+              "key": "1ec20e26-d404-4a28-9de6-e1ca119ee553",
+              "title": "Welcome to Search!",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "pHySYq-wghU",
+                "china_cdn_id": "pHySYq-wghU.mp4"
+              }
+            },
+            {
+              "id": 1056180,
+              "key": "214b36c9-4a85-41e7-b84e-a8ff878af411",
+              "title": "Navigation Problem",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Quiz: Route Finding Problem\n---\nOne application of the search algorithm is to find the shortest route between two cities.  Given the map below, can we find a path from Arad to Bucharest?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1056184,
+              "key": "8527a21a-41a6-4bfa-bd30-d2b5a6ddfa49",
+              "title": "Arad to Bucharest Map",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/August/5f443cac_l1-c3-quiz/l1-c3-quiz.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8527a21a-41a6-4bfa-bd30-d2b5a6ddfa49",
+              "caption": "",
+              "alt": "",
+              "width": 256,
+              "height": 357,
+              "instructor_notes": null
+            },
+            {
+              "id": 247675,
+              "key": "cd02793d-d5a7-47cf-a723-af4c936d6b51",
+              "title": "Quiz: Arad to Bucharest",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "cd02793d-d5a7-47cf-a723-af4c936d6b51",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Can we find a path from Arad to Bucharest?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Yes",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "No",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 229073,
+          "key": "2edb9de0-aa4c-4883-9d76-a942f94c66c9",
+          "title": "What Is A Problem?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2edb9de0-aa4c-4883-9d76-a942f94c66c9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 267216,
+              "key": "82bb6dc0-f75a-4548-841c-db98c72c8571",
+              "title": "What Is A Problem",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gepUYmWERZA",
+                "china_cdn_id": "gepUYmWERZA.mp4"
+              }
+            },
+            {
+              "id": 1056181,
+              "key": "c5ff9536-961c-4fc0-b58f-4316b50f0c40",
+              "title": "Problem Definition",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The route finding problem can be formulated as follows:\n* **Initial state**, denoted by S<sub>0</sub>, is any state that can be designated as the starting point.\n* **Actions**, denoted by: {a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub>, ...}, is a set of the possible actions available to the agent at _*any given state*_.\n* **Results**, denoted by S<sup>'</sup>, is the new stage where the agent ends up after taking an action at a given state.\n* **Goal Test**, denoted by a boolean of `True` or `False`, checks whether the current state is the goal state.\n* **Path Cost** is the sum of the cost of the individual steps. In the route finding problem, the cost could be the distance between two cities.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

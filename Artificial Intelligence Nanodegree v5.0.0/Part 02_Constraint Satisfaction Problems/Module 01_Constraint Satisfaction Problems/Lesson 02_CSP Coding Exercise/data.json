@@ -1,0 +1,139 @@
+{
+  "data": {
+    "lesson": {
+      "id": 594342,
+      "key": "357e219b-a97c-43a8-993c-3038dda4aa98",
+      "title": "CSP Coding Exercise",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Practice formulating some classical example problems as CSPs, and then to explore using a powerful open source constraint satisfaction tool called Z3 from Microsoft Research to solve them.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": null,
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 594343,
+          "key": "151f3162-5565-436b-abab-ee43674f61ff",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "151f3162-5565-436b-abab-ee43674f61ff",
+            "completed_at": "2020-06-10T07:04:17.561Z",
+            "last_viewed_at": "2020-06-11T21:39:29.164Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 594361,
+              "key": "e9b9999d-224d-4c3d-963f-6200afa8adb5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Introduction\nConstraint satisfaction is a general problem solving technique for solving a class of combinatorial optimization problems by imposing limits on the values in the solution. The goal of this exercise is to practice formulating some classical example problems as CSPs, and then to explore using a powerful open source constraint satisfaction tool called Z3 from Microsoft Research to solve them. Practicing with these simple problems will help you to recognize real-world problems that can be posed as CSPs; some solvers even have specialized utilities for specific types of problem (vehicle routing, planning, scheduling, etc.).\n\nThere are many different kinds of CSP solvers available for CSPs. Z3 is a \"Satisfiability Modulo Theories\" (SMT) solver, which means that unlike the backtracking and variable assignment heuristics discussed in lecture, Z3 first converts CSPs to satisfiability problems then uses a SAT solver to determine feasibility. Z3 includes a number of efficient solver algorithms primarily developed to perform formal program verification, but it can also be used on general CSPs. Google's OR tools includes a CP solver using backtracking with specialized subroutines for some common CP domains.\n\n#### ATTENTION WINDOWS USERS\n**NOTE: It is _very_ difficult to install Z3 on some versions of Windows. You may try following the instructions for setting up your environment in the first lesson, but if you are unable to install Z3 on your Windows machine then you should complete this exercise in the Workspace environment provided. The Workspace environment includes git version control, and offers the same Jupyter interface you would use in your local environment.**\n\n## Getting Started\nThe easiest way to complete the exercise is to click \"next\" below to open a Workspace that already has a Jupyter notebook server running and comes pre-loaded with all required files and libraries. The notebook contains all required instructions to complete the exercise.\n\nIf you would prefer to complete the exercise in your own local environment, then follow the steps below:\n\n1. Follow the instructions from before the first project to install and activate the aind conda environment in a terminal window.\n\n2. Clone the AIND coursework files from github (or open your local copy)\n```\n(aind) $ git clone https://github.com/udacity/artificial-intelligence\n(aind) $ cd artificial-intelligence\n```\n3. Launch a Jupyter notebook server. Depending on your system settings and Jupyter version, the notebook server will either open a browser window or print a URL including an authorization token. If it does not open a browser window automatically, then copy the URL with the authorization token and paste it into the address bar of your browser.\n```\n(aind) $ jupyter notebook\n```\n4. Use the Jupyter file navigator page in your browser to open `Exercises/1_Constraint Satisfaction/AIND-Constraint_Satisfaction.ipynb` and complete the steps described inside.\n\n## Evaluation\nThere is no submission for this exercise; it is self-evaluated. You can find a sample [solution](https://github.com/udacity/artificial-intelligence/blob/solutions/Exercises/1_Constraint%20Satisfaction/AIND-Constraint_Satisfaction.ipynb) in the `solutions` branch of the repository from GitHub. Keep in mind that there are many equally valid possible implementations for this code; _your_ solution isn't \"wrong\" just because it's different. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1052908,
+          "key": "ccbc5a7d-0906-4efc-a1d4-cc848f2b77bc",
+          "title": "Intro to z3 Solver Programming",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ccbc5a7d-0906-4efc-a1d4-cc848f2b77bc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1052909,
+              "key": "0258183e-def5-4193-9dcf-0e40d08416cf",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r845473c1052908xJUPYTERupwbd4wa",
+              "pool_id": "jupyter",
+              "view_id": "jupyter-ockmp",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowGrade": false,
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/intro_z3_solver.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 556673,
+          "key": "71186ecb-0c6d-4312-b60d-562e2d0e2d65",
+          "title": "Coding Exercise: Using CSPs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71186ecb-0c6d-4312-b60d-562e2d0e2d65",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 594341,
+              "key": "b66b58da-9fb5-43ed-bd6a-4194fb064ef3",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view45c7d8a1",
+              "pool_id": "jupyter",
+              "view_id": "45c7d8a1-4d28-4605-91a1-d915efbdb119",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Exercises/1_Constraint Satisfaction/AIND-Constraint_Satisfaction.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    }
+  ]
+}

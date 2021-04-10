@@ -1,0 +1,142 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.250 --> 00:00:02.840
+Speaking about saving time
+through deep searching
+
+00:00:02.840 --> 00:00:06.170
+another powerful trick is to look
+at the structure of the problem and
+
+00:00:06.170 --> 00:00:09.710
+see if we can decompose it to
+several independent problems.
+
+00:00:09.710 --> 00:00:13.620
+&gt;&gt; For example, Tasmania is independent
+of the rest of the Australia problem.
+
+00:00:13.620 --> 00:00:15.360
+We can solve it separately.
+
+00:00:15.360 --> 00:00:17.620
+&gt;&gt; Which takes a level
+off our search tree.
+
+00:00:17.620 --> 00:00:21.110
+In general, suppose we have
+a problem with 80 binary variables.
+
+00:00:21.110 --> 00:00:24.390
+We can divide it into 4
+problems of 20 variables.
+
+00:00:24.390 --> 00:00:30.740
+We go from a search space of 2 to
+the 80th to 4 times 2 to the 20th.
+
+00:00:30.740 --> 00:00:32.970
+&gt;&gt; Even better, if we have
+a CSP where there are no loops,
+
+00:00:32.970 --> 00:00:38.310
+we can solve the problem in OND
+squared time instead of OD to the N.
+
+00:00:38.310 --> 00:00:39.470
+&gt;&gt; How?
+
+00:00:39.470 --> 00:00:42.390
+&gt;&gt; We pick any variable to be the root
+of the tree and choose an ordering of
+
+00:00:42.390 --> 00:00:46.510
+the variable such that each variable
+appeared after its parent in the tree.
+
+00:00:46.510 --> 00:00:49.064
+We then start at the end and
+make each parent arc consistent,
+
+00:00:49.064 --> 00:00:51.670
+going up the tree until
+we get to the top.
+
+00:00:51.670 --> 00:00:53.520
+&gt;&gt; What if that is not possible?
+
+00:00:53.520 --> 00:00:55.542
+&gt;&gt; Then we report
+failure of the problem.
+
+00:00:55.542 --> 00:00:56.315
+&gt;&gt; Okay.
+
+00:00:56.315 --> 00:00:57.550
+What's next?
+
+00:00:57.550 --> 00:00:58.360
+&gt;&gt; It's simple.
+
+00:00:58.360 --> 00:01:00.980
+We start at the top of the tree and
+pick any assignment available.
+
+00:01:00.980 --> 00:01:03.510
+Going back down the tree
+until we get to the end.
+
+00:01:03.510 --> 00:01:06.530
+Since the trees aren't consistent any
+of the available assignments will solve
+
+00:01:06.530 --> 00:01:07.540
+the problem.
+
+00:01:07.540 --> 00:01:09.480
+&gt;&gt; How fast is this process?
+
+00:01:09.480 --> 00:01:12.421
+O of ND squared where N is
+the number of variables again and
+
+00:01:12.421 --> 00:01:14.310
+D is the size of the domain.
+
+00:01:14.310 --> 00:01:17.990
+&gt;&gt; So this trick really helps out
+with the speed of finding a solution.
+
+00:01:17.990 --> 00:01:21.110
+But what if the constrain
+graph really isn't a tree?
+
+00:01:21.110 --> 00:01:24.424
+&gt;&gt; Well, sometimes you condition
+a problem by assigning value to some
+
+00:01:24.424 --> 00:01:27.492
+variables and
+change the constrain graph into a tree.
+
+00:01:27.492 --> 00:01:30.348
+&gt;&gt; Like with our Australia
+coloring example.
+
+00:01:30.348 --> 00:01:33.866
+If we assign a value to South Australia
+first and remove that value from
+
+00:01:33.866 --> 00:01:37.506
+the possibilities of its neighbors,
+then the problem becomes a tree and
+
+00:01:37.506 --> 00:01:40.350
+we can use our fast method
+to solve the problem.
+
+00:01:40.350 --> 00:01:40.800
+&gt;&gt; Precisely.
+

@@ -1,0 +1,118 @@
+{
+  "data": {
+    "lesson": {
+      "id": 558992,
+      "key": "80a98ff5-e539-4964-b96d-d1acdc3358a6",
+      "title": "Additional Search Topics",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "References to additional readings on search.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/80a98ff5-e539-4964-b96d-d1acdc3358a6/558992/1538955255615/Additional+Search+Topics+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/80a98ff5-e539-4964-b96d-d1acdc3358a6/558992/1538955252973/Additional+Search+Topics+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 232775,
+          "key": "e7ead685-0752-4b5b-83af-e161f0480eec",
+          "title": "Problems with Search",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e7ead685-0752-4b5b-83af-e161f0480eec",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 246246,
+              "key": "a7328ad1-b0ce-4ff0-807a-06864e2c71d1",
+              "title": "Problems With Search",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "5RmTKsNoG6M",
+                "china_cdn_id": "5RmTKsNoG6M.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 255832,
+          "key": "d2fd5c51-e230-461d-96ad-cf01473c73b1",
+          "title": "Peter's take on AI",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d2fd5c51-e230-461d-96ad-cf01473c73b1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 255863,
+              "key": "fd95f06f-73fe-456d-87eb-32b1723b83df",
+              "title": "Peter's Take on AI",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "klwnKuusFhw",
+                "china_cdn_id": "klwnKuusFhw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 558993,
+          "key": "8961898a-da0c-49e4-a650-e226a42b6731",
+          "title": "Suggested Readings",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8961898a-da0c-49e4-a650-e226a42b6731",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 558994,
+              "key": "d22b70e4-3e31-4d23-a012-3928f48a56a5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The resources here may be useful if you're interested in learning more about state of the art search algorithms.\n\n## References\n- [Dijkstra's Algorithm vs. UCS](http://www.ise.bgu.ac.il/faculty/felner/papers/2011/socs/dikstra.pdf)\n- [Variants of A*](http://theory.stanford.edu/~amitp/GameProgramming/Variations.html)\n- [Jump Point Search](https://en.wikipedia.org/wiki/Jump_point_search) ←Can be 100x faster than A*",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

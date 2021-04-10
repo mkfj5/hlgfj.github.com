@@ -1,0 +1,270 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Why Backtracking?</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Constraint Satisfaction Problems</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Lesson Plan - Week 2.html">01. Lesson Plan - Week 2</a>
+    </li>
+    <li class="">
+      <a href="02. Introduction.html">02. Introduction</a>
+    </li>
+    <li class="">
+      <a href="03. CSP Examples.html">03. CSP Examples</a>
+    </li>
+    <li class="">
+      <a href="04. Map Coloring.html">04. Map Coloring</a>
+    </li>
+    <li class="">
+      <a href="05. Constraint Graph.html">05. Constraint Graph</a>
+    </li>
+    <li class="">
+      <a href="06. Map Coloring Quiz.html">06. Map Coloring Quiz</a>
+    </li>
+    <li class="">
+      <a href="07. Constraint Types.html">07. Constraint Types</a>
+    </li>
+    <li class="">
+      <a href="08. Backtracking Search.html">08. Backtracking Search</a>
+    </li>
+    <li class="">
+      <a href="09. Why Backtracking.html">09. Why Backtracking?</a>
+    </li>
+    <li class="">
+      <a href="10. Improving Backtracking Efficiency.html">10. Improving Backtracking Efficiency</a>
+    </li>
+    <li class="">
+      <a href="11. Backtracking Optimization Quiz.html">11. Backtracking Optimization Quiz</a>
+    </li>
+    <li class="">
+      <a href="12. Forward Checking.html">12. Forward Checking</a>
+    </li>
+    <li class="">
+      <a href="13. Constraint Propagation and Arc Consistency.html">13. Constraint Propagation and Arc Consistency</a>
+    </li>
+    <li class="">
+      <a href="14. Constraint Propagation Quiz.html">14. Constraint Propagation Quiz</a>
+    </li>
+    <li class="">
+      <a href="15. Structured CSPs.html">15. Structured CSPs</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">09. Why Backtracking?</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Untitled</p></h3>
+  <div>
+  <h3 id="search-in-csps">Search in CSPs</h3>
+<p>The basic idea of searching for a solution in a CSP is that you guess assignments <em>var = value</em> in order to advance to the next state until every variable is assigned to a valid value. </p>
+<p>If we used a standard depth-first search (which we'll cover in detail in a later module), then for <code>n</code> variables each with <code>d</code> possible values the branching factor of the resulting tree would be <code>nd</code> at the top level, <em>(n-1)d</em> at the second level, <em>(n-2)d</em> at the next level, and so on. The total branching factor would be <em>n! d^n</em> when there are only <em>d^n</em> possible assignments.</p>
+<p>The animation below shows the node search order using depth-first search with two variables: (i) <code>A</code> which can be assigned a value in (0, 1, 2), and (ii) <code>B</code> which can be assigned a value in (0, 1). </p>
+<p>Note that there are 1x3+1x2=5 children of the root node, and a total of 2x3 + 3x2=12 leaf nodes–every possible solution assignment is tested twice—and we'll test <em>many</em> partial solutions that are <strong>inconsistent</strong> (at least one constraint is violated by the partial assignment). These are exactly the problems that backtracking fixes.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/dfs.gif" alt="Depth first search node traversal order" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Depth first search node traversal order</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Untitled</p></h3>
+  <div>
+  <h3 id="backtracking-to-avoid-redundancy">Backtracking to avoid redundancy</h3>
+<p>The depth-first search tries both assigning <code>A</code> before <code>B</code> <strong>and</strong> assigning <code>B</code> before <code>A</code>. But the order of the assignments doesn't matter in finding a solution, so only one possible order needs to be tested. Backtracking is identical to depth-first search order, but it only evaluates a single assignment order for the variables and it reverts an assignment whenever the current state is inconsistent with any of the problem constraints. Backtracking will typically find a solution faster than a depth-first search.</p>
+<p>One key feature of backtracking search is that the choice of which variable to assign first and the choice of which value to assign can have a big impact on the efficiency of the search. That'll be the topic of the next lesson.</p>
+<p>The animation below shows the node search order on the same problem using one possible assignment order with backtracking search. (Note that we don't have any constraints involved, so it is identical to half of DFS in this case.) The backtracking search chooses one particular assignment order (in this case <code>A</code> is assigned, then <code>B</code>) so there are only 1x3 = 3 children of the root node, and 3x2=6 leaf nodes.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/backtracking.gif" alt="Backtracking eliminates redundant subgraphs" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Backtracking eliminates redundant subgraphs</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Untitled</p></h3>
+  <div>
+  <h3 id="aside-local-search">Aside: Local Search</h3>
+<p>Although we won't spend much time on it in this section, another alternative to depth-first or backtracking search is to use local search for solving CSPs. While depth-first search and backtracking apply variable assignments one at a time, local search always considers complete assignments -- every variable in the problem is always assigned to a concrete value (compare that to the root node of a DFS tree where <em>none</em> of the variables are assigned). </p>
+<p>Local search operates by starting with a complete assignment, then modifying one or more of the variable values within some "local neighborhood" of the current assignment. For example, (<code>A</code>=1,<code>B</code>=0) might change to (<code>A</code>=0,<code>B</code>=0) if we define the neighborhood as "a single value can change +/-1" (although other rules could also be chosen).</p>
+<p>The animation below shows one possible node search order on the example problem for some notional local search. We will discuss local search in greater detail in the optimization problems lesson later in the course.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/local.gif" alt="Local search only considers complete assignments" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Local search only considers complete assignments</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="10. Improving Backtracking Efficiency.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('09. Why Backtracking?')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

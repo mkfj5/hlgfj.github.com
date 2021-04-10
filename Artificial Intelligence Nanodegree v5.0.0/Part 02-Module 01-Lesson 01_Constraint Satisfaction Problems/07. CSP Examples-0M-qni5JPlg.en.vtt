@@ -1,0 +1,45 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.300 --> 00:00:05.420
+Besides unary and binary constraints, we
+could have constraints that involve 3 or
+
+00:00:05.420 --> 00:00:09.140
+more variables or soft constraints
+like the fact that I prefer to
+
+00:00:09.140 --> 00:00:11.580
+teach on a Tuesday/Thursday schedule.
+
+00:00:11.580 --> 00:00:15.358
+Problems with preference constraints are
+called constraint optimization problems
+
+00:00:15.358 --> 00:00:17.640
+and are with solving linear programming.
+
+00:00:17.640 --> 00:00:20.860
+&gt;&gt; There are lots of examples of
+constraint satisfaction problems.
+
+00:00:20.860 --> 00:00:23.790
+Sudoku is a classic game which can be
+solved with any of the methods we will
+
+00:00:23.790 --> 00:00:24.640
+be teaching.
+
+00:00:24.640 --> 00:00:28.860
+&gt;&gt; Other examples include car assembly,
+job scheduling in factories, class
+
+00:00:28.860 --> 00:00:33.550
+scheduling, spreadsheets, transportation
+scheduling or floor planning.
+
+00:00:33.550 --> 00:00:35.930
+Many of these require
+real-valued variables.
+

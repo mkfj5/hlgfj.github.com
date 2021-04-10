@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.260 --> 00:00:03.980
+Anyway, unary constraints restrict
+the value of a given variable,
+
+00:00:03.980 --> 00:00:06.190
+like saying Tasmania can't be purple.
+
+00:00:06.190 --> 00:00:08.950
+&gt;&gt; Binary constraints relate,
+at most, two variables.
+
+00:00:08.950 --> 00:00:11.310
+We can represent those
+with a constraint graph.
+
+00:00:11.310 --> 00:00:14.740
+&gt;&gt; Here's a constraint graph for
+our Australia coloring problem.
+
+00:00:14.740 --> 00:00:18.684
+Nodes are the variables,
+like Western Australia,
+
+00:00:18.684 --> 00:00:22.090
+South Australia, Queensland, etc.
+
+00:00:22.090 --> 00:00:24.690
+Arcs show the constraints
+between the variables.
+
+00:00:24.690 --> 00:00:27.497
+&gt;&gt; We can apply general-purpose
+constraint satisfaction problem
+
+00:00:27.497 --> 00:00:30.566
+algorithms to the graph structure to
+speed up our search for an answer.
+
+00:00:30.566 --> 00:00:33.750
+For example, Tasmania is independent
+from the rest of the problem.
+

@@ -1,0 +1,184 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.250 --> 00:00:03.380
+However, I noticed we could've
+stop our search earlier.
+
+00:00:03.380 --> 00:00:04.400
+&gt;&gt; How?
+
+00:00:04.400 --> 00:00:07.800
+&gt;&gt; At this step we said the Northern
+Territory in South Australia
+
+00:00:07.800 --> 00:00:09.280
+both had to be blue.
+
+00:00:09.280 --> 00:00:10.000
+&gt;&gt; So?
+
+00:00:10.000 --> 00:00:11.880
+&gt;&gt; But this two regions are adjacent.
+
+00:00:11.880 --> 00:00:13.960
+We know they can't both be blue.
+
+00:00:13.960 --> 00:00:17.180
+&gt;&gt; I see, for checking propagates
+information from assigned to
+
+00:00:17.180 --> 00:00:20.940
+unassigned variables but doesn't provide
+early detection from all failures.
+
+00:00:20.940 --> 00:00:24.020
+Instead, we can use constraint
+propagation repeatedly to enforce all
+
+00:00:24.020 --> 00:00:25.650
+the local constraints.
+
+00:00:25.650 --> 00:00:27.210
+&gt;&gt; We can use Arc Consistency for
+
+00:00:27.210 --> 00:00:29.730
+a simple version of
+constraint propagation.
+
+00:00:29.730 --> 00:00:33.070
+A variable, and a constraint
+satisfaction problem is arc consistent,
+
+00:00:33.070 --> 00:00:37.050
+with respect to another variable, if
+there is some value still available for
+
+00:00:37.050 --> 00:00:40.320
+the second variable, after we assign
+a value to the first variable.
+
+00:00:40.320 --> 00:00:43.090
+If all variables in a graph
+satisfies this condition,
+
+00:00:43.090 --> 00:00:45.520
+then the network is arc consistent.
+
+00:00:45.520 --> 00:00:47.490
+&gt;&gt; Let's look at the practical example.
+
+00:00:47.490 --> 00:00:50.310
+Once we get to the stage of signing
+green to Queensland we look at
+
+00:00:50.310 --> 00:00:52.122
+of its neighbors that are unassigned and
+
+00:00:52.122 --> 00:00:56.070
+see if the assignment of green reduces
+the number colors available to them.
+
+00:00:56.070 --> 00:00:58.221
+If so,
+we remove from a neighboring region.
+
+00:00:58.221 --> 00:01:00.981
+And then look at its neighboring regions
+to see if we need to appropriate
+
+00:01:00.981 --> 00:01:02.120
+the change onward.
+
+00:01:02.120 --> 00:01:04.300
+We keep doing this process
+until it terminates or
+
+00:01:04.300 --> 00:01:07.370
+we determine that one of the regions
+does not have any colors left.
+
+00:01:07.370 --> 00:01:10.675
+&gt;&gt; So here, we have removed green
+from South Australia's list and
+
+00:01:10.675 --> 00:01:12.290
+we're now looking at its neighbors.
+
+00:01:12.290 --> 00:01:15.680
+New South Wales is a neighbor, and
+in order to be arc consistent,
+
+00:01:15.680 --> 00:01:19.380
+we will have to remove blue
+from its available colors.
+
+00:01:19.380 --> 00:01:21.120
+It can only be orange.
+
+00:01:21.120 --> 00:01:23.150
+&gt;&gt; Victoria is a neighbor
+of New South Wales so
+
+00:01:23.150 --> 00:01:25.120
+we look to see if the change affects it.
+
+00:01:25.120 --> 00:01:26.490
+In fact it does.
+
+00:01:26.490 --> 00:01:29.680
+We remove orange from Victoria's
+list of available colors.
+
+00:01:29.680 --> 00:01:30.560
+Our choice in green for
+
+00:01:30.560 --> 00:01:34.630
+Queensland has caused a chain of changes
+in possible values for our variables.
+
+00:01:34.630 --> 00:01:36.779
+&gt;&gt; Why don't we remove blue,
+while we're at it so
+
+00:01:36.779 --> 00:01:39.162
+Victoria doesn't conflict
+with South Australia?
+
+00:01:39.162 --> 00:01:42.530
+&gt;&gt; Well, we haven't gotten that far
+in our queue of things to check yet.
+
+00:01:42.530 --> 00:01:44.700
+Next, we're going to look at
+the Northern Territory because it
+
+00:01:44.700 --> 00:01:48.310
+has another neighbor that might be
+affected by South Australia's change.
+
+00:01:48.310 --> 00:01:49.720
+In fact, we see South Australia and
+
+00:01:49.720 --> 00:01:52.637
+the Northern Territory are both
+restricted to blue which is not allowed.
+
+00:01:52.637 --> 00:01:55.810
+So we return a failure and force
+the search to try another option for
+
+00:01:55.810 --> 00:01:57.160
+Queensland.
+
+00:01:57.160 --> 00:01:58.940
+&gt;&gt; Wow, that was a lot of work.
+
+00:01:58.940 --> 00:02:01.160
+&gt;&gt; But it can save a lot of
+unnecessary deep searching for
+
+00:02:01.160 --> 00:02:02.510
+more complicated problems.
+

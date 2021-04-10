@@ -1,0 +1,26 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.260 --> 00:00:03.190
+Let's consider the optimizations
+we just discussed.
+
+00:00:03.190 --> 00:00:04.553
+For this half colored map,
+
+00:00:04.553 --> 00:00:08.121
+which region should we fill in next
+in order to minimize backtracking?
+
+00:00:08.121 --> 00:00:09.515
+There might be multiple answers here.
+
+00:00:09.515 --> 00:00:11.370
+But choose one of these
+optimizations and
+
+00:00:11.370 --> 00:00:13.280
+choose the region that
+matches with that.
+

@@ -1,0 +1,133 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.220 --> 00:00:02.920
+So which algorithm are we going
+to show first to solve constraint
+
+00:00:02.919 --> 00:00:04.230
+satisfaction problems?
+
+00:00:04.230 --> 00:00:06.259
+&gt;&gt; Well the stupid one first of course.
+
+00:00:06.259 --> 00:00:07.359
+&gt;&gt; I had to ask.
+
+00:00:07.360 --> 00:00:09.490
+&gt;&gt; Then we'll add
+intelligence as we need it.
+
+00:00:09.490 --> 00:00:11.199
+&gt;&gt; Okay, we'll use simple search.
+
+00:00:11.199 --> 00:00:13.660
+States are defined by
+the values assigned so far.
+
+00:00:13.660 --> 00:00:15.720
+&gt;&gt; The initial state is
+the empty assignment.
+
+00:00:15.720 --> 00:00:18.320
+First we'll check to see if
+the current assignment is the goal.
+
+00:00:18.320 --> 00:00:21.120
+&gt;&gt; Then we will assign a value to
+an unassigned variable that does not
+
+00:00:21.120 --> 00:00:22.960
+conflict with the current assignment.
+
+00:00:22.960 --> 00:00:26.160
+&gt;&gt; We call it a dead end if
+there are no legal assignments.
+
+00:00:26.160 --> 00:00:28.660
+In that case, we will back up
+to the previous state, and
+
+00:00:28.660 --> 00:00:30.160
+try another assignment.
+
+00:00:30.160 --> 00:00:32.539
+&gt;&gt; And we recurse until we
+either find the answer or
+
+00:00:32.539 --> 00:00:35.500
+try all the possible assignments and
+report failure.
+
+00:00:35.500 --> 00:00:38.740
+&gt;&gt; Let's make the algorithm
+concrete by doing an example.
+
+00:00:38.740 --> 00:00:39.370
+&gt;&gt; Okay.
+
+00:00:39.369 --> 00:00:41.259
+Here's our map of Australia.
+
+00:00:41.259 --> 00:00:43.724
+&gt;&gt; We will work with
+western Australia first.
+
+00:00:43.725 --> 00:00:47.439
+&gt;&gt; We could have one of three colors,
+orange, green or blue.
+
+00:00:47.439 --> 00:00:48.659
+&gt;&gt; I'll choose orange.
+
+00:00:48.659 --> 00:00:49.579
+&gt;&gt; Okay.
+
+00:00:49.579 --> 00:00:51.939
+What section do you want
+us to look at next?
+
+00:00:51.939 --> 00:00:53.719
+&gt;&gt; How about the northern territory.
+
+00:00:53.719 --> 00:00:54.310
+&gt;&gt; Great.
+
+00:00:54.310 --> 00:00:58.076
+Since we chose orange for western
+Australia, for northern territory,
+
+00:00:58.076 --> 00:01:00.439
+can have two colors, green or blue.
+
+00:01:00.439 --> 00:01:01.649
+&gt;&gt; Let's choose green.
+
+00:01:01.649 --> 00:01:06.349
+&gt;&gt; Okay, now let's work with Queensland
+next, it can be orange or blue.
+
+00:01:06.349 --> 00:01:07.559
+&gt;&gt; Let's choose blue.
+
+00:01:07.560 --> 00:01:12.010
+&gt;&gt; But now we are in trouble, there
+are no colors left for South Australia.
+
+00:01:12.010 --> 00:01:15.450
+&gt;&gt; Okay, well that's a dead end,
+let's back up and try the other branch,
+
+00:01:15.450 --> 00:01:18.109
+where we only used orange and
+green up to this point.
+
+00:01:18.109 --> 00:01:20.489
+&gt;&gt; And eventually we'll find
+the answer this way, but
+
+00:01:20.489 --> 00:01:23.059
+we can improve the efficiency
+of the algorithm significantly.
+
