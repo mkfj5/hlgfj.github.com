@@ -1,0 +1,150 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.320 --> 00:00:02.496
+Let's suppose we have two signals
+that really are not that similar.
+
+00:00:02.496 --> 00:00:07.269
+Dynamic time warping could allow them
+to match much better than they should.
+
+00:00:07.269 --> 00:00:09.990
+Look at this example where we
+use a different shorter signal
+
+00:00:09.990 --> 00:00:12.830
+along with the same long
+one as in the last example.
+
+00:00:12.830 --> 00:00:13.800
+&gt;&gt; Okay.
+
+00:00:13.800 --> 00:00:16.429
+&gt;&gt; While I have to start by
+matching the 0 and the 3,
+
+00:00:16.429 --> 00:00:19.620
+I can match the first half of
+the x-axis sequence to the 3 so
+
+00:00:19.620 --> 00:00:23.140
+that I can get to the negative section
+of the sequence to get a better match.
+
+00:00:23.140 --> 00:00:25.850
+Then I'm in a positive section
+of both sequences again.
+
+00:00:25.850 --> 00:00:27.429
+&gt;&gt; Yep, that can be a problem.
+
+00:00:27.429 --> 00:00:30.500
+In this case, the distance is poor
+because of all those numbers the first
+
+00:00:30.500 --> 00:00:33.189
+part of the sequence, matching the 3.
+
+00:00:33.189 --> 00:00:35.799
+But the severe amount of
+warping we're allowing
+
+00:00:35.799 --> 00:00:38.959
+means that the distance is
+probably smaller than we'd like.
+
+00:00:38.960 --> 00:00:41.859
+&gt;&gt; One way we could force a more
+reasonable matching is to bound how
+
+00:00:41.859 --> 00:00:44.030
+much we're allowed to
+deviate from the diagonal.
+
+00:00:44.030 --> 00:00:48.090
+&gt;&gt; Yep, we can use Sakoe Chiba Bounds
+to force more reasonable matches.
+
+00:00:48.090 --> 00:00:49.903
+&gt;&gt; Sakoe Chiba,
+now you're just making things up.
+
+00:00:49.902 --> 00:00:52.009
+&gt;&gt; No, no, really.
+
+00:00:52.009 --> 00:00:54.570
+It says we won't allow
+matches outside the limits
+
+00:00:54.570 --> 00:00:56.920
+placed by these diagonal lines.
+
+00:00:56.920 --> 00:00:59.969
+&gt;&gt; That will cause the matches to be
+worse leading to a bigger distance.
+
+00:00:59.969 --> 00:01:01.439
+&gt;&gt; Which is what we want.
+
+00:01:01.439 --> 00:01:03.176
+&gt;&gt; How do we calculate these bounds?
+
+00:01:03.176 --> 00:01:06.349
+&gt;&gt; Often empirically,
+we set different bounds and
+
+00:01:06.349 --> 00:01:09.030
+use cross validation to make
+sure they are reasonable.
+
+00:01:09.030 --> 00:01:11.920
+&gt;&gt; Well, what if some sections of the
+signal should have different bounds than
+
+00:01:11.920 --> 00:01:12.820
+others?
+
+00:01:12.819 --> 00:01:17.729
+&gt;&gt; Like on our example, this section
+here might have a lot of variance
+
+00:01:17.730 --> 00:01:22.790
+being shorter along, but the hump
+may have less variability and shape.
+
+00:01:22.790 --> 00:01:26.410
+&gt;&gt; And perhaps the last section can
+then have more variability again.
+
+00:01:26.409 --> 00:01:28.289
+Basically there are three
+sections of the signal and
+
+00:01:28.290 --> 00:01:30.859
+each can have a different
+amount of allowed warping.
+
+00:01:30.859 --> 00:01:33.760
+&gt;&gt; We could try to have
+different Sakoe Chiba Bounds for
+
+00:01:33.760 --> 00:01:35.290
+each section of the signal.
+
+00:01:35.290 --> 00:01:37.530
+&gt;&gt; True, but
+that seems complicated to train.
+
+00:01:37.530 --> 00:01:40.530
+And I know you prefer hidden
+markup models for such problems.
+
+00:01:40.530 --> 00:01:41.840
+Why don't you introduce them?
+
+00:01:41.840 --> 00:01:43.859
+&gt;&gt; Okay,
+you know they're my favorite technique.
+

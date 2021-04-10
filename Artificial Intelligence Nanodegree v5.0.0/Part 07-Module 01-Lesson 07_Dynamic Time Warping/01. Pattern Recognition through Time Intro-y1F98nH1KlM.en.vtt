@@ -1,0 +1,136 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.260 --> 00:00:02.843
+Thad, we've covered a lot of different
+machine learning algorithms.
+
+00:00:02.843 --> 00:00:05.576
+But what about situations
+where we have time series?
+
+00:00:05.575 --> 00:00:07.569
+&gt;&gt; You mean like speech recognition?
+
+00:00:07.570 --> 00:00:10.120
+&gt;&gt; Yeah, I know you've worked
+in sign language recognition and
+
+00:00:10.119 --> 00:00:11.369
+handwriting recognition.
+
+00:00:11.369 --> 00:00:13.000
+They seem to be similar problems.
+
+00:00:13.000 --> 00:00:14.539
+&gt;&gt; Yep, they are.
+
+00:00:14.539 --> 00:00:17.228
+Pattern recognition through
+time is one of my specialties.
+
+00:00:17.228 --> 00:00:20.253
+And it's where the AI community
+has made a lot of progress.
+
+00:00:20.253 --> 00:00:23.257
+When you think about it, pattern
+recognition through time should be
+
+00:00:23.257 --> 00:00:26.520
+easier than situations where
+you have just one measurement.
+
+00:00:26.519 --> 00:00:29.841
+&gt;&gt; You mean like how face recognition
+is easier when you have a video of
+
+00:00:29.841 --> 00:00:31.871
+a person, as opposed to a single photo?
+
+00:00:31.871 --> 00:00:34.460
+If one particular frame of
+the video is badly lit or
+
+00:00:34.460 --> 00:00:37.487
+the person is looking away
+the next frame might be better.
+
+00:00:37.487 --> 00:00:38.750
+&gt;&gt; Precisely.
+
+00:00:38.750 --> 00:00:42.009
+But in this section, we are going to
+focus on situations where there's
+
+00:00:42.009 --> 00:00:44.670
+a language-like
+structure to the problem.
+
+00:00:44.670 --> 00:00:48.490
+In other words, there's some fundamental
+unit, like a phoning in speech, or
+
+00:00:48.490 --> 00:00:49.689
+letter in handwriting,
+
+00:00:49.689 --> 00:00:53.238
+that's combined with other units to
+make bigger constructs like words.
+
+00:00:53.238 --> 00:00:56.424
+Which are then combined in even
+larger structures, like sentences.
+
+00:00:56.424 --> 00:00:59.003
+&gt;&gt; So besides speech,
+sign language and handwriting,
+
+00:00:59.003 --> 00:01:02.500
+what other problems have
+the same sort of structure?
+
+00:01:02.500 --> 00:01:03.624
+&gt;&gt; Well, in my opinion,
+
+00:01:03.624 --> 00:01:07.640
+most human activities through time
+have a language-like structure.
+
+00:01:07.640 --> 00:01:10.150
+Playing basketball, driving a car, or
+
+00:01:10.150 --> 00:01:14.580
+even just vacuuming the floor, all seem
+to have similiar units of movement,
+
+00:01:14.579 --> 00:01:17.519
+combinations of those movements and
+source statistical grammar.
+
+00:01:18.599 --> 00:01:22.709
+I believe this area of AI is one of
+the most promising for future research.
+
+00:01:22.709 --> 00:01:25.021
+I'm excited to share my
+knowledge of the subject.
+
+00:01:25.022 --> 00:01:27.441
+&gt;&gt; And then we're going to
+cover dynamic time warp and
+
+00:01:27.441 --> 00:01:29.397
+hidden Markov models in this section.
+
+00:01:29.397 --> 00:01:31.088
+Where should we start?
+
+00:01:31.088 --> 00:01:34.337
+&gt;&gt; Well, let's start with a challenge
+question on HMMs that gives a preview of
+
+00:01:34.337 --> 00:01:35.829
+what we're going to be learning.
+

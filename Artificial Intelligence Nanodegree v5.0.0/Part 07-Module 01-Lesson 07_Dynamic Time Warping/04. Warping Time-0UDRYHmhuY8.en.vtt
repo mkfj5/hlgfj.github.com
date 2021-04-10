@@ -1,0 +1,38 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.270 --> 00:00:03.430
+That will help our recognizer handle the
+whistles no matter what frequency they
+
+00:00:03.430 --> 00:00:04.379
+start at.
+
+00:00:04.379 --> 00:00:06.760
+Next let's work on the time warping.
+
+00:00:06.761 --> 00:00:11.663
+&gt;&gt; Just to be clear you're talking about
+the problem where I could draw out your
+
+00:00:11.663 --> 00:00:14.894
+name saying Fad or
+say your name quickly like Fad.
+
+00:00:14.894 --> 00:00:17.419
+&gt;&gt; Yep,
+that's precisely the problem we have.
+
+00:00:17.420 --> 00:00:20.929
+But with dolphin whistles, the problem
+is easy to see in the spectrogram.
+
+00:00:20.929 --> 00:00:25.559
+Basically we need to match the features
+that make the whistle distinct no matter
+
+00:00:25.559 --> 00:00:27.829
+if they are drawn out or
+produced quickly.
+

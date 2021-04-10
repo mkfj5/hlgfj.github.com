@@ -1,0 +1,108 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.120 --> 00:00:04.179
+Let's start with a problem I'm currently
+exploring, dolphin communication.
+
+00:00:04.179 --> 00:00:06.389
+Here's a spectrogram
+of a dolphin whistle.
+
+00:00:06.389 --> 00:00:11.019
+In actuality, dolphins have several
+types of vocalizations, including burst
+
+00:00:11.019 --> 00:00:15.759
+pulses and echolocation, but whistles
+are the easiest to see in a spectrogram.
+
+00:00:15.759 --> 00:00:17.861
+&gt;&gt; First,
+let's talk about what a spectrogram is.
+
+00:00:17.861 --> 00:00:22.492
+On this spectrogram, the x-axis is time,
+and the y-axis is frequency.
+
+00:00:22.492 --> 00:00:26.356
+The brightness of the pixels indicate
+the amount of power in that frequency
+
+00:00:26.356 --> 00:00:26.733
+band.
+
+00:00:26.733 --> 00:00:30.295
+&gt;&gt; Since we are recording in the ocean
+there's a lot of noise in the lower
+
+00:00:30.295 --> 00:00:31.103
+frequencies.
+
+00:00:31.103 --> 00:00:34.731
+5kHz and lower tends to have
+a lot of boat and wave noise.
+
+00:00:34.731 --> 00:00:40.228
+&gt;&gt; [SOUND]
+&gt;&gt; However,
+
+00:00:40.228 --> 00:00:46.279
+the whistles of the Atlantic spotted
+dolphin tend to range from 5kHz-17kHz.
+
+00:00:46.279 --> 00:00:50.022
+&gt;&gt; [SOUND]
+&gt;&gt; These whistles can be heard up to 3
+
+00:00:50.021 --> 00:00:51.629
+miles away under water.
+
+00:00:51.630 --> 00:00:52.900
+&gt;&gt; Why do they whistle?
+
+00:00:52.899 --> 00:00:54.640
+&gt;&gt; Probably for a lot of reasons.
+
+00:00:54.640 --> 00:00:57.799
+But one thing we do know is that
+dolphins have signature whistles that
+
+00:00:57.799 --> 00:00:59.570
+act much like our names.
+
+00:00:59.570 --> 00:01:03.240
+If a dolphin enters a new area and feels
+like company, It whistles his signature
+
+00:01:03.240 --> 00:01:07.390
+whistle, which helps its friends
+know where it is and how to find it.
+
+00:01:07.390 --> 00:01:09.540
+&gt;&gt; So
+what are we seeing in this spectrogram?
+
+00:01:09.540 --> 00:01:12.680
+&gt;&gt; To me it looks like the same
+whistle repeated twice.
+
+00:01:12.680 --> 00:01:14.470
+The whistle has two parts.
+
+00:01:14.469 --> 00:01:18.349
+Our task is to be able to recognize
+classes of whistles, so that our marine
+
+00:01:18.349 --> 00:01:22.209
+mammal researchers can automatically
+annotate their database of recordings.
+
+00:01:22.209 --> 00:01:24.039
+&gt;&gt; Well, I see one problem already.
+
+00:01:24.040 --> 00:01:27.170
+The second time the whistle is repeated,
+it seems a little more drawn out.
+

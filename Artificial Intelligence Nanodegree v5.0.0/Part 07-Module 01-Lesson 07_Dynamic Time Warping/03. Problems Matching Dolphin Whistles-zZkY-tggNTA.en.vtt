@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.190 --> 00:00:03.160
+That problem is going to be
+the focus for this lesson.
+
+00:00:03.160 --> 00:00:05.759
+We need to be able to
+handle classes of signals,
+
+00:00:05.759 --> 00:00:08.900
+where each example may be warped
+in time a bit differently.
+
+00:00:08.900 --> 00:00:10.359
+&gt;&gt; Okay, well, for features,
+
+00:00:10.359 --> 00:00:13.070
+can we just use the whistle
+frequencies through time?
+
+00:00:13.070 --> 00:00:15.699
+&gt;&gt; Normally, that would be a good idea,
+but in practice,
+
+00:00:15.699 --> 00:00:19.820
+the dolphin's often raise or lower
+the basic frequency of the whistle.
+
+00:00:19.820 --> 00:00:22.679
+What seems to matter is
+the pattern of relative rises and
+
+00:00:22.679 --> 00:00:24.689
+falls of the whistle through time.
+
+00:00:24.690 --> 00:00:27.410
+&gt;&gt; In that case,
+let's use delta frequency.
+
+00:00:27.410 --> 00:00:34.390
+Here, instead of 5, 14, 10,
+7, 10, and 14 kilohertz,
+
+00:00:34.390 --> 00:00:39.881
+let's use 9, -4, -3, 3, and 4.
+

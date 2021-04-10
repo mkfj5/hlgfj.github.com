@@ -1,0 +1,69 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.660 --> 00:00:04.879
+You always say do the simple thing first
+and add intelligence only if necessary.
+
+00:00:04.879 --> 00:00:07.459
+What happens if we just do
+Euclidean distance here?
+
+00:00:07.459 --> 00:00:09.189
+&gt;&gt; Let's try it and find out.
+
+00:00:09.189 --> 00:00:13.559
+Here are some reasonable delta frequency
+numbers for the top and bottom graphs.
+
+00:00:13.560 --> 00:00:18.199
+&gt;&gt; The top time series has 21 samples,
+but the bottom one only has 12.
+
+00:00:18.199 --> 00:00:19.719
+&gt;&gt; How do we do a Euclidean distance?
+
+00:00:20.780 --> 00:00:24.200
+&gt;&gt; A simple thing to do is
+pad the bottom one with 0s.
+
+00:00:24.199 --> 00:00:25.230
+&gt;&gt; That's reasonable.
+
+00:00:25.230 --> 00:00:29.320
+Other options would be to fill in with
+the average value or the last value, but
+
+00:00:29.320 --> 00:00:31.240
+any of these options will work for
+our example.
+
+00:00:32.439 --> 00:00:36.840
+&gt;&gt; Now we can figure out the Euclidean
+distance by simply doing the square root
+
+00:00:36.840 --> 00:00:41.480
+of the squares of the differences.
+
+00:00:41.479 --> 00:00:44.609
+Let's see, 0 minus 0 squared is 0,
+0 minus 5 squared is 25.
+
+00:00:44.609 --> 00:00:47.604
+&gt;&gt; And 2 minus 5 squared is 9.
+
+00:00:47.604 --> 00:00:49.994
+And 3 minus 5 squared is 4.
+
+00:00:49.994 --> 00:00:51.924
+&gt;&gt; And so on.
+
+00:00:51.924 --> 00:00:56.614
+Doing the math, we get the square root
+of 170, which is approximately 13.
+
+00:00:56.615 --> 00:01:00.685
+&gt;&gt; Yep, now let's try using dynamic
+time warping through the same problem.
+
