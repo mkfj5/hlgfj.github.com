@@ -1,0 +1,26 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.310 --> 00:00:03.270
+Now let's flip the coin 4 times and
+
+00:00:03.270 --> 00:00:08.140
+let's call xi the result
+of the i-th coin flip.
+
+00:00:08.140 --> 00:00:13.109
+So each xi is going to be
+drawn from heads or tails.
+
+00:00:13.109 --> 00:00:18.649
+What's the probability that all four of
+those flips gives us the same results
+
+00:00:18.649 --> 00:00:23.769
+no matter what it is, assuming that
+each one of those has an identity and
+
+00:00:23.769 --> 00:00:26.469
+equal probability of coming up heads?
+

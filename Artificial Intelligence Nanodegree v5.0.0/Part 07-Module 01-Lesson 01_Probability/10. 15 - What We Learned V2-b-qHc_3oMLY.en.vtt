@@ -1,0 +1,60 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.250 --> 00:00:02.560
+So we actually just learned
+some interesting lessons.
+
+00:00:02.560 --> 00:00:08.359
+Probability of any random variable y
+can be written as probability of Y,
+
+00:00:08.359 --> 00:00:14.050
+given that some other random variable,
+X assumes value i, times probability
+
+00:00:14.050 --> 00:00:19.810
+of X equals i, summed over all possible
+outcomes i, for the random variable X.
+
+00:00:20.839 --> 00:00:23.001
+This is called Total Probability.
+
+00:00:23.001 --> 00:00:26.105
+The second thing we learned has to
+do with negation of probabilities.
+
+00:00:26.105 --> 00:00:31.059
+We found that probability of not x given
+
+00:00:31.059 --> 00:00:35.871
+y is 1 minus probability of X given Y.
+
+00:00:35.871 --> 00:00:41.937
+Now, you might be tempted to say what
+about the probability of X given not Y?
+
+00:00:41.936 --> 00:00:49.546
+Is this the same as 1 minus
+probability of X given Y?
+
+00:00:49.546 --> 00:00:54.209
+And the answer is absolutely no,
+it's not the case.
+
+00:00:54.210 --> 00:00:57.649
+If you condition on something that
+has a certain probability value,
+
+00:00:57.649 --> 00:01:01.530
+you can take the event you're
+looking at and negate this.
+
+00:01:01.530 --> 00:01:03.792
+But you can never negate
+your position variable and
+
+00:01:03.792 --> 00:01:05.483
+assume that these values add up to 1.
+

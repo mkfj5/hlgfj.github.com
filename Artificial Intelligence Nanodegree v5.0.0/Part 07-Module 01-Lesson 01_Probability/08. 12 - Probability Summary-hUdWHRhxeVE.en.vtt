@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.680
+So, we just learned a number of things,
+
+00:00:01.680 --> 00:00:04.755
+one is about complimentary probability.
+
+00:00:04.755 --> 00:00:08.460
+If an event has certain probability P and
+
+00:00:08.460 --> 00:00:14.130
+the complimentary event has the probability 1-p. You also learned about independence.
+
+00:00:14.130 --> 00:00:17.950
+If two random variables X and Y are independent,
+
+00:00:17.950 --> 00:00:19.390
+you're going to write like this.
+
+00:00:19.390 --> 00:00:23.110
+That means the probability of the joint that any two variables can
+
+00:00:23.110 --> 00:00:27.250
+assume is the product of the marginals.
+
+00:00:27.250 --> 00:00:31.540
+So rather than asking the question what is the probability
+
+00:00:31.540 --> 00:00:36.700
+for any combination that these two coins of value five coins have taken,
+
+00:00:36.700 --> 00:00:39.490
+we can now look at the probability of each coin individually
+
+00:00:39.490 --> 00:00:43.230
+due to it's probability and let's multiply them up.
+

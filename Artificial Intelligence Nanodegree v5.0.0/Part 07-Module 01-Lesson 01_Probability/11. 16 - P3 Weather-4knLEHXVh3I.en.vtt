@@ -1,0 +1,22 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.655
+We assume there is some of them sunny days and some of them rainy days.
+
+00:00:05.655 --> 00:00:09.000
+On day one which we're going to call D1,
+
+00:00:09.000 --> 00:00:12.970
+probability of sunny is 0.9.
+
+00:00:12.970 --> 00:00:16.140
+Then let's assume there is sunny day,
+
+00:00:16.140 --> 00:00:20.115
+for the sunny day with 0.8 chance,
+
+00:00:20.115 --> 00:00:23.840
+and a rainy day for the sunny day.
+

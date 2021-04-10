@@ -1,0 +1,33 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.044 --> 00:00:06.347
+And here the correct is 0.009
+which is the product of
+
+00:00:06.347 --> 00:00:12.004
+the prior 0.01 times
+the conditional 0.9.
+
+00:00:12.005 --> 00:00:17.352
+Over here we get 0.001 probability
+
+00:00:17.352 --> 00:00:21.446
+of prior cancer times 0.1.
+
+00:00:21.446 --> 00:00:26.512
+Over here you get 0.198,
+probability of not having cancer is
+
+00:00:26.512 --> 00:00:31.577
+0.99 times still getting
+a positive reading with is 0.2 and
+
+00:00:31.577 --> 00:00:37.275
+finally we get 0.792 which is the
+probability of this one over here and
+
+00:00:37.274 --> 00:00:38.829
+this one over here.
+

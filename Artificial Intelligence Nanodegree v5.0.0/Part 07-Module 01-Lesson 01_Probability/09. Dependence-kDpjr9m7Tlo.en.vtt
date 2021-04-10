@@ -1,0 +1,70 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.280 --> 00:00:03.129
+So let me ask you about dependence.
+
+00:00:03.129 --> 00:00:05.320
+Suppose we flip two coins.
+
+00:00:05.320 --> 00:00:09.060
+Our first coin is a fair coin.
+
+00:00:09.060 --> 00:00:11.410
+And we're going to denote
+the outcome by X1.
+
+00:00:11.410 --> 00:00:15.690
+The chance of X1 coming
+up heads is half.
+
+00:00:15.689 --> 00:00:20.769
+But now we branch into picking
+a coin based on the first outcome.
+
+00:00:20.769 --> 00:00:22.844
+So if the first outcome was heads,
+
+00:00:22.844 --> 00:00:27.919
+then you pick a coin with probability of
+coming up heads, it's going to be 0.9.
+
+00:00:27.920 --> 00:00:31.475
+The way I wrote this is by
+conditional probability,
+
+00:00:31.475 --> 00:00:35.829
+the probability of the second coin
+flip coming up heads, provided that,
+
+00:00:35.829 --> 00:00:40.658
+or given that, X1,
+the first coin flip was heads, is 0.9.
+
+00:00:40.658 --> 00:00:43.835
+Now, the first coin flip
+might also come up tails,
+
+00:00:43.835 --> 00:00:46.359
+in which case I pick
+a very different coin.
+
+00:00:46.359 --> 00:00:51.497
+In this case, if I pick a coin,
+which, with 0.1 probability, will
+
+00:00:51.497 --> 00:00:56.998
+once again give me tails conditioned
+on the first coin flip coming up tails.
+
+00:00:56.999 --> 00:00:58.304
+So my question for
+
+00:00:58.304 --> 00:01:03.539
+you is what's the probability of
+the second coin flip coming up heads?
+
+00:01:03.539 --> 00:01:07.989
+[BLANK_AUDIO]
+

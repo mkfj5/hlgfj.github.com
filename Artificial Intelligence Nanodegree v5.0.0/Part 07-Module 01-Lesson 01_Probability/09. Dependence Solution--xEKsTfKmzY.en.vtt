@@ -1,0 +1,68 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.086 --> 00:00:03.883
+The answer is 0.55.
+
+00:00:03.883 --> 00:00:07.758
+The way to compute this is by
+the theorem of [INAUDIBLE] probability.
+
+00:00:07.758 --> 00:00:14.719
+Probability of X2=H, there are two
+ways I can get to this outcome.
+
+00:00:14.720 --> 00:00:18.179
+One is via this path over here and
+one is via this path over here.
+
+00:00:18.179 --> 00:00:19.650
+Let me just write both of them down.
+
+00:00:19.650 --> 00:00:24.557
+So first of all it could be
+the probability of X2 equals
+
+00:00:24.557 --> 00:00:29.583
+heads given that and
+I'll assume X1 was head already.
+
+00:00:29.583 --> 00:00:31.745
+And then now I have to add
+the complimentary event.
+
+00:00:31.745 --> 00:00:34.350
+Suppose X1 came up tails.
+
+00:00:34.350 --> 00:00:36.105
+Then I can ask the question,
+
+00:00:36.104 --> 00:00:39.771
+what is the probability that
+X2 come up heads regardless.
+
+00:00:39.771 --> 00:00:41.969
+Even though X1 was tails?
+
+00:00:41.969 --> 00:00:45.104
+Plugging in the numbers
+gives us the following,
+
+00:00:45.104 --> 00:00:47.942
+this one over here is 0.9, times a half.
+
+00:00:47.942 --> 00:00:50.917
+The probability of tails is 0.8,
+
+00:00:50.917 --> 00:00:56.585
+thereby my head probability
+becomes 1 minus 0.8 which is 0.2.
+
+00:00:56.585 --> 00:01:01.625
+Adding all of this
+together gives me 0.45
+
+00:01:01.625 --> 00:01:06.143
+plus 0.1 which is exactly 0.55.
+

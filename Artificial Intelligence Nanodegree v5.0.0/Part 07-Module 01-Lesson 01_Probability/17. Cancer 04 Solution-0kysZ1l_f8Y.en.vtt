@@ -1,0 +1,95 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.230 --> 00:00:06.318
+And the correct answer is 0.043.
+
+00:00:06.317 --> 00:00:13.032
+So, even though it received the positive
+test my probability of having cancer is
+
+00:00:13.032 --> 00:00:19.960
+just 4.3% which is not very much given
+that the test itself is quite sensitive.
+
+00:00:19.960 --> 00:00:25.010
+It gives me a 0.8 chance of
+Giving a negative result,
+
+00:00:25.010 --> 00:00:30.100
+if you don't have cancer it gives
+me a .9 chance of detecting cancer,
+
+00:00:30.100 --> 00:00:31.839
+given that I have cancer.
+
+00:00:31.839 --> 00:00:35.329
+Now, how come this variable is so small?
+
+00:00:35.329 --> 00:00:38.549
+Well, let's just put
+all the cases together.
+
+00:00:38.549 --> 00:00:41.829
+You already know that we
+received the positive tests.
+
+00:00:41.829 --> 00:00:46.349
+Therefore, this entry over here, and
+this entry over here are relevant.
+
+00:00:47.390 --> 00:00:52.430
+Now, the chance of hitting
+a positive test and
+
+00:00:52.430 --> 00:00:55.927
+hitting cancer is 0.009.
+
+00:00:55.927 --> 00:01:00.544
+Well, I might, when I receive a positive
+test, have cancer, not cancer.
+
+00:01:00.545 --> 00:01:06.007
+So it is normalized by these
+two possible causes for
+
+00:01:06.007 --> 00:01:11.719
+the positive test which
+is 0.009 + 0.198,
+
+00:01:11.719 --> 00:01:15.817
+when I work these two things together,
+
+00:01:15.817 --> 00:01:22.429
+I get 0.009/0.207 is
+approximately 0.043.
+
+00:01:22.430 --> 00:01:28.320
+But, the interesting thing in this
+equation is that the chances of having
+
+00:01:28.319 --> 00:01:32.429
+seen a positive test result in the
+absence of cancers are still much, much
+
+00:01:32.430 --> 00:01:36.800
+higher than just cancer seen in positive
+result in the presence of cancer.
+
+00:01:36.799 --> 00:01:39.390
+That's because our prior for
+cancer is so
+
+00:01:39.390 --> 00:01:43.460
+small in the population, there's
+just very unlikely to have cancer.
+
+00:01:43.459 --> 00:01:47.129
+So, the additional information
+of a positive test
+
+00:01:47.129 --> 00:01:51.593
+only raised my posterior
+probability to 0.043.
+

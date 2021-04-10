@@ -1,0 +1,32 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.048 --> 00:00:01.290
+And the solution is,
+
+00:00:01.290 --> 00:00:05.844
+let's look at different sequences in
+which head occurs at least three times.
+
+00:00:05.844 --> 00:00:10.035
+Could be head, head, head, head,
+which in this case occurs four times.
+
+00:00:10.035 --> 00:00:14.570
+Could be head, head, head, tail,
+and so on all the way to tail,
+
+00:00:14.570 --> 00:00:16.530
+head, head, head.
+
+00:00:16.530 --> 00:00:19.650
+There's 1, 2, 3, 4, 5 of those outcomes.
+
+00:00:19.649 --> 00:00:24.112
+Each of them has a 16th for
+probability, so
+
+00:00:24.112 --> 00:00:28.580
+it is 5 x 1/16, which is 0.3125.
+

@@ -1,0 +1,17 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.260 --> 00:00:04.017
+And the answer is 0.125.
+
+00:00:04.017 --> 00:00:05.939
+Each head is a probability of a half.
+
+00:00:05.939 --> 00:00:10.009
+We can multiply those probabilities
+because they are independent events.
+
+00:00:10.009 --> 00:00:15.490
+And that gives us 1/8 or 0.125.
+

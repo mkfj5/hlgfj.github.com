@@ -1,0 +1,181 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.330 --> 00:00:03.050
+So you just learned about what's
+probably the most important
+
+00:00:03.049 --> 00:00:08.009
+piece of math with this task,
+in statistics, called Bayes Rule.
+
+00:00:09.105 --> 00:00:13.890
+It's invented by Thomas Bayes,
+who was a British mathematician and
+
+00:00:13.890 --> 00:00:15.740
+a Presbyterian minister
+in the 18th century.
+
+00:00:16.789 --> 00:00:19.835
+Bayes rule is usually stated as follows.
+
+00:00:19.835 --> 00:00:25.251
+P(A|B) where B is the evidence and
+
+00:00:25.251 --> 00:00:29.967
+A is the variable we care about,
+
+00:00:29.966 --> 00:00:35.049
+is P(B|A) * P(A) / P(B).
+
+00:00:35.049 --> 00:00:37.589
+This expression is
+called the Likelihood,
+
+00:00:37.590 --> 00:00:43.550
+this is called the Prior and
+this is called the Marginal Likelihood.
+
+00:00:43.549 --> 00:00:47.259
+The expression over here
+is called the posterior.
+
+00:00:47.259 --> 00:00:52.589
+The interesting thing is the way
+the probabilities are reworded.
+
+00:00:53.649 --> 00:00:55.140
+Say we have evidence B.
+
+00:00:55.140 --> 00:00:57.119
+We know about B.
+
+00:00:57.119 --> 00:00:59.879
+But we really care about the variable A.
+
+00:00:59.880 --> 00:01:01.320
+So, example B is a test result.
+
+00:01:01.320 --> 00:01:04.200
+We don't care about the test
+result as we much as we
+
+00:01:04.200 --> 00:01:05.865
+care about the fact of whether
+we have cancer or not.
+
+00:01:05.865 --> 00:01:10.239
+This diagnostic reasoning,
+
+00:01:10.239 --> 00:01:14.649
+which is from evidence to it's causes,
+
+00:01:14.650 --> 00:01:20.008
+is turned upside down by Bayes
+rule into a causal reasoning,
+
+00:01:20.007 --> 00:01:25.399
+which is given hypothetically
+we knew the cause,
+
+00:01:25.400 --> 00:01:28.810
+what would be the probability of
+the evidence we just observed.
+
+00:01:29.950 --> 00:01:35.670
+But to correct for this inversion
+we have to multiply by the prior
+
+00:01:35.670 --> 00:01:40.475
+of the cause to be the case in the first
+place in this having cancel or
+
+00:01:40.475 --> 00:01:44.659
+not, and divide it by the probability
+of the evidence, POE.
+
+00:01:44.659 --> 00:01:49.289
+Which is often expanded using the field
+of total probability as follows.
+
+00:01:51.090 --> 00:01:57.739
+The probability of B is the sum of all
+the probabilities of the condition on a,
+
+00:01:57.739 --> 00:02:01.770
+lower caps a,
+times the probability of A=a.
+
+00:02:01.769 --> 00:02:04.299
+This is total probability.
+
+00:02:04.299 --> 00:02:06.170
+So let's apply this to the cancer case,
+
+00:02:06.170 --> 00:02:11.930
+and say we really care about whether
+they have cancer, which is our cause
+
+00:02:11.930 --> 00:02:17.040
+conditioned on the evidence that
+is the result of the skin cause.
+
+00:02:17.039 --> 00:02:19.419
+In this case, the positive test result.
+
+00:02:19.419 --> 00:02:21.509
+Let's just plug in the numbers.
+
+00:02:21.509 --> 00:02:26.090
+Our likelihood is the probability of
+seeing a positive test result given
+
+00:02:26.090 --> 00:02:31.909
+that they had cancer multiplied by the
+prior probability of having cancer over
+
+00:02:31.909 --> 00:02:36.829
+probability of the positive test
+result and that is according to
+
+00:02:36.830 --> 00:02:45.048
+the tables we looked at before,
+0.9 times a prior of 0.01 over.
+
+00:02:45.048 --> 00:02:49.448
+Now we're going to expand
+this variable here,
+
+00:02:49.448 --> 00:02:56.299
+equal to the total probability
+which gives us 0.9 times 0.01.
+
+00:02:56.299 --> 00:03:02.240
+It's the probability(+) given
+that we do have cancer.
+
+00:03:02.240 --> 00:03:08.388
+So the probability of plus,
+given that we don't have cancer,
+
+00:03:08.388 --> 00:03:12.219
+is 0.2, but the prior is 0.99.
+
+00:03:12.219 --> 00:03:16.853
+So if you plug in
+the numbers we know about,
+
+00:03:16.853 --> 00:03:22.168
+we get 0.009 / 0.009 + 0.198.
+
+00:03:22.168 --> 00:03:27.194
+Is approximately 0.0434
+
+00:03:27.193 --> 00:03:33.151
+which is the number we solved before.
+
+00:03:33.151 --> 00:03:41.858
+[BLANK_AUDIO]
+
