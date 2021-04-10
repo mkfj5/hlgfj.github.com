@@ -1,0 +1,32 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.270 --> 00:00:03.880
+We're going to use the n-Queens problem
+again to talk about genetic algorithms,
+
+00:00:03.880 --> 00:00:08.170
+but before we do that, we need to create
+a convention to represent a given board.
+
+00:00:08.170 --> 00:00:09.790
+&gt;&gt; We'll use the one in the book.
+
+00:00:09.790 --> 00:00:13.740
+Since there can only be one queen in
+each column, we can encode a board
+
+00:00:13.740 --> 00:00:16.640
+with the number per column that
+indicates where the queen is.
+
+00:00:16.640 --> 00:00:20.062
+So for this board,
+
+00:00:20.062 --> 00:00:24.758
+the encoding would
+
+00:00:24.758 --> 00:00:30.032
+be 86427531.
+

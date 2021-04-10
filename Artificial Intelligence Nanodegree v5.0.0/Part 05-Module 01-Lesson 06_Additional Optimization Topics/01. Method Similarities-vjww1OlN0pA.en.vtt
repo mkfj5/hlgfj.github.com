@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.300 --> 00:00:04.683
+Shelly, is there any idea of reducing
+the randomness of a time in generic
+
+00:00:04.683 --> 00:00:07.015
+algorithm like say in simulated?
+
+00:00:07.015 --> 00:00:09.541
+&gt;&gt; Well, not limitations
+that we have shown so far.
+
+00:00:09.541 --> 00:00:12.478
+But the fitness function naturally
+reduces the randomness as each
+
+00:00:12.478 --> 00:00:15.140
+generation gets closer to the solution.
+
+00:00:15.140 --> 00:00:18.090
+However, we could argue that
+the method could do better.
+
+00:00:18.090 --> 00:00:20.650
+In fact, there are a lot of
+publications that talk about tuning,
+
+00:00:20.650 --> 00:00:24.880
+cross over, mutations, number of parents
+and all the other parameters to optimize
+
+00:00:24.880 --> 00:00:27.970
+genetic algorithms,
+to converge as quickly as possible.
+
+00:00:27.970 --> 00:00:31.120
+&gt;&gt; In some sense,
+genetic algorithms are a fancy version
+
+00:00:31.120 --> 00:00:34.600
+of beam search that happens to
+make a nice analogy with biology.
+
+00:00:34.600 --> 00:00:38.240
+&gt;&gt; Yep, some people call genetic
+algorithms the second best solution to
+
+00:00:38.240 --> 00:00:39.390
+any problem.
+
+00:00:39.390 --> 00:00:42.780
+But analogies are nice things when
+learning and using different methods.
+
+00:00:42.780 --> 00:00:44.610
+We used a lot throughout this section.
+
+00:00:44.610 --> 00:00:45.970
+Hill climbing, a kneeling and
+
+00:00:45.970 --> 00:00:49.710
+genetic algorithms are all analogies
+to some physical or biological process.
+

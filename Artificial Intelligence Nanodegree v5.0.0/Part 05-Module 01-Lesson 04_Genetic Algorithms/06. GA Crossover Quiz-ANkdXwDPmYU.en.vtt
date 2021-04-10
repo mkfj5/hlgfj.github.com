@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.440 --> 00:00:01.710
+Try to apply what you've learned so
+
+00:00:01.710 --> 00:00:04.780
+far to complete this iteration
+of the genetic algorithm.
+
+00:00:04.780 --> 00:00:09.110
+First, fill in the fitness value or the
+number of non attacking pairs of queens
+
+00:00:09.110 --> 00:00:11.600
+for each board state in
+the initial population.
+
+00:00:11.600 --> 00:00:13.780
+Then, choose parents according
+to their fitness score and
+
+00:00:13.780 --> 00:00:15.310
+fill them in this column.
+
+00:00:15.310 --> 00:00:18.140
+Order them by fitness value
+where the best is on top.
+
+00:00:18.140 --> 00:00:19.949
+Now cross over the top
+two selected parents,
+
+00:00:19.949 --> 00:00:22.660
+making sure that they're
+different individuals.
+
+00:00:22.660 --> 00:00:25.440
+Then produce two children using a four,
+four split.
+
+00:00:25.440 --> 00:00:28.140
+Finally, fill in the fitness values for
+the resulting children.
+
