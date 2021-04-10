@@ -1,0 +1,614 @@
+{
+  "data": {
+    "lesson": {
+      "id": 556805,
+      "key": "0f093e61-2a50-40a0-beec-f03722ecc37d",
+      "title": "Hill Climbing",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Thad introduces _Hill Climbing_, a very simple local search optimization technique that works well on many iterative improvement problems.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/0f093e61-2a50-40a0-beec-f03722ecc37d/556805/1538955349514/Hill+Climbing+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/0f093e61-2a50-40a0-beec-f03722ecc37d/556805/1538955346563/Hill+Climbing+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 194091,
+          "key": "56394685570923",
+          "title": "Hill Climbing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "56394685570923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193741,
+              "key": "5639468557",
+              "title": "Hill Climbing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "IdmkCgRiYp4",
+                "china_cdn_id": "IdmkCgRiYp4.mp4"
+              }
+            },
+            {
+              "id": 1094358,
+              "key": "f17091e5-fcaf-4f08-8980-64596fac33d4",
+              "title": "Hills Climbing Instructor Note",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Note from the video**: Thad is cavalier about switching from *minimizing* the objective function to *maximizing* the objective function because it is trivial to move back and forth in optimization problems between seeking to maximize or minimize an objective function. \n\nIf you want to *minimize f(x)* and your optimizer program seeks to maximize the objective function, then define `g(x) = -f(x)` and find `max(g(x)) = max(-f(x)) = min(f(x))`. Similarly, if your optimization problem needs to *maximize f(x)* and your optimizer program seeks to minimize the objective function, define `g(x) = -f(x) and find min(g(x)) = min(-f(x)) = max(f(x))`. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1094357,
+              "key": "b0d33cd7-6eef-456b-8d15-cd24049f429e",
+              "title": "Hill Climbing",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Hill Climbing Algorithm\n\n**Hill Climbing** is also known as *greedy local search*. This algorithm only looks to the immediate neighbors without knowing where to go next. The algorithm evaluates the values of immediate neighbors and continually moves to the direction of the increasing value, hence the name “hill climbing”. The algorithm will terminate at a *peak* where there are no higher values among the neighbors.\n\nYou may have heard of the `gradient descent` algorithm. On the surface, both hill climbing and gradient descent algorithms share a similar goal to reach the maximum or minimum value on the state space landscape. However, there is a subtle difference between them. While hill climbing simply evaluates the value of the evaluation function, gradient descent computes the steepest slope of the function and moves to that direction.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 194093,
+          "key": "56394685580923",
+          "title": "Local Maximum",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "56394685580923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193740,
+              "key": "5639468558",
+              "title": "Local Maximum",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "_xAQNt96jpo",
+                "china_cdn_id": "_xAQNt96jpo.mp4"
+              }
+            },
+            {
+              "id": 1094360,
+              "key": "eb778abd-8fb4-4201-a421-2d0eba035ae1",
+              "title": "Local Maximum",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Hill Climbing algorithm is said to be `incomplete` because it can get stuck in a *local* maximum and does not guarantee finding the *global* maximum. In the following videos, we will learn two techniques in the attempt to get unstuck in the local maxima. The two techniques are: (i) `random restart` and (ii) `step size` configuration.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 194095,
+          "key": "56394685590923",
+          "title": "Random Restart",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "56394685590923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193739,
+              "key": "5639468559",
+              "title": "Random Restart",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "qhvqf4a5OcM",
+                "china_cdn_id": "qhvqf4a5OcM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 193954,
+          "key": "65970169700923",
+          "title": "Hill Climbing Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "65970169700923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193578,
+              "key": "6597016970",
+              "title": "Hill Climbing Quiz",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "6597016970",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "M4PQFz6jOxY",
+                  "china_cdn_id": "M4PQFz6jOxY.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Hill Climbing Quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/NrifmhQz12WBxH_qovU4KRvXlaBg5H-4WOEdv01sa05DGALwtjwL6P8_iEOVoCEuemgAFeyWfLDCtbb0Afc=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6597016970",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "6597016972",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric1",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.06359102244389027,
+                      "x": 0.8877805486284289,
+                      "y": 0.4474431818181818
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric2",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.06359102244389027,
+                      "x": 0.8877805486284289,
+                      "y": 0.5487111973392461
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric3",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.06733167082294264,
+                      "x": 0.8863388403990025,
+                      "y": 0.638684866962306
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric4",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.0685785536159601,
+                      "x": 0.8867479738154613,
+                      "y": 0.7353104212860311
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": null,
+                    "label": null,
+                    "marker": "numeric5",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.06733167082294264,
+                      "x": 0.8877415835411472,
+                      "y": 0.8296840354767184
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "rEaazmd7fuI",
+                  "china_cdn_id": "rEaazmd7fuI.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 194149,
+          "key": "56394685600923",
+          "title": "Step Size Too Small",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "56394685600923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193805,
+              "key": "5639468560",
+              "title": "Step Size Too Small",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "jiqO9_6Vdg4",
+                "china_cdn_id": "jiqO9_6Vdg4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194150,
+          "key": "56394685610923",
+          "title": "Step Size Too Large",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "56394685610923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193804,
+              "key": "5639468561",
+              "title": "Step Size Too Large",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "RG-Jd_XMmhg",
+                "china_cdn_id": "RG-Jd_XMmhg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194148,
+          "key": "56394685620923",
+          "title": "Hill Climbing Quiz 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "56394685620923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193806,
+              "key": "5639468562",
+              "title": "Hill Climbing Quiz 2",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Note: for this quiz, step size = 2 ",
+              "user_state": {
+                "node_key": "5639468562",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "gVHBvPKWPow",
+                  "china_cdn_id": "gVHBvPKWPow.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Hill Climbing Quiz 2",
+                "alt_text": "",
+                "background_image": "//lh3.googleusercontent.com/YEGTBAVu3lL9I1F9ncvRPpsR6DaERYgsC1SYfox3DOyZmUQWr0qAYfYqKZ29mBdZy7Lkfv5CBnwobCKknw=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5639468562",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "5639468564",
+                "widgets": [
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio1",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.767904457605985,
+                      "y": 0.6184174057649667
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.7678460099750624,
+                      "y": 0.6862181263858093
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio3",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.7668134351620948,
+                      "y": 0.7560975609756098
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio4",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.7645144950124688,
+                      "y": 0.8185282705099778
+                    }
+                  },
+                  {
+                    "group": "group2",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio5",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.811155704488778,
+                      "y": 0.6218819290465631
+                    }
+                  },
+                  {
+                    "group": "group2",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio6",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.8112141521197007,
+                      "y": 0.6872574833702882
+                    }
+                  },
+                  {
+                    "group": "group2",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio7",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.8112725997506235,
+                      "y": 0.7567904656319291
+                    }
+                  },
+                  {
+                    "group": "group2",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio8",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.8094802057356608,
+                      "y": 0.8211266629711752
+                    }
+                  },
+                  {
+                    "group": "group3",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio9",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.8552641832917706,
+                      "y": 0.6227827050997783
+                    }
+                  },
+                  {
+                    "group": "group3",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio10",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.8558681421446384,
+                      "y": 0.6912763303769401
+                    }
+                  },
+                  {
+                    "group": "group3",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio11",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.8554395261845387,
+                      "y": 0.7591463414634146
+                    }
+                  },
+                  {
+                    "group": "group3",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio12",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.8548940149625935,
+                      "y": 0.8211959534368071
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "uSF5H0Ew1ps",
+                  "china_cdn_id": "uSF5H0Ew1ps.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 194146,
+          "key": "56394685670923",
+          "title": "Local Beam Search",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "56394685670923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193799,
+              "key": "5639468567",
+              "title": "Local Beam Search",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "rCFlfKpc130",
+                "china_cdn_id": "rCFlfKpc130.mp4"
+              }
+            },
+            {
+              "id": 1094359,
+              "key": "1c2ce900-76ca-4a64-b6c9-ecb93003d101",
+              "title": "Local Beam Search",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "*Local Beam Search* is a variation of [Beam Search](https://en.wikipedia.org/wiki/Beam_search), a heuristic search algorithm that explores a graph by expanding the most promising node in a limited set (as defined by Wikipedia). Local beam search algorithm randomly generates *k* number of states and expand all the successors of all k states in each step. The algorithm will terminate when the successor has found the goal. Otherwise, it selects *k’s best successors* and iterates.\n\nSince the algorithm expands the next best successors and passes useful information across all parallel searches, the search may become narrowed in a small region and may get stuck in the local maxima. A different variant of *Stochastic Beam Search* solves this problem by choosing *k’s successors* randomly.\n\nIn the following lesson, we will look into the *Simulated Annealing* algorithm. Unlike the Hill Climbing algorithm, simulated annealing allows the move to the neighbor with a lower value. It makes the search less efficient, but it can return a *complete* solution by avoiding getting stuck in the local maxima.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    }
+  ]
+}

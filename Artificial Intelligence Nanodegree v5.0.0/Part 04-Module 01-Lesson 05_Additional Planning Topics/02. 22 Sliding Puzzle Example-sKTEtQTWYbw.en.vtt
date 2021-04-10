@@ -1,0 +1,142 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.615
+To understand the idea of heuristics,
+
+00:00:01.615 --> 00:00:03.505
+let's talk about another domain.
+
+00:00:03.505 --> 00:00:05.270
+Here we have this sliding puzzle domain.
+
+00:00:05.270 --> 00:00:08.235
+Remember, we can slide around these little tiles,
+
+00:00:08.235 --> 00:00:10.440
+and we try to reach a goal state.
+
+00:00:10.440 --> 00:00:13.020
+16 puzzle is kind of big,
+
+00:00:13.020 --> 00:00:17.165
+so let's show you the state space for the smaller 8 puzzle.
+
+00:00:17.165 --> 00:00:19.800
+And here's just a small portion of it.
+
+00:00:19.800 --> 00:00:24.180
+Now, let's figure out what the action schema looks like for this puzzle.
+
+00:00:24.180 --> 00:00:26.625
+So we only need to describe one action,
+
+00:00:26.625 --> 00:00:33.745
+which is to slide a tile t from location a to location b,
+
+00:00:33.745 --> 00:00:37.935
+and the precondition that the tile has to be on location A,
+
+00:00:37.935 --> 00:00:40.410
+and has to be a tile,
+
+00:00:40.410 --> 00:00:42.855
+and B has to be blank,
+
+00:00:42.855 --> 00:00:48.060
+and A and B have to be adjacent.
+
+00:00:48.060 --> 00:00:50.875
+That should be an and sign, not an A.
+
+00:00:50.875 --> 00:00:53.705
+So that's the action schema.
+
+00:00:53.705 --> 00:00:57.390
+I forgot. We need an effect,
+
+00:00:57.390 --> 00:01:04.920
+which should be that the tile is now on b and the blank is now on a,
+
+00:01:04.920 --> 00:01:11.490
+and the tile is no longer on a and the blank is no longer on b.
+
+00:01:11.490 --> 00:01:16.890
+Now we talked before about how a human analyst could examine a problem and come up with
+
+00:01:16.890 --> 00:01:19.500
+heuristics and encode those heuristics as
+
+00:01:19.500 --> 00:01:22.850
+a function that would help search do a better job.
+
+00:01:22.850 --> 00:01:25.455
+But with this kind of a formal representation,
+
+00:01:25.455 --> 00:01:29.575
+we can automatically come up with good representations of heuristics.
+
+00:01:29.575 --> 00:01:33.420
+So for example, if we came up with
+
+00:01:33.420 --> 00:01:38.605
+a relaxed problem by automatically going in and throwing out some of the prerequisites,
+
+00:01:38.605 --> 00:01:42.085
+we threw out a prerequisite to make the problem strictly easier,
+
+00:01:42.085 --> 00:01:43.800
+then you get a new heuristic.
+
+00:01:43.800 --> 00:01:49.185
+So for example, if we crossed out the requirement that b has to be blank,
+
+00:01:49.185 --> 00:01:54.370
+then we end up with the Manhattan or city block heuristic.
+
+00:01:54.370 --> 00:02:00.300
+And if we also throw out the requirement that a and b have to be adjacent,
+
+00:02:00.300 --> 00:02:03.450
+then we get the number of misplaced tiles heuristic.
+
+00:02:03.450 --> 00:02:06.240
+So that means we could slide a tile from
+
+00:02:06.240 --> 00:02:09.990
+any a to any b no matter how far apart they were.
+
+00:02:09.990 --> 00:02:12.345
+That's the number of misplaced tiles.
+
+00:02:12.345 --> 00:02:14.730
+And other heuristics are possible.
+
+00:02:14.730 --> 00:02:18.675
+For example, one popular thing is to ignore negative effects.
+
+00:02:18.675 --> 00:02:24.365
+To say, let's not say that this takes away the blank being in b.
+
+00:02:24.365 --> 00:02:28.515
+So if we ignore that negative effect we make the whole problem strictly easier.
+
+00:02:28.515 --> 00:02:32.700
+We'd have a relaxed problem and that might end up being a good heuristic.
+
+00:02:32.700 --> 00:02:37.005
+So because we have our actions encoded in this logical form,
+
+00:02:37.005 --> 00:02:39.170
+we can automatically edit that form.
+
+00:02:39.170 --> 00:02:40.545
+A program can do that,
+
+00:02:40.545 --> 00:02:42.150
+and the program could come up with heuristics
+
+00:02:42.150 --> 00:02:46.000
+rather than requiring the human to come up with heuristics.
+

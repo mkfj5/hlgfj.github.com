@@ -1,0 +1,120 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.190 --> 00:00:02.706
+You mean like this board?
+
+00:00:02.706 --> 00:00:06.277
+&gt;&gt; Hold on, I have to think
+about this one for a second.
+
+00:00:06.277 --> 00:00:10.390
+Okay, I see that there's only one
+current attack on this diagonal.
+
+00:00:10.390 --> 00:00:14.160
+So when I move one of these
+queens I should be done.
+
+00:00:14.160 --> 00:00:15.930
+&gt;&gt; Sure, why not try it out?
+
+00:00:15.930 --> 00:00:19.620
+&gt;&gt; Okay, well let's work with
+the queen in the fourth column first.
+
+00:00:19.620 --> 00:00:21.670
+I can't put it in the topmost row,
+
+00:00:21.670 --> 00:00:26.216
+because it gets attacked by the same
+queen as well as its diagonal neighbor.
+
+00:00:26.216 --> 00:00:31.800
+With the next row down,
+it's attacked both here and here.
+
+00:00:31.800 --> 00:00:36.220
+The next row down is
+attacked both here and here.
+
+00:00:36.220 --> 00:00:41.230
+Hold it, there is no place on this board
+I can put it without being attacked
+
+00:00:41.230 --> 00:00:42.310
+horizontally.
+
+00:00:42.310 --> 00:00:45.750
+Except where I had it originally,
+in fact,
+
+00:00:45.750 --> 00:00:48.730
+every possible spot
+makes the problem worse.
+
+00:00:48.730 --> 00:00:50.300
+We'll cause more attacks.
+
+00:00:50.300 --> 00:00:52.080
+&gt;&gt; Is there anything else we could do?
+
+00:00:52.080 --> 00:00:55.647
+&gt;&gt; We'll have the same problem with the
+queen in the second to the last column.
+
+00:00:55.647 --> 00:01:01.240
+Moving it down one row leads
+to two attacks, here and here.
+
+00:01:01.240 --> 00:01:04.540
+Going to the next row causes
+two attacks, as well.
+
+00:01:04.540 --> 00:01:07.860
+Every single move with this queen
+gets more attacks, as well.
+
+00:01:07.860 --> 00:01:12.700
+And moving any of the other six queens
+will also cause an increase of attacks
+
+00:01:12.700 --> 00:01:14.900
+because they will be
+attacked horizontally,
+
+00:01:14.900 --> 00:01:17.090
+plus we will still have
+the original attack.
+
+00:01:17.090 --> 00:01:21.550
+For example, look at this left
+most queen, every row, except for
+
+00:01:21.550 --> 00:01:25.210
+the one it's in,
+currently will have another attack.
+
+00:01:25.210 --> 00:01:27.710
+&gt;&gt; Does that mean
+the problem is unsolvable?
+
+00:01:27.710 --> 00:01:31.450
+&gt;&gt; No, I know the problem is solvable,
+but I seem to be stuck.
+
+00:01:31.450 --> 00:01:35.960
+No one move will improve my situation,
+this puzzle hurts my brain.
+
+00:01:35.960 --> 00:01:38.650
+&gt;&gt; Maybe we can use a simpler
+problem to figure out a solution and
+
+00:01:38.650 --> 00:01:40.480
+then come back to this one later.
+
+00:01:40.480 --> 00:01:41.390
+&gt;&gt; That's a great idea.
+

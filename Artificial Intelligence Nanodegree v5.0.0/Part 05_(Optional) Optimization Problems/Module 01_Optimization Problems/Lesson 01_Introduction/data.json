@@ -1,0 +1,672 @@
+{
+  "data": {
+    "lesson": {
+      "id": 556823,
+      "key": "541cf0bd-92a4-4ef5-841b-dcda4789162d",
+      "title": "Introduction",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Thad Starner introduces the concept of _iterative improvement problems_, a class of optimization problems that can be solved with global optimization or local search techniques covered in this lesson.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/541cf0bd-92a4-4ef5-841b-dcda4789162d/556823/1538955071250/Introduction+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/541cf0bd-92a4-4ef5-841b-dcda4789162d/556823/1538955068224/Introduction+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 590560,
+          "key": "817d148d-23e4-4ce2-b776-d5b1ad83d62d",
+          "title": "Lesson Plan - Week 6",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "817d148d-23e4-4ce2-b776-d5b1ad83d62d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 591168,
+              "key": "da44028a-b11d-490e-95ab-5868c92abc55",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Lesson Plan: Week 6\n---\nThis week you'll learn about combinatorial optimization problems and several solution methods based on local search (which was mentioned _briefly_ in week 2 as an alternative method of solving CSPs. The optimization techniques presented here include so-called \"gradient-free\" methods, which are suitable for problems where the optimal solutions can be computed without calculus.\n\nOptimization algorithms attempt to find optimal solutions that maximize or minimize **objective functions**. As we have seen in the previous lessons, the **search algorithms** return a solution **and** the path to the solution in the state space. However, the optimization algorithms do not concern the path to the solution. Instead, the optimization algorithms rely on the objective functions to find the most optimal solutions.\n\nIn this course, we will learn three optimization algorithms in AI. They are: **Hill Climbing**, **Simulated Annealing**, and **Genetic Algorithms**. There are other variants under optimization algorithms category as listed in [Wikipedia](https://en.wikipedia.org/wiki/List_of_algorithms#Optimization_algorithms).\n\n## Classroom\n- Watch **Introduction to Optimization Problems** and **Hill Climbing**\n\n## Reading (_Optional_)\n- AIMA **Chapter 4.1-4.3**; skim Chapter 4.4-4.5",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1094309,
+              "key": "1a49d7ae-302e-4037-9708-b3c122f636be",
+              "title": "Optimization",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/November/5fa03ba2_course-map/course-map.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1a49d7ae-302e-4037-9708-b3c122f636be",
+              "caption": "Course Map",
+              "alt": "",
+              "width": 383,
+              "height": 258,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 193914,
+          "key": "56394685450923",
+          "title": "Iterative Improvement Problems: TSP",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "56394685450923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193534,
+              "key": "5639468545",
+              "title": "Traveling Salesman Problem",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "dtCpwQsSthY",
+                "china_cdn_id": "dtCpwQsSthY.mp4"
+              }
+            },
+            {
+              "id": 1094310,
+              "key": "b6b9b112-fe6f-4320-893d-d93cbc5092ce",
+              "title": "Traveling Salesman Problem",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### NP problems\n\nComputer Scientists are concerned with the time to execute an algorithm. The execution time is not measured in seconds or milliseconds. However, it is proportionate to the number of elements in the problems (denoted as *N*), such as the number of cities to visit in the classic Traveling Salesman Problem.\n\nSometimes, the execution time to compute complex problems can be slow, as in N<sup>2</sup> or N<sup>m</sup>. This algorithm is said to take Polynomial time (denoted as *P*) to solve the problem. *NP* is defined as the set of problems where the solutions can be *verified* in polynomial time. A problem is called *NP-hard* when the algorithm used to solve this problem can be translated to solve other NP problems.\n\nThad introduces a trick to solve NP-hard problems by leveraging *randomness*. This is the essence of the optimization algorithms covered in this course. The algorithm picks a random start in the state space and takes small steps to find a better solution according to its objective function.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 194102,
+          "key": "56394685500923",
+          "title": "4-Queens",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "56394685500923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193748,
+              "key": "5639468550",
+              "title": "4-Queens",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "gIKqZNgVgJw",
+                "china_cdn_id": "gIKqZNgVgJw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194100,
+          "key": "56394685510923",
+          "title": "5-Queens Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "56394685510923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193747,
+              "key": "5639468551",
+              "title": "5-Queens Quiz",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Check a cell to place a queen there.\n\nNote that a valid solution is one where there are 5 total queens on the board, and none of them are attacking each other!",
+              "user_state": {
+                "node_key": "5639468551",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "5zZiO8sNdvw",
+                  "china_cdn_id": "5zZiO8sNdvw.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "5-Queens Quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/SHIGKRh6lULNaEMWUnY7i7YfRzJ3nLOF66kZXX9DvPBzz6FE6EgdzZyeJDLbRp86l4ogVSoqcj_8BKTV5Q=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5639468551",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "5639468553",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check1",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3516599127182045,
+                      "y": 0.3151676829268293
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check2",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4276223503740648,
+                      "y": 0.31579129711751663
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check3",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.507442331670823,
+                      "y": 0.3130889689578714
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check4",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5841256234413965,
+                      "y": 0.3120842572062084
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check5",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6636338840399002,
+                      "y": 0.31146064301552107
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check6",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3512312967581047,
+                      "y": 0.4522242239467849
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check7",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.4304668017456359,
+                      "y": 0.4508730598669623
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check8",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5098971321695761,
+                      "y": 0.4504226718403548
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check9",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5886845386533666,
+                      "y": 0.4473738913525499
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check10",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6677641832917706,
+                      "y": 0.4486211197339246
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check11",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.352322319201995,
+                      "y": 0.5877563747228381
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check12",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.43243453865336656,
+                      "y": 0.5865437915742794
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check13",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5111829800498753,
+                      "y": 0.5876524390243902
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check14",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5872038653366584,
+                      "y": 0.5866823725055432
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check15",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6642183603491272,
+                      "y": 0.5843264966740577
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check16",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.35257559226932667,
+                      "y": 0.7228727827050998
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check17",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.43165523690773067,
+                      "y": 0.7218334257206208
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check18",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5118648690773068,
+                      "y": 0.7228381374722838
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check19",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5881779925187033,
+                      "y": 0.7223184589800443
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check20",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6665562655860349,
+                      "y": 0.7245703991130821
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check21",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.35316006857855364,
+                      "y": 0.8617655210643016
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check22",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.43266832917705733,
+                      "y": 0.8626662971175166
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check23",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5126246882793017,
+                      "y": 0.8622159090909091
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check24",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5922498441396509,
+                      "y": 0.8644678492239468
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check25",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6670628117206983,
+                      "y": 0.8629781042128604
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "bPAFnwZx0b4",
+                  "china_cdn_id": "bPAFnwZx0b4.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 194096,
+          "key": "56394685550923",
+          "title": "n-Queens Heuristic Function",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "56394685550923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193743,
+              "key": "5639468555",
+              "title": "n-Queens Heuristic Function",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "Notice that \"attacks\" are counted differently than standard chess rules because we include pairs of queens as an \"attack\" even if another queen is between the pair.",
+              "video": {
+                "youtube_id": "hTVO07COpwg",
+                "china_cdn_id": "hTVO07COpwg.mp4"
+              }
+            },
+            {
+              "id": 1094308,
+              "key": "0d4852a3-aaf1-4ce7-af44-d490948a07d8",
+              "title": "n-Queens Heuristic Function",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Notice that \"attacks\" are counted differently than standard chess rules because we include pairs of queens as an \"attack\" even if another queen is between the pair.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 194094,
+          "key": "56394685560923",
+          "title": "n-Queens  Local Minima",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "56394685560923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193742,
+              "key": "5639468556",
+              "title": "n-Queens  Local Minima",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "ht3hLnulH4g",
+                "china_cdn_id": "ht3hLnulH4g.mp4"
+              }
+            },
+            {
+              "id": 1094311,
+              "key": "43ff7e4a-6a5f-4d2a-b7fe-a6111525f339",
+              "title": "Local Minima",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The example in the video shows the potential limitation in the optimization algorithm, where it can get stuck in one of the *local minima* (plural) and fails to reach the *global minimum* (singular) in the problem’s state space.\n\nNote: in the n-Queens problem, we call local or global minima since the objective function to minimize the value. When the objective function is to maximize the value, we call the peaks as either **local** or **global** maxima as shown in the figure below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1094312,
+              "key": "bce82df7-faaa-4157-811d-416828b1bb75",
+              "title": "State Space Landscape",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/November/5fa03c1f_state-space-landscape/state-space-landscape.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/bce82df7-faaa-4157-811d-416828b1bb75",
+              "caption": "The solution landscape of an optimization problem based on its state space and objective function",
+              "alt": "",
+              "width": 392,
+              "height": 218,
+              "instructor_notes": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

@@ -1,0 +1,424 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>5-Queens Quiz</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Introduction</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Lesson Plan - Week 6.html">01. Lesson Plan - Week 6</a>
+    </li>
+    <li class="">
+      <a href="02. Iterative Improvement Problems TSP.html">02. Iterative Improvement Problems: TSP</a>
+    </li>
+    <li class="">
+      <a href="03. 4-Queens.html">03. 4-Queens</a>
+    </li>
+    <li class="">
+      <a href="04. 5-Queens Quiz.html">04. 5-Queens Quiz</a>
+    </li>
+    <li class="">
+      <a href="05. n-Queens Heuristic Function.html">05. n-Queens Heuristic Function</a>
+    </li>
+    <li class="">
+      <a href="06. n-Queens  Local Minima.html">06. n-Queens  Local Minima</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">04. 5-Queens Quiz</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>5-Queens Quiz</p></h3>
+  <div>
+  <div>
+    <h4>Question:</h4>
+
+    <video controls>
+  <source src="04. 5-Queens Quiz-5zZiO8sNdvw.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. 5-Queens Quiz-5zZiO8sNdvw.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="CN" src="04. 5-Queens Quiz-5zZiO8sNdvw.zh-CN.vtt" label="CN">
+</video>
+
+
+  </div>
+
+  <h4>Start Quiz:</h4>
+  <div>
+  <div style="display: block;">
+    <div style="position: relative;">
+      <img src="img/5639468553.gif" style="width: 100%; max-height: 100%" alt="">
+      
+    <div style="
+    position: absolute; top: 31.51676829268293%; left: 35.16599127182045%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check1" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 31.579129711751662%; left: 42.762235037406484%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check2" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 31.308896895787143%; left: 50.7442331670823%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check3" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 31.20842572062084%; left: 58.41256234413965%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check4" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 31.146064301552105%; left: 66.36338840399002%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check5" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 45.22242239467849%; left: 35.123129675810475%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check6" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 45.08730598669623%; left: 43.04668017456359%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check7" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 45.04226718403548%; left: 50.98971321695761%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check8" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 44.73738913525499%; left: 58.868453865336654%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check9" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 44.86211197339246%; left: 66.77641832917706%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check10" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 58.77563747228381%; left: 35.2322319201995%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check11" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 58.65437915742794%; left: 43.243453865336654%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check12" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 58.765243902439025%; left: 51.11829800498753%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check13" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 58.66823725055432%; left: 58.72038653366584%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check14" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 58.43264966740577%; left: 66.42183603491272%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check15" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 72.28727827050999%; left: 35.25755922693266%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check16" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 72.18334257206209%; left: 43.165523690773064%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check17" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 72.28381374722838%; left: 51.186486907730675%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check18" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 72.23184589800444%; left: 58.817799251870326%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check19" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 72.45703991130821%; left: 66.65562655860349%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check20" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 86.17655210643017%; left: 35.31600685785536%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check21" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 86.26662971175166%; left: 43.266832917705734%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check22" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 86.2215909090909%; left: 51.26246882793018%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check23" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 86.44678492239468%; left: 59.22498441396509%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check24" aria-label="">
+      
+    </div>
+  
+    <div style="
+    position: absolute; top: 86.29781042128603%; left: 66.70628117206982%; width: 5%; height: 5%;
+  ">
+      
+        <input type="checkbox" style="width: 100%; height: 100%; max-width: 15px; max-height: 15px;" name="null" id="check25" aria-label="">
+      
+    </div>
+  
+    </div>
+  </div>
+</div>
+
+
+  <div>
+    <details>
+      <summary><strong>Solution:</strong></summary>
+      <div>
+        <video controls>
+  <source src="04. 5-Queens Quiz-bPAFnwZx0b4.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. 5-Queens Quiz-bPAFnwZx0b4.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="CN" src="04. 5-Queens Quiz-bPAFnwZx0b4.zh-CN.vtt" label="CN">
+</video>
+
+
+      </div>
+    </details>
+  </div>
+</div>
+
+
+  <div class="jumbotron" style="margin-top: 50px; margin-bottom: 50px;">
+    <h3>INSTRUCTOR NOTE:</h3>
+    <p>Check a cell to place a queen there.</p>
+<p>Note that a valid solution is one where there are 5 total queens on the board, and none of them are attacking each other!</p>
+  </div>
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="05. n-Queens Heuristic Function.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. 5-Queens Quiz')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

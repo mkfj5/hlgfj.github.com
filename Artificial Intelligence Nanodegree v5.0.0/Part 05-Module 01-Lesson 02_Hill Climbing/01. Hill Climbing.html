@@ -1,0 +1,207 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hill Climbing</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Hill Climbing</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Hill Climbing.html">01. Hill Climbing</a>
+    </li>
+    <li class="">
+      <a href="02. Local Maximum.html">02. Local Maximum</a>
+    </li>
+    <li class="">
+      <a href="03. Random Restart.html">03. Random Restart</a>
+    </li>
+    <li class="">
+      <a href="04. Hill Climbing Quiz.html">04. Hill Climbing Quiz</a>
+    </li>
+    <li class="">
+      <a href="05. Step Size Too Small.html">05. Step Size Too Small</a>
+    </li>
+    <li class="">
+      <a href="06. Step Size Too Large.html">06. Step Size Too Large</a>
+    </li>
+    <li class="">
+      <a href="07. Hill Climbing Quiz 2.html">07. Hill Climbing Quiz 2</a>
+    </li>
+    <li class="">
+      <a href="08. Local Beam Search.html">08. Local Beam Search</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">01. Hill Climbing</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Hill Climbing</p></h3>
+  <video controls>
+  <source src="01. Hill Climbing-IdmkCgRiYp4.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="01. Hill Climbing-IdmkCgRiYp4.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="CN" src="01. Hill Climbing-IdmkCgRiYp4.zh-CN.vtt" label="CN">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Hills Climbing Instructor Note</p></h3>
+  <div>
+  <p><strong>Note from the video</strong>: Thad is cavalier about switching from <em>minimizing</em> the objective function to <em>maximizing</em> the objective function because it is trivial to move back and forth in optimization problems between seeking to maximize or minimize an objective function. </p>
+<p>If you want to <em>minimize f(x)</em> and your optimizer program seeks to maximize the objective function, then define <code>g(x) = -f(x)</code> and find <code>max(g(x)) = max(-f(x)) = min(f(x))</code>. Similarly, if your optimization problem needs to <em>maximize f(x)</em> and your optimizer program seeks to minimize the objective function, define <code>g(x) = -f(x) and find min(g(x)) = min(-f(x)) = max(f(x))</code>. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Hill Climbing</p></h3>
+  <div>
+  <h2 id="hill-climbing-algorithm">Hill Climbing Algorithm</h2>
+<p><strong>Hill Climbing</strong> is also known as <em>greedy local search</em>. This algorithm only looks to the immediate neighbors without knowing where to go next. The algorithm evaluates the values of immediate neighbors and continually moves to the direction of the increasing value, hence the name “hill climbing”. The algorithm will terminate at a <em>peak</em> where there are no higher values among the neighbors.</p>
+<p>You may have heard of the <code>gradient descent</code> algorithm. On the surface, both hill climbing and gradient descent algorithms share a similar goal to reach the maximum or minimum value on the state space landscape. However, there is a subtle difference between them. While hill climbing simply evaluates the value of the evaluation function, gradient descent computes the steepest slope of the function and moves to that direction.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="02. Local Maximum.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('01. Hill Climbing')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

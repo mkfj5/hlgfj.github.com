@@ -1,0 +1,24 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.370 --> 00:00:02.560
+We are going to consider
+multiple starting points for
+
+00:00:02.560 --> 00:00:04.964
+the hill climbing
+algorithm in this quiz.
+
+00:00:04.964 --> 00:00:07.750
+By convention,
+we'll call these particles.
+
+00:00:07.750 --> 00:00:10.890
+For each of these particles, tell us
+their value assuming your algorithm
+
+00:00:10.890 --> 00:00:14.600
+has a step size of one and that it stops
+when no positive gradient is found.
+

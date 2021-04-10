@@ -1,0 +1,69 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.230 --> 00:00:03.282
+Let's be a little more formal
+about the n-Queens problems.
+
+00:00:03.282 --> 00:00:05.830
+Given a current board we
+want to make the one move
+
+00:00:05.830 --> 00:00:08.560
+that can most greatly
+improve the situation.
+
+00:00:08.560 --> 00:00:12.620
+In fact to simplify the discussion let's
+constrain ourselves to moving a single
+
+00:00:12.620 --> 00:00:14.850
+queen up or down within its column.
+
+00:00:14.850 --> 00:00:18.468
+Then we keep iterating until we reach
+our goal of having zero attacks.
+
+00:00:18.468 --> 00:00:21.622
+&gt;&gt; Given this board which
+currently has 17 attacking pairs.
+
+00:00:21.622 --> 00:00:25.670
+The best we can do with a single move is
+to get the number of attacks down to 12.
+
+00:00:25.670 --> 00:00:26.630
+For example,
+
+00:00:26.630 --> 00:00:30.620
+if you move this queen here, you
+reduce the number of conflicts to 12.
+
+00:00:30.620 --> 00:00:31.620
+&gt;&gt; That's right.
+
+00:00:31.620 --> 00:00:33.870
+But, how do we figure
+out which one to take?
+
+00:00:33.870 --> 00:00:35.640
+Do we just select it randomly?
+
+00:00:35.640 --> 00:00:37.330
+&gt;&gt; Seemed as good an idea as any.
+
+00:00:37.330 --> 00:00:39.480
+&gt;&gt; Okay so we can continue to iterate,
+
+00:00:39.480 --> 00:00:42.322
+hopefully reducing the number
+of attacks with each move.
+
+00:00:42.322 --> 00:00:45.710
+But what if we get into a situation
+where no move decreases our
+
+00:00:45.710 --> 00:00:46.670
+number of attacks?
+

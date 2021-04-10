@@ -1,0 +1,26 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.225 --> 00:00:02.967
+Now assume your algorithm
+has a step size of 2.
+
+00:00:02.967 --> 00:00:05.783
+It still stops when no
+positive gradient is found.
+
+00:00:05.783 --> 00:00:07.980
+What value would these particles return?
+
+00:00:07.980 --> 00:00:10.465
+Particle 1 starts at x equal to 7.
+
+00:00:10.465 --> 00:00:15.767
+Particle 2 starts at x equal to 8, and
+particle 3 starts at x equal to 10.
+
+00:00:15.767 --> 00:00:19.090
+Select their appropriate answer for each
+particle from the choices given here.
+

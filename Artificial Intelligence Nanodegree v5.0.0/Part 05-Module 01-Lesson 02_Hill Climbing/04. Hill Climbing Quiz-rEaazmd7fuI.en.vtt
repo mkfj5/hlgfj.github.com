@@ -1,0 +1,39 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.230 --> 00:00:04.246
+Particle 1 starts at x=1 and
+follows a positive gradient up, but
+
+00:00:04.246 --> 00:00:07.100
+then it gets stuck at
+the shoulder where y=2.
+
+00:00:07.100 --> 00:00:11.402
+Particle 2 starts at x=8 and
+follows a positive gradient up, but
+
+00:00:11.402 --> 00:00:14.281
+it gets stuck at this
+local maximum at y=6.
+
+00:00:14.281 --> 00:00:18.197
+Particle 3 starts at x=9 and follows
+the positive gradient in the right
+
+00:00:18.197 --> 00:00:21.747
+direction, but again it gets
+stuck at a local maximum, at y=8.
+
+00:00:21.747 --> 00:00:26.200
+Particle 4 starts at x=14 and
+also goes to the same local maximum.
+
+00:00:26.200 --> 00:00:28.400
+Particle 5 starts at x=20 and
+
+00:00:28.400 --> 00:00:33.339
+follows the positive gradient up
+towards the global maximum at y=12.
+

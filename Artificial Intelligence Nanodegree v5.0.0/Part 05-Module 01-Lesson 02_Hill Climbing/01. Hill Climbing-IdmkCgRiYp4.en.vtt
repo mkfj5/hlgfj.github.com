@@ -1,0 +1,22 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.330 --> 00:00:02.950
+The n Queen problem was multidimensional and
+
+00:00:02.950 --> 00:00:05.910
+we were trying to minimize
+the number of attacks.
+
+00:00:05.910 --> 00:00:10.179
+Here for convenience we'll make our
+goal to maximize this value, and
+
+00:00:10.179 --> 00:00:14.320
+we can only move left or right along
+this x axis, instead of having so
+
+00:00:14.320 --> 00:00:15.560
+many different pieces to move.
+

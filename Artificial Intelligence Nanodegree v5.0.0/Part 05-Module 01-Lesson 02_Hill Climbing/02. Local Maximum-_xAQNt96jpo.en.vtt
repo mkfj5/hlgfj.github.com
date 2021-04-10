@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.390 --> 00:00:01.830
+Suppose I start here.
+
+00:00:01.830 --> 00:00:03.969
+I look to the left and it goes down.
+
+00:00:05.030 --> 00:00:07.850
+I look to the right and it's going up.
+
+00:00:07.850 --> 00:00:10.090
+So I'll take a step in that direction.
+
+00:00:10.090 --> 00:00:11.620
+&gt;&gt; And
+what do you do when you reach the top?
+
+00:00:12.690 --> 00:00:16.770
+&gt;&gt; Well we will get stuck, just like
+we did with the end queens problem.
+
+00:00:16.770 --> 00:00:21.220
+There's no immediate step that I can
+do that has a positive gradient.
+
+00:00:21.220 --> 00:00:23.680
+Everything is negative, that's a bummer.
+
+00:00:23.680 --> 00:00:26.450
+&gt;&gt; Is that a problem,
+didn't we want to get to a maximum?
+
+00:00:26.450 --> 00:00:29.280
+&gt;&gt; We actually wanted to
+get to the global maximum.
+
+00:00:29.280 --> 00:00:30.490
+Looking at the graph,
+
+00:00:30.490 --> 00:00:33.490
+we can see that there's actually
+a taller peak over here.
+
+00:00:33.490 --> 00:00:35.860
+&gt;&gt; I see, but
+our computer agent doesn't know that.
+
+00:00:35.860 --> 00:00:38.610
+It can only see what's one
+step away from it, right?
+
+00:00:38.610 --> 00:00:40.560
+So how are you going to get unstuck?
+
+00:00:40.560 --> 00:00:42.780
+&gt;&gt; But what if I just start
+again somewhere else?
+

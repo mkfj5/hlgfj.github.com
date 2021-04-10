@@ -1,0 +1,136 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.220 --> 00:00:03.320
+Can we get an another example of
+an iterative improvement problem?
+
+00:00:03.319 --> 00:00:06.129
+&gt;&gt; Sure, here's one we'll
+use throughout this lesson.
+
+00:00:06.129 --> 00:00:07.769
+It's called N Queens.
+
+00:00:07.769 --> 00:00:10.449
+Basically, the puzzles
+the place N queens, so
+
+00:00:10.449 --> 00:00:11.899
+they cannot attack each other.
+
+00:00:11.900 --> 00:00:14.120
+On an n by n chessboard.
+
+00:00:14.119 --> 00:00:16.975
+&gt;&gt; In other words, no queen can
+be on the same horizontal row.
+
+00:00:16.975 --> 00:00:20.619
+Vertical column or diagonal.
+
+00:00:20.620 --> 00:00:23.800
+&gt;&gt; Okay, so
+here's an example board of four queens.
+
+00:00:23.800 --> 00:00:25.719
+I just put down the queens randomly.
+
+00:00:25.719 --> 00:00:28.859
+And there are five ways that
+the queens can attack each other.
+
+00:00:28.859 --> 00:00:31.649
+&gt;&gt; So, our goal is to get
+the number of attacks down to zero?
+
+00:00:31.649 --> 00:00:34.100
+&gt;&gt; Yep, and we have four
+dimensions in which to move.
+
+00:00:34.100 --> 00:00:36.829
+Specifically, we can move
+each queen's in it's column.
+
+00:00:36.829 --> 00:00:39.710
+To minimize the number of attacks.
+
+00:00:39.710 --> 00:00:42.299
+&gt;&gt; Well, there are two queens
+that have three attacks.
+
+00:00:42.299 --> 00:00:45.219
+It seems like a good idea
+to move one of those first.
+
+00:00:45.219 --> 00:00:47.699
+If we move the second
+queen to the top row.
+
+00:00:47.700 --> 00:00:50.080
+You could eliminate three
+of the five attacks.
+
+00:00:50.079 --> 00:00:52.479
+&gt;&gt; And
+that leaves only two attacks left.
+
+00:00:52.479 --> 00:00:55.909
+&gt;&gt; It seems like we should always start
+from the queen with the most attacks.
+
+00:00:55.909 --> 00:00:58.439
+This reminds me of the most
+constrained variable heuristic
+
+00:00:58.439 --> 00:01:00.269
+in constraint satisfaction problems.
+
+00:01:00.270 --> 00:01:02.085
+But we'll cover that
+topic in the next lesson.
+
+00:01:02.085 --> 00:01:02.880
+&gt;&gt; Yep, and
+
+00:01:02.880 --> 00:01:06.920
+taking that approach, the next queen
+we should work on is the third one.
+
+00:01:06.920 --> 00:01:08.890
+Which is involved in two attacks.
+
+00:01:08.890 --> 00:01:10.709
+If we move it to the bottom row.
+
+00:01:10.709 --> 00:01:14.109
+Then we will have no more attacks,
+and we have solved the problem.
+
+00:01:14.109 --> 00:01:16.034
+&gt;&gt; That's surprisingly effective!
+
+00:01:16.034 --> 00:01:18.109
+We've solved the problem
+in just two moves.
+
+00:01:18.109 --> 00:01:21.060
+Whereas, with simple search,
+we would have had many more steps.
+
+00:01:21.060 --> 00:01:24.460
+&gt;&gt; Exactly, it is an example of
+trying the stupid thing first.
+
+00:01:24.459 --> 00:01:26.979
+Then adding intelligence
+until we solve the problem.
+
+00:01:26.980 --> 00:01:29.390
+However, four queens seemed too easy.
+
+00:01:29.390 --> 00:01:31.579
+Let's try five queens and
+see if it gets harder.
+

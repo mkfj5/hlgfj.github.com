@@ -1,0 +1,154 @@
+{
+  "data": {
+    "lesson": {
+      "id": 556675,
+      "key": "7a6b3b2a-205a-49f8-93cf-63918dbf1149",
+      "title": "Simulated Annealing",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Thad explains _Simulated Annealing_, a classical global optimization technique for optimization.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/7a6b3b2a-205a-49f8-93cf-63918dbf1149/556675/1538955246549/Simulated+Annealing+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/7a6b3b2a-205a-49f8-93cf-63918dbf1149/556675/1538955244170/Simulated+Annealing+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 591169,
+          "key": "82ed87c8-36ab-4d0d-9df0-804b8226f66c",
+          "title": "Lesson Plan - Week 7",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82ed87c8-36ab-4d0d-9df0-804b8226f66c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 591170,
+              "key": "9c59f023-b6f0-44b6-a665-3424cdff4ac4",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Lesson Plan: Week 7\n---\nThis week's lessons introduce more techniques for solving combinatorial optimization problems: simulated annealing and genetic algorithms. Simulated annealing is not often used, but it is a classical algorithm that introduces some important concepts that lead to more modern replacement algorithms like [basin hopping](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.basinhopping.html) and [late acceptance hill climbing](https://www.sciencedirect.com/science/article/abs/pii/S0377221716305495). The same principles have been used to explain \"[superconvergence](https://arxiv.org/abs/1708.07120)\" in deep neural networks. Genetic algorithms have already received considerable attention lately for some applications in deep learning. (e.g., [here](https://blog.openai.com/evolution-strategies/) and [here](https://arxiv.org/pdf/1712.06567.pdf))\n\n## Classroom\n- Watch lessons on **Simulated Annealing** and **Genetic Algorithms**\n- (_Optional_) Complete the Optimization classroom exercise\n- (_Optional_) Review the **Additional Topics** lessons with links to optimization software packages and select readings.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 194023,
+          "key": "66325789370923",
+          "title": "Annealing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "66325789370923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193661,
+              "key": "6632578937",
+              "title": "Annealing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uFHaxOl1Nlo",
+                "china_cdn_id": "uFHaxOl1Nlo.mp4"
+              }
+            },
+            {
+              "id": 1094363,
+              "key": "8d28960e-104d-4903-ac2b-4c467ec48ab2",
+              "title": "Annealing",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Simulated Annealing algorithm** is inspired by the *annealing* process in [metallurgy](https://en.wikipedia.org/wiki/Metallurgy). An annealing process reshapes a hard metal or glass by exposing it to a high temperature and gradually cool it down until it maintains the new shape.\n\nUnlike the Hill Climbing algorithm, which can get stuck in the local maxima, Simulated Annealing is guaranteed to find the global maximum. The next video will explain why simulated annealing is a `complete` algorithm that is able to find the global maximum.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1094366,
+              "key": "21ebe165-eca8-43b6-aed2-9636e9ee4931",
+              "title": "Image Credits",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Image credits:\n- [Mud cracks / sewage sludge](https://en.wikipedia.org/wiki/Sewage_sludge) - Wikipedia\n- [Honeycomb](https://pixabay.com/en/queen-cup-honeycomb-honey-bee-337695/) - Pixabay\n- [Columnar basalts](https://commons.wikimedia.org/wiki/File:Columnar_basalt_Brei%C3%B0afj%C3%B6r%C3%B0ur_2012-07_B.JPG) - Wikipedia (this one is actually from Iceland)\n- [Heat treating (atomic lattice)](https://commons.wikimedia.org/wiki/File:IronAlfa%26IronGamma.svg) - Wikipedia\n- [Heat treating (sword making)](https://commons.wikimedia.org/wiki/File:Katana_hardened_edge_pic_with_inset_of_nioi.JPG) - Wikipedia",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 194145,
+          "key": "56394685660923",
+          "title": "Simulated Annealing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "56394685660923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 193798,
+              "key": "5639468566",
+              "title": "Simulated Annealing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "xoXmFy3FSCE",
+                "china_cdn_id": "xoXmFy3FSCE.mp4"
+              }
+            },
+            {
+              "id": 1094365,
+              "key": "3671a8c8-6e73-491e-9596-b7a347bb3c81",
+              "title": "Notation",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Notation**\n- _**T**_ is the simulated _temperature_ at time *t*, which reduces from a high value at the beginning to near zero eventually.\n- _**&Delta;E**_ is the change in energy going from _current_ to _next_.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1094364,
+              "key": "8c4dfacf-dc31-4bc3-961f-e985a4ff6dfa",
+              "title": "Simulated Annealing",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Simulated Annealing Pseudocode**\n```\nFor t=1 to ∞ do\n    T ← SCHEDULE(t)\n    if T=0: return current\n    next ← GET_RANDOM_SUCCESSOR(current)\n    if Δe>0: current ← next\n    else: current ← next with probability e^(ΔE/T)\n```\nLet's walk through the simulated annealing algorithm:\n- The algorithm initializes the temperature (T) to very high (infinity).\n- Through *schedule(t)*  function, the temperature will be decreased at each step. When temperature is zero, it will return the current state.\n- Unlike Hill Climbing algorithm which picks the *best* successor, Simulated Annealing will pick a *random* successor from the current state.\n- When the change in temperature is still high, the algorithm will accept any new value from the successor state although the value may become worse.\n- However, as the temperature cools down, the probability of making the transition from current to successor state is specified by the _acceptance probability function_: e<sup>ΔE/T</sup>. As T is approaching zero, the acceptance probability becomes very small.\n\nIn the following lesson, we will look into *Genetic Algorithm*. Similar to Simulated Annealing, the Genetic Algorithm will pick a random successor at each step. However, it has a different evaluation function, called *fitness function*.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
